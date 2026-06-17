@@ -279,7 +279,7 @@
 different GIS implementations and data stores. QGIS can deal with the above
 specifications as a client, being <strong>SFS</strong> (through support of the PostgreSQL
 data provider, see section <a class="reference internal" href="../managing_data_source/supported_data.html#label-postgis"><span class="std std-ref">PostgreSQL Database</span></a>).</p>
-<p><span class="xref std std-ref">QGISサーバ</span> 、UMN MapServer、またはGeoServerがインストールされたWebサーバを使用すれば、WMS、WMTS、WFS、WFS-T、およびWCSプロトコルを介して地図とデータを共有できます。</p>
+<p><a class="reference internal" href="../../server_manual/index.html#qgis-server-manual"><span class="std std-ref">QGIS Server</span></a>, UMN MapServer または GeoServer がインストールされたWebサーバを使用すれば、WMS、WMTS、WFS、WFS-T、およびWCSプロトコルを介して地図とデータを共有できます。</p>
 <section id="wms-wmts-client">
 <span id="ogc-wms"></span><h2><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">19.1. </span>WMS/WMTS クライアント</a><a class="headerlink" href="#wms-wmts-client" title="Link to this heading"></a></h2>
 <section id="overview-of-wms-support">
@@ -494,8 +494,8 @@ https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?service=WMTS&amp;reques
 <li><p><strong>サーバープロパティ</strong></p>
 <ul>
 <li><p><strong>WMS バージョン</strong> --- サーバーによってサポートされたWMSのバージョン.</p></li>
-<li><p><strong>画像フォーマット</strong> --- サーバーが地図を描画するときに応答できるMIME-タイプのリスト。QGISではQtライブラリが構築された基礎になるフォーマットは何でもサポートしています。通常は少なくとも <code class="docutils literal notranslate"><span class="pre">画像/png</span></code> と <code class="docutils literal notranslate"><span class="pre">画像/jpeg</span></code> があります。</p></li>
-<li><p><strong>アイデンティティ形式</strong> ---サーバーが識別ツールを使用する場合に対応できるMIME-タイプのリスト。現在、QGISは <a href="#id1"><span class="problematic" id="id2">``</span></a>テキストplain``タイプをサポートしています。</p></li>
+<li><p><strong>画像フォーマット</strong> --- サーバーが地図を描画するときに応答できるMIME-タイプのリスト。QGISではQtライブラリが構築された基礎になるフォーマットは何でもサポートしています。通常は少なくとも <code class="docutils literal notranslate"><span class="pre">image/png</span></code> と <code class="docutils literal notranslate"><span class="pre">image/jpeg</span></code> があります。</p></li>
+<li><p><strong>アイデンティティ形式</strong> --- サーバーが識別ツールを使用する場合に対応できるMIME-タイプのリスト。現在、QGISは <code class="docutils literal notranslate"><span class="pre">テキストplain</span></code> タイプをサポートしています。</p></li>
 </ul>
 </li>
 <li><p><strong>レイヤプロパティ</strong></p>
@@ -521,7 +521,7 @@ https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?service=WMTS&amp;reques
 <ul class="simple">
 <li><p><span class="guilabel">Server default</span></p></li>
 <li><p><span class="guilabel">Predefined date</span> を使用して連続しない時間範囲のデータを公開しているサーバを指定するか、 <span class="guilabel">Predefined range</span> を使用して利用可能な日付範囲を公開しているサーバを指定します。後者の場合は <span class="guilabel">Start date</span> と <span class="guilabel">End date</span> が必須です。予想されるフォーマットは、プロバイダが連続した期間のデータを持っているかどうかに応じて、参照時間オプション（下記参照）から推測することができます。</p></li>
-<li><p>:guilabel:<a href="#id1"><span class="problematic" id="id2">`</span></a>Follow project's temporal range`プロジェクトのプロパティダイアログで定義されたプロジェクトの時間的範囲に従います。</p></li>
+<li><p><span class="guilabel">Follow project's temporal range</span> プロジェクトのプロパティダイアログで定義されたプロジェクトの時間的範囲に従います。</p></li>
 </ul>
 <figure class="align-center" id="id9">
 <span id="figure-wmts-temporal"></span><img alt="../../../_images/temporal_properties.png" src="../../../_images/temporal_properties.png" />
@@ -542,7 +542,7 @@ https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?service=WMTS&amp;reques
 </li>
 <li><p><span class="guilabel">Ignore time components (use dates only)</span>:時間コンポーネントを無視します。チェックした場合、時系列クエリの時間コンポーネントは破棄され、日付コンポーネントのみがサーバリクエストで使用されます。</p></li>
 </ul>
-<p><a class="reference internal" href="../../../_images/checkbox.png"><img alt="checkbox" src="../../../_images/checkbox.png" style="width: 1.3em;" /></a> :guilabel:<a href="#id1"><span class="problematic" id="id2">`</span></a>特定のWMS-T基準時刻を使用する`レイヤーの機能で報告された時刻から選択することもできます。(日付の範囲ではなく)連続しない日付時刻インスタンスのセットを公開するサーバーに便利です。</p>
+<p><a class="reference internal" href="../../../_images/checkbox.png"><img alt="checkbox" src="../../../_images/checkbox.png" style="width: 1.3em;" /></a> <span class="guilabel">特定のWMS-T基準時刻を使用する</span> レイヤーの機能で報告された時刻から選択することもできます。(日付の範囲ではなく)連続しない日付時刻インスタンスのセットを公開するサーバーに便利です。</p>
 </section>
 <section id="qgis-server-properties">
 <span id="wms-server-properties"></span><h4><a class="toc-backref" href="#id31" role="doc-backlink"><span class="section-number">19.1.7.3. </span>QGIS Serverのプロパティ</a><a class="headerlink" href="#qgis-server-properties" title="Link to this heading"></a></h4>
@@ -972,7 +972,7 @@ before performing edits to avoid conflicts.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 17, 17:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 18, 00:34 +0900
       </span></p>
   </div>
 

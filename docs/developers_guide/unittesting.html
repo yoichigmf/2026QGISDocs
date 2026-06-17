@@ -436,7 +436,7 @@ macros Qt provides for use in your tests including:</p>
 <h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">6.3. </span>レンダリングテスト用に画像を比較する</a><a class="headerlink" href="#comparing-images-for-rendering-tests" title="Link to this heading"></a></h2>
 <p>異なる環境で画像をレンダリングすると、プラットフォーム固有の実装（フォントレンダリングやアンチエイリアシングアルゴリズムの違いなど）や、システムで利用可能なフォント、その他の不明瞭な理由により、微妙な違いが生じることがあります。</p>
 <p>Travis でレンダリングテストを実行して失敗した場合、Travis ログの一番下にある dash リンクを探します。このリンクから cdash ページに移動し、レンダリングされた画像と期待される画像の比較や、参照画像と一致しなかったピクセルを赤くハイライトする「差分」画像を見ることができます。</p>
-<p>QGISユニットテストシステムは、レンダリング画像が参照画像と異なる可能性がある場合に使用される「マスク」画像の追加をサポートしています。マスク画像は画像（参照画像と同じ名前ですが、<a href="#id1"><span class="problematic" id="id2">**</span></a>_mask.png**という接尾辞が付きます）で、参照画像と同じ寸法である必要があります。マスク画像のピクセル値は、個々のピクセルが参照画像とどの程度異なってもよいかを示します。したがって、黒いピクセルは、レンダリング画像のピクセルが参照画像の同じピクセルと完全に一致しなければならないことを示します。RGB 2, 2, 2のピクセルは、レンダリング画像が参照画像とRGB値で最大2まで異なる可能性があることを意味し、完全な白ピクセル（255, 255, 255）は、期待画像とレンダリング画像を比較する際に、そのピクセルが事実上無視されることを意味します。</p>
+<p>QGISユニットテストシステムは、レンダリング画像が参照画像と異なる可能性がある場合に使用される &quot;マスク&quot; 画像の追加をサポートしています。マスク画像は画像（参照画像と同じ名前ですが、 <strong>_mask.png</strong> という接尾辞が付きます）で、参照画像と同じ寸法である必要があります。マスク画像のピクセル値は、個々のピクセルが参照画像とどの程度異なってもよいかを示します。したがって、黒いピクセルは、レンダリング画像のピクセルが参照画像の同じピクセルと完全に一致しなければならないことを示します。RGB 2, 2, 2のピクセルは、レンダリング画像が参照画像とRGB値で最大2まで異なる可能性があることを意味し、完全な白ピクセル (255, 255, 255) は、期待画像とレンダリング画像を比較する際に、そのピクセルが事実上無視されることを意味します。</p>
 <p>マスク画像を生成するユーティリティスクリプトが <code class="docutils literal notranslate"><span class="pre">scripts/generate_test_mask_image.py</span></code> として用意されています。このスクリプトは参照画像のパス（例えば <code class="docutils literal notranslate"><span class="pre">tests/testdata/control_images/annotations/expected_annotation_fillstyle/expected_annotation_fillstyle.png</span></code>）とレンダリング画像のパスを渡して使用します。</p>
 <p>例</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scripts/generate_test_mask_image.py<span class="w"> </span>tests/testdata/control_images/annotations/expected_annotation_fillstyle/expected_annotation_fillstyle.png<span class="w"> </span>/tmp/path_to_rendered_image.png
@@ -457,7 +457,7 @@ macros Qt provides for use in your tests including:</p>
 <li><p>参考画像は「がっしりした」ものにしてください...つまり、1px幅の線やその他の細かい地物がないようにし、大きくて太いフォント（14ポイント以上を推奨）を使ってください。</p></li>
 <li><p>時々、テストはわずかに異なるサイズの画像を生成します（例えば、凡例のレンダリングテストでは、画像サイズはフォントのレンダリングサイズに依存し、クロスプラットフォームの違いに左右されます）。 これを考慮するには、<code class="docutils literal notranslate"><span class="pre">QgsMultiRenderChecker::setSizeTolerance()</span></code> を使用して、レンダリング画像の幅と高さが参照画像と異なる最大ピクセル数を指定します。</p></li>
 <li><p>参照画像に透明な背景を使用しないでください（CDashはそれをサポートしていません）。その代わりに、 <code class="docutils literal notranslate"><span class="pre">QgsMultiRenderChecker::drawBackground()</span></code> を使用して、参照画像の背景にチェックボードパターンを描画してください。</p></li>
-<li><p>フォントが必要な場合は、<a href="#id1"><span class="problematic" id="id2">``</span></a>QgsFontUtils::standardTestFontFamily()``（&quot;QGIS Vera Sans&quot;）で指定されたフォントを使用します。</p></li>
+<li><p>フォントが必要な場合は、 <code class="docutils literal notranslate"><span class="pre">QgsFontUtils::standardTestFontFamily()</span></code> ( &quot;QGIS Vera Sans&quot; )で指定されたフォントを使用します。</p></li>
 </ol>
 <p>travis が新しい画像に対してエラーを報告した場合 (例えば、アンチエイリアスやフォントの違いによるもの)、 <a class="extlink-source reference external" href="https://github.com/qgis/QGIS/blob/release-3_44/scripts/parse_dash_results.py">parse_dash_results.py</a> スクリプトは、ローカルのテストマスクを更新するときに役立ちます。</p>
 </section>
@@ -712,7 +712,7 @@ works in a truly platform independent way.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 17, 12:02 +0900
+      <span class="lastupdated">最終更新: 2026 6月 18, 00:34 +0900
       </span></p>
   </div>
 
