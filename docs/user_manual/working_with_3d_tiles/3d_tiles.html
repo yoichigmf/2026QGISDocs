@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>17. 3Dタイルの操作 &mdash; QGIS Documentation  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/qgis_docs.css?v=e885e955" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/qgis_logo.ico"/>
+    <link rel="canonical" href="https://docs.qgis.org/latest/en/docs/user_manual/working_with_3d_tiles/3d_tiles.html"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=c033477b"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script>let toggleHintShow = 'クリックして表示';</script>
+        <script>let toggleHintHide = 'クリックして非表示';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../_static/togglebutton.js?v=b8b12719"></script>
+        <script src="../../../_static/translations.js?v=91613774"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../search.html" />
+    <link rel="next" title="18. 地図のレイアウト" href="../print_layout/index.html" />
+    <link rel="prev" title="16. 点群の操作" href="../working_with_point_clouds/point_clouds.html" />
+  <meta name="description" content="QGIS 3.44 documentation: 17. 3Dタイルの操作">
+  <script>
+    var _paq = window._paq = window._paq || [];
+    _paq.push(["disableCookies"]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.qgis.org/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+</head>
+
+<body class="wy-body-for-nav">
+
+  <nav class="release_status_topbar">
+  </nav>
+
+   
+
+ 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            QGIS Documentation
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                3.44
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+   <a href= "../../../genindex.html">索引</a>
+ 
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/preamble.html">はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/foreword.html">序文</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/conventions.html">表記規則</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/features.html">機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/help_and_support.html">ヘルプとサポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/contributors.html">協力者</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/license/index.html">ライセンスの遵守</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction/getting_started.html">1. 最初のステップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/project_files.html">2. プロジェクトファイルの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/qgis_gui.html">3. QGISのユーザインタフェース</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/browser.html">4. ブラウザパネル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/qgis_configuration.html">5. QGISの設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_projections/working_with_projections.html">6. 投影法の操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../map_views/index.html">7. 地図の可視化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/general_tools.html">8. 一般ツール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../expressions/index.html">9. 式でレベルアップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../style_library/index.html">10. スタイルライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../managing_data_source/index.html">11. データソースの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_vector/index.html">12. ベクタデータの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_raster/index.html">13. ラスタデータの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_mesh/mesh.html">14. メッシュデータの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_vector_tiles/vector_tiles.html">15. ベクタタイルの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_point_clouds/point_clouds.html">16. 点群の操作</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">17. 3Dタイルの操作</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-are-3d-tiles">17.1. 3Dタイルとは何か？</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#state-of-3d-tiles-support">17.1.1. State of 3D Tiles Support</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#d-tiles-properties">17.2. 3D Tiles Properties</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#information-properties">17.2.1. 情報プロパティ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#source-properties">17.2.2. ソースプロパティ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#symbology-properties">17.2.3. シンボロジプロパティ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#d-view-properties">17.2.4. 3Dビュープロパティ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rendering-properties">17.2.5. レンダリングプロパティ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#elevation-properties">17.2.6. 標高プロパティ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#metadata-properties">17.2.7. メタデータプロパティ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../print_layout/index.html">18. 地図のレイアウト</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_ogc/ogc_client_support.html">19. OGC / ISOプロトコルの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_gps/index.html">20. GPSデータの操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auth_system/index.html">21. 認証システム</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grass_integration/grass_integration.html">22. GRASS GIS の統合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../processing/index.html">23. QGIS プロセシングフレームワーク</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../processing_algs/index.html">24. プロセシングプロバイダとアルゴリズム</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plugins/index.html">25. プラグイン</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendices/index.html">26. 付録</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../literature_web/literature_and_web_references.html">27. 文献とWeb参照</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../training_manual/index.html">トレーニングマニュアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gentle_gis_introduction/index.html">やさしい GIS 入門</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ドキュメント執筆者向け</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../documentation_guidelines/index.html">ドキュメント作成のガイドライン</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers_guide/index.html">開発者ガイド</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">QGIS Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">QGISユーザガイド</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">17. </span>3Dタイルの操作</li>
+
+    <li style="float: right; text-align: right;">
+	<ul>
+		
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/qgis/QGIS-Documentation/edit/master/docs/user_manual/working_with_3d_tiles/3d_tiles.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+	</ul>
+
+        <!-- Add a button to guide potential contributors
+	     To do: add a more generic page for contributing in QGIS docs to keep users in the same website
+	     <a class="qgis-edit-guidelines" href="https://docs.qgis.org/3.44/ja/docs/documentation_guidelines/index.html">
+	-->
+	<a class="qgis-edit-guidelines" href="https://qgis.org/community/involve/">
+		Learn how to contribute!
+	</a>
+    </li>
+
+
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../working_with_point_clouds/point_clouds.html" class="btn btn-neutral float-left" title="16. 点群の操作" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../print_layout/index.html" class="btn btn-neutral float-right" title="18. 地図のレイアウト" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div><div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 42.65% 翻訳されています。</p>
+</div>
+</div></blockquote>
+<section id="working-with-3d-tiles">
+<span id="label-3d-tiles"></span><span id="index-0"></span><h1><span class="section-number">17. </span>3Dタイルの操作<a class="headerlink" href="#working-with-3d-tiles" title="Link to this heading"></a></h1>
+<nav class="contents local" id="id1">
+<ul class="simple">
+<li><p><a class="reference internal" href="#what-are-3d-tiles" id="id10">3Dタイルとは何か？</a></p>
+<ul>
+<li><p><a class="reference internal" href="#state-of-3d-tiles-support" id="id11">State of 3D Tiles Support</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#d-tiles-properties" id="id12">3D Tiles Properties</a></p>
+<ul>
+<li><p><a class="reference internal" href="#information-properties" id="id13">情報プロパティ</a></p></li>
+<li><p><a class="reference internal" href="#source-properties" id="id14">ソースプロパティ</a></p></li>
+<li><p><a class="reference internal" href="#symbology-properties" id="id15">シンボロジプロパティ</a></p></li>
+<li><p><a class="reference internal" href="#d-view-properties" id="id16">3Dビュープロパティ</a></p></li>
+<li><p><a class="reference internal" href="#rendering-properties" id="id17">レンダリングプロパティ</a></p></li>
+<li><p><a class="reference internal" href="#elevation-properties" id="id18">標高プロパティ</a></p></li>
+<li><p><a class="reference internal" href="#metadata-properties" id="id19">メタデータプロパティ</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="what-are-3d-tiles">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">17.1. </span>3Dタイルとは何か？</a><a class="headerlink" href="#what-are-3d-tiles" title="Link to this heading"></a></h2>
+<p>3D tiles are specification for streaming and rendering large-scale 3D geospatial datasets.
+They use a hierarchical structure to efficiently manage and display 3D content,
+optimising performance by dynamically loading appropriate levels of detail.
+This technology is widely used in urban planning, architecture, simulation, gaming,
+and virtual reality, providing a standardised and interoperable solution
+for visualising complex geographical data.</p>
+<figure class="align-center" id="id6">
+<span id="figure-3d-tiles-example"></span><img alt="../../../_images/3d_tiles.png" src="../../../_images/3d_tiles.png" />
+<figcaption>
+<p><span class="caption-number">図 17.1 </span><span class="caption-text">3Dタイルの例</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>See <a class="reference internal" href="../managing_data_source/opening_data.html#d-tiles"><span class="std std-ref">3Dタイルシーンサービスの使用</span></a> for instructions on how to add these data sources to QGIS.</p>
+<section id="state-of-3d-tiles-support">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">17.1.1. </span>State of 3D Tiles Support</a><a class="headerlink" href="#state-of-3d-tiles-support" title="Link to this heading"></a></h3>
+<p>Currently, QGIS supports two formats of 3D tiles:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.ogc.org/cs/22-025r4/22-025r4.html">&quot;Cesium&quot; 3D Tiles</a> are used primarily for complex 3D
+models of buildings or whole cities. Such datasets can be provided by cloud-based platforms such as Cesium
+Ion or Google (<em>Photorealistic 3D Tiles</em>).</p></li>
+<li><p><a class="reference external" href="https://github.com/CesiumGS/quantized-mesh">Quantized Mesh</a>  tiles are used for terrain elevation data.</p></li>
+</ul>
+<p>Supported <em>3D Tiles</em> features:</p>
+<ul class="simple">
+<li><p>QGIS currently has partial support for 3D Tiles 1.0 and partial support for
+3D Tiles 1.1.</p></li>
+<li><p>For 3D Tiles 1.0, the tile format Batched 3D Model (<code class="docutils literal notranslate"><span class="pre">b3dm</span></code>) is supported.
+The tile formats Instanced 3D Model (<code class="docutils literal notranslate"><span class="pre">i3dm</span></code>), Point Cloud (<code class="docutils literal notranslate"><span class="pre">pnts</span></code>) and
+Composite (<code class="docutils literal notranslate"><span class="pre">cmpt</span></code>) are not supported yet.</p></li>
+<li><p>For 3D Tiles 1.1, the <code class="docutils literal notranslate"><span class="pre">3DTILES_content_gltf</span></code> extension is supported, so
+tile contents may also be encoded as glTF 2.0 (text or binary). The
+<code class="docutils literal notranslate"><span class="pre">EXT_mesh_gpu_instancing</span></code> extension is not supported yet.</p></li>
+<li><p>Currently only explicit tiling is supported. Implicit tiling is not
+supported yet.</p></li>
+<li><p>Currently only tilesets using EPSG:4978 are supported.</p></li>
+</ul>
+</section>
+</section>
+<section id="d-tiles-properties">
+<span id="dtiles-properties"></span><h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">17.2. </span>3D Tiles Properties</a><a class="headerlink" href="#d-tiles-properties" title="Link to this heading"></a></h2>
+<p>The 3D tiles <span class="guilabel">Layer Properties</span> dialog provides the following sections:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../../_images/metadata.png"><img alt="metadata" src="../../../_images/metadata.png" style="width: 1.5em;" /></a> <a class="reference internal" href="#dtilesinformationmenu"><span class="std std-ref">Information</span></a></p></td>
+<td><p><a class="reference internal" href="../../../_images/system.png"><img alt="system" src="../../../_images/system.png" style="width: 1.5em;" /></a> <a class="reference internal" href="#dtilessourcemenu"><span class="std std-ref">Source</span></a></p></td>
+<td><p><a class="reference internal" href="../../../_images/symbology.png"><img alt="symbology" src="../../../_images/symbology.png" style="width: 2em;" /></a> <a class="reference internal" href="#dtilessymbologymenu"><span class="std std-ref">Symbology</span></a> (<a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../../_images/3d.png"><img alt="3d" src="../../../_images/3d.png" style="width: 1.5em;" /></a> <a class="reference internal" href="#dtiles3dviewmenu"><span class="std std-ref">3D View</span></a> (<a class="footnote-reference brackets" href="#id5" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>)</p></td>
+<td><p><a class="reference internal" href="../../../_images/rendering.png"><img alt="rendering" src="../../../_images/rendering.png" style="width: 1.5em;" /></a> <a class="reference internal" href="#dtilesrenderingmenu"><span class="std std-ref">Rendering</span></a></p></td>
+<td><p><a class="reference internal" href="../../../_images/elevationscale.png"><img alt="elevationscale" src="../../../_images/elevationscale.png" style="width: 1.5em;" /></a> <a class="reference internal" href="#dtileselevationmenu"><span class="std std-ref">Elevation</span></a> (<a class="footnote-reference brackets" href="#id5" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../../_images/editmetadata.png"><img alt="editMetadata" src="../../../_images/editmetadata.png" style="width: 1.2em;" /></a> <a class="reference internal" href="#dtilesmetadatamenu"><span class="std std-ref">Metadata</span></a></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id3">2</a>,<a role="doc-backlink" href="#id4">3</a>)</span>
+<p>Also available in the <a class="reference internal" href="../introduction/general_tools.html#layer-styling-panel"><span class="std std-ref">Layer styling panel</span></a></p>
+</aside>
+</aside>
+<section id="information-properties">
+<span id="dtilesinformationmenu"></span><h3><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">17.2.1. </span>情報プロパティ</a><a class="headerlink" href="#information-properties" title="Link to this heading"></a></h3>
+<p><span class="guilabel">情報</span> タブは読み取り専用で、現在のレイヤの要約された情報やメタデータをさっと掴むことができる興味深い場所です。提供される情報には、以下のものがあります：</p>
+<ul class="simple">
+<li><p>based on the provider of the layer: name, URL, source type and path, number
+of zoom levels</p></li>
+<li><p>custom properties, used to store in the active project additional information about the layer.
+More properties can be created and managed using PyQGIS, specifically through
+the <a class="extlink-pyqgis reference external" href="https://qgis.org/pyqgis/3.44/qgis.core.QgsMapLayer.setCustomProperty">setCustomProperty()</a> method.</p></li>
+<li><p>座標参照系（CRS）：CRSの名前、単位、投影法、精度、参照（静的か動的か）</p></li>
+<li><p>picked from the <a class="reference internal" href="#dtilesmetadatamenu"><span class="std std-ref">filled metadata</span></a>: access,
+extents, links, contacts, history...</p></li>
+</ul>
+</section>
+<section id="source-properties">
+<span id="dtilessourcemenu"></span><h3><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">17.2.2. </span>ソースプロパティ</a><a class="headerlink" href="#source-properties" title="Link to this heading"></a></h3>
+<p>The <a class="reference internal" href="../../../_images/system.png"><img alt="system" src="../../../_images/system.png" style="width: 1.5em;" /></a> <span class="guilabel">Source</span> tab displays basic information about
+the selected 3D tile, including:</p>
+<ul class="simple">
+<li><p><span class="guilabel">レイヤパネル</span> で表示される <span class="guilabel">レイヤ名</span></p></li>
+<li><p>the <span class="guilabel">Coordinate Reference System</span>:
+Displays the layer's
+<a class="reference internal" href="../working_with_projections/working_with_projections.html#layer-crs"><span class="std std-ref">Coordinate Reference System (CRS)</span></a>.
+You can change the layer's CRS, by selecting a recently used one in
+the drop-down list or clicking on the <a class="reference internal" href="../../../_images/mActionSetProjection.png"><img alt="setProjection" src="../../../_images/mActionSetProjection.png" style="width: 1.5em;" /></a>
+<sup>Select CRS</sup> button (see <a class="reference internal" href="../working_with_projections/working_with_projections.html#crs-selector"><span class="std std-ref">座標参照系セレクタ</span></a>).
+Use this process only if the layer CRS is wrong or not specified.</p></li>
+</ul>
+</section>
+<section id="symbology-properties">
+<span id="dtilessymbologymenu"></span><h3><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">17.2.3. </span>シンボロジプロパティ</a><a class="headerlink" href="#symbology-properties" title="Link to this heading"></a></h3>
+<figure class="align-center" id="id7">
+<span id="figure-3d-tiles-symbology"></span><img alt="../../../_images/3d_tiles_symbology.png" src="../../../_images/3d_tiles_symbology.png" />
+<figcaption>
+<p><span class="caption-number">図 17.2 </span><span class="caption-text">3D Tile Layer Symbology</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>By default, the layer is styled using texture, but you can change it
+to see the wireframe mesh behind the scene by choosing <span class="guilabel">Wireframe</span>
+in the drop-down menu. You can also, change the mesh fill and line symbols
+similar to the vector polygons.
+Checking <a class="reference internal" href="../../../_images/checkbox.png"><img alt="checkbox" src="../../../_images/checkbox.png" style="width: 1.3em;" /></a> <span class="guilabel">Use texture colors</span> will render each mesh element
+with the average value of the full texture.
+This is a good option to try when dealing with a large dataset and
+want to get a quick overview of the data.</p>
+<figure class="align-center" id="id8">
+<span id="figure-3d-tiles-textured-and-wireframe"></span><img alt="../../../_images/3d_tiles_textured_and_wireframe.png" src="../../../_images/3d_tiles_textured_and_wireframe.png" />
+<figcaption>
+<p><span class="caption-number">図 17.3 </span><span class="caption-text">3D Tiles - textured and wireframe</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>From the <span class="guilabel">Symbology</span> tab, you can also set some options that
+invariably act on all features of the layer:</p>
+<ul class="simple">
+<li><p><span class="guilabel">Maximum error</span>: This parameter determines the level of detail
+displayed in the 3D model. Similar to point clouds, 3D tiles
+often contain more information than necessary for visual representation.
+By adjusting this setting, you control the balance between display density
+and rendering speed. A larger value (e.g., 5 mm) may introduce noticeable
+gaps between elements, while a smaller value (e.g., 0.1 mm) could lead to
+the rendering of an excessive number of details, potentially slowing down
+the rendering process. Different units can be selected to tailor the setting
+to your specific needs.</p></li>
+<li><p><span class="guilabel">Opacity</span>: Adjusts the visibility of the underlying layer on the
+map canvas using this tool. Use slider to tailor the visibility
+of your scene layer according to your preferences. Alternatively, specify the
+exact percentage of visibility through the menu next to the slider.</p></li>
+<li><p><span class="guilabel">Blending mode</span>: You can achieve special rendering effects with these tools
+that you may previously only know from graphics programs.
+The pixels of your overlaying and underlying layers are mixed through the settings
+described in <a class="reference internal" href="../introduction/general_tools.html#blend-modes"><span class="std std-ref">混合モード</span></a>.</p></li>
+</ul>
+</section>
+<section id="d-view-properties">
+<span id="dtiles3dviewmenu"></span><h3><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">17.2.4. </span>3Dビュープロパティ</a><a class="headerlink" href="#d-view-properties" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><span class="guilabel">Maximum screen space error</span>: Determines the threshold for swapping
+terrain tiles with more detailed ones (and vice versa) - i.e. how soon the 3D
+view will use higher quality tiles. Lower numbers mean more details in the
+scene at the expenses of increased rendering complexity.</p></li>
+<li><p><a class="reference internal" href="../../../_images/unchecked.png"><img alt="unchecked" src="../../../_images/unchecked.png" style="width: 1.3em;" /></a> <span class="guilabel">Show bounding boxes</span>: Shows 3D bounding boxes of the
+terrain tiles (useful for troubleshooting terrain issues).</p></li>
+</ul>
+<p>To view the data you can open <a class="reference internal" href="../../../_images/mActionNew3DMap.png"><img alt="new3DMap" src="../../../_images/mActionNew3DMap.png" style="width: 1.5em;" /></a> <span class="guilabel">New 3D map view</span>.</p>
+<figure class="align-center" id="id9">
+<span id="figure-3d-tiles-map-view"></span><img alt="../../../_images/3d_tiles_map_view.png" src="../../../_images/3d_tiles_map_view.png" />
+<figcaption>
+<p><span class="caption-number">図 17.4 </span><span class="caption-text">3Dマップビュー</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="rendering-properties">
+<span id="dtilesrenderingmenu"></span><h3><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">17.2.5. </span>レンダリングプロパティ</a><a class="headerlink" href="#rendering-properties" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="../../../_images/unchecked.png"><img alt="unchecked" src="../../../_images/unchecked.png" style="width: 1.3em;" /></a> :縮尺に応じた表示設定` では、 <span class="guilabel">最大縮尺（含まない）</span> と <span class="guilabel">最小縮尺（含む）</span> を設定することができ、地物が表示される縮尺の範囲を定義します。それらはこの範囲外で非表示になります。<a class="reference internal" href="../../../_images/mActionMapIdentification.png"><img alt="mapIdentification" src="../../../_images/mActionMapIdentification.png" style="width: 1.5em;" /></a> <sup>現在のキャンバススケールを使う</sup> ボタンを使用すると、現在のマップキャンバスの縮尺を可視範囲の境界として使用することができます。詳しくは <a class="reference internal" href="../introduction/general_tools.html#label-scaledepend"><span class="std std-ref">表示縮尺セレクタ</span></a> を参照してください。</p>
+</section>
+<section id="elevation-properties">
+<span id="dtileselevationmenu"></span><h3><a class="toc-backref" href="#id18" role="doc-backlink"><span class="section-number">17.2.6. </span>標高プロパティ</a><a class="headerlink" href="#elevation-properties" title="Link to this heading"></a></h3>
+<p>The <a class="reference internal" href="../../../_images/elevationscale.png"><img alt="elevationscale" src="../../../_images/elevationscale.png" style="width: 1.5em;" /></a> <span class="guilabel">Elevation</span> tab provides options to control
+the layer elevation properties within a <a class="reference internal" href="../map_views/3d_map_view.html#label-3dmapview"><span class="std std-ref">3D map view</span></a>.
+Specifically, you can set:</p>
+<ul class="simple">
+<li><p><span class="guilabel">Elevation Surface</span>: how the 3D layer vertices Z values
+should be interpreted as terrain elevation.
+You can apply a <span class="guilabel">Scale</span> factor and an <span class="guilabel">Offset</span>.</p></li>
+</ul>
+</section>
+<section id="metadata-properties">
+<span id="dtilesmetadatamenu"></span><span id="index-1"></span><h3><a class="toc-backref" href="#id19" role="doc-backlink"><span class="section-number">17.2.7. </span>メタデータプロパティ</a><a class="headerlink" href="#metadata-properties" title="Link to this heading"></a></h3>
+<p><a class="reference internal" href="../../../_images/editmetadata.png"><img alt="editMetadata" src="../../../_images/editmetadata.png" style="width: 1.2em;" /></a> <span class="guilabel">メタデータ</span> タブには、レイヤに関するメタデータレポートの作成・編集オプションがあります。詳細は <a class="reference internal" href="../introduction/general_tools.html#metadatamenu"><span class="std std-ref">メタデータ</span></a> を参照してください。</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../working_with_point_clouds/point_clouds.html" class="btn btn-neutral float-left" title="16. 点群の操作" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../print_layout/index.html" class="btn btn-neutral float-right" title="18. 地図のレイアウト" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2002-now, QGIS project.
+      <span class="lastupdated">最終更新: 2026 6月 17, 12:02 +0900
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Transifex follows a particular logic to build target pages:
+Expected French translation link for https://docs.qgis.org/3.28/en/docs/user_manual/print_composer/overview_composer.html
+would return https://app.transifex.com/qgis/qgis-documentation/translate/#fr/aa6d8bc653526d38b295ca94bf8eee5e
+with the md5 value of "github#qgis/QGIS-Documentation#release_3.28#locale/en/LC_MESSAGES/docs/user_manual/print_composer/overview_composer.po"-->
+<!--Make sure that mismatching language codes between Transifex and Sphinx are converted-->
+
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-info-circle"> QGIS Documentation </span>
+      v: 3.44
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+      <dl>
+        <dt>Languages</dt>
+        
+          <dd><a href="https://docs.qgis.org/3.44/en/docs/user_manual/working_with_3d_tiles/3d_tiles.html">en</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/cs/docs/user_manual/working_with_3d_tiles/3d_tiles.html">cs</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/de/docs/user_manual/working_with_3d_tiles/3d_tiles.html">de</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/es/docs/user_manual/working_with_3d_tiles/3d_tiles.html">es</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/fr/docs/user_manual/working_with_3d_tiles/3d_tiles.html">fr</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/hu/docs/user_manual/working_with_3d_tiles/3d_tiles.html">hu</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/it/docs/user_manual/working_with_3d_tiles/3d_tiles.html">it</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ja/docs/user_manual/working_with_3d_tiles/3d_tiles.html">ja</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ko/docs/user_manual/working_with_3d_tiles/3d_tiles.html">ko</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/lt/docs/user_manual/working_with_3d_tiles/3d_tiles.html">lt</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/nl/docs/user_manual/working_with_3d_tiles/3d_tiles.html">nl</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/pl/docs/user_manual/working_with_3d_tiles/3d_tiles.html">pl</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/pt_BR/docs/user_manual/working_with_3d_tiles/3d_tiles.html">pt_BR</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/pt_PT/docs/user_manual/working_with_3d_tiles/3d_tiles.html">pt_PT</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ro/docs/user_manual/working_with_3d_tiles/3d_tiles.html">ro</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ru/docs/user_manual/working_with_3d_tiles/3d_tiles.html">ru</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/sv/docs/user_manual/working_with_3d_tiles/3d_tiles.html">sv</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/zh-Hans/docs/user_manual/working_with_3d_tiles/3d_tiles.html">zh-Hans</a></dd>
+        
+      </dl>
+
+      <dl>
+        <dt>Versions</dt>
+        
+          <dd><a href="https://docs.qgis.org/testing/ja/docs/user_manual/working_with_3d_tiles/3d_tiles.html">testing</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/latest/ja/docs/user_manual/working_with_3d_tiles/3d_tiles.html">latest</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ja/docs/user_manual/working_with_3d_tiles/3d_tiles.html">3.44</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.40/ja/docs/user_manual/working_with_3d_tiles/3d_tiles.html">3.40</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.34/ja/docs/user_manual/working_with_3d_tiles/3d_tiles.html">3.34</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.28/ja/docs/user_manual/working_with_3d_tiles/3d_tiles.html">3.28</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.22/ja/docs/user_manual/working_with_3d_tiles/3d_tiles.html">3.22</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.16/ja/docs/user_manual/working_with_3d_tiles/3d_tiles.html">3.16</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.10/ja/docs/user_manual/working_with_3d_tiles/3d_tiles.html">3.10</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.4/ja/docs/user_manual/working_with_3d_tiles/3d_tiles.html">3.4</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/2.18/ja/docs/user_manual/working_with_3d_tiles/3d_tiles.html">2.18</a></dd>
+        
+      </dl>
+
+      
+       <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="https://docs.qgis.org/3.44/pdf">PDF</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/zip">HTML</a></dd>
+        
+      </dl>
+      
+
+      
+      
+      <dl>
+        <dt>Contribute to Docs</dt>
+          <dd>
+            <a href="https://github.com/qgis/QGIS-Documentation/edit/master/docs/user_manual/working_with_3d_tiles/3d_tiles.rst" target="_blank" rel="noopener noreferrer">Edit on GitHub</a>
+          </dd>
+          
+          
+          <dd>
+            <a href="https://app.transifex.com/qgis/qgis-documentation/translate/#ja/68fedae355c71f40d6840cac0fedda4e" target="_blank" rel="noopener noreferrer">Translate Page</a>
+          </dd>
+          
+          <dd>
+            <a href="https://github.com/qgis/QGIS-Documentation/issues" target="_blank" rel="noopener noreferrer">Report Issue</a>
+          </dd>
+      </dl>
+      
+
+      <dl>
+        <dt>On QGIS Project</dt>
+          <dd>
+            <a href="https://qgis.org" target="_blank" rel="noopener noreferrer">Home</a>
+          </dd>
+          <dd>
+            <a href="https://qgis.org/api/3.44" target="_blank" rel="noopener noreferrer">C++ API</a>
+          </dd>
+          <dd>
+            <a href="https://qgis.org/pyqgis/3.44" target="_blank" rel="noopener noreferrer">PyQGIS API</a>
+          </dd>
+          <dd>
+            <a href="https://github.com/qgis/QGIS/tree/release-3_44" target="_blank" rel="noopener noreferrer">Source</a>
+          </dd>
+      </dl>
+
+    </div>
+  </div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. 翻訳ガイドライン &mdash; QGIS Documentation  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/qgis_docs.css?v=e885e955" />
+      <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="shortcut icon" href="../../_static/qgis_logo.ico"/>
+    <link rel="canonical" href="https://docs.qgis.org/latest/en/docs/documentation_guidelines/do_translations.html"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=c033477b"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script>let toggleHintShow = 'クリックして表示';</script>
+        <script>let toggleHintHide = 'クリックして非表示';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+        <script src="../../_static/translations.js?v=91613774"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="5. 置換参照と定義" href="substitutions.html" />
+    <link rel="prev" title="3. PyQGISクックブック中でコードを書く" href="cookbook_guidelines.html" />
+  <meta name="description" content="QGIS 3.44 documentation: 4. 翻訳ガイドライン">
+  <script>
+    var _paq = window._paq = window._paq || [];
+    _paq.push(["disableCookies"]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.qgis.org/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+</head>
+
+<body class="wy-body-for-nav">
+
+  <nav class="release_status_topbar">
+  </nav>
+
+   
+
+ 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            QGIS Documentation
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                3.44
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+   <a href= "../../genindex.html">索引</a>
+ 
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/preamble.html">はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/foreword.html">序文</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/conventions.html">表記規則</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/features.html">機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/help_and_support.html">ヘルプとサポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/contributors.html">協力者</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/license/index.html">ライセンスの遵守</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training_manual/index.html">トレーニングマニュアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gentle_gis_introduction/index.html">やさしい GIS 入門</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ドキュメント執筆者向け</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ドキュメント作成のガイドライン</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="first_contribution.html">1. 貢献のためのステップバイステップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing.html">2. 執筆のためのガイドライン</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbook_guidelines.html">3. PyQGISクックブック中でコードを書く</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. 翻訳ガイドライン</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#becoming-a-translator">4.1. 翻訳者になる</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#transifex">4.1.1. Transifex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#join-a-project">4.1.2. プロジェクトへ参加</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#translate">4.1.3. 翻訳</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#translation-process">4.2. 翻訳プロセス</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#translate-a-file">4.3. ファイルを翻訳する</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#translation-in-transifex">4.3.1. Transifexでの翻訳</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#translation-in-qt-linguist">4.3.2. Qt Linguist による翻訳</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#translate-a-manual">4.3.3. マニュアルを翻訳する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary-rules-for-translation">4.3.4. 翻訳ルールのまとめ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="substitutions.html">5. 置換参照と定義</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers_guide/index.html">開発者ガイド</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">QGIS Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">ドキュメント作成のガイドライン</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4. </span>翻訳ガイドライン</li>
+
+    <li style="float: right; text-align: right;">
+	<ul>
+		
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/qgis/QGIS-Documentation/edit/master/docs/documentation_guidelines/do_translations.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+	</ul>
+
+        <!-- Add a button to guide potential contributors
+	     To do: add a more generic page for contributing in QGIS docs to keep users in the same website
+	     <a class="qgis-edit-guidelines" href="https://docs.qgis.org/3.44/ja/docs/documentation_guidelines/index.html">
+	-->
+	<a class="qgis-edit-guidelines" href="https://qgis.org/community/involve/">
+		Learn how to contribute!
+	</a>
+    </li>
+
+
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="cookbook_guidelines.html" class="btn btn-neutral float-left" title="3. PyQGISクックブック中でコードを書く" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="substitutions.html" class="btn btn-neutral float-right" title="5. 置換参照と定義" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div><div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>翻訳は <a class="reference internal" href="#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 95.31% 翻訳されています。</p>
+</div>
+</div></blockquote>
+<section id="translation-guidelines">
+<span id="id1"></span><h1><span class="section-number">4. </span>翻訳ガイドライン<a class="headerlink" href="#translation-guidelines" title="Link to this heading"></a></h1>
+<nav class="contents local" id="id2">
+<ul class="simple">
+<li><p><a class="reference internal" href="#becoming-a-translator" id="id8">翻訳者になる</a></p>
+<ul>
+<li><p><a class="reference internal" href="#transifex" id="id9">Transifex</a></p></li>
+<li><p><a class="reference internal" href="#join-a-project" id="id10">プロジェクトへ参加</a></p></li>
+<li><p><a class="reference internal" href="#translate" id="id11">翻訳</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#translation-process" id="id12">翻訳プロセス</a></p></li>
+<li><p><a class="reference internal" href="#translate-a-file" id="id13">ファイルを翻訳する</a></p>
+<ul>
+<li><p><a class="reference internal" href="#translation-in-transifex" id="id14">Transifexでの翻訳</a></p></li>
+<li><p><a class="reference internal" href="#translation-in-qt-linguist" id="id15">Qt Linguist による翻訳</a></p></li>
+<li><p><a class="reference internal" href="#translate-a-manual" id="id16">マニュアルを翻訳する</a></p></li>
+<li><p><a class="reference internal" href="#summary-rules-for-translation" id="id17">翻訳ルールのまとめ</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<p>このマニュアルは翻訳者の手助けとなることを目的としています。まず、翻訳チームに参加する方法を説明します。次に、技術的にどのように翻訳が行なわれるのかの一般的なプロセスを説明します。その後、実際の英語の <code class="file docutils literal notranslate"><span class="pre">.rst</span></code> ドキュメントからオランダ語に翻訳された、その翻訳について説明します。最後に、<a class="reference internal" href="#translation-summary"><span class="std std-ref">翻訳のルール</span></a> の概要を示します。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>このガイドラインでは QGIS ドキュメントに焦点を当てますが、下記の方法やルールは QGIS アプリケーションにも適用可能です。</p>
+</div>
+<section id="becoming-a-translator">
+<span id="becoming-translator"></span><h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">4.1. </span>翻訳者になる</a><a class="headerlink" href="#becoming-a-translator" title="Link to this heading"></a></h2>
+<p>QGISプロジェクトでは、QGISを外国語に翻訳する作業に時間を割いてくださる方 - 場合によっては、翻訳作業を調整してくださる方を常に募集しています。</p>
+<p>私たちはプロジェクト管理プロセスの改善に努め、特定の責任範囲を持つ人々の間で負荷をより均等に分散しようとしているので、皆様からのご協力は大変ありがたいです。</p>
+<p>新しい言語のコーディネーターに立候補したい方は、どうぞご応募ください。同じ言語のコーディネーターに複数の応募者が名乗りを上げた場合は、お互いに連絡を取り合い、どのように作業を分担するかを決めてください。</p>
+<section id="transifex">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">4.1.1. </span>Transifex</a><a class="headerlink" href="#transifex" title="Link to this heading"></a></h3>
+<p>ウェブベースの翻訳プラットフォームである <a class="reference external" href="https://www.transifex.com">Transifex</a> は、QGISのすべての翻訳: デスクトップアプリケーション自体（またはGUI）とドキュメントに使用されています。ですから最初に必要なのは、ログインして始めるためのアカウントです。</p>
+</section>
+<section id="join-a-project">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">4.1.2. </span>プロジェクトへ参加</a><a class="headerlink" href="#join-a-project" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p><a class="reference external" href="https://explore.transifex.com/qgis/">https://explore.transifex.com/qgis/</a> に行きます</p></li>
+<li><p>私たちが翻訳しているプロジェクトを調べたり、さまざまな統計情報から対象言語を特定したりすることができます:</p>
+<ul class="simple">
+<li><p><strong>QGIS Desktop</strong> は、QGISアプリ（QGIS DesktopとQGIS Server）で利用できる全てのテキスト部品、</p></li>
+<li><p><strong>QGIS Documentation</strong> は、<a class="reference external" href="https://docs.qgis.org/latest/">公式のLTRドキュメント</a></p></li>
+</ul>
+</li>
+<li><p>翻訳を手伝いたいプロジェクトをクリックしてください</p></li>
+<li><p>右側の <span class="guilabel">JOIN THIS PROJECT</span> をクリックします。登録を促す画面が表示されます。</p></li>
+<li><p>アカウントを作成するか、サードパーティのプラットフォームのアカウントで接続します。受信するメールに記載されたリンクからアカウントを認証します。</p></li>
+<li><p>ログインします</p></li>
+<li><p>次に、翻訳を手伝いたい言語を選択するポップアップが表示されます。なお、プロセスをできるだけ単純にしようとしているため、国パラメータに関係なく、対象となる言語のみを表示しています（例 <code class="docutils literal notranslate"><span class="pre">French</span> <span class="pre">(France)</span> <span class="pre">(fr_FR)</span></code> <strong>ではなく</strong> <code class="docutils literal notranslate"><span class="pre">French</span> <span class="pre">(fr)</span></code>）。 言語に顕著な違いがある場合（例 ポルトガル対ブラジルのポルトガル語）のみ、異なるバージョンを許容します。</p>
+<p>対象言語、つまりQGISの翻訳を手伝いたい言語、を検索します。あなたが話せる言語全てを検索する必要はありません:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">既に追加されています</span></code> と表示されていれば、それを選択して <span class="guilabel">Join Project</span> を押してください。</p></li>
+<li><p>既に追加されていますと表示されない場合は、それを選択して <span class="guilabel">言語を申請</span> を押します。プロジェクト全体を翻訳するには、数週間はかかると覚悟してください。繰り返しになってすみませんが、話せる言語を全て選択するということではありません。</p></li>
+</ul>
+</li>
+<li><p>次に、言語コーディネーターまたはプロジェクトのメンテナが申請を処理するのを待つ必要があります。申請が受理されると、電子メールで通知が届きます。申請に1週間ほど回答がない場合は、Transifexか <a class="reference external" href="https://lists.osgeo.org/mailman/listinfo/qgis-tr">QGIS 翻訳者メーリングリスト</a> にいる言語コーディネーターに書き送ることを検討してください。</p></li>
+<li><p>また、他のQGISプロジェクトに参加して手伝うこともできます。</p></li>
+</ol>
+</section>
+<section id="translate">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">4.1.3. </span>翻訳</a><a class="headerlink" href="#translate" title="Link to this heading"></a></h3>
+<p>申請が承認されると、選択したプロジェクト内のテキストを翻訳できるようになります。あなたの言語をクリックし、翻訳したい章を選択し、翻訳をクリックするだけです。簡単でしょう？</p>
+<p>良い翻訳をしていただくために、以下にいくつか指示があります。一読を強くお勧めします。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Transifexにある翻訳可能なファイルへの簡単なアクセス</strong></p>
+<p>現在のドキュメントに誤訳や抜けを見つけた場合は、そのページ左下のドロップダウンメニューにある <code class="docutils literal notranslate"><span class="pre">Translate</span> <span class="pre">page</span></code> リンクを使ってTransifexのソースにアクセスし、必要な更新を行うことができます。</p>
+</div>
+</section>
+</section>
+<section id="translation-process">
+<span id="id4"></span><h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">4.2. </span>翻訳プロセス</a><a class="headerlink" href="#translation-process" title="Link to this heading"></a></h2>
+<p>QGIS のドキュメントは <code class="file docutils literal notranslate"><span class="pre">.rst</span></code> ファイルを使い英語で書かれています。翻訳を提供するには次のようにします。</p>
+<ol class="arabic simple">
+<li><p>事前ビルドスクリプトによって <code class="file docutils literal notranslate"><span class="pre">.po</span></code> ファイルと呼ばれる翻訳用のファイルが、 <code class="file docutils literal notranslate"><span class="pre">/QGIS-Documentation/locale/en</span></code> フォルダーの中に作成されます。</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">.po</span></code> ファイルの中の文が Transifex のウェブプラットフォームにプッシュされ、英語から各言語へと、翻訳者がエディターを使って翻訳できるようになります。</p></li>
+<li><p>ファイルが100%翻訳されると、翻訳された文字列は自動的にドキュメントリポジトリの <code class="file docutils literal notranslate"><span class="pre">/QGIS-Documentation/locale/</span> <span class="pre">&lt;language&gt;</span></code> 配下にプルバックされます。</p></li>
+<li><p>次のドキュメントのビルド（1日に1回以上発生します－時刻はページの下部を参照）で、スクリプトが文章を再利用して翻訳出力を作成します。</p></li>
+<li><p>完全に翻訳されていないファイルについては、2週間ごとにスクリプトがTransifexからGithubに翻訳された文字列を取り込み、次のビルドで同様に公開されます。</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">.rst</span></code> ファイルが更新されるたびに、英語の <code class="file docutils literal notranslate"><span class="pre">.po</span></code> ファイルが更新され、その変更が Transifex の対応するファイルにプッシュされます。つまり、すでに翻訳された <code class="file docutils literal notranslate"><span class="pre">.rst</span></code> 文書に新しい段落が追加されたとき、新しい/更新された文章だけが翻訳された <code class="file docutils literal notranslate"><span class="pre">.po</span></code> ファイルに追加され、翻訳する必要があることを意味します。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>QGISデスクトップの仕様を翻訳する</p>
+<p>QGISアプリケーションの翻訳と大きく異なる点は、 <code class="file docutils literal notranslate"><span class="pre">.po</span></code> ファイルの代わりに、特定のバージョンのアプリケーションを構成する <code class="file docutils literal notranslate"><span class="pre">.py</span></code>, <code class="file docutils literal notranslate"><span class="pre">.cpp</span></code>, <code class="file docutils literal notranslate"><span class="pre">.yaml</span></code> ファイル内のすべての翻訳可能文字列が、単一の <code class="file docutils literal notranslate"><span class="pre">.ts</span></code> ファイル（例：<cite>qgis-application/qgis_jp (branch release-3_30)`</cite> ）として Transifex へプッシュ、プルすることです。翻訳は、開発ブランチ（毎日）、とリリース時（リリースされたバージョンごとに）にGithubにプルされます。</p>
+</div>
+<p>現在、2つの異なるツールが、 QGIS での翻訳を行うために使用されています。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.transifex.com/">Transifexウェブプラットフォーム</a> は、QGISを翻訳する上で <strong>最も簡単で推奨される方法</strong> であり、上記のプロセスを透明に行い、翻訳者のために翻訳可能なテキストをすべて1か所に集めます。欲しいファイルを選択して翻訳するだけです。翻訳されたファイルは、次のリリースが公開されるまでプラットフォームに保存されます。</p></li>
+<li><p><a class="reference external" href="https://doc.qt.io/archives/qt-5.15/qtlinguist-index.html">Qt Linguist</a> は Qt の開発ツールです。翻訳者は <code class="file docutils literal notranslate"><span class="pre">.po</span></code> (もしくは <code class="file docutils literal notranslate"><span class="pre">.ts</span></code>) ファイルをソースコードからローカル環境にpullし、翻訳し、pushする必要があります。</p></li>
+</ul>
+<p>どちらのツールを選ぼうと、翻訳のルールは同じであることに注意してください。</p>
+</section>
+<section id="translate-a-file">
+<span id="translate-file"></span><h2><a class="toc-backref" href="#id13" role="doc-backlink"><span class="section-number">4.3. </span>ファイルを翻訳する</a><a class="headerlink" href="#translate-a-file" title="Link to this heading"></a></h2>
+<p>ヒートマッププラグインの例を使って翻訳の作業を説明します。この例では英語からオランダ語に翻訳を行いますが、他のドキュメントや言語でもほぼ同じでしょう。</p>
+<p>ヒートマッププラグインのドキュメントのソースは以下の場所にあります。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">QGIS</span><span class="o">-</span><span class="n">Documentation</span><span class="o">/</span><span class="n">source</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">user_manual</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">plugins_heatmap</span><span class="o">.</span><span class="n">rst</span>
+</pre></div>
+</div>
+<p>なんでこのドキュメントを例として選んだのかですって？</p>
+<ol class="arabic simple">
+<li><p>このドキュメントには画像、キャプション、ヘッダー、参照、置換があるからです</p></li>
+<li><p>このドキュメントを書いたのは私なので、私には翻訳が容易だからです (^o^;)</p></li>
+</ol>
+<p>ビルドプロセスが英語の <code class="file docutils literal notranslate"><span class="pre">.po</span></code> ファイルを以下の場所に生成しています。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">QGIS</span><span class="o">-</span><span class="n">Documentation</span><span class="o">/</span><span class="n">locale</span><span class="o">/</span><span class="n">en</span><span class="o">/</span><span class="n">LC_MESSAGES</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">user_manual</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">plugins_heatmap</span><span class="o">.</span><span class="n">po</span>
+</pre></div>
+</div>
+<p>これに対応するオランダ語の <code class="file docutils literal notranslate"><span class="pre">.po</span></code> ファイル（基本的にコピーです）は以下の場所にあります。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">QGIS</span><span class="o">-</span><span class="n">Documentation</span><span class="o">/</span><span class="n">locale</span><span class="o">/</span><span class="n">nl</span><span class="o">/</span><span class="n">LC_MESSAGES</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">user_manual</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">plugins_heatmap</span><span class="o">.</span><span class="n">po</span>
+</pre></div>
+</div>
+<p>このファイルと並んでごく小さなサイズの <code class="file docutils literal notranslate"><span class="pre">.mo</span></code> ファイルがあるのに気づかれると思いますが、今のところ、このファイルにはなんの翻訳も含まれていません。</p>
+<section id="translation-in-transifex">
+<span id="translation-transifex"></span><h3><a class="toc-backref" href="#id14" role="doc-backlink"><span class="section-number">4.3.1. </span>Transifexでの翻訳</a><a class="headerlink" href="#translation-in-transifex" title="Link to this heading"></a></h3>
+<p>Transifex を使って翻訳するには、以下のようにしてください。</p>
+<ol class="arabic">
+<li><p><a class="reference internal" href="#becoming-translator"><span class="std std-ref">Transifex でアカウントを作成し、QGIS プロジェクトに参加してください</span></a>。</p></li>
+<li><p>Languages チームの一員となったら、該当するプロジェクト（ここでは <code class="docutils literal notranslate"><span class="pre">QGIS</span> <span class="pre">Documentation</span></code> です）をクリックします。翻訳が可能な言語の一覧が、その進捗の割合とともに表示されます。</p>
+<figure class="align-center" id="id5">
+<span id="figure-transifex-languages"></span><img alt="../../_images/transifex_choose_language.png" src="../../_images/transifex_choose_language.png" />
+<figcaption>
+<p><span class="caption-number">図 4.23 </span><span class="caption-text">Transifex のメニューで翻訳する言語を選ぶ</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>翻訳する言語の上にカーソルを持ってきて、次のいずれかをクリックしてください。</p>
+<ul class="simple">
+<li><p><span class="guilabel">リソースを表示</span>: 翻訳可能な <code class="file docutils literal notranslate"><span class="pre">.po</span></code> ファイルが、その翻訳の割合と文字列数とその他のメタデータとともに表示されます。</p></li>
+<li><p><span class="guilabel">翻訳</span>: 翻訳可能なすべての <code class="file docutils literal notranslate"><span class="pre">.po</span></code> ファイルと翻訳インターフェースが開きます。</p></li>
+</ul>
+</li>
+<li><p>翻訳したいファイル（この例では <code class="docutils literal notranslate"><span class="pre">docs_user-manual_plugins_plugins-heatmap</span></code> という名前のheatmap pluginのファイルを探します）か、もしくはなんでもいいので翻訳の終わっていないファイルを見つけて、それをクリックしてください。するとそのファイル中の文字列が読み込まれ、絞り込みや翻訳、提案などのインターフェースを利用できるようになります。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>ページの左下にあるドロップダウンメニューの <code class="docutils literal notranslate"><span class="pre">Translate</span> <span class="pre">page</span></code> リンクをクリックすると、Transifexの対応する翻訳ページに直接移動します。</p>
+</div>
+</li>
+<li><p>あとは個々のテキストを選んで、下記の <a class="reference internal" href="#translate-manual"><span class="std std-ref">ガイドライン</span></a> に従って翻訳するだけです。</p></li>
+</ol>
+<p>Transifex の Web エディターについてのより詳しい情報は、<a class="reference external" href="https://help.transifex.com/en/articles/6318216-translating-with-the-web-editor">https://help.transifex.com/en/articles/6318216-translating-with-the-web-editor</a> を参照してください。</p>
+</section>
+<section id="translation-in-qt-linguist">
+<span id="translation-linguist"></span><h3><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">4.3.2. </span>Qt Linguist による翻訳</a><a class="headerlink" href="#translation-in-qt-linguist" title="Link to this heading"></a></h3>
+<p>Qt Linguist を使って翻訳するには、以下に従ってください。</p>
+<ol class="arabic simple">
+<li><p>手動で <code class="file docutils literal notranslate"><span class="pre">.po</span></code> または <code class="file docutils literal notranslate"><span class="pre">.ts</span></code> ファイルを取得します。Transifex プラットフォームから、またはソースリポジトリ (GitHub) の <code class="file docutils literal notranslate"><span class="pre">locale/$language</span></code> フォルダーから、ファイルをダウンロードすることで実現できます。</p></li>
+<li><p>ローカルで翻訳に取りかかります。</p></li>
+<li><p>修正を行ったファイルを元の場所 (Transifex または GitHub) へアップロードします。</p></li>
+</ol>
+<p>翻訳可能なファイルを Transifex を使ってダウンロードしたりアップロードしたりすることも可能ですが、この手順はお勧めできません。というのも、 Transifex にはバージョン管理システムがないために、あなたがアップロードしたファイルは単純に既存のファイルを置き換えるだけなので、その間に Transifex で他の人によって行われた変更を上書きしてしまう可能性があるからです。</p>
+<p>Qt Linguist で初めてそのファイルを開くときは、次のようなダイアログが表示されます。</p>
+<figure class="align-center" id="id6">
+<span id="figure-translation-language"></span><img alt="../../_images/linguist_choose_language.png" src="../../_images/linguist_choose_language.png" />
+<figcaption>
+<p><span class="caption-number">図 4.24 </span><span class="caption-text">linguist メニューから翻訳する言語を選ぶ</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Target language は正しく選択する必要があります。 Source language は POSIX、Country/Region はAny Country のままでかまいません。</p>
+<p><span class="guilabel">OK</span> ボタンを押すと、 Qt Linguist は文を埋め、翻訳を始めることができます。 <a class="reference internal" href="#figure-translation-menu"><span class="std std-numref">図 4.25</span></a> を参照してください。</p>
+<figure class="align-center" id="id7">
+<span id="figure-translation-menu"></span><a class="reference internal image-reference" href="../../_images/linguist_menu.png"><img alt="../../_images/linguist_menu.png" src="../../_images/linguist_menu.png" style="width: 50em;" /></a>
+<figcaption>
+<p><span class="caption-number">図 4.25 </span><span class="caption-text">Qt Linguist のメニューを使用して翻訳</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>メニューには使うと便利な以下のようなボタンがあります。</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../_images/linguist_done_next.png"><img alt="linguist_done_next" src="../../_images/linguist_done_next.png" style="width: 2em;" /></a> [翻訳を完了して次へ] ボタンは、最も重要なボタンです。翻訳が必要な項目では、テキストフィールドに翻訳を入力してこのボタンを押してください。翻訳を必要としない項目では、テキストフィールドは空のままでこのボタンを押してください。これで翻訳完了となり、次の項目に進みます。</p></li>
+<li><p><a class="reference internal" href="../../_images/linguist_previous.png"><img alt="linguist_previous" src="../../_images/linguist_previous.png" style="width: 2em;" /></a> [前へ行く] ボタンで、その前の翻訳項目に移動することができます。</p></li>
+<li><p><a class="reference internal" href="../../_images/linguist_next.png"><img alt="linguist_next" src="../../_images/linguist_next.png" style="width: 2em;" /></a> [次へ行く] ボタンで、その次の翻訳項目に移動することができます。</p></li>
+<li><p><a class="reference internal" href="../../_images/linguist_next_todo.png"><img alt="linguist_next_todo" src="../../_images/linguist_next_todo.png" style="width: 2em;" /></a> [次のするべき] ボタンは、翻訳が必要な次の翻訳項目にジャンプします。ソースファイルの変更によって追加や修正が行われた文だけを翻訳する必要があるときに便利です。</p></li>
+<li><p><a class="reference internal" href="../../_images/linguist_previous_todo.png"><img alt="linguist_previous_todo" src="../../_images/linguist_previous_todo.png" style="width: 2em;" /></a> [前のするべき] ボタンは逆方向に検索を行い、最初に見つかった未翻訳の項目にジャンプします。</p></li>
+</ul>
+<p>Qt Linguist の使い方についての詳しい情報は、 <a class="reference external" href="https://doc.qt.io/archives/qt-5.15/linguist-translators.html">https://doc.qt.io/archives/qt-5.15/linguist-translators.html</a> を参照してください</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>翻訳のためにソースリポジトリからファイルをダウンロードするときは、絶対に <code class="docutils literal notranslate"><span class="pre">master</span></code> ブランチで行わないでください。ある特定のバージョンで英語での更新が完了した後は、常に翻訳用ブランチが有効になっています。翻訳のためにはそのブランチを使用してください。例えばQGIS 2.8 の翻訳では、manual_en_v2.8 ブランチを使用してください。</p>
+</div>
+</section>
+<section id="translate-a-manual">
+<span id="translate-manual"></span><h3><a class="toc-backref" href="#id16" role="doc-backlink"><span class="section-number">4.3.3. </span>マニュアルを翻訳する</a><a class="headerlink" href="#translate-a-manual" title="Link to this heading"></a></h3>
+<p>それでは plugin_heatmap のマニュアルの翻訳を始めましょう！</p>
+<p>大部分の文は、そのまま翻訳してください。特別な翻訳をしなければならない部分（rst 文）を、この翻訳セッションの中で挙げていきます。</p>
+<p>以下で翻訳の対象として興味深い文を見ていきましょう。</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>The |heatmap| <span class="na">:sup:</span><span class="nv">`Heatmap`</span> plugin allows to create a heatmap from a
+point vector map. A heatmap is a raster map showing the density or
+magnitude of point related information. From the result &quot;hotspots&quot; can
+easily be identified.
+</pre></div>
+</div>
+<p>このセンテンスには2つの rst 構文があります。</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">|heatmap|</span></code> のように <code class="docutils literal notranslate"><span class="pre">|</span></code> に挟まれた言葉は、置換されるので決して翻訳してはいけません。ここではヒートマッププラグインのアイコンに置換されます。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:sup:`Heatmap`</span></code> のような <code class="docutils literal notranslate"><span class="pre">:sup:</span></code> 文は上付き文です。続くテキストを少し高く出力します。これはツールバー項目の上にマウスを当てた時に表示されるポップアップテキストを表示するために使用されますが、実際の QGIS アプリケーションでの翻訳とは異なる場合があります。オランダ語の場合はそうではありません。</p></li>
+</ol>
+<p>この文中のそれ以外のプレーンテキストは、すべて翻訳してかまいません。</p>
+<p>次の文には 、マニュアルの別のセクションをを参照するためによく使われる <code class="docutils literal notranslate"><span class="pre">:ref:</span></code> 文が含まれています。 <code class="docutils literal notranslate"><span class="pre">:ref:</span></code> 文に続くテキストは一意の識別子であるため、 変更してはいけません。</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>First this core plugin needs to be activated using the Plugin Manager
+(see Section <span class="na">:ref:</span><span class="nv">`load_core_plugin`</span>). After activation the heatmap icon
+|heatmap| can be found in the Raster Toolbar.
+</pre></div>
+</div>
+<p>この場合、 <code class="docutils literal notranslate"><span class="pre">load_core_plugin</span></code> は一意の参照識別子であり、キャプションのある rst アイテムの前に配置されます。この ref 文は見出しのテキストに置換され、ハイパーリンクに変換されます。 参照されている見出しが翻訳された時は、この見出しを参照しているすべての ref 文も自動的に同じように翻訳されます。</p>
+<p>次の文には rst タグ <code class="docutils literal notranslate"><span class="pre">:menuselection:</span></code> があります。続くテキストは実際に QGIS アプリケーションのメニューで表示されるテキストです。これはアプリケーションでは翻訳されているかもしれませんので、その場合は変更すべきです。</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Select from menu <span class="na">:menuselection:</span><span class="nv">`View --&gt; Toolbars --&gt; Raster`</span> to activate
+the Raster Toolbar when it is not yet activated.
+</pre></div>
+</div>
+<p>ここではオランダ語へローカライズされた QGIS アプリケーションで使用される翻訳ですので、上記の &quot;View --&gt;&quot; は実際には &quot;Beeld --&gt;&quot; と翻訳されます。</p>
+<p>次のように、トリッキーな翻訳アイテムを見かけることもあります。</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>The |heatmap| <span class="na">:sup:</span><span class="nv">`Heatmap`</span> tool button starts the Dialog of the Heatmap
+plugin (see <span class="na">:numref:</span><span class="nv">`figure_heatmap_settings`</span>).
+</pre></div>
+</div>
+<p>この文には、図 <code class="docutils literal notranslate"><span class="pre">figure_heatmap_settings_</span></code> への参照があります。セクションへの参照と同様に、この参照を変更してはいけません。 rst ドキュメントでの参照定義は <code class="file docutils literal notranslate"><span class="pre">.po</span></code> ファイルには含まれていないため、これを変更することはできません。このことは図への参照は翻訳できないことを意味します。 HTML 生成時には <code class="docutils literal notranslate"><span class="pre">figure_heatmap_settings</span></code> と表示されます。 PDF 生成の際には <code class="docutils literal notranslate"><span class="pre">figure_heatmap_settings_</span></code> は図番号に置き換えられます。</p>
+<p>次の rst 属性付きの文はこのようなものです。</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gs">**Input Point dialog**</span>: Provides a selection of loaded point vector maps.
+</pre></div>
+</div>
+<p>上の行内の二重星印を削除しないでください。二重星印に挟まれたテキストは太字で表示されます。テキストそのものは多くの場合、ダイアログ中のテキストであり、アプリケーションでは翻訳されているかもしれません。</p>
+<p>以下の文章には <code class="docutils literal notranslate"><span class="pre">:guilabel:</span></code> rst タグが含まれています。</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>When the |checkbox| <span class="na">:guilabel:</span><span class="nv">`Advanced`</span> checkbox is checked it will
+give access to additional advanced options.
+</pre></div>
+</div>
+<p>guilabel タグのテキスト <code class="docutils literal notranslate"><span class="pre">Advanced</span></code> は QGIS アプリケーション中でおそらく翻訳されるのでたぶん変更する必要があります。</p>
+<p>以下の文章には ``airports`` が含まれています。引用符は、テキストに別のテキストフォントを設定するために使用されています。このケースでは、リテラル値であり、翻訳を必要としません。</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>For the following example, we will use the <span class="s">``airports``</span> vector point
+layer from the QGIS sample dataset (see <span class="na">:ref:</span><span class="nv">`label_sampledata`</span>).
+Another excellent QGIS tutorial on making heatmaps can be found on
+`https://www.qgistutorials.com
+<span class="nt">&lt;https://www.qgistutorials.com/en/docs/creating_heatmaps.html&gt;</span>`_.
+</pre></div>
+</div>
+<p>この文には、URL と表示テキストの両方を持つハイパーリンクも含まれています。URL はもちろん手をつけずそのまま残すべきですが、読者に表示される方のテキストである <code class="docutils literal notranslate"><span class="pre">https://www.qgistutorials.com</span></code> は変更することができます。ハイパーリンクの末尾のアンダースコアは本質的な部分なので決して削除してはいけません。</p>
+</section>
+<section id="summary-rules-for-translation">
+<span id="translation-summary"></span><h3><a class="toc-backref" href="#id17" role="doc-backlink"><span class="section-number">4.3.4. </span>翻訳ルールのまとめ</a><a class="headerlink" href="#summary-rules-for-translation" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">|logo|</span></code> 、 <code class="docutils literal notranslate"><span class="pre">|checkbox|</span></code> 、<code class="docutils literal notranslate"><span class="pre">|label|</span></code> 、<code class="docutils literal notranslate"><span class="pre">|selectString|</span></code> 、<code class="docutils literal notranslate"><span class="pre">|addLayer|</span></code> ... のような、2つの <code class="docutils literal notranslate"><span class="pre">|</span></code> の文字に挟まれたテキストは変更しないでください。これらは、画像に置換するために使用される特殊なタグです</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:ref:</span></code>, <code class="docutils literal notranslate"><span class="pre">:file:</span></code>, <code class="docutils literal notranslate"><span class="pre">:numref:</span></code> などで始まる役割を持つ参照は、タイトルが含まれていない限り変更しないでください。タイトルが含まれている場合は、タイトルを翻訳することはできますが、リンク（すなわち <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> と <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> で囲まれたテキスト）は変更せずにおいてください</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>参照にタイトルが提供されている場合、Transifex は英語の原文にリンク部分を数字に置き換えて表示することがあります。原文の数字をクリックすると、翻訳中のタイトルの横に参照のリンクが追加されます。</p>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">figure_labels_1_</span></code> のようなアンダースコアで終わる参照を変更しないでください。</p></li>
+<li><p>ハイパーリンクの URL を変更しないでください。ただし読者に表示される記述は変更できます。ハイパーリンクの末尾のアンダースコア (<code class="docutils literal notranslate"><span class="pre">&gt;`_</span></code>) は空白を加えたりせずそのまま残しておいてください。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:index:</span></code> 、 <code class="docutils literal notranslate"><span class="pre">:sup:</span></code> 、 <code class="docutils literal notranslate"><span class="pre">:guilabel:</span></code> 、 <code class="docutils literal notranslate"><span class="pre">:menuselection:</span></code> タグに続く引用符内のテキストは変更してください。それが QGIS アプリケーションで翻訳されているかどうか、どう翻訳されているかを確認してください。タグ自体は変更しないでください。</p></li>
+<li><p>二重星と二重引用符の間のテキストは多くの場合、値もしくはフィールド名を示しています。翻訳の必要があることもあれば、ないこともあります。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">`</span></code>, <code class="docutils literal notranslate"><span class="pre">``</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code>, <code class="docutils literal notranslate"><span class="pre">::</span></code> などの特殊文字は、正確に元のテキストと同じ文字を（同じ数だけ）使用するよう注意してください 。これらは情報の見た目を整えるのに貢献しています。</p></li>
+<li><p>特殊文字やタグで囲まれた部分のテキストを、スペースで始めたり終わらせたりしないでください。</p></li>
+<li><p>翻訳文字列の後に段落を開始して終了しないでください。そうすると HTML 生成時にテキストが翻訳されません。</p></li>
+</ol>
+<p>以上のルールを守ってドキュメントの品質を良くしましょう！</p>
+<p>何か質問があれば <a class="reference external" href="mailto:qgis-community-team&#37;&#52;&#48;lists&#46;osgeo&#46;org">QGIS コミュニティチーム</a> または <a class="reference external" href="mailto:qgis-tr&#37;&#52;&#48;lists&#46;osgeo&#46;org">QGIS 翻訳チーム</a> までご連絡ください。</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cookbook_guidelines.html" class="btn btn-neutral float-left" title="3. PyQGISクックブック中でコードを書く" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="substitutions.html" class="btn btn-neutral float-right" title="5. 置換参照と定義" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2002-now, QGIS project.
+      <span class="lastupdated">最終更新: 2026 6月 17, 12:02 +0900
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Transifex follows a particular logic to build target pages:
+Expected French translation link for https://docs.qgis.org/3.28/en/docs/user_manual/print_composer/overview_composer.html
+would return https://app.transifex.com/qgis/qgis-documentation/translate/#fr/aa6d8bc653526d38b295ca94bf8eee5e
+with the md5 value of "github#qgis/QGIS-Documentation#release_3.28#locale/en/LC_MESSAGES/docs/user_manual/print_composer/overview_composer.po"-->
+<!--Make sure that mismatching language codes between Transifex and Sphinx are converted-->
+
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-info-circle"> QGIS Documentation </span>
+      v: 3.44
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+      <dl>
+        <dt>Languages</dt>
+        
+          <dd><a href="https://docs.qgis.org/3.44/en/docs/documentation_guidelines/do_translations.html">en</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/cs/docs/documentation_guidelines/do_translations.html">cs</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/de/docs/documentation_guidelines/do_translations.html">de</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/es/docs/documentation_guidelines/do_translations.html">es</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/fr/docs/documentation_guidelines/do_translations.html">fr</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/hu/docs/documentation_guidelines/do_translations.html">hu</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/it/docs/documentation_guidelines/do_translations.html">it</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ja/docs/documentation_guidelines/do_translations.html">ja</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ko/docs/documentation_guidelines/do_translations.html">ko</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/lt/docs/documentation_guidelines/do_translations.html">lt</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/nl/docs/documentation_guidelines/do_translations.html">nl</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/pl/docs/documentation_guidelines/do_translations.html">pl</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/pt_BR/docs/documentation_guidelines/do_translations.html">pt_BR</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/pt_PT/docs/documentation_guidelines/do_translations.html">pt_PT</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ro/docs/documentation_guidelines/do_translations.html">ro</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ru/docs/documentation_guidelines/do_translations.html">ru</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/sv/docs/documentation_guidelines/do_translations.html">sv</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/zh-Hans/docs/documentation_guidelines/do_translations.html">zh-Hans</a></dd>
+        
+      </dl>
+
+      <dl>
+        <dt>Versions</dt>
+        
+          <dd><a href="https://docs.qgis.org/testing/ja/docs/documentation_guidelines/do_translations.html">testing</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/latest/ja/docs/documentation_guidelines/do_translations.html">latest</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ja/docs/documentation_guidelines/do_translations.html">3.44</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.40/ja/docs/documentation_guidelines/do_translations.html">3.40</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.34/ja/docs/documentation_guidelines/do_translations.html">3.34</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.28/ja/docs/documentation_guidelines/do_translations.html">3.28</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.22/ja/docs/documentation_guidelines/do_translations.html">3.22</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.16/ja/docs/documentation_guidelines/do_translations.html">3.16</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.10/ja/docs/documentation_guidelines/do_translations.html">3.10</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.4/ja/docs/documentation_guidelines/do_translations.html">3.4</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/2.18/ja/docs/documentation_guidelines/do_translations.html">2.18</a></dd>
+        
+      </dl>
+
+      
+       <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="https://docs.qgis.org/3.44/pdf">PDF</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/zip">HTML</a></dd>
+        
+      </dl>
+      
+
+      
+      
+      <dl>
+        <dt>Contribute to Docs</dt>
+          <dd>
+            <a href="https://github.com/qgis/QGIS-Documentation/edit/master/docs/documentation_guidelines/do_translations.rst" target="_blank" rel="noopener noreferrer">Edit on GitHub</a>
+          </dd>
+          
+          
+          <dd>
+            <a href="https://app.transifex.com/qgis/qgis-documentation/translate/#ja/b414b266cdc03d880bf48247e39f8972" target="_blank" rel="noopener noreferrer">Translate Page</a>
+          </dd>
+          
+          <dd>
+            <a href="https://github.com/qgis/QGIS-Documentation/issues" target="_blank" rel="noopener noreferrer">Report Issue</a>
+          </dd>
+      </dl>
+      
+
+      <dl>
+        <dt>On QGIS Project</dt>
+          <dd>
+            <a href="https://qgis.org" target="_blank" rel="noopener noreferrer">Home</a>
+          </dd>
+          <dd>
+            <a href="https://qgis.org/api/3.44" target="_blank" rel="noopener noreferrer">C++ API</a>
+          </dd>
+          <dd>
+            <a href="https://qgis.org/pyqgis/3.44" target="_blank" rel="noopener noreferrer">PyQGIS API</a>
+          </dd>
+          <dd>
+            <a href="https://github.com/qgis/QGIS/tree/release-3_44" target="_blank" rel="noopener noreferrer">Source</a>
+          </dd>
+      </dl>
+
+    </div>
+  </div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

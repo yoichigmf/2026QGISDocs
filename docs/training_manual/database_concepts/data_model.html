@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>15.2. レッスン: データモデルの実装 &mdash; QGIS Documentation  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/qgis_docs.css?v=e885e955" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/qgis_logo.ico"/>
+    <link rel="canonical" href="https://docs.qgis.org/latest/en/docs/training_manual/database_concepts/data_model.html"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=c033477b"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script>let toggleHintShow = 'クリックして表示';</script>
+        <script>let toggleHintHide = 'クリックして非表示';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../_static/togglebutton.js?v=b8b12719"></script>
+        <script src="../../../_static/translations.js?v=91613774"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../search.html" />
+    <link rel="next" title="15.3. レッスン: モデルにデータを追加する" href="adding_data.html" />
+    <link rel="prev" title="15.1. レッスン: データベースの概要" href="db_intro.html" />
+  <meta name="description" content="QGIS 3.44 documentation: 15.2. レッスン: データモデルの実装">
+  <script>
+    var _paq = window._paq = window._paq || [];
+    _paq.push(["disableCookies"]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.qgis.org/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+</head>
+
+<body class="wy-body-for-nav">
+
+  <nav class="release_status_topbar">
+  </nav>
+
+   
+
+ 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            QGIS Documentation
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                3.44
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+   <a href= "../../../genindex.html">索引</a>
+ 
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/preamble.html">はじめに</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/foreword.html">序文</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/conventions.html">表記規則</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/features.html">機能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/help_and_support.html">ヘルプとサポート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/contributors.html">協力者</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/license/index.html">ライセンスの遵守</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">トレーニングマニュアル</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../foreword/index.html">1. コースの紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic_map/index.html">2. モジュール: 基本的な地図を作成して探索する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector_classification/index.html">3. モジュール: ベクタデータを分類する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../map_composer/index.html">4. モジュール: 地図をレイアウトする</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create_vector_data/index.html">5. モジュール: ベクタデータを作る</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vector_analysis/index.html">6. モジュール: ベクタ解析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rasters/index.html">7. モジュール: ラスタ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../complete_analysis/index.html">8. モジュール: 分析の完了</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qgis_plugins/index.html">9. モジュール: プラグイン</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../online_resources/index.html">10. モジュール: オンラインリソース</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qgis_server/index.html">11. モジュール: QGIS Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">15. モジュール: PostgreSQLでのデータベース概念</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="db_intro.html">15.1. レッスン: データベースの概要</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">15.2. レッスン: データモデルの実装</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#install-postgresql">15.2.1. PostgreSQLのインストール</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#help">15.2.2. ヘルプ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-database-user">15.2.3. データベースユーザーの作成</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verify-the-new-account">15.2.4. 新しいアカウントの確認</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-database">15.2.5. データベースの作成</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#starting-a-database-shell-session">15.2.6. データベースのシェルセッションの開始</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#make-tables-in-sql">15.2.7. SQLでテーブルを作成する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-keys-in-sql">15.2.8. SQLでキーを作成する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-indexes-in-sql">15.2.9. SQLでインデックスを作成する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dropping-tables-in-sql">15.2.10. SQLでテーブルを削除する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#a-word-on-pgadmin-iii">15.2.11. pgAdmin III について一言</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#in-conclusion">15.2.12. 結論</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-s-next">15.2.13. 次は?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="adding_data.html">15.3. レッスン: モデルにデータを追加する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="queries.html">15.4. レッスン: クエリ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="views.html">15.5. レッスン: ビュー</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rules.html">15.6. レッスン: ルール</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../spatial_databases/index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../processing/index.html">17. QGISプロセシングガイド</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../databases/index.html">18. モジュール: QGISで空間データベースを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/contribute.html">19. 付録：このマニュアルに貢献する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/preparing_data.html">20. 練習データを準備する</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gentle_gis_introduction/index.html">やさしい GIS 入門</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ドキュメント執筆者向け</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../documentation_guidelines/index.html">ドキュメント作成のガイドライン</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developers_guide/index.html">開発者ガイド</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">QGIS Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">QGISトレーニングマニュアル</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">15. </span>モジュール: PostgreSQLでのデータベース概念</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">15.2. </span>レッスン: データモデルの実装</li>
+
+    <li style="float: right; text-align: right;">
+	<ul>
+		
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/qgis/QGIS-Documentation/edit/master/docs/training_manual/database_concepts/data_model.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+	</ul>
+
+        <!-- Add a button to guide potential contributors
+	     To do: add a more generic page for contributing in QGIS docs to keep users in the same website
+	     <a class="qgis-edit-guidelines" href="https://docs.qgis.org/3.44/ja/docs/documentation_guidelines/index.html">
+	-->
+	<a class="qgis-edit-guidelines" href="https://qgis.org/community/involve/">
+		Learn how to contribute!
+	</a>
+    </li>
+
+
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="db_intro.html" class="btn btn-neutral float-left" title="15.1. レッスン: データベースの概要" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="adding_data.html" class="btn btn-neutral float-right" title="15.3. レッスン: モデルにデータを追加する" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div><div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 86.42% 翻訳されています。</p>
+</div>
+</div></blockquote>
+<section id="lesson-implementing-the-data-model">
+<h1><span class="section-number">15.2. </span>レッスン: データモデルの実装<a class="headerlink" href="#lesson-implementing-the-data-model" title="Link to this heading"></a></h1>
+<p>すべての理論をカバーしたところで新しいデータベースを作ってみましょう。このデータベースは後に続くレッスンの実習で使います。</p>
+<p><strong>このレッスンの目標:</strong> 必要なソフトウェアをインストールしてサンプルデータベースの実装に使用します。</p>
+<section id="install-postgresql">
+<h2><span class="section-number">15.2.1. </span>PostgreSQLのインストール<a class="headerlink" href="#install-postgresql" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>お使いのオペレーティングシステムに対応したPostgreSQLのパッケージとインストール方法は、<a class="reference external" href="https://www.postgresql.org/download/">https://www.postgresql.org/download/</a> でご覧いただけます。なお、このドキュメントでは、ユーザーがUbuntuでQGISを実行していることを想定しています。</p>
+</div>
+<p>Ubuntuで:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>postgresql-9.1
+</pre></div>
+</div>
+<p>このようなメッセージを取得するはずです:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>sudo<span class="o">]</span><span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>qgis:
+Reading<span class="w"> </span>package<span class="w"> </span>lists...<span class="w"> </span>Done
+Building<span class="w"> </span>dependency<span class="w"> </span>tree
+Reading<span class="w"> </span>state<span class="w"> </span>information...<span class="w"> </span>Done
+The<span class="w"> </span>following<span class="w"> </span>extra<span class="w"> </span>packages<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>installed:
+postgresql-client-9.1<span class="w"> </span>postgresql-client-common<span class="w"> </span>postgresql-common
+Suggested<span class="w"> </span>packages:
+oidentd<span class="w"> </span>ident-server<span class="w"> </span>postgresql-doc-9.1
+The<span class="w"> </span>following<span class="w"> </span>NEW<span class="w"> </span>packages<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>installed:
+postgresql-9.1<span class="w"> </span>postgresql-client-9.1<span class="w"> </span>postgresql-client-common<span class="w"> </span>postgresql-common
+<span class="m">0</span><span class="w"> </span>upgraded,<span class="w"> </span><span class="m">4</span><span class="w"> </span>newly<span class="w"> </span>installed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>to<span class="w"> </span>remove<span class="w"> </span>and<span class="w"> </span><span class="m">5</span><span class="w"> </span>not<span class="w"> </span>upgraded.
+Need<span class="w"> </span>to<span class="w"> </span>get<span class="w"> </span><span class="m">5</span>,012kB<span class="w"> </span>of<span class="w"> </span>archives.
+After<span class="w"> </span>this<span class="w"> </span>operation,<span class="w"> </span><span class="m">19</span>.0MB<span class="w"> </span>of<span class="w"> </span>additional<span class="w"> </span>disk<span class="w"> </span>space<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>used.
+Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span><span class="k">continue</span><span class="w"> </span><span class="o">[</span>Y/n<span class="o">]</span>?
+</pre></div>
+</div>
+<p><kbd class="kbd docutils literal notranslate">Y</kbd> と <kbd class="kbd docutils literal notranslate">Enter</kbd> キーを押し、ダウンロードとインストールが完了するまで待ちます。</p>
+</section>
+<section id="help">
+<h2><span class="section-number">15.2.2. </span>ヘルプ<a class="headerlink" href="#help" title="Link to this heading"></a></h2>
+<p>PostgreSQLにはとても良い <a class="reference external" href="https://www.postgresql.org/docs/9.1/index.html">オンライン</a> ドキュメントがあります。</p>
+</section>
+<section id="create-a-database-user">
+<h2><span class="section-number">15.2.3. </span>データベースユーザーの作成<a class="headerlink" href="#create-a-database-user" title="Link to this heading"></a></h2>
+<p>Ubuntuで:</p>
+<p>インストールが完了したらこのコマンドを実行して postgres ユーザーになり、新しいデータベースユーザーを作成します:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>su<span class="w"> </span>-<span class="w"> </span>postgres
+</pre></div>
+</div>
+<p>入力を求められたら通常のログインパスワードを入力します (sudo権限を持っている必要があります)。</p>
+<p>では、postgres ユーザーでの bash プロンプトでデータベースユーザーを作成します。ユーザー名は unix ログイン名と一致させて下さい。そうするとログインする時に postgres が自動的に認証するのでいろいろと楽になります:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>createuser<span class="w"> </span>-d<span class="w"> </span>-E<span class="w"> </span>-i<span class="w"> </span>-l<span class="w"> </span>-P<span class="w"> </span>-r<span class="w"> </span>-s<span class="w"> </span>qgis
+</pre></div>
+</div>
+<p>入力を求められたらパスワードを入力します。ログインパスワードとは異なるパスワードを使用するべきです。</p>
+<p>これらのオプションはどういう意味ですか?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-d,<span class="w"> </span>--createdb<span class="w">     </span>role<span class="w"> </span>can<span class="w"> </span>create<span class="w"> </span>new<span class="w"> </span>databases
+-E,<span class="w"> </span>--encrypted<span class="w">    </span>encrypt<span class="w"> </span>stored<span class="w"> </span>password
+-i,<span class="w"> </span>--inherit<span class="w">      </span>role<span class="w"> </span>inherits<span class="w"> </span>privileges<span class="w"> </span>of<span class="w"> </span>roles<span class="w"> </span>it<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>member<span class="w"> </span>of<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
+-l,<span class="w"> </span>--login<span class="w">        </span>role<span class="w"> </span>can<span class="w"> </span>login<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
+-P,<span class="w"> </span>--pwprompt<span class="w">     </span>assign<span class="w"> </span>a<span class="w"> </span>password<span class="w"> </span>to<span class="w"> </span>new<span class="w"> </span>role
+-r,<span class="w"> </span>--createrole<span class="w">   </span>role<span class="w"> </span>can<span class="w"> </span>create<span class="w"> </span>new<span class="w"> </span>roles
+-s,<span class="w"> </span>--superuser<span class="w">    </span>role<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>superuser
+</pre></div>
+</div>
+<p>今、入力することにより、postgresユーザーのbashシェル環境を残す必要があります:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">exit</span>
+</pre></div>
+</div>
+</section>
+<section id="verify-the-new-account">
+<h2><span class="section-number">15.2.4. </span>新しいアカウントの確認<a class="headerlink" href="#verify-the-new-account" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<p>このように返されるはずです:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span>      <span class="o">|</span>  <span class="n">Owner</span>   <span class="o">|</span> <span class="n">Encoding</span> <span class="o">|</span> <span class="n">Collation</span>  <span class="o">|</span>   <span class="n">Ctype</span>    <span class="o">|</span>
+<span class="o">----------+----------+----------+------------+------------+</span>
+<span class="n">postgres</span>  <span class="o">|</span> <span class="n">postgres</span> <span class="o">|</span> <span class="n">UTF8</span>     <span class="o">|</span> <span class="n">en_ZA</span><span class="o">.</span><span class="n">utf8</span> <span class="o">|</span> <span class="n">en_ZA</span><span class="o">.</span><span class="n">utf8</span> <span class="o">|</span>
+<span class="n">template0</span> <span class="o">|</span> <span class="n">postgres</span> <span class="o">|</span> <span class="n">UTF8</span>     <span class="o">|</span> <span class="n">en_ZA</span><span class="o">.</span><span class="n">utf8</span> <span class="o">|</span> <span class="n">en_ZA</span><span class="o">.</span><span class="n">utf8</span> <span class="o">|</span>
+<span class="n">template1</span> <span class="o">|</span> <span class="n">postgres</span> <span class="o">|</span> <span class="n">UTF8</span>     <span class="o">|</span> <span class="n">en_ZA</span><span class="o">.</span><span class="n">utf8</span> <span class="o">|</span> <span class="n">en_ZA</span><span class="o">.</span><span class="n">utf8</span> <span class="o">|</span>
+<span class="p">(</span><span class="mi">3</span> <span class="n">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><kbd class="kbd docutils literal notranslate">Q</kbd> を入力して終了します。</p>
+</section>
+<section id="create-a-database">
+<h2><span class="section-number">15.2.5. </span>データベースの作成<a class="headerlink" href="#create-a-database" title="Link to this heading"></a></h2>
+<p><kbd class="kbd docutils literal notranslate">createdb</kbd> コマンドは新しいデータベースを作成するのに使います。これはbash シェルプロンプトから実行しましょう:</p>
+<div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="n">createdb</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="n">qgis</span>
+</pre></div>
+</div>
+<p>このコマンドを使用して新しいデータベースの存在を確認できます:</p>
+<div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span><span class="w"> </span><span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<p>このように返されるはずです:</p>
+<div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="k">Name</span><span class="w">      </span><span class="o">|</span><span class="w">  </span><span class="k">Owner</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="k">Encoding</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">Collation</span><span class="w">  </span><span class="o">|</span><span class="w">   </span><span class="n">Ctype</span><span class="w">    </span><span class="o">|</span><span class="w">   </span><span class="k">Access</span><span class="w"> </span><span class="k">privileges</span>
+<span class="c1">----------+----------+----------+------------+------------+-----------------------</span>
+<span class="n">address</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="n">qgis</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="n">UTF8</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="n">en_ZA</span><span class="mf">.</span><span class="n">utf8</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">en_ZA</span><span class="mf">.</span><span class="n">utf8</span><span class="w"> </span><span class="o">|</span>
+<span class="n">postgres</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">postgres</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">UTF8</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="n">en_ZA</span><span class="mf">.</span><span class="n">utf8</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">en_ZA</span><span class="mf">.</span><span class="n">utf8</span><span class="w"> </span><span class="o">|</span>
+<span class="n">template0</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">postgres</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">UTF8</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="n">en_ZA</span><span class="mf">.</span><span class="n">utf8</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">en_ZA</span><span class="mf">.</span><span class="n">utf8</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">=</span><span class="n">c</span><span class="o">/</span><span class="n">postgres</span><span class="p">:</span><span class="w"> </span><span class="n">postgres</span><span class="o">=</span><span class="n">CTc</span><span class="o">/</span><span class="n">postgres</span>
+<span class="n">template1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">postgres</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">UTF8</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="n">en_ZA</span><span class="mf">.</span><span class="n">utf8</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">en_ZA</span><span class="mf">.</span><span class="n">utf8</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">=</span><span class="n">c</span><span class="o">/</span><span class="n">postgres</span><span class="p">:</span><span class="w"> </span><span class="n">postgres</span><span class="o">=</span><span class="n">CTc</span><span class="o">/</span><span class="n">postgres</span>
+<span class="p">(</span><span class="mf">4</span><span class="w"> </span><span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><kbd class="kbd docutils literal notranslate">Q</kbd> を入力して終了します。</p>
+</section>
+<section id="starting-a-database-shell-session">
+<h2><span class="section-number">15.2.6. </span>データベースのシェルセッションの開始<a class="headerlink" href="#starting-a-database-shell-session" title="Link to this heading"></a></h2>
+<p>このようにして簡単にデータベースに接続することができます:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="n">address</span>
+</pre></div>
+</div>
+<p>psql データベースシェルを終了するには:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">q</span>
+</pre></div>
+</div>
+<p>シェルのヘルプを見るには:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\?
+</pre></div>
+</div>
+<p>sql コマンドのヘルプを見るには:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">help</span>
+</pre></div>
+</div>
+<p>特定のコマンドのヘルプを表示するには(例):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">help</span> <span class="n">create</span> <span class="n">table</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="http://www.postgresonline.com/downloads/special_feature/postgresql90_cheatsheet_A4.pdf">Psql cheat sheet</a> も参照してください。</p>
+</section>
+<section id="make-tables-in-sql">
+<h2><span class="section-number">15.2.7. </span>SQLでテーブルを作成する<a class="headerlink" href="#make-tables-in-sql" title="Link to this heading"></a></h2>
+<p>いくつかのテーブルを作ってみましょう! ガイドとしてER図を使用します。まず、address（住所）データベースに接続します:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span><span class="w"> </span><span class="n">address</span>
+</pre></div>
+</div>
+<p>Then create a <code class="docutils literal notranslate"><span class="pre">streets</span></code> table:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">streets</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="nb">serial</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">serial</span></code> and <code class="docutils literal notranslate"><span class="pre">varchar</span></code> are <strong>data types</strong>. <code class="docutils literal notranslate"><span class="pre">serial</span></code> tells
+PostgreSQL to start an integer sequence (auto-number) to populate the <code class="docutils literal notranslate"><span class="pre">id</span></code>
+automatically for every new record. <code class="docutils literal notranslate"><span class="pre">varchar(50)</span></code> tells PostgreSQL to
+create a character field of 50 characters in length.</p>
+<p>You will notice that the command ends with a <code class="docutils literal notranslate"><span class="pre">;</span></code> - all SQL commands should
+be terminated this way. When you press <kbd class="kbd docutils literal notranslate">Enter</kbd>, psql will report something
+like this:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">NOTICE</span><span class="p">:</span><span class="w">  </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">implicit</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="ss">&quot;streets_id_seq&quot;</span>
+<span class="w">         </span><span class="k">for</span><span class="w"> </span><span class="nb">serial</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="ss">&quot;streets.id&quot;</span>
+<span class="n">NOTICE</span><span class="p">:</span><span class="w">  </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">implicit</span><span class="w"> </span><span class="k">index</span>
+<span class="w">         </span><span class="ss">&quot;streets_pkey&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="ss">&quot;streets&quot;</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span>
+</pre></div>
+</div>
+<p>That means your table was created successfully, with a primary key <code class="docutils literal notranslate"><span class="pre">streets_pkey</span></code>
+using <code class="docutils literal notranslate"><span class="pre">streets.id</span></code>.</p>
+<p>Note: If you hit return without entering a <code class="docutils literal notranslate"><span class="pre">;</span></code>, then you will get a prompt like
+this: <code class="docutils literal notranslate"><span class="pre">address-#</span></code>. This is because PostgreSQL is expecting you to enter more. Enter
+<code class="docutils literal notranslate"><span class="pre">;</span></code> to run your command.</p>
+<p>テーブルのスキーマを表示するにはこうします:</p>
+<div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="kp">\d</span><span class="w"> </span><span class="ss">streets</span>
+</pre></div>
+</div>
+<p>このように表示されるはずです:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">Table</span><span class="w"> </span><span class="ss">&quot;public.streets&quot;</span>
+<span class="k">Column</span><span class="w">  </span><span class="o">|</span><span class="w">         </span><span class="k">Type</span><span class="w">          </span><span class="o">|</span><span class="w">            </span><span class="n">Modifiers</span>
+<span class="c1">--------+-----------------------+--------------------------------------</span>
+<span class="w"> </span><span class="n">id</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="nb">integer</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">default</span>
+<span class="w">        </span><span class="o">|</span><span class="w">                       </span><span class="o">|</span><span class="w"> </span><span class="n">nextval</span><span class="p">(</span><span class="s1">&#39;streets_id_seq&#39;</span><span class="p">::</span><span class="n">regclass</span><span class="p">)</span>
+<span class="w"> </span><span class="n">name</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="o">|</span>
+<span class="n">Indexes</span><span class="p">:</span>
+<span class="w">  </span><span class="ss">&quot;streets_pkey&quot;</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"> </span><span class="n">btree</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>テーブルの内容を表示するにはこうします:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">streets</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>このように表示されるはずです:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">id</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">name</span>
+<span class="c1">---+------</span>
+<span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>ご覧のようにテーブルは現在空です。</p>
+<section id="try-yourself">
+<h3>やってみよう: <abbr>★★☆ （中級レベル）</abbr><a class="headerlink" href="#try-yourself" title="Link to this heading"></a></h3>
+<p>上記のアプローチを使用してpeople（人々）というテーブルを作成します:</p>
+<p>電話番号、自宅住所、名前などのフィールドを追加します。上記と同じデータ型のID列も作ったか確認して下さい。</p>
+<div class="dropdown admonition">
+<p class="admonition-title">答え</p>
+<p>正しいpeopleテーブルを作るSQLは次の通り:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">create</span> <span class="n">table</span> <span class="n">people</span> <span class="p">(</span><span class="nb">id</span> <span class="n">serial</span> <span class="ow">not</span> <span class="n">null</span> <span class="n">primary</span> <span class="n">key</span><span class="p">,</span>
+                     <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+                     <span class="n">house_no</span> <span class="nb">int</span> <span class="ow">not</span> <span class="n">null</span><span class="p">,</span>
+                     <span class="n">street_id</span> <span class="nb">int</span> <span class="ow">not</span> <span class="n">null</span><span class="p">,</span>
+                     <span class="n">phone_no</span> <span class="n">varchar</span> <span class="n">null</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p>テーブルのスキーマ（<code class="docutils literal notranslate"><span class="pre">\\d</span> <span class="pre">people</span></code> を入力）は次のようなものです:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Table</span> <span class="s2">&quot;public.people&quot;</span>
+
+<span class="n">Column</span>     <span class="o">|</span>         <span class="n">Type</span>          <span class="o">|</span>                      <span class="n">Modifiers</span>
+<span class="o">-----------+-----------------------+-------------------------------------</span>
+<span class="nb">id</span>         <span class="o">|</span> <span class="n">integer</span>               <span class="o">|</span> <span class="ow">not</span> <span class="n">null</span> <span class="n">default</span>
+           <span class="o">|</span>                       <span class="o">|</span> <span class="n">nextval</span><span class="p">(</span><span class="s1">&#39;people_id_seq&#39;</span><span class="p">::</span><span class="n">regclass</span><span class="p">)</span>
+<span class="n">name</span>       <span class="o">|</span> <span class="n">character</span> <span class="n">varying</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="o">|</span>
+<span class="n">house_no</span>   <span class="o">|</span> <span class="n">integer</span>               <span class="o">|</span> <span class="ow">not</span> <span class="n">null</span>
+<span class="n">street_id</span>  <span class="o">|</span> <span class="n">integer</span>               <span class="o">|</span> <span class="ow">not</span> <span class="n">null</span>
+<span class="n">phone_no</span>   <span class="o">|</span> <span class="n">character</span> <span class="n">varying</span>     <span class="o">|</span>
+<span class="n">Indexes</span><span class="p">:</span>
+  <span class="s2">&quot;people_pkey&quot;</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span> <span class="n">btree</span> <span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>説明のために、あえてfkey制約を省略しています。</p>
+</div>
+</section>
+</section>
+<section id="create-keys-in-sql">
+<h2><span class="section-number">15.2.8. </span>SQLでキーを作成する<a class="headerlink" href="#create-keys-in-sql" title="Link to this heading"></a></h2>
+<p>上記のソリューションの問題はデータベースが people と streets に論理的な関係があることを知らないことです。この関係を表現するには、streets テーブルの主キーを指す外部キーを定義する必要があります。</p>
+<figure class="align-center">
+<img alt="../../../_images/er-people-streets.png" src="../../../_images/er-people-streets.png" />
+</figure>
+<p>これを行うには2つの方法があります:</p>
+<ul class="simple">
+<li><p>テーブル作成後にキーを追加する</p></li>
+<li><p>テーブル作成時にキーを定義する</p></li>
+</ul>
+<p>テーブルは既に作成されているので最初の方法を採ります:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">people</span>
+<span class="w">  </span><span class="k">add</span><span class="w"> </span><span class="k">constraint</span><span class="w"> </span><span class="n">people_streets_fk</span><span class="w"> </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">street_id</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">streets</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>That tells the <code class="docutils literal notranslate"><span class="pre">people</span></code> table that its <code class="docutils literal notranslate"><span class="pre">street_id</span></code> fields must match
+a valid street <code class="docutils literal notranslate"><span class="pre">id</span></code> from the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table.</p>
+<p>より一般的には制約の作成はテーブルの作成時に行います:</p>
+<div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="nb">serial</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span>
+<span class="w">                     </span><span class="k">name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mf">50</span><span class="p">),</span>
+<span class="w">                     </span><span class="n">house_no</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<span class="w">                     </span><span class="n">street_id</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">streets</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<span class="w">                     </span><span class="n">phone_no</span><span class="w"> </span><span class="nb">varchar</span><span class="w"> </span><span class="k">null</span><span class="p">);</span>
+
+<span class="go">\d people</span>
+</pre></div>
+</div>
+<p>制約を追加した後、テーブルのスキーマはこのようになります:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">Table</span><span class="w"> </span><span class="ss">&quot;public.people&quot;</span>
+
+<span class="w">  </span><span class="k">Column</span><span class="w">   </span><span class="o">|</span><span class="w">         </span><span class="k">Type</span><span class="w">          </span><span class="o">|</span><span class="w">            </span><span class="n">Modifiers</span>
+<span class="c1">-----------+-----------------------+---------------------------------</span>
+<span class="w"> </span><span class="n">id</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="nb">integer</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">default</span>
+<span class="w">           </span><span class="o">|</span><span class="w">                       </span><span class="o">|</span><span class="w"> </span><span class="n">nextval</span><span class="p">(</span><span class="s1">&#39;people_id_seq&#39;</span><span class="p">::</span><span class="n">regclass</span><span class="p">)</span>
+<span class="w"> </span><span class="n">name</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="o">|</span>
+<span class="w"> </span><span class="n">house_no</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nb">integer</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span>
+<span class="w"> </span><span class="n">street_id</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">integer</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span>
+<span class="w"> </span><span class="n">phone_no</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="w">     </span><span class="o">|</span>
+<span class="n">Indexes</span><span class="p">:</span>
+<span class="w">  </span><span class="ss">&quot;people_pkey&quot;</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"> </span><span class="n">btree</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="k">Foreign</span><span class="o">-</span><span class="k">key</span><span class="w"> </span><span class="k">constraints</span><span class="p">:</span>
+<span class="w">  </span><span class="ss">&quot;people_streets_fk&quot;</span><span class="w"> </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">streets</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="create-indexes-in-sql">
+<h2><span class="section-number">15.2.9. </span>SQLでインデックスを作成する<a class="headerlink" href="#create-indexes-in-sql" title="Link to this heading"></a></h2>
+<p>人の名前をすばやく検索できるようにするにはpeople（人々）テーブルのname（名前）列にインデックスを作成します:</p>
+<div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">people_name_idx</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">people</span><span class="p">(</span><span class="k">name</span><span class="p">);</span>
+
+<span class="go">\d people</span>
+</pre></div>
+</div>
+<p>その結果:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">Table</span><span class="w"> </span><span class="ss">&quot;public.people&quot;</span>
+
+<span class="w">  </span><span class="k">Column</span><span class="w">   </span><span class="o">|</span><span class="w">         </span><span class="k">Type</span><span class="w">          </span><span class="o">|</span><span class="w">                      </span><span class="n">Modifiers</span>
+<span class="c1">-----------+-----------------------+-----------------------------------</span>
+<span class="w"> </span><span class="n">id</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="nb">integer</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="n">nextval</span>
+<span class="w">           </span><span class="o">|</span><span class="w">                       </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;people_id_seq&#39;</span><span class="p">::</span><span class="n">regclass</span><span class="p">)</span>
+<span class="w"> </span><span class="n">name</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="o">|</span>
+<span class="w"> </span><span class="n">house_no</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nb">integer</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span>
+<span class="w"> </span><span class="n">street_id</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">integer</span><span class="w">               </span><span class="o">|</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span>
+<span class="w"> </span><span class="n">phone_no</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="w">     </span><span class="o">|</span>
+<span class="n">Indexes</span><span class="p">:</span>
+<span class="w"> </span><span class="ss">&quot;people_pkey&quot;</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"> </span><span class="n">btree</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+<span class="w"> </span><span class="ss">&quot;people_name_idx&quot;</span><span class="w"> </span><span class="n">btree</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w">    </span><span class="o">&lt;</span><span class="c1">-- new index added!</span>
+<span class="k">Foreign</span><span class="o">-</span><span class="k">key</span><span class="w"> </span><span class="k">constraints</span><span class="p">:</span>
+<span class="w"> </span><span class="ss">&quot;people_streets_fk&quot;</span><span class="w"> </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">streets</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="dropping-tables-in-sql">
+<h2><span class="section-number">15.2.10. </span>SQLでテーブルを削除する<a class="headerlink" href="#dropping-tables-in-sql" title="Link to this heading"></a></h2>
+<p>If you want to get rid of a table you can use the <code class="docutils literal notranslate"><span class="pre">DROP</span></code> command:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">streets</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>現在の例では、上記のコマンドは機能しません。なぜダメなのでしょう？</p>
+<div class="dropdown admonition">
+<p class="admonition-title">答え</p>
+<p>The reason the DROP command would not work in this case is because the
+<code class="docutils literal notranslate"><span class="pre">people</span></code> table has a Foreign Key constraint to the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table. This means
+that dropping (or deleting) the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table would leave the <code class="docutils literal notranslate"><span class="pre">people</span></code> table
+with references to non-existent <code class="docutils literal notranslate"><span class="pre">streets</span></code> data.</p>
+<p>It is possible to 'force' the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table to be deleted by using the
+<code class="docutils literal notranslate"><span class="pre">CASCADE</span></code> command, but this would also delete the <code class="docutils literal notranslate"><span class="pre">people</span></code> and any other table
+which had a relationship to the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table. Use with caution!</p>
+</div>
+<p>If you used the same <code class="docutils literal notranslate"><span class="pre">drop</span> <span class="pre">table</span></code> command on the <code class="docutils literal notranslate"><span class="pre">people</span></code> table, it would
+be successful:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">people</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>If you actually did enter that command and dropped the <code class="docutils literal notranslate"><span class="pre">people</span></code>
+table, now would be a good time to rebuild it, as you will need it in the
+next exercises.</p>
+</div>
+</section>
+<section id="a-word-on-pgadmin-iii">
+<h2><span class="section-number">15.2.11. </span>pgAdmin III について一言<a class="headerlink" href="#a-word-on-pgadmin-iii" title="Link to this heading"></a></h2>
+<p>データベースについて学ぶために非常に有効な方法なので <cite>psql</cite> プロンプトからSQLコマンドを入力しています。しかし、より早くより簡単に行う方法があります。pgAdmin III をインストールするとGUI上のクリック操作でテーブルの create, drop, alter 等を行うことができます。</p>
+<p>Ubuntuではこのようにインストールします:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>pgadmin3
+</pre></div>
+</div>
+<p>pgAdmin III は別のモジュールで詳しく取り上げます。</p>
+</section>
+<section id="in-conclusion">
+<h2><span class="section-number">15.2.12. </span>結論<a class="headerlink" href="#in-conclusion" title="Link to this heading"></a></h2>
+<p>真新しいデータベースを完全にゼロから作成する方法を見てきました。</p>
+</section>
+<section id="what-s-next">
+<h2><span class="section-number">15.2.13. </span>次は?<a class="headerlink" href="#what-s-next" title="Link to this heading"></a></h2>
+<p>次はDBMSを使用して新しいデータを追加する方法を学びます。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="db_intro.html" class="btn btn-neutral float-left" title="15.1. レッスン: データベースの概要" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="adding_data.html" class="btn btn-neutral float-right" title="15.3. レッスン: モデルにデータを追加する" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2002-now, QGIS project.
+      <span class="lastupdated">最終更新: 2026 6月 17, 12:02 +0900
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Transifex follows a particular logic to build target pages:
+Expected French translation link for https://docs.qgis.org/3.28/en/docs/user_manual/print_composer/overview_composer.html
+would return https://app.transifex.com/qgis/qgis-documentation/translate/#fr/aa6d8bc653526d38b295ca94bf8eee5e
+with the md5 value of "github#qgis/QGIS-Documentation#release_3.28#locale/en/LC_MESSAGES/docs/user_manual/print_composer/overview_composer.po"-->
+<!--Make sure that mismatching language codes between Transifex and Sphinx are converted-->
+
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-info-circle"> QGIS Documentation </span>
+      v: 3.44
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+      <dl>
+        <dt>Languages</dt>
+        
+          <dd><a href="https://docs.qgis.org/3.44/en/docs/training_manual/database_concepts/data_model.html">en</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/cs/docs/training_manual/database_concepts/data_model.html">cs</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/de/docs/training_manual/database_concepts/data_model.html">de</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/es/docs/training_manual/database_concepts/data_model.html">es</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/fr/docs/training_manual/database_concepts/data_model.html">fr</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/hu/docs/training_manual/database_concepts/data_model.html">hu</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/it/docs/training_manual/database_concepts/data_model.html">it</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ja/docs/training_manual/database_concepts/data_model.html">ja</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ko/docs/training_manual/database_concepts/data_model.html">ko</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/lt/docs/training_manual/database_concepts/data_model.html">lt</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/nl/docs/training_manual/database_concepts/data_model.html">nl</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/pl/docs/training_manual/database_concepts/data_model.html">pl</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/pt_BR/docs/training_manual/database_concepts/data_model.html">pt_BR</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/pt_PT/docs/training_manual/database_concepts/data_model.html">pt_PT</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ro/docs/training_manual/database_concepts/data_model.html">ro</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ru/docs/training_manual/database_concepts/data_model.html">ru</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/sv/docs/training_manual/database_concepts/data_model.html">sv</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/zh-Hans/docs/training_manual/database_concepts/data_model.html">zh-Hans</a></dd>
+        
+      </dl>
+
+      <dl>
+        <dt>Versions</dt>
+        
+          <dd><a href="https://docs.qgis.org/testing/ja/docs/training_manual/database_concepts/data_model.html">testing</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/latest/ja/docs/training_manual/database_concepts/data_model.html">latest</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/ja/docs/training_manual/database_concepts/data_model.html">3.44</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.40/ja/docs/training_manual/database_concepts/data_model.html">3.40</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.34/ja/docs/training_manual/database_concepts/data_model.html">3.34</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.28/ja/docs/training_manual/database_concepts/data_model.html">3.28</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.22/ja/docs/training_manual/database_concepts/data_model.html">3.22</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.16/ja/docs/training_manual/database_concepts/data_model.html">3.16</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.10/ja/docs/training_manual/database_concepts/data_model.html">3.10</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.4/ja/docs/training_manual/database_concepts/data_model.html">3.4</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/2.18/ja/docs/training_manual/database_concepts/data_model.html">2.18</a></dd>
+        
+      </dl>
+
+      
+       <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="https://docs.qgis.org/3.44/pdf">PDF</a></dd>
+        
+          <dd><a href="https://docs.qgis.org/3.44/zip">HTML</a></dd>
+        
+      </dl>
+      
+
+      
+      
+      <dl>
+        <dt>Contribute to Docs</dt>
+          <dd>
+            <a href="https://github.com/qgis/QGIS-Documentation/edit/master/docs/training_manual/database_concepts/data_model.rst" target="_blank" rel="noopener noreferrer">Edit on GitHub</a>
+          </dd>
+          
+          
+          <dd>
+            <a href="https://app.transifex.com/qgis/qgis-documentation/translate/#ja/98587dfe019171da8c8b32a160670d2b" target="_blank" rel="noopener noreferrer">Translate Page</a>
+          </dd>
+          
+          <dd>
+            <a href="https://github.com/qgis/QGIS-Documentation/issues" target="_blank" rel="noopener noreferrer">Report Issue</a>
+          </dd>
+      </dl>
+      
+
+      <dl>
+        <dt>On QGIS Project</dt>
+          <dd>
+            <a href="https://qgis.org" target="_blank" rel="noopener noreferrer">Home</a>
+          </dd>
+          <dd>
+            <a href="https://qgis.org/api/3.44" target="_blank" rel="noopener noreferrer">C++ API</a>
+          </dd>
+          <dd>
+            <a href="https://qgis.org/pyqgis/3.44" target="_blank" rel="noopener noreferrer">PyQGIS API</a>
+          </dd>
+          <dd>
+            <a href="https://github.com/qgis/QGIS/tree/release-3_44" target="_blank" rel="noopener noreferrer">Source</a>
+          </dd>
+      </dl>
+
+    </div>
+  </div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
