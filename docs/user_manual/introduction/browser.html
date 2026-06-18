@@ -202,7 +202,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 98.78% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 99.30% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="the-browser-panel">
@@ -448,7 +448,7 @@
 <span id="id2"></span><h3><a class="toc-backref" href="#id23" role="doc-backlink"><span class="section-number">4.2.6. </span>データベースエントリ</a><a class="headerlink" href="#database-entries" title="Link to this heading"></a></h3>
 <p>QGISで利用できるデータベースの種類は、ご利用のOSとインストールされているドライバによって異なる場合があります。以下は、データセットツリーの各レベルにおけるコンテキストメニューの様々なエントリのリストです。</p>
 <table class="longtable docutils align-default" id="id11">
-<caption><span class="caption-number">表 4.3 </span><span class="caption-text">データベースエントリにできる操作</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
+<caption><span class="caption-number">表 4.3 </span><span class="caption-text">データベースエントリでできる操作</span><a class="headerlink" href="#id11" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 27.0%" />
 <col style="width: 15.0%" />
@@ -871,11 +871,8 @@
 <p><span class="guilabel">Import Vector Layer...</span> を使用してレイヤーを追加する手順は次のとおりです。:</p>
 <ol class="arabic">
 <li><p><span class="guilabel">レイヤソース</span>: を追加します。現在のQGISプロジェクトから選択したインポートするレイヤーです。ソース レイヤーの選択された地物のみをインポートするには <a class="reference internal" href="../../../_images/checkbox.png"><img alt="checkbox" src="../../../_images/checkbox.png" style="width: 1.3em;" /></a> <span class="guilabel">選択した地物のみ</span> オプションを使用します。</p></li>
-<li><p>Set the <span class="guilabel">Table name</span>: the name of the destination table in the database.
-By default, it is taken from the source layer name but can be modified.
-You can also use the <a class="reference internal" href="../../../_images/checkbox.png"><img alt="checkbox" src="../../../_images/checkbox.png" style="width: 1.3em;" /></a> <span class="guilabel">Replace destination table (if exists)</span>
-to overwrite an existing table.</p></li>
-<li><p><span class="guilabel">CRSを出力に割り当てる</span> ：を定義します。出力先のテーブルの座標参照形です。デフォルトではソースレイヤのCRSになりますが、 <a class="reference internal" href="../working_with_projections/working_with_projections.html#crs-selector"><span class="std std-ref">CRS selector</span></a> を使用して変更することもできます。</p></li>
+<li><p><span class="guilabel">テーブル名</span> を設定します。これはデータベース内の出力先テーブルの名前です。デフォルトではソースのレイヤ名から取得されますが、変更することもできます。また、 <a class="reference internal" href="../../../_images/checkbox.png"><img alt="checkbox" src="../../../_images/checkbox.png" style="width: 1.3em;" /></a> <span class="guilabel">出力先テーブルを置き換える（すでに存在する場合）</span> を使用して、既存のテーブルを上書きすることもできます。</p></li>
+<li><p><span class="guilabel">CRSを出力に割り当てる</span> ：を定義します。出力先のテーブルの座標参照系です。デフォルトではソースレイヤのCRSになりますが、 <a class="reference internal" href="../working_with_projections/working_with_projections.html#crs-selector"><span class="std std-ref">CRS selector</span></a> を使用して変更することもできます。</p></li>
 <li><p><span class="guilabel">属性</span>: を設定します。</p>
 <ul class="simple">
 <li><p><span class="guilabel">ソースの式</span> ： フィールドに値を入力するために使用される式です。デフォルトでは、これは元のソースフィールドに対応します。</p></li>
@@ -892,12 +889,11 @@ to overwrite an existing table.</p></li>
 <li><p>出力先テーブルから属性を削除するには、 <a class="reference internal" href="../../../_images/mActionDeleteAttribute.png"><img alt="deleteAttribute" src="../../../_images/mActionDeleteAttribute.png" style="width: 1.5em;" /></a> <sup>Delete selected field</sup> を使用します。</p></li>
 <li><p><a class="reference internal" href="../../../_images/mActionArrowUp.png"><img alt="arrowUp" src="../../../_images/mActionArrowUp.png" style="width: 1.5em;" /></a> <sup>選択属性を上へ</sup> または <a class="reference internal" href="../../../_images/mActionArrowDown.png"><img alt="arrowDown" src="../../../_images/mActionArrowDown.png" style="width: 1.5em;" /></a> <sup>選択属性を下へ</sup> によりフィールドの順序を変更します。</p></li>
 <li><p><a class="reference internal" href="../../../_images/mIconClearText.png"><img alt="clearText" src="../../../_images/mIconClearText.png" style="width: 1.5em;" /></a> <sup>Reset all fields</sup> to clear all fields and start from scratch.</p></li>
-<li><p><a class="reference internal" href="../../../_images/settings.png"><img alt="settings" src="../../../_images/settings.png" style="width: 1.5em;" /></a> <sup>Convert All Fields To Lowercase</sup> or <a class="reference internal" href="../../../_images/settings.png"><img alt="settings" src="../../../_images/settings.png" style="width: 1.5em;" /></a> <sup>Convert All Fields To Uppercase</sup>,
-to change the case of all field names.</p></li>
+<li><p><a class="reference internal" href="../../../_images/settings.png"><img alt="settings" src="../../../_images/settings.png" style="width: 1.5em;" /></a> <sup>フィールド名を小文字に変換</sup> または <a class="reference internal" href="../../../_images/settings.png"><img alt="settings" src="../../../_images/settings.png" style="width: 1.5em;" /></a> <sup>フィールド名を大文字に変換</sup> によりすべての属性名の大文字・小文字を変更します。</p></li>
 </ul>
 </li>
 <li><p>必要に応じて、 <a class="reference internal" href="general_tools.html#extent-selector"><span class="std std-ref">範囲でフィルタリング</span></a> を使用して、空間フィルタを適用します。これにより、インポートする地物を定義されたバウンディングボックス内に絞り込むことができます。</p></li>
-<li><p>必要に応じて、 <a class="reference internal" href="../expressions/expression.html#expression-builder"><span class="std std-ref">地物フィルタ</span></a>. を使用して属性フィルタを適用します。これにより、式を使用してインポートする地物を選択することができます。</p></li>
+<li><p>必要に応じて、 <a class="reference internal" href="../expressions/expression.html#expression-builder"><span class="std std-ref">地物フィルタ</span></a> を使用して属性フィルタを適用します。これにより、式を使用してインポートする地物を選択することができます。</p></li>
 </ol>
 </section>
 </section>
@@ -930,8 +926,7 @@ to change the case of all field names.</p></li>
 <p>(<a class="reference internal" href="../working_with_ogc/ogc_client_support.html#ogc-wcs"><span class="std std-ref">参照</span></a>)</p>
 </th>
 <th class="head"><p><a class="reference internal" href="../../../_images/mIconWfs.png"><img alt="wfs" src="../../../_images/mIconWfs.png" style="width: 1.5em;" /></a></p>
-<p>WFS / OGC
-API - Features</p>
+<p>WFS / OGC API - 地物</p>
 <p>(<a class="reference internal" href="../working_with_ogc/ogc_client_support.html#ogc-wfs"><span class="std std-ref">参照</span></a>)</p>
 </th>
 <th class="head"><p><a class="reference internal" href="../../../_images/mIconAfs.png"><img alt="afs" src="../../../_images/mIconAfs.png" style="width: 1.5em;" /></a></p>
@@ -1254,7 +1249,7 @@ Servers</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 06:14 +0900
+      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
       </span></p>
   </div>
 
