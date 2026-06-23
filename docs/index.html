@@ -84,7 +84,7 @@
    <a href= "../genindex.html">索引</a>
  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+              <p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about/foreword.html">序文</a></li>
@@ -96,8 +96,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_manual/index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="training_manual/index.html">トレーニングマニュアル</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gentle_gis_introduction/index.html">やさしい GIS 入門</a></li>
 </ul>
@@ -107,7 +107,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyqgis_developer_cookbook/index.html">PyQGIS クックブック(QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developers_guide/index.html">開発者ガイド</a></li>
 </ul>
 
@@ -156,7 +156,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 47.83% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 82.61% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="documentation-for-qgis-version">
@@ -173,16 +173,9 @@
 <p class="admonition-title">注釈</p>
 <p>このドキュメントは <a class="reference external" href="https://explore.transifex.com/qgis/qgis-documentation">Transifex</a> のコミュニティメンバーによって元の英語版から翻訳されています。</p>
 <p>翻訳作業の <a class="reference internal" href="about/contributors.html#translation-stats"><span class="std std-ref">完了レベル</span></a> によっては、まだ英語のままの段落やページがあるかもしれません。Transifexで新たに翻訳文を作成したり、既存の翻訳をレビューすることで、コミュニティを支援することができます。</p>
-<p>For the time being, localized translations are only available for
-the Long Term releases branch, but should nevertheless be suitable to learn how to
-use QGIS.</p>
+<p>現時点では、ローカライズされた翻訳は Long Term リリースブランチでのみ利用可能ですが、QGIS の使い方を学ぶには十分対応できるはずです。</p>
 </div>
-<p>Welcome to the official documentation of <a class="reference external" href="https://qgis.org">QGIS</a>,
-the free and open source community-driven GIS software!
-If you are new to this documentation, the table of contents below
-and in the sidebar should help you easily access the documentation
-for your topic of interest. You can also use the search function
-in the top left corner.</p>
+<p>フリーでオープンソースのコミュニティ主導 GIS ソフトウェアである <a class="reference external" href="https://qgis.org">QGIS</a> の公式ドキュメントへようこそ！このドキュメントを初めてご覧になる方は、以下および左側のサイドバーにある目次を使うことで、興味のあるトピックのドキュメントに簡単にアクセスできます。左上にある検索機能も利用できます。</p>
 <p>オンラインドキュメントの他に、QGISプロジェクトではダウンロードしてオフラインで読むことができる資料も用意しています。資料はサイドバー下部にある <span class="guilabel">QGIS Documentation</span> メニューからアクセスでき、以下の形式があります：</p>
 <ul class="simple">
 <li><p>zip圧縮されたHTMLファイル。展開して <a class="reference internal" href="user_manual/introduction/qgis_configuration.html#doc-config-path"><span class="std std-ref">ドキュメントへのパス</span></a> を通せば、ソフトウェア内からも利用可能です。</p></li>
@@ -190,22 +183,16 @@ in the top left corner.</p>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>QGIS is an open source project developed by a community of contributors.
-The documentation team can always use your feedback and help to improve
-the tutorials and feature descriptions. If you don't understand something,
-or cannot find what you are looking for in the docs, help us make the
-documentation better by letting us know:</p>
+<p>QGIS は、コミュニティによって開発されているオープンソースプロジェクトです。ドキュメントチームは、チュートリアルや機能の説明を改善するために、皆さんからのフィードバックや協力を常に必要としています。理解しにくい部分があったり、ドキュメント内で探しているものが見つからない場合は、お知らせいただくことでドキュメントの改善にご協力ください:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/qgis/QGIS-Documentation/">GitHubリポジトリ</a> にイシューやプルリクエストを提出する</p></li>
-<li><p>Help us <a class="reference internal" href="documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">translate the documentation</span></a> into your language</p></li>
-<li><p>Or talk to us on either the <a class="reference external" href="https://lists.osgeo.org/mailman/listinfo/qgis-community-team">qgis-community-team</a> mailing-list,
-the <a class="reference external" href="https://web.libera.chat/?channels=#qgis">#qgis</a> channel on IRC
-or the <a class="reference external" href="https://matrix.to/#/#qgis:osgeo.org">#qgis:matrix.org</a> room!</p></li>
+<li><p>あなたの言語に翻訳を行って <a class="reference internal" href="documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">translate the documentation</span></a>  私たちを助けて下さい</p></li>
+<li><p>私たちと会話したい場合は <a class="reference external" href="https://lists.osgeo.org/mailman/listinfo/qgis-community-team">qgis-community-team</a> メーリングリスト, IRCの <a class="reference external" href="https://web.libera.chat/?channels=#qgis">#qgis</a> チャンネルまたは <a class="reference external" href="https://matrix.to/#/#qgis:osgeo.org">#qgis:matrix.org</a> ルームでお気軽に声をかけて下さい!</p></li>
 </ul>
 </div>
-<p>Please have a look at one of the documents below.</p>
+<p>以下のいずれかのドキュメントをご覧ください。</p>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+<p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about/foreword.html">序文</a></li>
@@ -219,7 +206,7 @@ or the <a class="reference external" href="https://matrix.to/#/#qgis:osgeo.org">
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="user_manual/index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="user_manual/introduction/getting_started.html">1. 最初のステップ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_manual/introduction/project_files.html">2. プロジェクトファイルの操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_manual/introduction/qgis_gui.html">3. QGISのユーザインタフェース</a></li>
@@ -249,7 +236,7 @@ or the <a class="reference external" href="https://matrix.to/#/#qgis:osgeo.org">
 <li class="toctree-l2"><a class="reference internal" href="user_manual/literature_web/literature_and_web_references.html">27. 文献とWeb参照</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="server_manual/introduction.html">1. はじめに</a></li>
 <li class="toctree-l2"><a class="reference internal" href="server_manual/getting_started.html">2. 最初のステップ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="server_manual/services.html">3. サービス</a></li>
@@ -318,7 +305,7 @@ or the <a class="reference external" href="https://matrix.to/#/#qgis:osgeo.org">
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="pyqgis_developer_cookbook/index.html">PyQGIS クックブック(QGIS 3.44)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pyqgis_developer_cookbook/intro.html">1. はじめに</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyqgis_developer_cookbook/loadproject.html">2. プロジェクトをロードする</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyqgis_developer_cookbook/loadlayer.html">3. レイヤをロードする</a></li>
@@ -371,7 +358,7 @@ or the <a class="reference external" href="https://matrix.to/#/#qgis:osgeo.org">
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 23, 13:55 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 16:52 +0900
       </span></p>
   </div>
 
