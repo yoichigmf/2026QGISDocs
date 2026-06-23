@@ -35,7 +35,7 @@
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="検索" href="../../../search.html" />
     <link rel="next" title="17.13. HTML出力" href="html.html" />
-    <link rel="prev" title="17.11. ベクター計算機" href="vector_calculator.html" />
+    <link rel="prev" title="17.11. ベクタ計算機" href="vector_calculator.html" />
   <meta name="description" content="QGIS 3.44 documentation: 17.12. 範囲を定義する">
   <script>
     var _paq = window._paq = window._paq || [];
@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../spatial_databases/index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">17. QGISプロセシングガイド</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="intro.html">17.1. はじめに</a></li>
@@ -127,7 +127,7 @@
 <li class="toctree-l3"><a class="reference internal" href="first_saga_alg.html">17.8. 外部アルゴリズムを実行する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="log.html">17.9. プロセシングログ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="no_data.html">17.10. ラスタ計算機。No-data値</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクター計算機</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクタ計算機</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">17.12. 範囲を定義する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="html.html">17.13. HTML出力</a></li>
 <li class="toctree-l3"><a class="reference internal" href="john_snow.html">17.14. 最初の分析例</a></li>
@@ -207,7 +207,7 @@
 
 
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
-        <a href="vector_calculator.html" class="btn btn-neutral float-left" title="17.11. ベクター計算機" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vector_calculator.html" class="btn btn-neutral float-left" title="17.11. ベクタ計算機" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="html.html" class="btn btn-neutral float-right" title="17.13. HTML出力" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
@@ -218,7 +218,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 66.67% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="defining-extents">
@@ -227,14 +227,13 @@
 <p class="admonition-title">注釈</p>
 <p>このレッスンでは、いくつかのアルゴリズムによって必要とされている範囲、特にラスタの範囲を定義する方法について説明します。</p>
 </div>
-<p>いくつかのアルゴリズムは、それらが行う解析によってカバーされる区域を定義する範囲、そしてたいていは結果のレイヤの区域を定義する範囲を必要とします。</p>
+<p>いくつかのアルゴリズムは、それが行う解析によってカバーされる区域を定義するための範囲と、そしてたいていは結果のレイヤの範囲を定義することが必要です。</p>
 <p>範囲が必要とされる場合は、それを定義する4つの値（最小X、最小Y、最大X、最大Y）を入力することによって手動で定義できますが、他にもそれを同様に行うより実用的でより興味深い方法があります。このレッスンではそれらのすべてを見ることができます。</p>
-<p>First, let's open an algorithm that requires an extent to be defined.
-Open the <span class="guilabel">Rasterize (vector to raster)</span> algorithm, which creates a raster layer from a vector layer.</p>
+<p>まずは、範囲が定義されることを必要とするアルゴリズムを開いてみましょう。ベクタレイヤからラスタレイヤを作成する <span class="guilabel">ラスタライズ（ベクタをラスタ化）</span> アルゴリズムを開きます。</p>
 <figure class="align-default">
 <img alt="../../../_images/rasterize1.png" src="../../../_images/rasterize1.png" />
 </figure>
-<p>最後の2つのパラメータを除くすべてのパラメータは、ラスタ化するレイヤを定義し、ラスタ化処理の方法を設定するために使用されます。一方、最後の2つのパラメータは、出力レイヤの特性を定義するものです。つまり、カバーする区域（入力ベクタレイヤがカバーする区域と同じとは限らない）と、解像度/セルサイズ（ベクタレイヤにはセルサイズがないため、ベクタレイヤから推測することはできない）を定義する。</p>
+<p>最後の2つのパラメータを除く全てのパラメータは、ラスタ化するレイヤを定義するためと、ラスタ化処理の方法を設定するために使用されます。一方で、最後の2つのパラメータは出力レイヤの特性を定義するものです。つまり、それらはカバーされる区域（入力ベクタレイヤがカバーする区域と同じとは限らない）と、解像度/セルサイズ（ベクタレイヤにはセルサイズがないため、ベクタレイヤから推測することはできない）を定義します。</p>
 <p>まず行うことができることは、前に説明した定義する4つの値を、カンマで区切って入力することです。</p>
 <figure class="align-default">
 <img alt="../../../_images/type.png" src="../../../_images/type.png" />
@@ -244,46 +243,31 @@ Open the <span class="guilabel">Rasterize (vector to raster)</span> algorithm, w
 <img alt="../../../_images/menu1.png" src="../../../_images/menu1.png" />
 </figure>
 <p>それらのそれぞれが何をするか見てみましょう。</p>
-<p>The first option is <span class="guilabel">Use layer/canvas extent</span>, which will show the selection
-dialog shown below.</p>
+<p>第１のオプションは <span class="guilabel">レイヤ/キャンバス範囲を使用</span> で、以下に示す選択ダイアログが表示されます。</p>
 <figure class="align-default">
 <img alt="../../../_images/layer.png" src="../../../_images/layer.png" />
 </figure>
 <p>ここでは、キャンバスの範囲（現在のズームでカバーされている範囲）、または利用可能ないずれかのレイヤの範囲を選択できます。それを選択して <em>OK</em> をクリックすると、テキストボックスが自動的に対応する値で満たされます。</p>
-<p>The second option is <span class="guilabel">Select extent on canvas</span>. In this case, the algorithm
-dialog disappears and you can click and drag on the QGIS canvas to define
-the desired extent.</p>
+<p>第2のオプションは、 <span class="guilabel">キャンバス上で範囲選択</span> です。この場合、アルゴリズムダイアログが消え、所望の範囲を定義するためにQGISキャンバス上でクリック＆ドラッグできます。</p>
 <figure class="align-default">
 <img alt="../../../_images/extent_drag.png" src="../../../_images/extent_drag.png" />
 </figure>
 <p>マウスボタンを放すとダイアログが再び現れ、そのテキストボックスには定義された範囲に対応する値がすでに入っています。</p>
-<p>The last option is <span class="guilabel">Use min covering extent from input layers</span>, which is the
-default option. This will compute the min covering extent of all layers used
-to run the algorithm, and there is no need to enter any value in the text box.
-In the case of a single input layer, as in the algorithm we are running,
-the same extent can be obtained by selecting that same input layer in the
-<span class="guilabel">Use layer/canvas extent</span> that we already saw. However, when there are several
-input layers, the min covering extent does not correspond to any of the input
-layer extent, since it is computed from all of them together.</p>
+<p>最後のオプションは、 <span class="guilabel">入力レイヤ範囲をカバーする最小の使用</span> で、デフォルトのオプションです。これは、アルゴリズムを実行するために使用される全てのレイヤをカバーする最小の範囲を計算し、テキストボックスに値を入力する必要はありません。ここで実行しているアルゴリズムのように入力レイヤが単一の場合は、すでに見た <span class="guilabel">レイヤ/キャンバス範囲を使用</span> にあるのと同じ入力レイヤを選択することによって同じ範囲を得ることができます。しかしながら入力レイヤが複数存在する場合、カバーする最小の範囲はそれらをまとめたものから計算されるので、入力レイヤの範囲のいずれにも該当しません。</p>
 <p>ラスタ化アルゴリズムを実行するために、この最後のメソッドを使用します。</p>
-<p>Fill the parameters dialog as shown next, and press <span class="guilabel">OK</span>.</p>
+<p>次に示すようにパラメータダイアログボックスを入力し、 <span class="guilabel">OK</span> を押してください。</p>
 <figure class="align-default">
 <img alt="../../../_images/parameters.png" src="../../../_images/parameters.png" />
 </figure>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>In this case, better use an <code class="docutils literal notranslate"><span class="pre">Integer</span> <span class="pre">(1</span> <span class="pre">byte)</span></code> instead of a
-<code class="docutils literal notranslate"><span class="pre">Floating</span> <span class="pre">point</span> <span class="pre">(4</span> <span class="pre">byte)</span></code>, since the <code class="docutils literal notranslate"><span class="pre">NAME</span></code> is an integer with maximum
-value=64. This will result in a smaller file size and faster computations.</p>
+<p>この場合には、 <code class="docutils literal notranslate"><span class="pre">NAME</span></code> は最大値=64の整数なので、<code class="docutils literal notranslate"><span class="pre">浮動小数点数（4バイト）</span></code> よりも <code class="docutils literal notranslate"><span class="pre">整数（1バイト）</span></code> を使用するほうが良いです。これによってファイルサイズは小さくなり、計算がより高速になります。</p>
 </div>
 <p>元のベクタレイヤがカバーする区域を正確にカバーするラスタ化レイヤが得られるでしょう。</p>
 <figure class="align-default">
 <img alt="../../../_images/result.png" src="../../../_images/result.png" />
 </figure>
-<p>In some cases, the last option, <span class="guilabel">Use min covering extent from input layers</span>,
-might not be available. This will happen in those algorithm that do not have
-input layers, but just parameters of other types. In that case, you will have
-to enter the value manually or use any of the other options.</p>
+<p>場合によっては、最後のオプション <span class="guilabel">入力レイヤ範囲をカバーする最小の使用</span> が使えないことがあります。これは、入力レイヤを持たず他のタイプのパラメータだけ持つアルゴリズムで起こります。その場合は、手動で値を入力するか、他のオプションのいずれかを使用する必要があります。</p>
 <p>選択が存在する場合、レイヤの範囲は地物の全体集合のことであり、たとえラスタ化が選択された項目に対してのみ実行されても、選択は範囲を計算するために使用されませんのでご注意ください。その場合は、実際に選択から新しいレイヤを作成しそれを入力として使用したいかもしれません。</p>
 </section>
 
@@ -291,7 +275,7 @@ to enter the value manually or use any of the other options.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="vector_calculator.html" class="btn btn-neutral float-left" title="17.11. ベクター計算機" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vector_calculator.html" class="btn btn-neutral float-left" title="17.11. ベクタ計算機" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="html.html" class="btn btn-neutral float-right" title="17.13. HTML出力" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
@@ -299,7 +283,7 @@ to enter the value manually or use any of the other options.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

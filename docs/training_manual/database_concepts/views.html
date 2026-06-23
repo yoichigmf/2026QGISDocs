@@ -114,15 +114,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">15. モジュール: PostgreSQLでのデータベース概念</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">15. モジュール: PostgreSQLによるデータベースの概念</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="db_intro.html">15.1. レッスン: データベースの概要</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_model.html">15.2. レッスン: データモデルの実装</a></li>
 <li class="toctree-l3"><a class="reference internal" href="adding_data.html">15.3. レッスン: モデルにデータを追加する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="queries.html">15.4. レッスン: クエリ</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">15.5. レッスン: ビュー</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#creating-a-view">15.5.1. ビューの作成</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#modifying-a-view">15.5.2. ビューの変更</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dropping-a-view">15.5.3. ビューの削除</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-view">15.5.1. ビューを作成する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modifying-a-view">15.5.2. ビューを変更する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dropping-a-view">15.5.3. ビューを削除する</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#in-conclusion">15.5.4. 結論</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-s-next">15.5.5. 次は?</a></li>
 </ul>
@@ -164,7 +164,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">QGISトレーニングマニュアル</a></li>
-          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">15. </span>モジュール: PostgreSQLでのデータベース概念</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">15. </span>モジュール: PostgreSQLによるデータベースの概念</a></li>
       <li class="breadcrumb-item active"><span class="section-number">15.5. </span>レッスン: ビュー</li>
 
     <li style="float: right; text-align: right;">
@@ -197,15 +197,15 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 88.89% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="lesson-views">
 <h1><span class="section-number">15.5. </span>レッスン: ビュー<a class="headerlink" href="#lesson-views" title="Link to this heading"></a></h1>
-<p>クエリを記述するときはそれを考案するのに多くの時間と労力が必要です。ビューを使えばSQLクエリの定義を再利用可能な「仮想テーブル」に保存できます。</p>
+<p>クエリを記述するときは、それを考案するのに多くの時間と労力が必要です。ビューを使えばそのSQLクエリの定義を再利用可能な「仮想テーブル」に保存できます。</p>
 <p><strong>このレッスンの目標:</strong> クエリをビューとして保存します。</p>
 <section id="creating-a-view">
-<h2><span class="section-number">15.5.1. </span>ビューの作成<a class="headerlink" href="#creating-a-view" title="Link to this heading"></a></h2>
+<h2><span class="section-number">15.5.1. </span>ビューを作成する<a class="headerlink" href="#creating-a-view" title="Link to this heading"></a></h2>
 <p>ビューはテーブルのように扱うことができますが、そのデータはクエリから供給されます。上記に基いて単純なビューを作りましょう:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">roads_count_v</span><span class="w"> </span><span class="k">as</span>
 <span class="w">  </span><span class="k">select</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="n">people</span><span class="p">.</span><span class="n">name</span><span class="p">),</span><span class="w"> </span><span class="n">streets</span><span class="p">.</span><span class="n">name</span>
@@ -213,8 +213,7 @@
 <span class="w">  </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">street_id</span><span class="p">,</span><span class="w"> </span><span class="n">streets</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>As you can see the only change is the <code class="docutils literal notranslate"><span class="pre">create</span> <span class="pre">view</span> <span class="pre">roads_count_v</span> <span class="pre">as</span></code> part
-at the beginning. We can now select data from that view:</p>
+<p>ご覧のとおり、はじめの <code class="docutils literal notranslate"><span class="pre">create</span> <span class="pre">view</span> <span class="pre">roads_count_v</span> <span class="pre">as</span></code> の部分だけが異なります。そのビューからデータを選択できます:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">roads_count_v</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -229,7 +228,7 @@ at the beginning. We can now select data from that view:</p>
 </div>
 </section>
 <section id="modifying-a-view">
-<h2><span class="section-number">15.5.2. </span>ビューの変更<a class="headerlink" href="#modifying-a-view" title="Link to this heading"></a></h2>
+<h2><span class="section-number">15.5.2. </span>ビューを変更する<a class="headerlink" href="#modifying-a-view" title="Link to this heading"></a></h2>
 <p>ビューは固定されておらず、「実データ」を持ちません。つまりデータベースの中のデータに影響を与えることなく簡単に変更できます:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">roads_count_v</span><span class="w"> </span><span class="k">AS</span>
 <span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="n">people</span><span class="p">.</span><span class="n">name</span><span class="p">),</span><span class="w"> </span><span class="n">streets</span><span class="p">.</span><span class="n">name</span>
@@ -239,8 +238,7 @@ at the beginning. We can now select data from that view:</p>
 </pre></div>
 </div>
 <p>(また、この例はすべてのSQLキーワードには大文字を使用する最良慣行を示しています。)</p>
-<p>You will see that we have added an <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> clause so that our view rows
-are nicely sorted:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> 句を追加したのでビューの行はきれいに並べ替えられています:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">roads_count_v</span><span class="p">;</span>
 
 <span class="w"> </span><span class="k">count</span><span class="w"> </span><span class="o">|</span><span class="w">    </span><span class="n">name</span>
@@ -253,7 +251,7 @@ are nicely sorted:</p>
 </div>
 </section>
 <section id="dropping-a-view">
-<h2><span class="section-number">15.5.3. </span>ビューの削除<a class="headerlink" href="#dropping-a-view" title="Link to this heading"></a></h2>
+<h2><span class="section-number">15.5.3. </span>ビューを削除する<a class="headerlink" href="#dropping-a-view" title="Link to this heading"></a></h2>
 <p>不要になったビューはこのように削除できます:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">drop</span><span class="w"> </span><span class="k">view</span><span class="w"> </span><span class="n">roads_count_v</span><span class="p">;</span>
 </pre></div>
@@ -281,7 +279,7 @@ are nicely sorted:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

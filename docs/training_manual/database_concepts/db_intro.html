@@ -35,7 +35,7 @@
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="検索" href="../../../search.html" />
     <link rel="next" title="15.2. レッスン: データモデルの実装" href="data_model.html" />
-    <link rel="prev" title="15. モジュール: PostgreSQLでのデータベース概念" href="index.html" />
+    <link rel="prev" title="15. モジュール: PostgreSQLによるデータベースの概念" href="index.html" />
   <meta name="description" content="QGIS 3.44 documentation: 15.1. レッスン: データベースの概要">
   <script>
     var _paq = window._paq = window._paq || [];
@@ -114,14 +114,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">15. モジュール: PostgreSQLでのデータベース概念</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">15. モジュール: PostgreSQLによるデータベースの概念</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">15.1. レッスン: データベースの概要</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#what-is-a-database">15.1.1. データベースとは何ですか？</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#tables">15.1.2. 表</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#columns-fields">15.1.3. 列/フィールド</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#records">15.1.4. レコード</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#datatypes">15.1.5. データ型</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#modelling-an-address-database">15.1.6. 住所データベースをモデル化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modelling-an-address-database">15.1.6. 住所データベースをモデル化する</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#database-theory">15.1.7. データベース理論</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#normalisation">15.1.8. 正規化</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id1">15.1.9. <abbr>★☆☆ （初級レベル）</abbr> 自分でやってみよう:</a></li>
@@ -175,7 +175,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">QGISトレーニングマニュアル</a></li>
-          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">15. </span>モジュール: PostgreSQLでのデータベース概念</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">15. </span>モジュール: PostgreSQLによるデータベースの概念</a></li>
       <li class="breadcrumb-item active"><span class="section-number">15.1. </span>レッスン: データベースの概要</li>
 
     <li style="float: right; text-align: right;">
@@ -197,7 +197,7 @@
 
 
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
-        <a href="index.html" class="btn btn-neutral float-left" title="15. モジュール: PostgreSQLでのデータベース概念" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="15. モジュール: PostgreSQLによるデータベースの概念" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="data_model.html" class="btn btn-neutral float-right" title="15.2. レッスン: データモデルの実装" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
@@ -208,7 +208,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 90.91% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="lesson-introduction-to-databases">
@@ -249,7 +249,7 @@
 </section>
 <section id="records">
 <h2><span class="section-number">15.1.4. </span>レコード<a class="headerlink" href="#records" title="Link to this heading"></a></h2>
-<p>レコードは、テーブル行に格納されている情報です。各レコードには、テーブル内の各列のフィールドがあります。</p>
+<p>ひとつのレコードはテーブルのひとつの行に格納されている情報です。それぞれのレコードにはテーブルの各列に対応したフィールドがあります。</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Horst</span><span class="w"> </span><span class="o">|</span><span class="w">  </span><span class="mi">88</span><span class="w">  </span><span class="o">&lt;</span><span class="c1">-- one record</span>
 </pre></div>
 </div>
@@ -257,7 +257,7 @@
 <section id="datatypes">
 <h2><span class="section-number">15.1.5. </span>データ型<a class="headerlink" href="#datatypes" title="Link to this heading"></a></h2>
 <p>データ型は、列に格納できる情報の種類を制限します。* - ティムとホルスト*</p>
-<p>データ型には多くの種類があります。最も一般的なものに焦点を当ててみましょう：</p>
+<p>データ型には多くの種類があります。最も一般的なものを取り上げてみましょう：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">String</span></code> - 自由形式のテキストデータを格納します</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Integer</span></code> - 整数を格納します</p></li>
@@ -283,8 +283,8 @@
 <p>使えるデータ型には更に多くがあります－ <a class="reference external" href="https://www.postgresql.org/docs/current/datatype.html">PostgreSQLマニュアルを確認してください</a></p>
 </section>
 <section id="modelling-an-address-database">
-<h2><span class="section-number">15.1.6. </span>住所データベースをモデル化<a class="headerlink" href="#modelling-an-address-database" title="Link to this heading"></a></h2>
-<p>データベースが構築されるかを確認するために、単純なケーススタディを使ってみましょう。住所のデータベースを作成したいとします。</p>
+<h2><span class="section-number">15.1.6. </span>住所データベースをモデル化する<a class="headerlink" href="#modelling-an-address-database" title="Link to this heading"></a></h2>
+<p>どのようにデータベースが構築されるかを見るために、単純なケーススタディを使ってみましょう。住所のデータベースを作成したいとします。</p>
 <section id="try-yourself">
 <h3><abbr>★☆☆ （初級レベル）</abbr> 自分でやってみよう:<a class="headerlink" href="#try-yourself" title="Link to this heading"></a></h3>
 <p>簡単な住所を構成し、そしてデータベースに格納される、プロパティを書き出します。</p>
@@ -322,7 +322,7 @@
 <section id="normalisation">
 <h2><span class="section-number">15.1.8. </span>正規化<a class="headerlink" href="#normalisation" title="Link to this heading"></a></h2>
 <p>データベースの主なアイデアの1つは、データの重複/冗長性を避けることです。データベースから冗長性を除去するプロセスを正規化といいます。</p>
-<p>正規化は、データベース構造が汎用的な照会に適しており、挿入、更新、および削除の異常（データの整合性が失われる可能性がある）などの望ましくない特性がないことを確実にする体系的な方法です。 <em>-ウィキペディア</em></p>
+<p>正規化は、データベース構造が汎用的なクエリに適しており、挿入、更新、および削除の異常（データの整合性が失われる可能性がある）などの望ましくない特性がないことを確実にする体系的な方法です。 <em>-ウィキペディア</em></p>
 <p>正規「形」には様々な種類があります。</p>
 <p>簡単な例を見てみましょう:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">Table</span><span class="w"> </span><span class="ss">&quot;public.people&quot;</span>
@@ -352,18 +352,11 @@
 </section>
 <section id="id1">
 <h2><span class="section-number">15.1.9. </span><abbr>★☆☆ （初級レベル）</abbr> 自分でやってみよう:<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
-<p>Redesign the theoretical <code class="docutils literal notranslate"><span class="pre">people</span></code> table above to reduce duplication and to
-normalise the data structure.</p>
+<p>上記の理論上の <code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルを再設計して、重複を減らし、データ構造を正規化します。</p>
 <p>データベースの正規化については <a class="reference external" href="https://en.wikipedia.org/wiki/Database_normalization">ここ</a> に読み物があります</p>
 <div class="dropdown admonition">
 <p class="admonition-title">答え</p>
-<p>The major problem with the <code class="docutils literal notranslate"><span class="pre">people</span></code> table is that there is a single address
-field which contains a person's entire address. Thinking about our theoretical
-<code class="docutils literal notranslate"><span class="pre">address</span></code> table earlier in this lesson, we know that an address is made up of
-many different properties. By storing all these properties in one field, we make
-it much harder to update and query our data. We therefore need to split the
-address field into the various properties. This would give us a table which has
-the following structure:</p>
+<p><code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルの大きな問題は、ある人の住所全体を含んだ単独のaddressフィールドがあることです。このレッスンで前に学んだ理論上の <em>address</em> テーブルについて考えてみると、ひとつの住所は多くの様々なプロパティで構成されていることが分かっています。これらのプロパティを全てひとつのフィールドに格納することで、データの更新やクエリをより難しくしています。したがって、addressフィールドを様々なプロパティに分割する必要があります。そうすると、次のような構造を持つテーブルができます:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span> <span class="o">|</span>     <span class="n">name</span>      <span class="o">|</span> <span class="n">house_no</span> <span class="o">|</span>  <span class="n">street_name</span>   <span class="o">|</span>    <span class="n">city</span>    <span class="o">|</span>   <span class="n">phone_no</span>
  <span class="o">--+---------------+----------+----------------+------------+-----------------</span>
  <span class="mi">1</span> <span class="o">|</span> <span class="n">Tim</span> <span class="n">Sutton</span>    <span class="o">|</span>     <span class="mi">3</span>    <span class="o">|</span> <span class="n">Buirski</span> <span class="n">Plein</span>  <span class="o">|</span> <span class="n">Swellendam</span> <span class="o">|</span> <span class="mi">071</span> <span class="mi">123</span> <span class="mi">123</span>
@@ -375,8 +368,8 @@ the following structure:</p>
 </section>
 <section id="indexes">
 <h2><span class="section-number">15.1.10. </span>索引<a class="headerlink" href="#indexes" title="Link to this heading"></a></h2>
-<p>データベース索引は、データベース表のデータ検索操作の速度を向上させるデータ構造です。 <em>-ウィキペディア</em></p>
-<p>たとえば教科書を読んで、ある概念の説明を探しているが、その教科書には索引がなかったとします。表紙から読み始め、必要な情報が見つかるまで、本全体を通して作業を進めなければなりません。教科書の裏にある索引は、関連情報を持つページに素早くジャンプするのに役立ちます:</p>
+<p>データベース索引は、データベーステーブルのデータ取得操作の速度を向上させるデータ構造です。 <em>-ウィキペディア</em></p>
+<p>たとえば教科書を読んでいて、ある概念の説明を探しているが、その教科書には索引がないと想像してみてください。表紙から読み始め、必要な情報が見つかるまで、本全体を通して作業を進めなければなりません。教科書の裏にある索引は、関連情報を持つページに素早くジャンプするのに役立ちます:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">person_name_idx</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -399,8 +392,8 @@ the following structure:</p>
 </section>
 <section id="sequences">
 <h2><span class="section-number">15.1.11. </span>シーケンス<a class="headerlink" href="#sequences" title="Link to this heading"></a></h2>
-<p>シーケンスは、一意の番号ジェネレータです。通常、テーブル内の列の一意の識別子を作成するために使用されます。</p>
-<p>この例では、IDはシーケンスで、その数はレコードがテーブルに追加されるたびに1つ増えます:</p>
+<p>シーケンスは、一意の番号の生成器です。通常、テーブル内の列の一意の識別子を作成するために使用されます。</p>
+<p>この例では、IDはシーケンスで、その数値はレコードがテーブルに追加されるたびに1つ増えます:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">id</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="n">name</span><span class="w">     </span><span class="o">|</span><span class="w">           </span><span class="n">address</span><span class="w">           </span><span class="o">|</span><span class="w">  </span><span class="n">phone_no</span>
 <span class="c1">---+--------------+-----------------------------+-------------</span>
 <span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Tim</span><span class="w"> </span><span class="n">Sutton</span><span class="w">   </span><span class="o">|</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">Buirski</span><span class="w"> </span><span class="n">Plein</span><span class="p">,</span><span class="w"> </span><span class="n">Swellendam</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">071</span><span class="w"> </span><span class="mi">123</span><span class="w"> </span><span class="mi">123</span>
@@ -410,10 +403,7 @@ the following structure:</p>
 </section>
 <section id="entity-relationship-diagramming">
 <h2><span class="section-number">15.1.12. </span>エンティティ・リレーションシップ図の作成<a class="headerlink" href="#entity-relationship-diagramming" title="Link to this heading"></a></h2>
-<p>In a normalised database, you typically have many relations (tables). The
-entity-relationship diagram (ER Diagram) is used to design the logical
-dependencies between the relations. Consider our non-normalised <code class="docutils literal notranslate"><span class="pre">people</span></code> table
-from earlier in the lesson:</p>
+<p>正規化されたデータベースでは、通常、多くのリレーション（テーブル）があります。エンティティ・リレーションシップ図（ER図）は、そのリレーションの間の論理依存関係を設計するために使用されます。レッスン前半の正規化されていない <code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルを考えてみましょう:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">people</span><span class="p">;</span>
 
 <span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="n">name</span><span class="w">     </span><span class="o">|</span><span class="w">           </span><span class="n">address</span><span class="w">           </span><span class="o">|</span><span class="w">  </span><span class="n">phone_no</span>
@@ -441,34 +431,31 @@ from earlier in the lesson:</p>
 <span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>We can then link the two tables using the 'keys' <code class="docutils literal notranslate"><span class="pre">streets.id</span></code> and
-<code class="docutils literal notranslate"><span class="pre">people.streets_id</span></code>.</p>
+<p>その後、「キー」 <code class="docutils literal notranslate"><span class="pre">streets.id</span></code> と <code class="docutils literal notranslate"><span class="pre">people.streets_id</span></code> を使用して2つのテーブルをリンクできます。</p>
 <p>この2つのテーブルのためのER図を描く場合は、次のようになります。</p>
 <figure class="align-center">
 <img alt="../../../_images/er-people-streets.png" src="../../../_images/er-people-streets.png" />
 </figure>
-<p>ER図は、関係「一対多」を表現する助けになります。この場合、矢印記号は、1つの通りに対して住んでいる人々は何人もいることがあると示しています。</p>
+<p>ER図は、「一対多」関係を表現する助けになります。この場合、矢印記号は、1つの通りに対して住んでいる人々は何人もいることがあると示しています。</p>
 <section id="id2">
 <h3><abbr>★★☆ （中級レベル）</abbr> 自分でやってみよう:<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <p>この <cite>people</cite> モデルにはまだいくつかの正規化の問題があります - さらに正規化して、ER図を用いて自分の考えを示すことができるかどうか確認してみてください。</p>
 <div class="dropdown admonition">
 <p class="admonition-title">答え</p>
-<p>Our <code class="docutils literal notranslate"><span class="pre">people</span></code> table currently looks like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルは現在このようなものです:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span> <span class="o">|</span>     <span class="n">name</span>     <span class="o">|</span> <span class="n">house_no</span> <span class="o">|</span> <span class="n">street_id</span> <span class="o">|</span>  <span class="n">phone_no</span>
 <span class="o">---+--------------+----------+-----------+-------------</span>
  <span class="mi">1</span> <span class="o">|</span> <span class="n">Horst</span> <span class="n">Duster</span> <span class="o">|</span>        <span class="mi">4</span> <span class="o">|</span>         <span class="mi">1</span> <span class="o">|</span> <span class="mi">072</span> <span class="mi">121</span> <span class="mi">122</span>
 </pre></div>
 </div>
-<p>The <span class="guilabel">street_id</span> column represents a 'one to many' relationship between the
-people object and the related street object, which is in the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table.</p>
-<p>テーブルをさらに正規化する方法のひとつは、名前フィールドを <em>first_name</em> と <em>last_name</em> に分割することです:</p>
+<p><span class="guilabel">street_id</span> 列は、peopleオブジェクトと、<code class="docutils literal notranslate"><span class="pre">streets</span></code> テーブルにある関係したstreetオブジェクトの間の「一対多」の関係を表しています。</p>
+<p>テーブルをさらに正規化する方法のひとつは、nameフィールドを <em>first_name</em> と <em>last_name</em> に分割することです:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span> <span class="o">|</span> <span class="n">first_name</span> <span class="o">|</span> <span class="n">last_name</span>  <span class="o">|</span> <span class="n">house_no</span> <span class="o">|</span> <span class="n">street_id</span> <span class="o">|</span>  <span class="n">phone_no</span>
 <span class="o">---+------------+------------+----------+-----------+------------</span>
  <span class="mi">1</span> <span class="o">|</span>    <span class="n">Horst</span>   <span class="o">|</span>   <span class="n">Duster</span>   <span class="o">|</span>     <span class="mi">4</span>    <span class="o">|</span>     <span class="mi">1</span>     <span class="o">|</span> <span class="mi">072</span> <span class="mi">121</span> <span class="mi">122</span>
 </pre></div>
 </div>
-<p>We can also create separate tables for the town or city name and country,
-linking them to our <code class="docutils literal notranslate"><span class="pre">people</span></code> table via 'one to many' relationships:</p>
+<p>また町か市の名称と国で別々のテーブルを作り、「一対多」関係で <code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルとリンクすることもできます:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span> <span class="o">|</span> <span class="n">first_name</span> <span class="o">|</span> <span class="n">last_name</span> <span class="o">|</span> <span class="n">house_no</span> <span class="o">|</span> <span class="n">street_id</span> <span class="o">|</span> <span class="n">town_id</span> <span class="o">|</span> <span class="n">country_id</span>
 <span class="o">---+------------+-----------+----------+-----------+---------+------------</span>
  <span class="mi">1</span> <span class="o">|</span>    <span class="n">Horst</span>   <span class="o">|</span>   <span class="n">Duster</span>  <span class="o">|</span>     <span class="mi">4</span>    <span class="o">|</span>     <span class="mi">1</span>     <span class="o">|</span>    <span class="mi">2</span>    <span class="o">|</span>     <span class="mi">1</span>
@@ -483,10 +470,7 @@ linking them to our <code class="docutils literal notranslate"><span class="pre"
 </section>
 <section id="constraints-primary-keys-and-foreign-keys">
 <h2><span class="section-number">15.1.13. </span>制約、主キーと外部キー<a class="headerlink" href="#constraints-primary-keys-and-foreign-keys" title="Link to this heading"></a></h2>
-<p>A database constraint is used to ensure that data in a relation matches the
-modeller's view of how that data should be stored. For example a constraint on
-your postal code could ensure that the number falls between <code class="docutils literal notranslate"><span class="pre">1000</span></code> and
-<code class="docutils literal notranslate"><span class="pre">9999</span></code>.</p>
+<p>リレーション内のデータがモデラーのデータの格納方法と一致するように、データベースの制約が使用されます。たとえば、郵便番号の制約により、数字が <code class="docutils literal notranslate"><span class="pre">1000</span></code> と <code class="docutils literal notranslate"><span class="pre">9999</span></code> の間に入ることが保証されます。</p>
 <p>主キーは、レコードを一意にする1つ以上のフィールドの値です。通常、主キーはidというシーケンスです。</p>
 <p>外部キーは、（他のテーブルの主キーを使用して）別のテーブルに一意のレコードを参照するために使用されます。</p>
 <p>ER図では、テーブル間の結合は、通常、主キーにリンクする外部キーに基づいています。</p>
@@ -532,7 +516,7 @@ your postal code could ensure that the number falls between <code class="docutil
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="15. モジュール: PostgreSQLでのデータベース概念" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="15. モジュール: PostgreSQLによるデータベースの概念" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="data_model.html" class="btn btn-neutral float-right" title="15.2. レッスン: データモデルの実装" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
@@ -540,7 +524,7 @@ your postal code could ensure that the number falls between <code class="docutil
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

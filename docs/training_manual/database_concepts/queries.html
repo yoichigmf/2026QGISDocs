@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">15. モジュール: PostgreSQLでのデータベース概念</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">15. モジュール: PostgreSQLによるデータベースの概念</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="db_intro.html">15.1. レッスン: データベースの概要</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_model.html">15.2. レッスン: データモデルの実装</a></li>
 <li class="toctree-l3"><a class="reference internal" href="adding_data.html">15.3. レッスン: モデルにデータを追加する</a></li>
@@ -166,7 +166,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">QGISトレーニングマニュアル</a></li>
-          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">15. </span>モジュール: PostgreSQLでのデータベース概念</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">15. </span>モジュール: PostgreSQLによるデータベースの概念</a></li>
       <li class="breadcrumb-item active"><span class="section-number">15.4. </span>レッスン: クエリ</li>
 
     <li style="float: right; text-align: right;">
@@ -199,20 +199,16 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 85.11% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="lesson-queries">
 <h1><span class="section-number">15.4. </span>レッスン: クエリ<a class="headerlink" href="#lesson-queries" title="Link to this heading"></a></h1>
-<p>When you write a <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">...</span></code> command it is commonly known as a query -
-you are interrogating the database for information.</p>
+<p><code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">...</span></code> コマンドを書くとき、これは一般的にはクエリと言われますが、データベースに情報を問い合わせています。</p>
 <p><strong>このレッスンの目的：</strong> 有用な情報を返すクエリを作成する方法を学習します。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>If you did not do so in the previous lesson, add the following people
-objects to your <code class="docutils literal notranslate"><span class="pre">people</span></code> table. If you receive any errors related to
-foreign key constraints, you will need to add the 'Main Road' object to your
-streets table first</p>
+<p>前のレッスンでしていない場合は、以下のpeopleオブジェクトを <code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルに追加してください。外部キー制約に関連した何らかのエラーを受け取る場合は、先にstreetsテーブルに 'Main Road' オブジェクトを追加する必要があります</p>
 </div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">house_no</span><span class="p">,</span><span class="w"> </span><span class="n">street_id</span><span class="p">,</span><span class="w"> </span><span class="n">phone_no</span><span class="p">)</span>
 <span class="w">          </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Joe Bloggs&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;072 887 23 45&#39;</span><span class="p">);</span>
@@ -257,8 +253,8 @@ streets table first</p>
 </section>
 <section id="filtering">
 <h2><span class="section-number">15.4.2. </span>フィルタリング<a class="headerlink" href="#filtering" title="Link to this heading"></a></h2>
-<p>だいたいはデータベース内のすべてのレコード一つ一つを見たいとは思わないでしょう。特に何千ものレコードがあり、1つか2つを見たいだけの場合は 。</p>
-<p>これは <kbd class="kbd docutils literal notranslate">house_no</kbd> が50未満であるオブジェクトのみを返す数値フィルタの例です:</p>
+<p>だいたいはデータベース内の全てのレコード一つ一つを見たいとは思わないでしょう。特に何千ものレコードがあり、1つか2つを見たいだけの場合はそうでしょう。</p>
+<p>これは <code class="docutils literal notranslate"><span class="pre">house_no</span></code> が50未満であるオブジェクトのみを返す数値フィルタの例です:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">house_no</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">house_no</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
 
 <span class="w">      </span><span class="n">name</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="n">house_no</span>
@@ -288,11 +284,8 @@ streets table first</p>
 <span class="w">  </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="k">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Here we used the <code class="docutils literal notranslate"><span class="pre">LIKE</span></code> clause to find all names with an <code class="docutils literal notranslate"><span class="pre">s</span></code> in them.
-You'll notice that this query is case-sensitive, so the <code class="docutils literal notranslate"><span class="pre">Sally</span> <span class="pre">Norman</span></code> entry
-has not been returned.</p>
-<p>If you want to search for a string of letters regardless of case, you can do a
-case in-sensitive search using the <code class="docutils literal notranslate"><span class="pre">ILIKE</span></code> clause:</p>
+<p>ここでは、 <code class="docutils literal notranslate"><span class="pre">LIKE</span></code> 句を使用し、その中に <code class="docutils literal notranslate"><span class="pre">s</span></code> を持つ全ての名前を見つけます。このクエリは大文字小文字が区別されることに気づくでしょう、だから <code class="docutils literal notranslate"><span class="pre">Sally</span> <span class="pre">Norman</span></code> エントリは返されていません。</p>
+<p>大文字小文字関係なく文字列を検索したい場合は、 <code class="docutils literal notranslate"><span class="pre">ILIKE</span></code> 句を使用すれば大文字小文字を無視した検索ができます:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">house_no</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">ilike</span><span class="w"> </span><span class="s1">&#39;%r%&#39;</span><span class="p">;</span>
 
 <span class="w">       </span><span class="n">name</span><span class="w">     </span><span class="o">|</span><span class="w"> </span><span class="n">house_no</span>
@@ -302,12 +295,11 @@ case in-sensitive search using the <code class="docutils literal notranslate"><s
 <span class="w">  </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="k">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>That query returned every <strong>people</strong> object with an <code class="docutils literal notranslate"><span class="pre">r</span></code> or <code class="docutils literal notranslate"><span class="pre">R</span></code> in their
-name.</p>
+<p>そのクエリは、<code class="docutils literal notranslate"><span class="pre">r</span></code> 又は <code class="docutils literal notranslate"><span class="pre">R</span></code> をその名前に持つ全ての <strong>people</strong> オブジェクトを返します。</p>
 </section>
 <section id="joins">
 <h2><span class="section-number">15.4.3. </span>結合<a class="headerlink" href="#joins" title="Link to this heading"></a></h2>
-<p>IDの代わりに人の詳細とその通りの名前を確認したい場合は？そのためには、単一のクエリ中で2つのテーブルを結合する必要があります。例を見てみましょう:</p>
+<p>IDの代わりに人の詳細とその街路の名前を確認したい場合は？そのためには、単一のクエリ中で2つのテーブルを結合する必要があります。例を見てみましょう:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">house_no</span><span class="p">,</span><span class="w"> </span><span class="n">streets</span><span class="p">.</span><span class="n">name</span>
 <span class="k">from</span><span class="w"> </span><span class="n">people</span><span class="p">,</span><span class="n">streets</span>
 <span class="k">where</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">street_id</span><span class="o">=</span><span class="n">streets</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
@@ -356,8 +348,7 @@ name.</p>
 <span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="k">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Now let's show you a sub-selection on this data. We want to show only people who
-live in <code class="docutils literal notranslate"><span class="pre">street_id</span></code> number <code class="docutils literal notranslate"><span class="pre">1</span></code>:</p>
+<p>それでは、このデータの副選択を表示してみましょう。 <code class="docutils literal notranslate"><span class="pre">street_id</span></code> 番号 <code class="docutils literal notranslate"><span class="pre">1</span></code> に住む人だけを表示してみます:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">people</span><span class="p">.</span><span class="n">name</span>
 <span class="k">from</span><span class="w"> </span><span class="n">people</span><span class="p">,</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="o">*</span>
@@ -407,12 +398,11 @@ live in <code class="docutils literal notranslate"><span class="pre">street_id</
 </div>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>Because we have not used an <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> clause, the order of your
-results may not match what is shown here.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> 句を使用しなかったため、検索結果の順序はここに示したものとは一致しない場合があります。</p>
 </div>
 <section id="try-yourself">
 <h3>やってみよう: <abbr>★★☆ （中級レベル）</abbr><a class="headerlink" href="#try-yourself" title="Link to this heading"></a></h3>
-<p>通りの名前で人を要約し、street_idsの代わりに実際の通りの名前を表示してください。</p>
+<p>街路の名前で人を要約し、street_idsの代わりに実際の街路の名前を表示してください。</p>
 <div class="dropdown admonition">
 <p class="admonition-title">答え</p>
 <p>使うべき正しいSQL文はこちらです:</p>
@@ -457,7 +447,7 @@ results may not match what is shown here.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

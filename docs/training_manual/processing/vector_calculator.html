@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>17.11. ベクター計算機 &mdash; QGIS Documentation  ドキュメント</title>
+  <title>17.11. ベクタ計算機 &mdash; QGIS Documentation  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/qgis_docs.css?v=e885e955" />
       <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
@@ -36,7 +36,7 @@
     <link rel="search" title="検索" href="../../../search.html" />
     <link rel="next" title="17.12. 範囲を定義する" href="extents.html" />
     <link rel="prev" title="17.10. ラスタ計算機。No-data値" href="no_data.html" />
-  <meta name="description" content="QGIS 3.44 documentation: 17.11. ベクター計算機">
+  <meta name="description" content="QGIS 3.44 documentation: 17.11. ベクタ計算機">
   <script>
     var _paq = window._paq = window._paq || [];
     _paq.push(["disableCookies"]);
@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../spatial_databases/index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">17. QGISプロセシングガイド</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="intro.html">17.1. はじめに</a></li>
@@ -127,7 +127,7 @@
 <li class="toctree-l3"><a class="reference internal" href="first_saga_alg.html">17.8. 外部アルゴリズムを実行する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="log.html">17.9. プロセシングログ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="no_data.html">17.10. ラスタ計算機。No-data値</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">17.11. ベクター計算機</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">17.11. ベクタ計算機</a></li>
 <li class="toctree-l3"><a class="reference internal" href="extents.html">17.12. 範囲を定義する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="html.html">17.13. HTML出力</a></li>
 <li class="toctree-l3"><a class="reference internal" href="john_snow.html">17.14. 最初の分析例</a></li>
@@ -186,7 +186,7 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">QGISトレーニングマニュアル</a></li>
           <li class="breadcrumb-item"><a href="index.html"><span class="section-number">17. </span>QGISプロセシングガイド</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">17.11. </span>ベクター計算機</li>
+      <li class="breadcrumb-item active"><span class="section-number">17.11. </span>ベクタ計算機</li>
 
     <li style="float: right; text-align: right;">
 	<ul>
@@ -218,31 +218,25 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 62.50% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="vector-calculator">
-<h1><span class="section-number">17.11. </span>ベクター計算機<a class="headerlink" href="#vector-calculator" title="Link to this heading"></a></h1>
+<h1><span class="section-number">17.11. </span>ベクタ計算機<a class="headerlink" href="#vector-calculator" title="Link to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>このレッスンでは、ベクター演算を使用して、数式に基づいてベクターレイヤーに新しい属性を追加する方法について説明します。</p>
+<p>このレッスンでは、ベクタ計算機を使用して、数式に基づいてベクタレイヤに新しい属性を追加する方法について説明します。</p>
 </div>
-<p>We already know how to use the raster calculator to create new raster layers using mathematical expressions.
-A similar algorithm is available for vector layers, and generates a new layer with the same attributes of the input layer,
-plus an additional one with the result of the expression entered.
-The algorithm is called <span class="guilabel">Field calculator</span> and has the following parameters dialog.</p>
+<p>数式を使用して新しいラスタレイヤを作成するためにラスタ計算機を使用する方法はすでに知っています。同様のアルゴリズムがベクタレイヤに対して利用でき、入力レイヤと同じ属性に加え、入力された式の結果による追加の属性も持つ新しいレイヤを生成します。このアルゴリズムは、<span class="guilabel">フィールド計算機</span> と呼ばれ、以下のパラメータダイアログボックスを持っています。</p>
 <figure class="align-default">
 <img alt="../../../_images/field_calculator.png" src="../../../_images/field_calculator.png" />
 </figure>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>インターフェイスが大幅に変更されたプロセッシングの新しいバージョンでは、より強力で使いやすいです。</p>
+<p>プロセシングの新しいバージョンではインターフェイスが大幅に変更され、使うのにより強力で簡単です。</p>
 </div>
-<p>ここでは、そのアルゴリズムを使用してのいくつかの例があります。</p>
-<p>First, let's calculate the population density of white people in each polygon, which represents a census.
-We have two fields in the attributes table that we can use for that, namely <code class="docutils literal notranslate"><span class="pre">WHITE</span></code> and <code class="docutils literal notranslate"><span class="pre">SHAPE_AREA</span></code>.
-We just have to divide them and multiply by one million (to have density per square km),
-so we can use the following formula in the corresponding field:</p>
+<p>これはそのアルゴリズムを使ったいくつかの例です。</p>
+<p>まずは、国勢調査を表し、各ポリゴン中の白人の人口密度を計算してみましょう。属性テーブルにはそのために使用できる二つのフィールド、つまり <code class="docutils literal notranslate"><span class="pre">WHITE</span></code> と <code class="docutils literal notranslate"><span class="pre">SHAPE_AREA</span></code> があります。（平方キロメートルあたりの密度にするためには）それらを割り算して、百万を掛ける必要があるだけなので、対応するフィールドに次の式を使用できます:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="s2">&quot;WHITE&quot;</span> <span class="o">/</span> <span class="s2">&quot;SHAPE_AREA&quot;</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">1000000</span>
 </pre></div>
 </div>
@@ -250,17 +244,17 @@ so we can use the following formula in the corresponding field:</p>
 <figure class="align-default">
 <img alt="../../../_images/density1.png" src="../../../_images/density1.png" />
 </figure>
-<p>This will generate a new field named <code class="docutils literal notranslate"><span class="pre">WHITE_DENS</span></code>.</p>
+<p>これは <code class="docutils literal notranslate"><span class="pre">WHITE_DENS</span></code> という名前の新しいフィールドを生成します。</p>
 <p>今度は、男性人口が女性人口に比して数値的に優位にあるかどうかを示す新しいものを作成するために、 <code class="docutils literal notranslate"><span class="pre">MALES</span></code> と <code class="docutils literal notranslate"><span class="pre">FEMALES</span></code> フィールド間の比率を計算してみましょう。</p>
-<p>Enter the following formula:</p>
+<p>次の式を入力します:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;MALES&quot;</span> <span class="o">/</span> <span class="s2">&quot;FEMALES&quot;</span>
 </pre></div>
 </div>
-<p>This time the parameters window should look like this before pressing the <span class="guilabel">OK</span> button.</p>
+<p>今回 <span class="guilabel">OK</span> ボタンを押す前のパラメータウィンドウは次のようになります。</p>
 <figure class="align-default">
 <img alt="../../../_images/ratio.png" src="../../../_images/ratio.png" />
 </figure>
-<p>両方のフィールドが整数型であるため、以前のバージョンでは、結果が整数に切り捨てられることになります。この場合、式は次のようになります。私たちは浮動小数点数に結果を望んでいることを示すために <code class="docutils literal notranslate"><span class="pre">1.0</span> <span class="pre">*</span> <span class="pre">&quot;MALES&quot;</span> <span class="pre">/</span> <span class="pre">&quot;FEMALES&quot;</span></code> 。</p>
+<p>以前のバージョンでは、両方のフィールドが整数型であるため、結果が整数に切り捨てられることになります。今回は結果を浮動小数点数にすることを示すため、式は次のようになります: <code class="docutils literal notranslate"><span class="pre">1.0</span> <span class="pre">*</span> <span class="pre">&quot;MALES&quot;</span> <span class="pre">/</span> <span class="pre">&quot;FEMALES&quot;</span></code> 。</p>
 <p>次の式を使用して、 <code class="docutils literal notranslate"><span class="pre">male</span></code> または <code class="docutils literal notranslate"><span class="pre">female</span></code> テキスト文字列の代わりに、それらの比の値で新しいフィールドを持つように、条件付きの関数を使用できます:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CASE</span> <span class="n">WHEN</span>  <span class="s2">&quot;MALES&quot;</span> <span class="o">&gt;</span> <span class="s2">&quot;FEMALES&quot;</span>  <span class="n">THEN</span> <span class="s1">&#39;male&#39;</span> <span class="n">ELSE</span> <span class="s1">&#39;female&#39;</span> <span class="n">END</span>
 </pre></div>
@@ -269,8 +263,7 @@ so we can use the following formula in the corresponding field:</p>
 <figure class="align-default">
 <img alt="../../../_images/predominance.png" src="../../../_images/predominance.png" />
 </figure>
-<p>A python field calculator is available in the <span class="guilabel">Advanced Python field calculator</span>,
-which will not be detailed here.</p>
+<p>Pythonフィールド計算機は <span class="guilabel">高度なPythonのフィールド計算機</span> で利用できますがここでは詳述しません。</p>
 <figure class="align-default">
 <img alt="../../../_images/advanced.png" src="../../../_images/advanced.png" />
 </figure>
@@ -288,7 +281,7 @@ which will not be detailed here.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

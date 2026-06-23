@@ -114,14 +114,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">16.1. レッスン: PostGISの設定</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#installing-under-ubuntu">16.1.1. Ubuntuでのインストール</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#installing-under-windows">16.1.2. Windowsでのインストール</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#installing-on-other-platforms">16.1.3. その他のプラットフォームへのインストール</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#configuring-databases-to-use-postgis">16.1.4. PostGISを使うためにデータベースを設定する</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#looking-at-the-installed-postgis-functions">16.1.5. インストールされたPostGIS関数を見る</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#looking-at-the-installed-postgis-functions">16.1.5. インストールされたPostGIS機能を見る</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#spatial-reference-systems">16.1.6. 空間参照系</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#in-conclusion">16.1.7. 結論</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#what-s-next">16.1.8. 次は?</a></li>
@@ -199,12 +199,12 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 91.84% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="lesson-postgis-setup">
 <h1><span class="section-number">16.1. </span>レッスン: PostGISの設定<a class="headerlink" href="#lesson-postgis-setup" title="Link to this heading"></a></h1>
-<p>PostGISの関数を設定することで, PostgreSQLの中から空間関数にアクセス可能になります.</p>
+<p>PostGIS機能を設定することで、PostgreSQLの中から空間関数にアクセスできるようになります。</p>
 <p><strong>このレッスンの目的:</strong> 空間関数をインストールし, それらの効果を簡単にデモする.</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
@@ -254,14 +254,13 @@ $<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>
 </div>
 </section>
 <section id="looking-at-the-installed-postgis-functions">
-<h2><span class="section-number">16.1.5. </span>インストールされたPostGIS関数を見る<a class="headerlink" href="#looking-at-the-installed-postgis-functions" title="Link to this heading"></a></h2>
-<p>PostGISは、空間データを扱えるようにPostgreSQLのコア機能を拡張する、データベース機能の集まりと考えることができます。「扱える」とは、格納、検索、クエリおよび操作を意味します。これを行うために、多数の機能が、データベースにインストールされています。</p>
+<h2><span class="section-number">16.1.5. </span>インストールされたPostGIS機能を見る<a class="headerlink" href="#looking-at-the-installed-postgis-functions" title="Link to this heading"></a></h2>
+<p>PostGISは、空間データを扱えるようにPostgreSQLのコア機能を拡張する、データベース機能の集まりと考えることができます。「扱える」とは、格納、取得、クエリおよび操作を意味します。これを行うために、多数の機能が、データベースにインストールされています。</p>
 <p>私たちのPostgreSQLの <code class="docutils literal notranslate"><span class="pre">address住所</span></code> データベースはPostGISのおかげで地理空間的に有効になりました。次のセクションではこれについてもっと深く掘り下げていきますが、ここでちょっと味見しましょう。テキストからポイントを作成したいとしましょう。最初に、psqlコマンドを使ってポイントに関連する関数を見つけます。<code class="docutils literal notranslate"><span class="pre">address住所</span></code> データベースにまだ接続していない場合は、今すぐ実行してください。次に、</p>
 <div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="kp">\df</span><span class="w"> </span><span class="ss">*point*</span>
 </pre></div>
 </div>
-<p>This is the command we're looking for: <code class="docutils literal notranslate"><span class="pre">st_pointfromtext</span></code>.  To page through
-the list, use the down arrow, then press <kbd class="kbd docutils literal notranslate">Q</kbd> to quit back to the psql shell.</p>
+<p>これが探しているコマンドです: <code class="docutils literal notranslate"><span class="pre">st_pointfromtext</span></code> 。 リストをページ送りするには、下矢印を使用し、 <kbd class="kbd docutils literal notranslate">Q</kbd> を押して psql シェルに戻ります。</p>
 <p>次のコマンドを実行してみてください：</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">st_pointfromtext</span><span class="p">(</span><span class="s1">&#39;POINT(1 1)&#39;</span><span class="p">);</span>
 </pre></div>
@@ -275,17 +274,16 @@ the list, use the down arrow, then press <kbd class="kbd docutils literal notran
 </div>
 <p>注目すべき３点:</p>
 <ul class="simple">
-<li><p>We defined a point at position 1,1 (EPSG:4326 is assumed) using
-<code class="docutils literal notranslate"><span class="pre">POINT(1</span> <span class="pre">1)</span></code>,</p></li>
-<li><p>SQL文を実行しましたが、どのテーブル上でもなく、SQLプロンプトから入力されたデータで,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POINT(1</span> <span class="pre">1)</span></code> を使って、ポイントの位置を 1,1 (EPSG:4326 を想定)と定義しました</p></li>
+<li><p>どのテーブル上でもなく、SQLプロンプトから入力されたデータでSQL文を実行しました</p></li>
 <li><p>結果の行はあまり意味がありません。</p></li>
 </ul>
-<p>得られた行は、「よく知られているバイナリ」（WKB）と呼ばれるOGCフォーマットです。私たちは、次のセクションで詳細にこのフォーマットを見ていきます。</p>
-<p>結果をテキストとして戻すために、テキストを返す何かを探して関数リストをすばやくスキャンできます：</p>
+<p>得られた行は、'Well Known Binary' (WKB) と呼ばれるOGCフォーマットで記述されています。次のセクションではこのフォーマットを詳細に見ていきます。</p>
+<p>結果をテキストに戻すため、関数リストをすばやくスキャンしてテキストを返す何かを探します：</p>
 <div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="kp">\df</span><span class="w"> </span><span class="ss">*text</span>
 </pre></div>
 </div>
-<p>私たちが探しているクエリは <code class="docutils literal notranslate"><span class="pre">st_astext</span></code> です。以前のクエリと組み合わせてみましょう：</p>
+<p>私たちが探しているクエリは <code class="docutils literal notranslate"><span class="pre">st_astext</span></code> です。先のクエリと組み合わせてみましょう：</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">st_astext</span><span class="p">(</span><span class="n">st_pointfromtext</span><span class="p">(</span><span class="s1">&#39;POINT(1 1)&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -296,20 +294,17 @@ the list, use the down arrow, then press <kbd class="kbd docutils literal notran
 <span class="w">  </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Here, we entered the string <code class="docutils literal notranslate"><span class="pre">POINT(1,1)</span></code>, turned it
-into a point using <code class="docutils literal notranslate"><span class="pre">st_pointfromtext()</span></code>, and turned it back into a
-human-readable form with <code class="docutils literal notranslate"><span class="pre">st_astext()</span></code>, which gave us back our original
-string.</p>
-<p>実際にPostGISの使い方の詳細に入る前の最後の例は：</p>
+<p>文字列 <code class="docutils literal notranslate"><span class="pre">POINT(1,1)</span></code> を入力し、 <code class="docutils literal notranslate"><span class="pre">st_pointfromtext()</span></code> を使用してポイントに変え、 <code class="docutils literal notranslate"><span class="pre">st_astext()</span></code> で人が読める形式に戻すと、元の文字列が返ってきました。</p>
+<p>PostGISの使い方の詳細に入る前の最後の例です：</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">st_astext</span><span class="p">(</span><span class="n">st_buffer</span><span class="p">(</span><span class="n">st_pointfromtext</span><span class="p">(</span><span class="s1">&#39;POINT(1 1)&#39;</span><span class="p">),</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">));</span>
 </pre></div>
 </div>
-<p>それは何をしましたか？それは私たちのポイントを中心に1度のバッファを作成し、テキストとして結果を返しました。</p>
+<p>これは何をしたでしょうか？それはポイントを中心に1度のバッファを作成し、結果をテキストとして返しました。</p>
 </section>
 <section id="spatial-reference-systems">
 <h2><span class="section-number">16.1.6. </span>空間参照系<a class="headerlink" href="#spatial-reference-systems" title="Link to this heading"></a></h2>
-<p>PostGISの機能だけでなく、この拡張は欧州石油調査グループ（EPSG）によって定義された空間参照システム（SRS）の定義のコレクションを含んでいます。これらは、座標参照系（CRS）変換などの操作中に使用されます。</p>
-<p>通常のデータベーステーブルに格納されているので、データベース中のこれらのSRSの定義を調べることができます。</p>
+<p>この拡張は、PostGIS機能だけでなく、欧州石油調査グループ（EPSG）によって定義された空間参照システム（SRS）の定義のコレクションを含んでいます。これらは、座標参照系（CRS）変換などの操作に使用されます。</p>
+<p>これらのSRSの定義は通常のデータベーステーブルに格納されているので、データベースの中にそれを調べることができます。</p>
 <p>まず、psqlプロンプトで次のコマンドを入力して、テーブルのスキーマを見てみましょう。</p>
 <div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="kp">\d</span><span class="w"> </span><span class="ss">spatial_ref_sys</span>
 </pre></div>
@@ -327,8 +322,8 @@ string.</p>
 <span class="ss">&quot;spatial_ref_sys_pkey&quot;</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"> </span><span class="n">btree</span><span class="w"> </span><span class="p">(</span><span class="n">srid</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>このテーブルを表示および操作するために、（入門セクションから学んだように）標準のSQLクエリを使用できます - 何をしているのか分からなければ、任意のレコードを更新または削除するのは良いアイデアではありません。</p>
-<p>興味のあるSRIDは、EPSG：4326  -  WGS 84楕円体を使用した地理/緯度経度参照系です。それを見てみましょう：</p>
+<p>このテーブルを表示および操作するために、（入門セクションから学んだように）標準のSQLクエリを使用できます - ただし何をしているのか分からなければ、任意のレコードを更新または削除するのは良い考えではありません。</p>
+<p>興味のあるSRIDは、EPSG：4326  -  WGS 84楕円体を使用した地理/緯度経度参照系でしょう。それを見てみましょう：</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">spatial_ref_sys</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">srid</span><span class="o">=</span><span class="mi">4326</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -344,12 +339,11 @@ string.</p>
 <span class="n">proj4text</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">longlat</span><span class="w"> </span><span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">WGS84</span><span class="w"> </span><span class="o">+</span><span class="n">datum</span><span class="o">=</span><span class="n">WGS84</span><span class="w"> </span><span class="o">+</span><span class="n">no_defs</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">srtext</span></code> is the projection definition in well known text (you may recognise
-this from .prj files in your shapefile collection).</p>
+<p><code class="docutils literal notranslate"><span class="pre">srtext</span></code> はwell known text（WKT）で記述された投影法の定義です（シェープファイルの集まりにある.prjファイルからこれを認識できるでしょう）。</p>
 </section>
 <section id="in-conclusion">
 <h2><span class="section-number">16.1.7. </span>結論<a class="headerlink" href="#in-conclusion" title="Link to this heading"></a></h2>
-<p>今PostGISの機能はPostgreSQLのコピーにインストールされています。これによりPostGISのさまざまな空間関数を使用できるでしょう。</p>
+<p>これでPostGISの関数はPostgreSQLのコピーにインストールされました。これによりPostGISの豊富な空間関数を利用できるようになります。</p>
 </section>
 <section id="what-s-next">
 <h2><span class="section-number">16.1.8. </span>次は?<a class="headerlink" href="#what-s-next" title="Link to this heading"></a></h2>
@@ -369,7 +363,7 @@ this from .prj files in your shapefile collection).</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

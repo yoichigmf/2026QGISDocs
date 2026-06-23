@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="spatial_functions.html">16.1. レッスン: PostGISの設定</a></li>
 <li class="toctree-l3"><a class="reference internal" href="simple_feature_model.html">16.2. レッスン: 単純地物モデル</a></li>
@@ -205,27 +205,23 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 88.33% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="lesson-geometry-construction">
 <h1><span class="section-number">16.5. </span>レッスン: ジオメトリの構成<a class="headerlink" href="#lesson-geometry-construction" title="Link to this heading"></a></h1>
-<p>このセクションでは単純なジオメトリがSQL内でどのように構成されるかを少し掘り下げます。実際には、複雑なジオメトリをデジタル化ツールを使用して作るには、QGIS のような GIS を使用するでしょう。しかし、それらがどのように形作られているかを知ることは、クエリを書いたりデータベースがどのように作られているかを理解するのに役立ちます。</p>
-<p><strong>The goal of this lesson:</strong> To better understand how to create spatial
-entities directly in PostgreSQL.</p>
+<p>このセクションでは単純なジオメトリがSQL内でどのように構成されるかを少し掘り下げます。実際には、QGIS のような GIS を使用し、そのデジタイズツールを使って複雑なジオメトリを作るでしょう。しかし、それらがどのように形作られているかを知ることは、クエリを書いたりデータベースがどのように作られているかを理解するのに役立ちます。</p>
+<p><strong>このレッスンの目的:</strong> PostgreSQL で空間要素を直接作成する方法をよく理解すること。</p>
 <section id="creating-linestrings">
 <h2><span class="section-number">16.5.1. </span>ラインストリングの作成<a class="headerlink" href="#creating-linestrings" title="Link to this heading"></a></h2>
-<p>Going back to our <code class="docutils literal notranslate"><span class="pre">address</span></code> database, let's get our streets table matching
-the others; i.e., having a constraint on the geometry, an index and an entry in
-the <code class="docutils literal notranslate"><span class="pre">geometry_columns</span></code> table.</p>
+<p><code class="docutils literal notranslate"><span class="pre">address</span></code> データベースに戻って、その他と一致するstreetsテーブルを取得してみましょう。すなわち、ジオメトリ、インデックスと <code class="docutils literal notranslate"><span class="pre">geometry_columns</span></code> テーブル中のエントリに制約を持ちます。</p>
 </section>
 <section id="try-yourself">
 <h2><span class="section-number">16.5.2. </span>やってみよう: <abbr>★★☆ （中級レベル）</abbr><a class="headerlink" href="#try-yourself" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p>Modify the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table so that it has a geometry column of type
-ST_LineString.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">street</span></code> テーブルを修正して、タイプST_LineStringのジオメトリ列を持つようにします。</p></li>
 <li><p>ジオメトリ列のテーブルに伴う更新を行うことを忘れないでください！</p></li>
-<li><p>また、ラインストリングでないかnullであるようなジオメトリが追加されることを防ぐための制約を追加します。</p></li>
+<li><p>また制約を追加して、LINESTRINGでもnullでもないジオメトリが追加されることを防ぎます。</p></li>
 <li><p>新しいジオメトリ列に空間インデックスを作成します。</p></li>
 </ul>
 <div class="dropdown admonition">
@@ -248,7 +244,7 @@ ST_LineString.</p></li>
 <span class="k">where</span><span class="w"> </span><span class="n">streets</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>結果をQGISで確認してみます。('レイヤ' パネルのstreetsレイヤを右クリックし、'レイヤの領域にズームする'を選択する必要があるかもしれません。)</p>
+<p>結果をQGISで確認してみます。(「レイヤ」パネルのstreetsレイヤを右クリックし、「レイヤの領域にズームする」を選択する必要があるかもしれません。)</p>
 <p>いくつかはQGISから、いくつかはコマンドラインからstreetのエントリをもう少し追加します。</p>
 </section>
 <section id="creating-polygons">
@@ -260,7 +256,7 @@ ST_LineString.</p></li>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>ポリゴンは、その座標リストの周りに二重括弧を必要とします。これにより、複数の連結していない領域を持つ複雑なポリゴンを追加できるようなります。例えば</p>
+<p>ポリゴンは、その座標リストの周りに二重括弧を必要とします。これは、複数の連結していない領域を持つ複雑なポリゴンを追加できるようにするためです。例えば</p>
 </div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">cities</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">)</span>
 <span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Tokyo Outer Wards&#39;</span><span class="p">,</span>
@@ -343,9 +339,7 @@ ST_LineString.</p></li>
 <span class="n">DETAIL</span><span class="p">:</span><span class="w"> </span><span class="k">Key</span><span class="w"> </span><span class="p">(</span><span class="n">city_id</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">present</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="s s-Name">&quot;cities&quot;</span><span class="mf">.</span>
 </pre></div>
 </div>
-<p>then it means that while experimenting with creating polygons for the
-cities table, you must have deleted some of them and started over. Just
-check the entries in your cities table and use any <code class="docutils literal notranslate"><span class="pre">id</span></code> which exists.</p>
+<p>これは、citiesテーブルのポリゴンを作成する実験中に、そのうちのいくつかを削除してやり直したことを意味します。citiesテーブルのエントリを確認して、存在する <code class="docutils literal notranslate"><span class="pre">id</span></code> を使ってみてください。</p>
 </div>
 </section>
 <section id="looking-at-our-schema">
@@ -426,17 +420,14 @@ check the entries in your cities table and use any <code class="docutils literal
 </section>
 <section id="access-sub-objects">
 <h2><span class="section-number">16.5.7. </span>サブオブジェクトへのアクセス<a class="headerlink" href="#access-sub-objects" title="Link to this heading"></a></h2>
-<p>With the SFS-Model functions, you have a wide variety of options to access
-sub-objects of SFS Geometries. When you want to select the first vertex point of
-every polygon geometry in the table <code class="docutils literal notranslate"><span class="pre">myPolygonTable</span></code>, you have to do this in this
-way:</p>
+<p>SFS-モデルの機能を使用すると、SFSジオメトリのサブオブジェクトにアクセスするための様々なオプションを持ちます。テーブル <code class="docutils literal notranslate"><span class="pre">myPolygonTable</span></code> 内の全てのポリゴンジオメトリの最初の頂点を選択したいときは、このような方法でこれを実行する必要があります：</p>
 <ul>
 <li><p>ポリゴン境界をラインストリングに変換する：</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">st_boundary</span><span class="p">(</span><span class="n">geom</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">myPolygonTable</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
-<li><p>結果のラインストリングの最初の頂点を選択します。</p>
+<li><p>結果のラインストリングの最初の頂点を選択します:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">st_startpoint</span><span class="p">(</span><span class="n">myGeometry</span><span class="p">)</span>
 <span class="k">from</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">st_boundary</span><span class="p">(</span><span class="n">geom</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">myGeometry</span>
@@ -471,10 +462,7 @@ way:</p>
 </section>
 <section id="building-geometries-from-other-geometries">
 <h2><span class="section-number">16.5.10. </span>ジオメトリを他のジオメトリから構築する<a class="headerlink" href="#building-geometries-from-other-geometries" title="Link to this heading"></a></h2>
-<p>From a given point table, you want to generate a linestring. The order of the
-points is defined by their <code class="docutils literal notranslate"><span class="pre">id</span></code>. Another ordering method could be a
-timestamp, such as the one you get when you capture waypoints with a GPS
-receiver.</p>
+<p>与えられたポイントテーブルから、ラインストリングを生成します。ポイントの順序は、その <code class="docutils literal notranslate"><span class="pre">id</span></code> によって定義されます。別の並べ方は、GPS受信機でウェイポイントをキャプチャするときに得るような、タイムスタンプになりうるかもしれません。</p>
 <figure class="align-center">
 <img alt="../../../_images/qgis_006.png" src="../../../_images/qgis_006.png" />
 </figure>
@@ -504,8 +492,7 @@ receiver.</p>
 <span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">table_b</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>As the result, you will get all records from <code class="docutils literal notranslate"><span class="pre">table_a</span></code> which are not stored in
-<code class="docutils literal notranslate"><span class="pre">table_b</span></code>.</p>
+<p>結果として、<code class="docutils literal notranslate"><span class="pre">table_a</span></code> から <code class="docutils literal notranslate"><span class="pre">table_b</span></code> に格納されていない全てのレコードが得られるでしょう。</p>
 </section>
 <section id="tablespaces">
 <h2><span class="section-number">16.5.13. </span>表領域<a class="headerlink" href="#tablespaces" title="Link to this heading"></a></h2>
@@ -536,7 +523,7 @@ receiver.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="spatial_functions.html">16.1. レッスン: PostGISの設定</a></li>
 <li class="toctree-l3"><a class="reference internal" href="simple_feature_model.html">16.2. レッスン: 単純地物モデル</a></li>
@@ -197,19 +197,15 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 73.68% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="lesson-import-and-export">
 <h1><span class="section-number">16.3. </span>レッスン: インポートとエクスポート<a class="headerlink" href="#lesson-import-and-export" title="Link to this heading"></a></h1>
-<p>Of course, a database with no easy way to migrate data into it and out of it
-would not be of much use. Fortunately, there are a number
-of tools that will let you easily move data into and out of PostgreSQL.</p>
+<p>もちろん、データを出し入れする簡単な方法がないデータベースはあまり役に立たないでしょう。幸い、PostgreSQLにデータを簡単に出し入れできるようにするツールはたくさんあります。</p>
 <section id="shp2pgsql">
 <h2><span class="section-number">16.3.1. </span>shp2pgsql<a class="headerlink" href="#shp2pgsql" title="Link to this heading"></a></h2>
-<p>shp2pgsql is a commandline tool to import ESRI Shapefile to the database.
-Under Unix, you can use the following command for importing a new PostgreSQL
-table:</p>
+<p>shp2pgsqlは、ESRIシェープファイルをデータベースにインポートするためのコマンドラインツールです。Unixでは、以下のコマンドで新しいPostgreSQLテーブルをインポートすることができます:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>shp2pgsql<span class="w"> </span>-s<span class="w"> </span>&lt;SRID&gt;<span class="w"> </span>-c<span class="w"> </span>-D<span class="w"> </span>-I<span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>shapefile&gt;<span class="w"> </span>&lt;schema&gt;.&lt;table&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>psql<span class="w"> </span>-d<span class="w"> </span>&lt;databasename&gt;<span class="w"> </span>-h<span class="w"> </span>&lt;hostname&gt;<span class="w"> </span>-U<span class="w"> </span>&lt;username&gt;
 </pre></div>
@@ -228,8 +224,7 @@ psql<span class="w"> </span>psql<span class="w"> </span>-d<span class="w"> </spa
 </section>
 <section id="pgsql2shp">
 <h2><span class="section-number">16.3.2. </span>pgsql2shp<a class="headerlink" href="#pgsql2shp" title="Link to this heading"></a></h2>
-<p>pgsql2shp is a commandline tool to export PostgreSQL Tables, Views or SQL select
-queries. To do this under Unix:</p>
+<p>pgsql2shp は, PostgreSQL のテーブル, ビュー, または SQL の select クエリをエクスポートするためのコマンドラインツールです. Unix では次のように実行します :</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pgsql2shp<span class="w"> </span>-f<span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>new<span class="w"> </span>shapefile&gt;<span class="w"> </span>-g<span class="w"> </span>&lt;geometry<span class="w"> </span>column<span class="w"> </span>name&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-h<span class="w"> </span>&lt;hostname&gt;<span class="w"> </span>-U<span class="w"> </span>&lt;username&gt;<span class="w"> </span>&lt;databasename&gt;<span class="w"> </span>&lt;table<span class="w"> </span><span class="p">|</span><span class="w"> </span>view&gt;
 </pre></div>
@@ -242,9 +237,7 @@ queries. To do this under Unix:</p>
 </section>
 <section id="ogr2ogr">
 <h2><span class="section-number">16.3.3. </span>ogr2ogr<a class="headerlink" href="#ogr2ogr" title="Link to this heading"></a></h2>
-<p>ogr2ogr is a very powerful tool to convert data into and from PostgreSQL to many
-data formats. ogr2ogr is part of the GDAL library and has to be installed
-separately. To export a table from PostgreSQL to GML, you can use this command:</p>
+<p>ogr2ogr は、PostgreSQL と多くのデータフォーマットの間でデータを変換するための非常に強力なツールです。ogr2ogrはGDALライブラリの一部であり、別々にインストールする必要があります。PostgreSQLからGMLにテーブルをエクスポートするには、このコマンドが使用できます：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ogr2ogr<span class="w"> </span>-f<span class="w"> </span>GML<span class="w"> </span>export.gml<span class="w"> </span>PG:<span class="s1">&#39;dbname=&lt;databasename&gt; user=&lt;username&gt;</span>
 <span class="s1">        host=&lt;hostname&gt;&#39;</span><span class="w"> </span>&lt;Name<span class="w"> </span>of<span class="w"> </span>PostgreSQL-Table&gt;
 </pre></div>
@@ -252,16 +245,11 @@ separately. To export a table from PostgreSQL to GML, you can use this command:<
 </section>
 <section id="db-manager">
 <h2><span class="section-number">16.3.4. </span>DB Manager<a class="headerlink" href="#db-manager" title="Link to this heading"></a></h2>
-<p>You may have noticed another option in the <span class="guilabel">Database</span> menu labeled
-<span class="guilabel">DB Manager</span>. This is a tool that provides a
-unified interface for interacting with spatial databases including PostgreSQL. It
-also allows you to import and export from databases to other formats. Since the
-next module is largely devoted to using this tool, we will only briefly mention
-it here.</p>
+<p><span class="guilabel">データベース</span> メニューに <span class="guilabel">DBマネージャ</span> という別のオプションがあることにお気づきかもしれません。これは PostgreSQL を含む空間データベースと対話する統一的なインターフェイスを提供するツールです。これもデータベースから他のフォーマットにインポートとエクスポートができます。次のモジュールではこのツールを使うことに重点を置いているので、ここでは簡単に触れるだけに留めます。</p>
 </section>
 <section id="in-conclusion">
 <h2><span class="section-number">16.3.5. </span>結論<a class="headerlink" href="#in-conclusion" title="Link to this heading"></a></h2>
-<p>データベースとの間でデータをインポート及びエクスポートは, 多様な方法で行うことができます. 異なるデータソースを使用する場合は特に,　この機能(またはこの機能に似た機能)を使用します.</p>
+<p>データベースでデータをインポート及びエクスポートすることは様々な方法で行うことができます。異なるデータソースを使用する場合は特に,　この機能(またはそれに似た機能)を日常的に使用することになるでしょう。</p>
 </section>
 <section id="what-s-next">
 <h2><span class="section-number">16.3.6. </span>次は?<a class="headerlink" href="#what-s-next" title="Link to this heading"></a></h2>
@@ -281,7 +269,7 @@ it here.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">15. モジュール: PostgreSQLでのデータベース概念</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">15. モジュール: PostgreSQLによるデータベースの概念</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="db_intro.html">15.1. レッスン: データベースの概要</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">15.2. レッスン: データモデルの実装</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#install-postgresql">15.2.1. PostgreSQLのインストール</a></li>
@@ -172,7 +172,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">QGISトレーニングマニュアル</a></li>
-          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">15. </span>モジュール: PostgreSQLでのデータベース概念</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">15. </span>モジュール: PostgreSQLによるデータベースの概念</a></li>
       <li class="breadcrumb-item active"><span class="section-number">15.2. </span>レッスン: データモデルの実装</li>
 
     <li style="float: right; text-align: right;">
@@ -205,7 +205,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 86.42% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="lesson-implementing-the-data-model">
@@ -268,7 +268,7 @@ Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span
 -s,<span class="w"> </span>--superuser<span class="w">    </span>role<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>superuser
 </pre></div>
 </div>
-<p>今、入力することにより、postgresユーザーのbashシェル環境を残す必要があります:</p>
+<p>次に以下を入力してpostgresユーザーのbashシェル環境から離れてください:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">exit</span>
 </pre></div>
 </div>
@@ -291,7 +291,7 @@ Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span
 </section>
 <section id="create-a-database">
 <h2><span class="section-number">15.2.5. </span>データベースの作成<a class="headerlink" href="#create-a-database" title="Link to this heading"></a></h2>
-<p><kbd class="kbd docutils literal notranslate">createdb</kbd> コマンドは新しいデータベースを作成するのに使います。これはbash シェルプロンプトから実行しましょう:</p>
+<p><code class="docutils literal notranslate"><span class="pre">createdb</span></code> コマンドは新しいデータベースを作成するのに使います。これはbash シェルプロンプトから実行しましょう:</p>
 <div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="n">createdb</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="n">qgis</span>
 </pre></div>
 </div>
@@ -341,17 +341,12 @@ Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span><span class="w"> </span><span class="n">address</span>
 </pre></div>
 </div>
-<p>Then create a <code class="docutils literal notranslate"><span class="pre">streets</span></code> table:</p>
+<p>次に <code class="docutils literal notranslate"><span class="pre">streets</span></code> （街路）テーブルを作成します:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">streets</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="nb">serial</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">));</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">serial</span></code> and <code class="docutils literal notranslate"><span class="pre">varchar</span></code> are <strong>data types</strong>. <code class="docutils literal notranslate"><span class="pre">serial</span></code> tells
-PostgreSQL to start an integer sequence (auto-number) to populate the <code class="docutils literal notranslate"><span class="pre">id</span></code>
-automatically for every new record. <code class="docutils literal notranslate"><span class="pre">varchar(50)</span></code> tells PostgreSQL to
-create a character field of 50 characters in length.</p>
-<p>You will notice that the command ends with a <code class="docutils literal notranslate"><span class="pre">;</span></code> - all SQL commands should
-be terminated this way. When you press <kbd class="kbd docutils literal notranslate">Enter</kbd>, psql will report something
-like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">serial</span></code> と <code class="docutils literal notranslate"><span class="pre">varchar</span></code> は <strong>データ型</strong> です。 <code class="docutils literal notranslate"><span class="pre">serial</span></code> は、新しいレコードの <code class="docutils literal notranslate"><span class="pre">id</span></code> を自動的に設定するために PostgreSQLに整数シーケンス（自動採番）を始めるよう命じています。 <code class="docutils literal notranslate"><span class="pre">varchar(50)</span></code> は PostgreSQLに長さ50文字の文字列フィールドを作成するよう命じています。</p>
+<p>コマンドが <code class="docutils literal notranslate"><span class="pre">;</span></code> で終わっていることに気づきましたか。すべてのSQLコマンドはこのように終わるべきです。 <kbd class="kbd docutils literal notranslate">Enter</kbd> キーを押すと psql は次のように報告します:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">NOTICE</span><span class="p">:</span><span class="w">  </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">implicit</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="ss">&quot;streets_id_seq&quot;</span>
 <span class="w">         </span><span class="k">for</span><span class="w"> </span><span class="nb">serial</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="ss">&quot;streets.id&quot;</span>
 <span class="n">NOTICE</span><span class="p">:</span><span class="w">  </span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">implicit</span><span class="w"> </span><span class="k">index</span>
@@ -359,11 +354,8 @@ like this:</p>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span>
 </pre></div>
 </div>
-<p>That means your table was created successfully, with a primary key <code class="docutils literal notranslate"><span class="pre">streets_pkey</span></code>
-using <code class="docutils literal notranslate"><span class="pre">streets.id</span></code>.</p>
-<p>Note: If you hit return without entering a <code class="docutils literal notranslate"><span class="pre">;</span></code>, then you will get a prompt like
-this: <code class="docutils literal notranslate"><span class="pre">address-#</span></code>. This is because PostgreSQL is expecting you to enter more. Enter
-<code class="docutils literal notranslate"><span class="pre">;</span></code> to run your command.</p>
+<p><code class="docutils literal notranslate"><span class="pre">streets.id</span></code> を使用する主キー <code class="docutils literal notranslate"><span class="pre">streets_pkey</span></code> を持つテーブルが正しく作成されました。</p>
+<p>注: <code class="docutils literal notranslate"><span class="pre">;</span></code> を入力せずに Enterキーを押すと <code class="docutils literal notranslate"><span class="pre">address-#</span></code> のようなプロンプトが表示されます。これはあなたがもっと入力することをPostgreSQLが期待しているためです。コマンドを実行するには <code class="docutils literal notranslate"><span class="pre">;</span></code> を入力して下さい。</p>
 <p>テーブルのスキーマを表示するにはこうします:</p>
 <div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="kp">\d</span><span class="w"> </span><span class="ss">streets</span>
 </pre></div>
@@ -393,7 +385,7 @@ this: <code class="docutils literal notranslate"><span class="pre">address-#</sp
 <section id="try-yourself">
 <h3>やってみよう: <abbr>★★☆ （中級レベル）</abbr><a class="headerlink" href="#try-yourself" title="Link to this heading"></a></h3>
 <p>上記のアプローチを使用してpeople（人々）というテーブルを作成します:</p>
-<p>電話番号、自宅住所、名前などのフィールドを追加します。上記と同じデータ型のID列も作ったか確認して下さい。</p>
+<p>電話番号、自宅住所、名前などのフィールドを追加します（これらは有効な名前ではありません。有効になるように変えてください）。テーブルに上記と同じデータ型のID列も作ったか確認して下さい。</p>
 <div class="dropdown admonition">
 <p class="admonition-title">答え</p>
 <p>正しいpeopleテーブルを作るSQLは次の通り:</p>
@@ -425,7 +417,7 @@ this: <code class="docutils literal notranslate"><span class="pre">address-#</sp
 </section>
 <section id="create-keys-in-sql">
 <h2><span class="section-number">15.2.8. </span>SQLでキーを作成する<a class="headerlink" href="#create-keys-in-sql" title="Link to this heading"></a></h2>
-<p>上記のソリューションの問題はデータベースが people と streets に論理的な関係があることを知らないことです。この関係を表現するには、streets テーブルの主キーを指す外部キーを定義する必要があります。</p>
+<p>上記の解決法の問題はデータベースが people と streets に論理的な関係があることを知らないことです。この関係を表現するには、streets テーブルの主キーを指す外部キーを定義する必要があります。</p>
 <figure class="align-center">
 <img alt="../../../_images/er-people-streets.png" src="../../../_images/er-people-streets.png" />
 </figure>
@@ -439,8 +431,7 @@ this: <code class="docutils literal notranslate"><span class="pre">address-#</sp
 <span class="w">  </span><span class="k">add</span><span class="w"> </span><span class="k">constraint</span><span class="w"> </span><span class="n">people_streets_fk</span><span class="w"> </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">street_id</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="n">streets</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>That tells the <code class="docutils literal notranslate"><span class="pre">people</span></code> table that its <code class="docutils literal notranslate"><span class="pre">street_id</span></code> fields must match
-a valid street <code class="docutils literal notranslate"><span class="pre">id</span></code> from the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table.</p>
+<p><code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルの <code class="docutils literal notranslate"><span class="pre">street_id</span></code> フィールドは <code class="docutils literal notranslate"><span class="pre">streets</span></code> テーブルの有効な街路 <code class="docutils literal notranslate"><span class="pre">id</span></code> と一致しなければならないことを指示します。</p>
 <p>より一般的には制約の作成はテーブルの作成時に行います:</p>
 <div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="nb">serial</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span>
 <span class="w">                     </span><span class="k">name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mf">50</span><span class="p">),</span>
@@ -498,31 +489,23 @@ a valid street <code class="docutils literal notranslate"><span class="pre">id</
 </section>
 <section id="dropping-tables-in-sql">
 <h2><span class="section-number">15.2.10. </span>SQLでテーブルを削除する<a class="headerlink" href="#dropping-tables-in-sql" title="Link to this heading"></a></h2>
-<p>If you want to get rid of a table you can use the <code class="docutils literal notranslate"><span class="pre">DROP</span></code> command:</p>
+<p>テーブルを取り除きたい場合は <code class="docutils literal notranslate"><span class="pre">drop</span></code> コマンドを使用します:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">streets</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>現在の例では、上記のコマンドは機能しません。なぜダメなのでしょう？</p>
 <div class="dropdown admonition">
 <p class="admonition-title">答え</p>
-<p>The reason the DROP command would not work in this case is because the
-<code class="docutils literal notranslate"><span class="pre">people</span></code> table has a Foreign Key constraint to the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table. This means
-that dropping (or deleting) the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table would leave the <code class="docutils literal notranslate"><span class="pre">people</span></code> table
-with references to non-existent <code class="docutils literal notranslate"><span class="pre">streets</span></code> data.</p>
-<p>It is possible to 'force' the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table to be deleted by using the
-<code class="docutils literal notranslate"><span class="pre">CASCADE</span></code> command, but this would also delete the <code class="docutils literal notranslate"><span class="pre">people</span></code> and any other table
-which had a relationship to the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table. Use with caution!</p>
+<p>この場合、DROPコマンドが機能しないのは、<code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルが <code class="docutils literal notranslate"><span class="pre">streets</span></code> テーブルに対して外部キー制約を持っているためです。つまり、<code class="docutils literal notranslate"><span class="pre">streets</span></code> テーブルをドロップ（または削除）すると、存在しない <code class="docutils literal notranslate"><span class="pre">streets</span></code> データへの参照が <code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルに残ってしまうのです。</p>
+<p><code class="docutils literal notranslate"><span class="pre">CASCADE</span></code> コマンドを使用することで、<code class="docutils literal notranslate"><span class="pre">streets</span></code> テーブルを「強制的に」削除することは可能ですが、この場合、<code class="docutils literal notranslate"><span class="pre">streets</span></code> テーブルと関係がある <code class="docutils literal notranslate"><span class="pre">people</span></code> やその他のテーブルも削除されます。注意して使用してください！</p>
 </div>
-<p>If you used the same <code class="docutils literal notranslate"><span class="pre">drop</span> <span class="pre">table</span></code> command on the <code class="docutils literal notranslate"><span class="pre">people</span></code> table, it would
-be successful:</p>
+<p><code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルに同じ <code class="docutils literal notranslate"><span class="pre">drop</span> <span class="pre">table</span></code> コマンドを使う場合は正しく削除されるでしょう:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">people</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>If you actually did enter that command and dropped the <code class="docutils literal notranslate"><span class="pre">people</span></code>
-table, now would be a good time to rebuild it, as you will need it in the
-next exercises.</p>
+<p>実際にそのコマンドを入力して <code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルを削除した場合は、再度作成して下さい。次の演習で必要になります。</p>
 </div>
 </section>
 <section id="a-word-on-pgadmin-iii">
@@ -556,7 +539,7 @@ next exercises.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

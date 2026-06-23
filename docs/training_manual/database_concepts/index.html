@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>15. モジュール: PostgreSQLでのデータベース概念 &mdash; QGIS Documentation  ドキュメント</title>
+  <title>15. モジュール: PostgreSQLによるデータベースの概念 &mdash; QGIS Documentation  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/qgis_docs.css?v=e885e955" />
       <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
@@ -36,7 +36,7 @@
     <link rel="search" title="検索" href="../../../search.html" />
     <link rel="next" title="15.1. レッスン: データベースの概要" href="db_intro.html" />
     <link rel="prev" title="14.9. レッスン: 地図プレゼンテーション" href="../forestry/results_map.html" />
-  <meta name="description" content="QGIS 3.44 documentation: 15. モジュール: PostgreSQLでのデータベース概念">
+  <meta name="description" content="QGIS 3.44 documentation: 15. モジュール: PostgreSQLによるデータベースの概念">
   <script>
     var _paq = window._paq = window._paq || [];
     _paq.push(["disableCookies"]);
@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">15. モジュール: PostgreSQLでのデータベース概念</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">15. モジュール: PostgreSQLによるデータベースの概念</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="db_intro.html">15.1. レッスン: データベースの概要</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_model.html">15.2. レッスン: データモデルの実装</a></li>
 <li class="toctree-l3"><a class="reference internal" href="adding_data.html">15.3. レッスン: モデルにデータを追加する</a></li>
@@ -157,7 +157,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">QGISトレーニングマニュアル</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">15. </span>モジュール: PostgreSQLでのデータベース概念</li>
+      <li class="breadcrumb-item active"><span class="section-number">15. </span>モジュール: PostgreSQLによるデータベースの概念</li>
 
     <li style="float: right; text-align: right;">
 	<ul>
@@ -193,7 +193,7 @@
 </div>
 </div></blockquote>
 <section id="module-database-concepts-with-postgresql">
-<h1><span class="section-number">15. </span>モジュール: PostgreSQLでのデータベース概念<a class="headerlink" href="#module-database-concepts-with-postgresql" title="Link to this heading"></a></h1>
+<h1><span class="section-number">15. </span>モジュール: PostgreSQLによるデータベースの概念<a class="headerlink" href="#module-database-concepts-with-postgresql" title="Link to this heading"></a></h1>
 <p>リレーショナル·データベースはGISシステムの重要な部分です。リレーショナルデータベース管理システム（RDBMS）の概念について学び、データを格納するための新しいデータベースを作成するためにPostgreSQLを使用してだけでなく、他の一般的なRDBMSの機能について学習します。</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -203,7 +203,7 @@
 <li class="toctree-l2"><a class="reference internal" href="db_intro.html#columns-fields">15.1.3. 列/フィールド</a></li>
 <li class="toctree-l2"><a class="reference internal" href="db_intro.html#records">15.1.4. レコード</a></li>
 <li class="toctree-l2"><a class="reference internal" href="db_intro.html#datatypes">15.1.5. データ型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="db_intro.html#modelling-an-address-database">15.1.6. 住所データベースをモデル化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db_intro.html#modelling-an-address-database">15.1.6. 住所データベースをモデル化する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="db_intro.html#database-theory">15.1.7. データベース理論</a></li>
 <li class="toctree-l2"><a class="reference internal" href="db_intro.html#normalisation">15.1.8. 正規化</a></li>
 <li class="toctree-l2"><a class="reference internal" href="db_intro.html#id1">15.1.9. <abbr>★☆☆ （初級レベル）</abbr> 自分でやってみよう:</a></li>
@@ -255,9 +255,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="views.html">15.5. レッスン: ビュー</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="views.html#creating-a-view">15.5.1. ビューの作成</a></li>
-<li class="toctree-l2"><a class="reference internal" href="views.html#modifying-a-view">15.5.2. ビューの変更</a></li>
-<li class="toctree-l2"><a class="reference internal" href="views.html#dropping-a-view">15.5.3. ビューの削除</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#creating-a-view">15.5.1. ビューを作成する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#modifying-a-view">15.5.2. ビューを変更する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html#dropping-a-view">15.5.3. ビューを削除する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html#in-conclusion">15.5.4. 結論</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html#what-s-next">15.5.5. 次は?</a></li>
 </ul>
@@ -284,7 +284,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

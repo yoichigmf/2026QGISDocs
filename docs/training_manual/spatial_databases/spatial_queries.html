@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="spatial_functions.html">16.1. レッスン: PostGISの設定</a></li>
 <li class="toctree-l3"><a class="reference internal" href="simple_feature_model.html">16.2. レッスン: 単純地物モデル</a></li>
@@ -197,7 +197,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 89.09% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="lesson-spatial-queries">
@@ -206,7 +206,7 @@
 <p><strong>このレッスンの目的：</strong> 空間関数が、空間関数でない一般の関数と同様に導入できることを明らかにすること。</p>
 <section id="spatial-operators">
 <h2><span class="section-number">16.4.1. </span>空間演算子<a class="headerlink" href="#spatial-operators" title="Link to this heading"></a></h2>
-<p>ある地点(X,Y)から距離が2度内の地点を特定したい場合以下の操作ができます</p>
+<p>ある地点(X,Y)から距離が2度以内の地点を特定したい場合、以下の操作ができます</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span>
 <span class="k">from</span><span class="w"> </span><span class="n">people</span>
 <span class="k">where</span><span class="w"> </span><span class="n">st_distance</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="s1">&#39;SRID=4326;POINT(33 -34)&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
@@ -221,18 +221,18 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>上記の geom 値はこのページ上では当サイトのスペースを残すため削除されました。人が読める座標を確認したい場合、上記の「WKTとしてポイントを表示」セクションと類似の操作で確認できます。</p>
+<p>上記の geom 値はページの都合上切り捨てられています。人が読める座標を確認したい場合は、前述の「WKTとしてポイントを表示」セクションと同様の操作を試してください。</p>
 </div>
-<p>上述のクエリが2 <em>度</em> という空間内にある地点をすべて返すということはどうやって判るでしょうか？なぜ 2 <em>メートル</em>、あるいはその他の単位ではないのでしょうか？</p>
+<p>上述のクエリが2 <em>度</em> という空間内にある地点をすべて返すということはどうやって分かるでしょうか？なぜ 2 <em>メートル</em>、あるいはその他の単位ではないのでしょうか？</p>
 <div class="dropdown admonition">
 <p class="admonition-title">答え</p>
-<p>レイヤが使用しているCRSはWGS 84であるため、このクエリで使用されている単位は度です。これは地理CRSで、単位は度であることを意味します。UTM図法のような投影CRSは、単位がメートルです。</p>
+<p>レイヤが使用しているCRSはWGS 84であるため、このクエリの例で使用されている単位は度です。これは地理CRSで、単位は度であることを意味します。UTM図法のような投影CRSは、単位がメートルです。</p>
 <p>クエリを書くときには、レイヤのCRSがどの単位にあるのかを知る必要があることを忘れないでください。そうすることで、期待通りの結果を返すクエリを書くことができるようになります。</p>
 </div>
 </section>
 <section id="spatial-indexes">
 <h2><span class="section-number">16.4.2. </span>空間索引<a class="headerlink" href="#spatial-indexes" title="Link to this heading"></a></h2>
-<p>空間索引も定義できます。空間索引を使用すると、空間クエリをより迅速に作成できます。ジオメトリ列に空間索引を作成するには、次のようにします。</p>
+<p>空間索引も定義できます。空間索引を使用すると、空間クエリをより迅速に作成できます。ジオメトリ列に空間索引を作成するには、次のようにします:</p>
 <div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">people_geo_idx</span>
 <span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">people</span>
 <span class="w">  </span><span class="k">USING</span><span class="w"> </span><span class="n">gist</span>
@@ -266,7 +266,7 @@
 </section>
 <section id="try-yourself">
 <h2><span class="section-number">16.4.3. </span>やってみよう: <abbr>★★☆ （中級レベル）</abbr><a class="headerlink" href="#try-yourself" title="Link to this heading"></a></h2>
-<p>都市のテーブルを、そのジオメトリ列が空間索引付けされるように変更します。</p>
+<p>cities (都市)テーブルを、そのジオメトリ列が空間索引付けされるように変更します。</p>
 <div class="dropdown admonition">
 <p class="admonition-title">答え</p>
 <blockquote>
@@ -281,7 +281,7 @@
 <section id="postgis-spatial-functions-demo">
 <h2><span class="section-number">16.4.4. </span>PostGIS 空間関数デモ<a class="headerlink" href="#postgis-spatial-functions-demo" title="Link to this heading"></a></h2>
 <p>PostGIS の空間関数のデモを行うため、いくつかの（架空の）データを含む新しいデータベースを作成します。</p>
-<p>まず、新しいデータベースを作成します（まずpsqlシェルを終了します）。</p>
+<p>まず始めに新しいデータベースを作成します（先にpsqlシェルを終了します）:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>createdb<span class="w"> </span>postgis_demo
 </pre></div>
 </div>
@@ -289,28 +289,21 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psql<span class="w"> </span>-d<span class="w"> </span>postgis_demo<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;CREATE EXTENSION postgis;&quot;</span>
 </pre></div>
 </div>
-<p>Next, import the data provided in the <code class="file docutils literal notranslate"><span class="pre">exercise_data/postgis/</span></code> directory.
-Refer back to the previous lesson for instructions, but remember that you'll
-need to create a new PostGIS connection to the new database. You can import from
-the terminal or via DB Manager. Import the files into the following database
-tables:</p>
+<p>次に、 <code class="file docutils literal notranslate"><span class="pre">exercise_data/postgis/</span></code> ディレクトリにあるデータをインポートします。手順については前のレッスンを参照してください。ただし、新しいデータベースへの新しいPostGIS接続を作成する必要があることに注意してください。ターミナル又はDBマネージャを経由してインポートできます。ファイルを次のデータベーステーブルにインポートします:</p>
 <ul class="simple">
-<li><p><code class="file docutils literal notranslate"><span class="pre">points.shp</span></code> into <code class="docutils literal notranslate"><span class="pre">building</span></code></p></li>
-<li><p><code class="file docutils literal notranslate"><span class="pre">lines.shp</span></code> into <code class="docutils literal notranslate"><span class="pre">road</span></code></p></li>
-<li><p><code class="file docutils literal notranslate"><span class="pre">polygons.shp</span></code> into <code class="docutils literal notranslate"><span class="pre">region</span></code></p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">points.shp</span></code> を <code class="docutils literal notranslate"><span class="pre">building</span></code> に</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">lines.shp</span></code> を <code class="docutils literal notranslate"><span class="pre">road</span></code> に</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">polygons.shp</span></code> を <code class="docutils literal notranslate"><span class="pre">region</span></code> に</p></li>
 </ul>
-<p>Load these three database layers into QGIS via the <span class="guilabel">Add PostGIS
-Layers</span> dialog, as usual. When you open their attribute tables, you'll note
-that they have both an <code class="docutils literal notranslate"><span class="pre">id</span></code> field and a <code class="docutils literal notranslate"><span class="pre">gid</span></code> field created by the
-PostGIS import.</p>
-<p>テーブルはインポートされていますので、データを照会するためのPostGISを使用できます。端末（コマンドライン）に戻って以下を実行することによりpsqlのプロンプトを入力してください:</p>
+<p>いつものように、 <span class="guilabel">PostGISのレイヤを追加</span> ダイアログでこれらの3つのデータベースレイヤをQGISに読み込みます。それらの属性テーブルを開くと、 <code class="docutils literal notranslate"><span class="pre">id</span></code> フィールドとPostGISのインポートによって作成された <code class="docutils literal notranslate"><span class="pre">gid</span></code> フィールドの両方があることに気づきます。</p>
+<p>これでテーブルがインポートされたのでデータをクエリするのにPostGISを使用できます。ターミナル（コマンドライン）に戻り、以下を実行してpsqlのプロンプトに入ります:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="n">postgis_demo</span>
 </pre></div>
 </div>
-<p>QGISでそれらを開き、結果を見ることができるように、それらからのビューを作成することによってこれらのselect文の一部をデモします。</p>
+<p>実際にselect文を使ってビューを作成してみます。そうするとQGISで開いて結果を見ることができます。</p>
 <section id="select-by-location">
 <h3>場所による選択<a class="headerlink" href="#select-by-location" title="Link to this heading"></a></h3>
-<p>クワズール地域のすべての建物を手に入れよう：</p>
+<p>クワズール地域のすべての建物を取得します：</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">st_astext</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">geom</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">point</span>
 <span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">building</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">region</span><span class="w"> </span><span class="n">b</span>
 <span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">st_within</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">geom</span><span class="p">)</span>
@@ -328,7 +321,7 @@ PostGIS import.</p>
 <span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="k">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>または、そこからビューを作成する場合は、次のようにします。</p>
+<p>または、そこからビューを作成する場合は、次のようにします:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">vw_select_location</span><span class="w"> </span><span class="k">AS</span>
 <span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">gid</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">geom</span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">building</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">region</span><span class="w"> </span><span class="n">b</span>
@@ -336,7 +329,7 @@ PostGIS import.</p>
 <span class="w">      </span><span class="k">AND</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;KwaZulu&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>レイヤとしてビューを追加し、QGISで表示：</p>
+<p>レイヤとしてビューを追加し、QGISで表示します：</p>
 <figure class="align-center">
 <img alt="../../../_images/kwazulu_view_result.png" src="../../../_images/kwazulu_view_result.png" />
 </figure>
@@ -371,7 +364,7 @@ PostGIS import.</p>
 <figure class="align-center">
 <img alt="../../../_images/adjoining_result.png" src="../../../_images/adjoining_result.png" />
 </figure>
-<p>不足している地域（クイーンズランド州）に注意してください。これはトポロジエラーが原因である可能性があります。このようなアーティファクトによって、データの潜在的な問題を警告できます。データが持つ異常に巻き込まれることなくこの謎を解決するために、代わりにバッファ交差を使用できます：</p>
+<p>不足している地域（クイーンズランド州）に注意してください。これはトポロジエラーによるものかもしれません。このような不自然な結果がデータの潜在的な問題を警告することがあります。データが持っているかもしれない異常に捕らわれることなくこの謎を解決するには、代わりにバッファ交差が使用できるかもしれません：</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">vw_hokkaido_buffer</span><span class="w"> </span><span class="k">AS</span>
 <span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">gid</span><span class="p">,</span><span class="w"> </span><span class="n">ST_BUFFER</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">geom</span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">region</span>
@@ -396,16 +389,12 @@ PostGIS import.</p>
 <span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;Hokkaido&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>In this query, the original buffer view is used as any other table would be. It
-is given the alias <code class="docutils literal notranslate"><span class="pre">a</span></code>, and its geometry field, <code class="docutils literal notranslate"><span class="pre">a.geom</span></code>, is used
-to select any polygon in the <code class="docutils literal notranslate"><span class="pre">region</span></code> table (alias <code class="docutils literal notranslate"><span class="pre">b</span></code>) that
-intersects it. However, Hokkaido itself is excluded from this select statement,
-because we don't want it; we only want the regions adjoining it.</p>
+<p>このクエリでは、元のバッファ・ビューは、他のテーブルがされるように使用されます。これは別名 <code class="docutils literal notranslate"><span class="pre">a</span></code> が与えられ、そのジオメトリフィールド <code class="docutils literal notranslate"><span class="pre">a.geom</span></code> が <code class="docutils literal notranslate"><span class="pre">region</span></code> テーブル（別名 <code class="docutils literal notranslate"><span class="pre">b</span></code> ）にあってそれと交差するすべてのポリゴンを選択するために使用されます。しかし北海道自体はこのselect文から除外されます。必要なのは北海道自体ではなく、それに隣接する領域だけだからです。</p>
 <p>QGISでは:</p>
 <figure class="align-center">
 <img alt="../../../_images/hokkaido_buffer_select.png" src="../../../_images/hokkaido_buffer_select.png" />
 </figure>
-<p>バッファを作成する追加のステップを行うことなしに、指定された距離内のすべてのオブジェクトを選択することもできます：</p>
+<p>バッファを作成するステップを追加せずに、指定された距離内の全てのオブジェクトを選択することもできます：</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">vw_hokkaido_distance_select</span><span class="w"> </span><span class="k">AS</span>
 <span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">gid</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">geom</span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">region</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">region</span><span class="w"> </span><span class="n">b</span>
@@ -421,7 +410,7 @@ because we don't want it; we only want the regions adjoining it.</p>
 </section>
 <section id="select-unique-values">
 <h3>一意の値を選択する<a class="headerlink" href="#select-unique-values" title="Link to this heading"></a></h3>
-<p>クイーンズランド州のすべての建物に固有の町名のリストを表示します：</p>
+<p>クイーンズランド州にある全ての建物について、一意の町名のリストを表示します：</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">name</span>
 <span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">building</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">region</span><span class="w"> </span><span class="n">b</span>
 <span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">st_within</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">geom</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">geom</span><span class="p">)</span>
@@ -501,7 +490,7 @@ because we don't want it; we only want the regions adjoining it.</p>
 </section>
 <section id="what-s-next">
 <h2><span class="section-number">16.4.6. </span>次は?<a class="headerlink" href="#what-s-next" title="Link to this heading"></a></h2>
-<p>次は、より複雑な幾何形状の構造と、それらをPostGISを使用して作成する方法を調査するつもりです。</p>
+<p>次では、より複雑なジオメトリの構造と、PostGISを使用してそれらを作成する方法を見ていきます。</p>
 </section>
 </section>
 
@@ -517,7 +506,7 @@ because we don't want it; we only want the regions adjoining it.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

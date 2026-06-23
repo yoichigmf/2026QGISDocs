@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="spatial_functions.html">16.1. レッスン: PostGISの設定</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">16.2. レッスン: 単純地物モデル</a><ul>
@@ -200,12 +200,12 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 84.00% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="lesson-simple-feature-model">
 <h1><span class="section-number">16.2. </span>レッスン: 単純地物モデル<a class="headerlink" href="#lesson-simple-feature-model" title="Link to this heading"></a></h1>
-<p>データベースの中にどのように地物を保存し、表現できるでしょうか? このレッスンではOGCによって定義されている単純地物モデルを見ていきます。</p>
+<p>地理的な地物をデータベースの中にどのように保存し、表現できるでしょうか? このレッスンではOGCが定義した単純地物モデルというひとつの取り組み方を見ていきます。</p>
 <p><strong>このレッスンの目標:</strong> SFSモデルとは何か、それをどうやって使うかを学習します。</p>
 <section id="what-is-ogc">
 <h2><span class="section-number">16.2.1. </span>OGCとは<a class="headerlink" href="#what-is-ogc" title="Link to this heading"></a></h2>
@@ -217,7 +217,7 @@
 <figure class="align-center">
 <img alt="../../../_images/ogc_sfs.png" src="../../../_images/ogc_sfs.png" />
 </figure>
-<p>このモデルは地理空間データをポイント、ラインストリング及びポリゴン型（そしてそれらの集合）で定義しています。</p>
+<p>このモデルでは、ポイント、ラインストリング及びポリゴン型（およびそれらを集約したマルチオブジェクト）の地理空間データを定義しています。</p>
 <p>詳細は、<a class="reference external" href="https://www.ogc.org/standards/sfs">OGC Simple Feature for SQL</a> 標準を見てください。</p>
 </section>
 <section id="add-a-geometry-field-to-table">
@@ -229,14 +229,14 @@
 </section>
 <section id="add-a-constraint-based-on-geometry-type">
 <h2><span class="section-number">16.2.4. </span>ジオメトリタイプに基づく制約を追加する<a class="headerlink" href="#add-a-constraint-based-on-geometry-type" title="Link to this heading"></a></h2>
-<p>ジオメトリフィールドタイプは、フィールドのジオメトリの <em>タイプ</em> を暗黙に指定していないことに気づくでしょう。そのために制約が必要です:</p>
+<p>お気づきのとおり、ジオメトリフィールドタイプは、フィールドのジオメトリの <em>タイプ</em> を暗黙に指定しません。そのために制約が必要です:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">people</span>
 <span class="k">add</span><span class="w"> </span><span class="k">constraint</span><span class="w"> </span><span class="n">people_geom_point_chk</span>
 <span class="w">    </span><span class="k">check</span><span class="p">(</span><span class="n">st_geometrytype</span><span class="p">(</span><span class="n">geom</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ST_Point&#39;</span><span class="p">::</span><span class="nb">text</span>
 <span class="w">          </span><span class="k">OR</span><span class="w"> </span><span class="n">geom</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>これはポイントジオメトリまたはnull値だけを受け入れる制約をテーブルに追加します。</p>
+<p>これは制約をテーブルに追加して、ポイントジオメトリまたはnull値だけを受け入れるようにします。</p>
 </section>
 <section id="try-yourself">
 <h2><span class="section-number">16.2.5. </span><abbr>★★★ （上級レベル）</abbr> 自分でやってみよう:<a class="headerlink" href="#try-yourself" title="Link to this heading"></a></h2>
@@ -252,25 +252,20 @@
 <span class="w">  </span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;public&#39;</span><span class="p">,</span><span class="s1">&#39;people&#39;</span><span class="p">,</span><span class="s1">&#39;geom&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4326</span><span class="p">,</span><span class="s1">&#39;POINT&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Why? <code class="docutils literal notranslate"><span class="pre">geometry_columns</span></code> is used by certain applications to be aware of
-which tables in the database contain geometry data.</p>
+<p>なぜでしょう? <code class="docutils literal notranslate"><span class="pre">geometry_columns</span></code> はデータベースの中のどのテーブルがジオメトリデータを持っているかをアプリケーションが認識するために使われます。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>上記の <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> 文でエラーが発生した場合は、まずこのクエリを実行してください：</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">geometry_columns</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>If the column <code class="docutils literal notranslate"><span class="pre">f_table_name</span></code> contains the value <code class="docutils literal notranslate"><span class="pre">people</span></code>, then
-this table has already been registered and you don't need to do anything
-more.</p>
+<p>列 <code class="docutils literal notranslate"><span class="pre">f_table_name</span></code> に値 <code class="docutils literal notranslate"><span class="pre">people</span></code> が含まれている場合、このテーブルは既に登録されており、それ以上何もする必要はありません。</p>
 </div>
-<p>値「2」は次元の数を示します。この場合、 <strong>X</strong> と <strong>Y</strong> の2つです。</p>
-<p>The value <code class="docutils literal notranslate"><span class="pre">4326</span></code> refers to the projection we are using; in this case, WGS
-84, which is referred to by the number 4326 (refer to the earlier discussion
-about the EPSG).</p>
+<p>値 <code class="docutils literal notranslate"><span class="pre">2</span></code> は次元の数を示します。この場合、 <strong>X</strong> と <strong>Y</strong> の2つです。</p>
+<p>値 <code class="docutils literal notranslate"><span class="pre">4326</span></code> は私たちが使っている投影法を指しています。この場合はWGS 84であり、数字4326で参照されます（EPSGに関する以前の解説を参照して下さい）。</p>
 <section id="id1">
 <h3><abbr>★☆☆ （初級レベル）</abbr> 自分でやってみよう:<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
-<p>Add an appropriate <code class="docutils literal notranslate"><span class="pre">geometry_columns</span></code> entry for your new cities layer</p>
+<p>新しい cities レイヤに適切な <code class="docutils literal notranslate"><span class="pre">geometry_columns</span></code> エントリを追加して下さい</p>
 <div class="dropdown admonition">
 <p class="admonition-title">答え</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">insert</span> <span class="n">into</span> <span class="n">geometry_columns</span> <span class="n">values</span>
@@ -282,7 +277,7 @@ about the EPSG).</p>
 </section>
 <section id="add-geometry-record-to-table-using-sql">
 <h2><span class="section-number">16.2.7. </span>SQLを使用してテーブルにジオメトリレコードを追加する<a class="headerlink" href="#add-geometry-record-to-table-using-sql" title="Link to this heading"></a></h2>
-<p>テーブルが地理的に有効になったので、そこにジオメトリを格納することができます：</p>
+<p>これでテーブルが地理的に有効になったので、そこにジオメトリを格納することができます：</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">house_no</span><span class="p">,</span><span class="w"> </span><span class="n">street_id</span><span class="p">,</span><span class="w"> </span><span class="n">phone_no</span><span class="p">,</span><span class="w"> </span><span class="n">geom</span><span class="p">)</span>
 <span class="w">        </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Fault Towers&#39;</span><span class="p">,</span>
 <span class="w">                 </span><span class="mi">34</span><span class="p">,</span>
@@ -294,13 +289,10 @@ about the EPSG).</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>上記の新しいエントリには使用する投影法(SRID)を指定する必要があります。これはプレーンテキストを用いて新しいポイントのジオメトリを入力すると正しい投影法の情報が自動的に付加されないためです。新しいポイントはデータセットと同じSRIDを使用する必要がありますのでそれを指定しなければいけません。</p>
-<p>もしグラフィカルなインターフェイスを使用していれば、たとえば、各ポイントの投影法は自動で指定されます。つまり以前行ったようにデータセットに投影法を指定しておけば、すべてのポイントに対して正しい投影法を指定しなくてもよいのです。</p>
+<p>グラフィカルなインターフェイスを使用していると、たとえば各ポイントの投影法の指定は自動的でしょう。つまり以前行ったように、データセットに投影法を指定しておけば、追加したい各ポイントについて正しい投影法を使用することを通常は気にする必要はありません。</p>
 </div>
-<p>Now is probably a good time to open QGIS and try to view your <code class="docutils literal notranslate"><span class="pre">people</span></code>
-table. Also, we should try editing / adding / deleting records and then
-performing select queries in the database to see how the data has changed.</p>
-<p>To load a PostgreSQL layer in QGIS, use the <span class="menuselection">Layer ► Add PostgreSQL
-Layers</span> menu option or toolbar button:</p>
+<p>ここでQGISを開いて <code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルを表示するのが良いでしょう。また、データベースでレコードの編集/追加/削除を試し、それから選択クエリを実行してデータがどのように変わったかを見ます。</p>
+<p>QGISでPostgreSQLレイヤを読み込むには <span class="menuselection">レイヤ ► PostgreSQLレイヤを追加</span> メニューオプションまたは次のツールバーボタンを使用します:</p>
 <blockquote>
 <div><p><a class="reference internal" href="../../../_images/mActionAddPostgisLayer.png"><img alt="addPostgisLayer" src="../../../_images/mActionAddPostgisLayer.png" style="width: 1.5em;" /></a></p>
 </div></blockquote>
@@ -322,12 +314,8 @@ Layers</span> menu option or toolbar button:</p>
 <span class="n">Password</span><span class="p">:</span>
 </pre></div>
 </div>
-<p>To see whether QGIS has found the <code class="docutils literal notranslate"><span class="pre">address</span></code> database and that your
-username and password are correct, click <span class="guilabel">Test Connect</span>. If it works,
-check the boxes next to <span class="guilabel">Save Username</span> and <span class="guilabel">Save Password</span>.
-Then click <span class="guilabel">OK</span> to create this connection.</p>
-<p>Back in the <span class="guilabel">Add PostgreSQL Layers</span> dialog, click <span class="guilabel">Connect</span>
-and add layers to your project as usual.</p>
+<p>QGISが <code class="docutils literal notranslate"><span class="pre">address</span></code> データベースを見つけたかどうか、そしてユーザー名とパスワードが正しいことを確認するには、 <span class="guilabel">接続テスト</span> をクリックします。正しく動作したら <span class="guilabel">ユーザー名の保存</span> と <span class="guilabel">パスワード保存</span> の横にあるチェックボックスをチェックします。そして <span class="guilabel">OK</span> ボタンをクリックしてこの接続を作成します。</p>
+<p><span class="guilabel">PostgreSQLレイヤを追加</span> ダイアログに戻り <span class="guilabel">接続</span> をクリックし、いつものようにプロジェクトにレイヤを追加します。</p>
 <section id="id2">
 <h3><abbr>★★☆ （中級レベル）</abbr> 自分でやってみよう:<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <p>人の名前と街路の名前、位置(geom列)をプレーンテキストとして表示するクエリを作成して下さい。</p>
@@ -377,7 +365,7 @@ and add layers to your project as usual.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

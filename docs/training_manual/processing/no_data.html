@@ -34,7 +34,7 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="検索" href="../../../search.html" />
-    <link rel="next" title="17.11. ベクター計算機" href="vector_calculator.html" />
+    <link rel="next" title="17.11. ベクタ計算機" href="vector_calculator.html" />
     <link rel="prev" title="17.9. プロセシングログ" href="log.html" />
   <meta name="description" content="QGIS 3.44 documentation: 17.10. ラスタ計算機。No-data値">
   <script>
@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../spatial_databases/index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">17. QGISプロセシングガイド</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="intro.html">17.1. はじめに</a></li>
@@ -127,7 +127,7 @@
 <li class="toctree-l3"><a class="reference internal" href="first_saga_alg.html">17.8. 外部アルゴリズムを実行する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="log.html">17.9. プロセシングログ</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">17.10. ラスタ計算機。No-data値</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクター計算機</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクタ計算機</a></li>
 <li class="toctree-l3"><a class="reference internal" href="extents.html">17.12. 範囲を定義する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="html.html">17.13. HTML出力</a></li>
 <li class="toctree-l3"><a class="reference internal" href="john_snow.html">17.14. 最初の分析例</a></li>
@@ -208,7 +208,7 @@
 
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
         <a href="log.html" class="btn btn-neutral float-left" title="17.9. プロセシングログ" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="vector_calculator.html" class="btn btn-neutral float-right" title="17.11. ベクター計算機" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="vector_calculator.html" class="btn btn-neutral float-right" title="17.11. ベクタ計算機" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
 </div>
@@ -218,7 +218,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 97.14% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="the-raster-calculator-no-data-values">
@@ -271,17 +271,13 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">/</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">a</span></code> は、積算流量のレイヤを指し（リストに表示される最初のものであるため）、 <code class="docutils literal notranslate"><span class="pre">b</span></code> はDEMを指します。外部データ値 - ここで式の最初の部分でしていることはそれ自体で積算流量レイヤを割ることです。この結果は流域内で値1、外でデータなし値です。それからDEMを掛け、流域内でそれらのセルの標高値 （ <code class="docutils literal notranslate"><span class="pre">DEM</span> <span class="pre">*</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">DEM</span></code> ）、外でデータなし値（ <code class="docutils literal notranslate"><span class="pre">DEM</span> <span class="pre">*</span> <span class="pre">no_data</span> <span class="pre">=</span> <span class="pre">no_data</span></code> ）を得ます</p>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> は、積算流量のレイヤを指し（リストに表示される最初のものであるため）、 <code class="docutils literal notranslate"><span class="pre">b</span></code> はDEMを指します。外部データ値 - ここで式の最初の部分でしていることはそれ自体で積算流量レイヤを割ることです。この結果は流域内で値1、外で no--data 値です。それからDEMを掛け、流域内でそれらのセルの標高値 （ <code class="docutils literal notranslate"><span class="pre">DEM</span> <span class="pre">*</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">DEM</span></code> ）、外で no--data 値（ <code class="docutils literal notranslate"><span class="pre">DEM</span> <span class="pre">*</span> <span class="pre">no_data</span> <span class="pre">=</span> <span class="pre">no_data</span></code> ）を得ます</p>
 <p>結果のレイヤはこれです。</p>
 <figure class="align-default">
 <img alt="../../../_images/masked.png" src="../../../_images/masked.png" />
 </figure>
 <p>この技術は、ラスタレイヤ内で値を <em>マスク</em> するために頻繁に使用され、ラスタレイヤによって使用される任意の矩形領域でない領域のための計算を実行したいときはいつでも有用です。例えば、ラスタレイヤの標高ヒストグラムはあまり意味を持ちません。代わりそれが流域に対応する値のみを使用して（上記の場合のように）計算される場合、得られる結果は実際に流域の構成についての情報を与える有意味なものです。</p>
-<p>There are other interesting things about this algorithm that we have just run,
-apart from the no--data values and how they are handled.
-If you have a look at the extents of the layers that we have multiplied
-(you can do it double-clicking on the names of the layers in the table of contents and looking at the properties),
-you will see that they are not the same, since the extent covered by the flow accumulation layer is smaller that the extent of the full DEM.</p>
+<p>実行したこのアルゴリズムには、no--data 値とそれらがどのように処理されるか以外にも興味深い点がいくつかあります。乗算したレイヤの範囲を見てみると（目次にあるレイヤの名前をダブルクリックしてプロパティを見ることでできます）同じでないことがわかります。それは流量積算レイヤが覆う範囲がDEM全体の範囲より小さいためです。</p>
 <p>それが意味するのは、これらのレイヤが一致しないこと、1つまたは両方のレイヤをリサンプリングすることでそれらのサイズと範囲を同じに揃えなければ直接掛け算はできないことです。しかし、私たちは何もしませんでした。QGISではこのような状況の面倒を見てくれて、必要なときに自動的に入力レイヤをリサンプリングします。出力範囲は、入力レイヤから計算された最小の被覆範囲、およびそれらセルサイズの最小セルサイズです。</p>
 <p>この場合（そしてほとんどの場合）、これは所望の結果を生成しますが、どんな操作が追加で行われているかには常に注意しておく必要があります。なぜならそれらは結果に影響を与える可能性があるからです。この動作が希望されない場合がある場合には、手動のリサンプリングが事前に適用されるべきです。後の章では、複数のラスタレイヤを使用したときのアルゴリズムの動作について詳細に見るでしょう。</p>
 <p>このレッスンを別のマスク作成の練習で終えましょう。私たちは標高が1000メートルと1500メートルの間のすべての地域で傾きを計算しようとしています。</p>
@@ -295,7 +291,7 @@ you will see that they are not the same, since the extent covered by the flow ac
 <figure class="align-default">
 <img alt="../../../_images/elevation_mask.png" src="../../../_images/elevation_mask.png" />
 </figure>
-<p>データなし値は0/0の式から来ています。それは未定の値であるので、SAGAは、実際にはデータ値として扱うNaN（非数）の値を、追加します。この小さなトリックを使えば、セルのデータなし値が何か知らなくても、データなし値を設定できます。</p>
+<p>データなし値は0/0の式から来ています。それは未定の値であるので、SAGAは、実際にはデータ値として扱うNaN（非数）の値を、追加します。この小さなトリックを使えば、セルのデータなし値が何か知らなくても、no--data 値を設定できます。</p>
 <p>今、プロジェクトに含まれる傾斜レイヤを掛ける必要があるだけで、希望の結果が得られるでしょう。</p>
 <p>すべてのことは、計算機で、単一の操作で行うことができます。これは読者の練習として残しておきます。</p>
 </section>
@@ -305,14 +301,14 @@ you will see that they are not the same, since the extent covered by the flow ac
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="log.html" class="btn btn-neutral float-left" title="17.9. プロセシングログ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="vector_calculator.html" class="btn btn-neutral float-right" title="17.11. ベクター計算機" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="vector_calculator.html" class="btn btn-neutral float-right" title="17.11. ベクタ計算機" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

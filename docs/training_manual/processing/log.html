@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../spatial_databases/index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">17. QGISプロセシングガイド</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="intro.html">17.1. はじめに</a></li>
@@ -131,7 +131,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="no_data.html">17.10. ラスタ計算機。No-data値</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクター計算機</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクタ計算機</a></li>
 <li class="toctree-l3"><a class="reference internal" href="extents.html">17.12. 範囲を定義する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="html.html">17.13. HTML出力</a></li>
 <li class="toctree-l3"><a class="reference internal" href="john_snow.html">17.14. 最初の分析例</a></li>
@@ -222,7 +222,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 95.24% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="the-processing-log">
@@ -235,12 +235,7 @@
 <p>ログを開くには、QGISのステータスバー右下のバルーンをクリックしてください。いくつかのアルゴリズムは、ここではそれらの実行に関する情報を残すことがあります。例えば、外部アプリケーションを呼び出すアルゴリズムは、通常、そのアプリケーションのコンソール出力をこのエントリにログ出力します。それを見ると、私たちが実行した（そして入力データが正しくなかったので実行に失敗した）ばかりのSAGAアルゴリズムの出力がここに格納されていることが分かります。</p>
 <p>これは、何が起こっているか理解するのに便利です。上級ユーザーは、その出力を分析して、アルゴリズムが失敗した理由を探せるでしょう。上級ユーザーでなければ、持っている問題を診断するのを他の人に助けてもらうために有用でしょう。外部のソフトウェアのインストール中の問題であるかもしれないし、提供されたデータの問題であるかもしれません。</p>
 <p>アルゴリズムには、そのアルゴリズムが実行できたとしても結果が正しくないかもしれない場合に警告を残すものがあります。例えば、非常に少ない点で補間アルゴリズムを実行するとき、アルゴリズムは実行できて結果は作成されますが、より多くの点が使用されなければならないので、それは正しくない可能性が高いです。指定されたアルゴリズムのいくつかの側面に確信がない場合は、定期的にこのタイプの警告をチェックすることをお勧めします。</p>
-<p>From the <span class="menuselection">Processing ► History...</span> menu, you'll find <em>algorithms</em> that are executed,
-regardless of they are executed from the GUI or from the console (which will be explained later in this manual).
-The execution is stored in this dialog as a console call.
-That means that every time you run an algorithm, a console command is added to the log,
-and you have the full history of your working session.
-Here is how that history looks like:</p>
+<p><span class="menuselection">プロセシング► 履歴...</span> メニューから実行された <em>アルゴリズム</em> を見つけることができます。これはGUIと（このマニュアルの後半で説明する）コンソールのどちらから実行されたかとは無関係です。実行内容はコンソール呼び出しとしてこのダイアログに保存されます。つまり、アルゴリズムを実行するたびに、コンソールコマンドがログに追加され、作業セッションの完全な履歴が残ります。その履歴は以下のようなものです:</p>
 <figure class="align-default">
 <img alt="../../../_images/history1.png" src="../../../_images/history1.png" />
 </figure>
@@ -279,7 +274,7 @@ Here is how that history looks like:</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">15. モジュール: PostgreSQLでのデータベース概念</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">15. モジュール: PostgreSQLによるデータベースの概念</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="db_intro.html">15.1. レッスン: データベースの概要</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_model.html">15.2. レッスン: データモデルの実装</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">15.3. レッスン: モデルにデータを追加する</a><ul>
@@ -168,7 +168,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">QGISトレーニングマニュアル</a></li>
-          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">15. </span>モジュール: PostgreSQLでのデータベース概念</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">15. </span>モジュール: PostgreSQLによるデータベースの概念</a></li>
       <li class="breadcrumb-item active"><span class="section-number">15.3. </span>レッスン: モデルにデータを追加する</li>
 
     <li style="float: right; text-align: right;">
@@ -201,7 +201,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 73.08% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="lesson-adding-data-to-the-model">
@@ -210,23 +210,19 @@
 <p><strong>このレッスンの目標：</strong> データベースモデルに新しいデータを挿入する方法を学習します。</p>
 <section id="insert-statement">
 <h2><span class="section-number">15.3.1. </span>insert文<a class="headerlink" href="#insert-statement" title="Link to this heading"></a></h2>
-<p>How do you add data to a table? The sql <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> statement provides the
-functionality for this:</p>
+<p>どうやってテーブルにデータを追加しますか？SQLの <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> 文は、このための機能を提供します:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">streets</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;High street&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>注意すべきいくつかの事：</p>
 <ul class="simple">
-<li><p>After the table name (<code class="docutils literal notranslate"><span class="pre">streets</span></code>), you list the column names that you
-will be populating (in this case only the <code class="docutils literal notranslate"><span class="pre">name</span></code> column).</p></li>
-<li><p>After the <code class="docutils literal notranslate"><span class="pre">values</span></code> keyword, place the list of field values.</p></li>
+<li><p>テーブル名（ <code class="docutils literal notranslate"><span class="pre">streets</span></code> （街路））の後に、配置したい 列 の名前を列挙します（この場合は <code class="docutils literal notranslate"><span class="pre">name</span></code> （名前）列 のみ）。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">values</span></code> キーワードの後にフィールドの値のリストを置きます。</p></li>
 <li><p>文字列は単一引用符で囲む必要があります。</p></li>
-<li><p>Note that we did not insert a value for the <code class="docutils literal notranslate"><span class="pre">id</span></code> column; this
-is because it is a sequence and will be auto-generated.</p></li>
-<li><p>If you do manually set the <code class="docutils literal notranslate"><span class="pre">id</span></code>, you may cause serious problems with
-the integrity of your database.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> 列には値を挿入しなかったことに注意してください。それがシーケンスで自動生成されるためです。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> を手動で設定すると、データベースの整合性に深刻な問題を引き起こす可能性があります。</p></li>
 </ul>
-<p>You should see <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">0</span> <span class="pre">1</span></code> if it is successful.</p>
+<p>成功した場合 <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">0</span> <span class="pre">1</span></code> と表示されるはずです。</p>
 <p>テーブル内のすべてのデータを選択して、挿入アクションの結果を見ることができます:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">streets</span><span class="p">;</span>
 </pre></div>
@@ -241,7 +237,7 @@ the integrity of your database.</p></li>
 </div>
 <section id="try-yourself">
 <h3>やってみよう: <abbr>★☆☆ （初級レベル）</abbr><a class="headerlink" href="#try-yourself" title="Link to this heading"></a></h3>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> command to add a new street to the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table.</p>
+<p><code class="docutils literal notranslate"><span class="pre">INSERT</span></code> コマンドを使用して <code class="docutils literal notranslate"><span class="pre">streets</span></code> テーブルに新しい道路を追加してください。</p>
 <div class="dropdown admonition">
 <p class="admonition-title">答え</p>
 <p>使うべきSQLコマンドはこのようなものです（街路の名称はあなたが選んだもので置き換えることができます）:</p>
@@ -256,7 +252,7 @@ the integrity of your database.</p></li>
 </section>
 <section id="id1">
 <h2><span class="section-number">15.3.3. </span>やってみよう: <abbr>★★☆ （中級レベル）</abbr><a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
-<p>Try to add a person object to the <code class="docutils literal notranslate"><span class="pre">people</span></code> table with the following details:</p>
+<p>人物オブジェクトを以下の詳細を持つ <code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルに追加してみましょう:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span><span class="p">:</span> <span class="n">Joe</span> <span class="n">Smith</span>
 <span class="n">House</span> <span class="n">Number</span><span class="p">:</span> <span class="mi">55</span>
 <span class="n">Street</span><span class="p">:</span> <span class="n">Main</span> <span class="n">Street</span>
@@ -267,13 +263,11 @@ the integrity of your database.</p></li>
 <p class="admonition-title">注釈</p>
 <p>この例では、文字列ではなく整数として電話番号を定義したことを思い出してください。</p>
 </div>
-<p>At this point, you should have an error report if you try to do this without
-first creating a record for Main Street in the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table.</p>
+<p>この時点では、先にメインストリートのレコードを <code class="docutils literal notranslate"><span class="pre">streets</span></code> テーブルに作成せずにこれを実行しようとすると、エラーレポートが出ているはずです。</p>
 <p>以下のことに気づいたはずです：</p>
 <ul class="simple">
 <li><p>その名前を使用して街路を追加できません</p></li>
-<li><p>You can't add a street using a street <code class="docutils literal notranslate"><span class="pre">id</span></code> before first creating the
-street record on the <code class="docutils literal notranslate"><span class="pre">streets</span></code> table</p></li>
+<li><p>最初に <code class="docutils literal notranslate"><span class="pre">streets</span></code> テーブルに街路レコードを作成しないと、街路 <code class="docutils literal notranslate"><span class="pre">id</span></code> を使って街路を追加できません</p></li>
 </ul>
 <p>2つのテーブルが主キー/外部キーのペアを介して結合していることに注意してください。これは、有効な人は有効な対応する街路レコードも存在していなければ作成できないことを意味します。</p>
 <p>上記の知識を使用して、データベースに新しい人を追加します。</p>
@@ -310,26 +304,24 @@ street record on the <code class="docutils literal notranslate"><span class="pre
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">update</span><span class="w"> </span><span class="n">streets</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;New Main Road&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Main Road&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Be very careful using such update statements - if more than one record matches
-your <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause, they will all be updated!</p>
+<p>このようなupdate文はきわめて慎重に使用してください - <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> 句に複数のレコードが一致した場合、それらはすべて更新されます！</p>
 <p>よりよい解決策は、テーブルの主キーを使用して変更するレコードを参照することです:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">update</span><span class="w"> </span><span class="n">streets</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;New Main Road&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>It should return <code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">1</span></code>.</p>
+<p>それは <code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">1</span></code> を返す必要があります。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> statement criteria are case sensitive, <code class="docutils literal notranslate"><span class="pre">Main</span>
-<span class="pre">Road</span></code> is not the same as <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">road</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">WHERE</span></code> 文の基準では大文字と小文字が区別されます。<code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">Road</span></code> は <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">road</span></code> と同じではありません。</p>
 </div>
 </section>
 <section id="delete-data">
 <h2><span class="section-number">15.3.6. </span>データを削除<a class="headerlink" href="#delete-data" title="Link to this heading"></a></h2>
-<p>In order to delete an object from a table, use the <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> command:</p>
+<p>テーブルからオブジェクトを削除するために、<code class="docutils literal notranslate"><span class="pre">DELETE</span></code> コマンドを使用してください:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Joe Smith&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>今度は人々のテーブルを見てみましょう:</p>
+<p>今度はpeopleテーブルを見てみましょう:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">address</span><span class="o">=#</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">people</span><span class="p">;</span>
 
 <span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">house_no</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">street_id</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">phone_no</span>
@@ -372,7 +364,7 @@ your <code class="docutils literal notranslate"><span class="pre">WHERE</span></
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 

@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">15. モジュール: PostgreSQLでのデータベース概念</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">15. モジュール: PostgreSQLによるデータベースの概念</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="db_intro.html">15.1. レッスン: データベースの概要</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_model.html">15.2. レッスン: データモデルの実装</a></li>
 <li class="toctree-l3"><a class="reference internal" href="adding_data.html">15.3. レッスン: モデルにデータを追加する</a></li>
@@ -162,7 +162,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">QGISトレーニングマニュアル</a></li>
-          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">15. </span>モジュール: PostgreSQLでのデータベース概念</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">15. </span>モジュール: PostgreSQLによるデータベースの概念</a></li>
       <li class="breadcrumb-item active"><span class="section-number">15.6. </span>レッスン: ルール</li>
 
     <li style="float: right; text-align: right;">
@@ -195,7 +195,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 60.00% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="lesson-rules">
@@ -204,23 +204,21 @@
 <p><strong>このレッスンの目標:</strong> データベースの新しいルールを作成する方法を学習する.</p>
 <section id="creating-a-logging-rule">
 <h2><span class="section-number">15.6.1. </span>ログに記録するルールを作る<a class="headerlink" href="#creating-a-logging-rule" title="Link to this heading"></a></h2>
-<p>Say you want to log every change of <code class="docutils literal notranslate"><span class="pre">phone_no</span></code> in your <code class="docutils literal notranslate"><span class="pre">people</span></code> table in to a
-<code class="docutils literal notranslate"><span class="pre">people_log</span></code> table. So you set up a new table:</p>
+<p><code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルにある <code class="docutils literal notranslate"><span class="pre">phone_no</span></code> の変更すべてを <code class="docutils literal notranslate"><span class="pre">people_log</span></code> テーブルにログとして記録したいとします。そこで新しいテーブルを設定します:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">people_log</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="nb">text</span><span class="p">,</span><span class="w"> </span><span class="k">time</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="n">NOW</span><span class="p">());</span>
 </pre></div>
 </div>
-<p>In the next step, create a rule that logs every change of a <code class="docutils literal notranslate"><span class="pre">phone_no</span></code> in the
-<code class="docutils literal notranslate"><span class="pre">people</span></code> table into the <code class="docutils literal notranslate"><span class="pre">people_log</span></code> table:</p>
+<p>次のステップでは, <code class="docutils literal notranslate"><span class="pre">people</span></code> テーブル内の <code class="docutils literal notranslate"><span class="pre">phone_no</span></code> の変更すべてを <code class="docutils literal notranslate"><span class="pre">people_log</span></code> テーブルにログとして記録するルールを作成します:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span><span class="w"> </span><span class="k">rule</span><span class="w"> </span><span class="n">people_log</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">people</span>
 <span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">phone_no</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="k">OLD</span><span class="p">.</span><span class="n">phone_no</span>
 <span class="w">  </span><span class="k">do</span><span class="w"> </span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">people_log</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="k">OLD</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>ルールが正しく機能することを確認するには, 電話番号を変更してみましょう :</p>
+<p>ルールが正しく機能することを確認するには, 電話番号を変更してみましょう:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">update</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">phone_no</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;082 555 1234&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Check that the <code class="docutils literal notranslate"><span class="pre">people</span></code> table was updated correctly:</p>
+<p><code class="docutils literal notranslate"><span class="pre">people</span></code> テーブルが正しく更新されたことを確認してください:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
 
 <span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">|</span><span class="w">    </span><span class="n">name</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">house_no</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">street_id</span><span class="w"> </span><span class="o">|</span><span class="w">   </span><span class="n">phone_no</span>
@@ -229,8 +227,7 @@
 <span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Now, thanks to the rule we created, the <code class="docutils literal notranslate"><span class="pre">people_log</span></code> table will look like
-this:</p>
+<p>これで作成したルールによって <code class="docutils literal notranslate"><span class="pre">people_log</span></code> テーブルは次のようになります:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">people_log</span><span class="p">;</span>
 
 <span class="w">    </span><span class="n">name</span><span class="w">    </span><span class="o">|</span><span class="w">            </span><span class="k">time</span>
@@ -241,8 +238,7 @@ this:</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>The value of the <code class="docutils literal notranslate"><span class="pre">time</span></code> field will depend on the current date
-and time.</p>
+<p><code class="docutils literal notranslate"><span class="pre">time</span></code> フィールドの値は、現在の日付と時刻に依存します。</p>
 </div>
 </section>
 <section id="in-conclusion">
@@ -251,8 +247,7 @@ and time.</p>
 </section>
 <section id="what-s-next">
 <h2><span class="section-number">15.6.3. </span>次は?<a class="headerlink" href="#what-s-next" title="Link to this heading"></a></h2>
-<p>The next module will introduce you to Spatial Database using PostgreSQL with PostGIS
-extension, which takes these database concepts and applies them to GIS data.</p>
+<p>次のモジュールでは、PostGIS拡張を伴ったPostgreSQLを使って空間データベースを紹介し、これらのデータベースの概念を使い、GISデータに適用します。</p>
 </section>
 </section>
 
@@ -268,7 +263,7 @@ extension, which takes these database concepts and applies them to GIS data.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
       </span></p>
   </div>
 
