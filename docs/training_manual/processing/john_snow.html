@@ -85,7 +85,7 @@
    <a href= "../../../genindex.html">索引</a>
  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+              <p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about/foreword.html">序文</a></li>
@@ -97,8 +97,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">トレーニングマニュアル</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../foreword/index.html">1. コースの紹介</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basic_map/index.html">2. モジュール: 基本的な地図を作成して探索する</a></li>
@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../spatial_databases/index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">17. QGISプロセシングガイド</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="intro.html">17.1. はじめに</a></li>
@@ -127,7 +127,7 @@
 <li class="toctree-l3"><a class="reference internal" href="first_saga_alg.html">17.8. 外部アルゴリズムを実行する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="log.html">17.9. プロセシングログ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="no_data.html">17.10. ラスタ計算機。No-data値</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクター計算機</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクタ計算機</a></li>
 <li class="toctree-l3"><a class="reference internal" href="extents.html">17.12. 範囲を定義する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="html.html">17.13. HTML出力</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">17.14. 最初の分析例</a></li>
@@ -166,7 +166,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS クックブック(QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developers_guide/index.html">開発者ガイド</a></li>
 </ul>
 
@@ -218,7 +218,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 61.11% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="first-analysis-example">
@@ -227,41 +227,30 @@
 <p class="admonition-title">注釈</p>
 <p>このレッスンでは、プロセシング・フレームワークの要素により精通できるよう、ツールボックスだけを使用していくつかの実際の分析を実行します。</p>
 </div>
-<p>Now that everything is configured and we can use external algorithms,
-we have a very powerful tool to perform spatial analysis.
-It is time to work out a larger exercise with some real world data.</p>
-<p>我々は、John Snowが1854年に彼の画期的な仕事(<a class="reference external" href="https://en.wikipedia.org/wiki/John_Snow_%28physician%29">https://en.wikipedia.org/wiki/John_Snow_%28physician%29</a>)で使用した有名なデータセットを使用し、いくつかの興味深い結果を得ることになります。このデータセットの分析は非常に明白であり、良い結果と結論に至るために高度なGIS技術を必要としませんが、このような空間的問題が、異なる処理ツールを使うことによってどのように分析され解決されるかを示す良い方法であるといえるでしょう。</p>
-<p>データセットには、コレラによる死者の位置とポンプの位置のシェープファイル、およびTIFFフォーマットでのOSMレンダリングされた地図が含まれています。このレッスンのための対応QGISプロジェクトを開きます。</p>
+<p>全てが設定され、外部アルゴリズムを使用でき、これで空間分析を実行するための非常に強力なツールを手に入れました。何か実世界のデータでより大規模な演習に取りかかる時が来ました。</p>
+<p>John Snowが1854年に彼の画期的な仕事(<a class="reference external" href="https://en.wikipedia.org/wiki/John_Snow_%28physician%29">https://en.wikipedia.org/wiki/John_Snow_%28physician%29</a>)で使用した有名なデータセットを使って、いくつかの興味深い結果を得てみます。このデータセットの分析はとても明白で、良い結果と結論に至るために高度なGIS技術を必要としませんが、このような空間的問題が、様々な処理ツールを使うことによってどのように分析され解決されるかを示す良い方法であるといえるでしょう。</p>
+<p>データセットには、コレラによる死者の位置とポンプの位置のシェープファイル、およびOSMレンダリングされたTIFF形式の地図が含まれています。このレッスンに対応しているQGISプロジェクトを開いてください。</p>
 <figure class="align-default">
 <img alt="../../../_images/project2.png" src="../../../_images/project2.png" />
 </figure>
-<p>The first thing to do is to calculate the Voronoi diagram (a.k.a. Thiessen
-polygons) of the pumps layer, to get the influence zone of each pump.
-The <span class="guilabel">Voronoi polygons</span> algorithm can be used for that.</p>
+<p>最初にすることは、ポンプレイヤのボロノイ図（別名：ティーセン多角形）を計算し、各ポンプの影響範囲を得ることです。 <span class="guilabel">ボロノイ多角形</span> アルゴリズムが、それに使用できます。</p>
 <figure class="align-default">
 <img alt="../../../_images/voronoi.png" src="../../../_images/voronoi.png" />
 </figure>
-<p>かなり簡単ですが、それですでに興味深い情報が得られます。</p>
+<p>かなり簡単ですが、それで早くも興味深い情報が得られます。</p>
 <figure class="align-default">
 <img alt="../../../_images/voronoi2.png" src="../../../_images/voronoi2.png" />
 </figure>
 <p>明らかに、ほとんどの患者がポリゴンの1つの範囲内にあります</p>
-<p>To get a more quantitative result, we can count the number of deaths in each polygon.
-Since each point represents a building where deaths occurred,
-and the number of deaths is stored in an attribute, we cannot just count the points.
-We need a weighted count, so we will use the <span class="guilabel">Count points in polygon</span> tool.</p>
+<p>より定量的な結果を得るためには、各ポリゴンにおける死者数をカウントできます。各ポイントは死者が発生した建物を表し、死者数は属性に格納されているので、ポイントをカウントするだけではできません。重み付けされたカウントを必要とするので、 <span class="guilabel">ポリゴン内の点の数</span> ツールを使用します。</p>
 <figure class="align-default">
 <img alt="../../../_images/pointsinpoly.png" src="../../../_images/pointsinpoly.png" />
 </figure>
-<p>The new field will be called <code class="docutils literal notranslate"><span class="pre">DEATHS</span></code>, and we use the <code class="docutils literal notranslate"><span class="pre">COUNT</span></code> field as weighting field.
-The resulting table clearly reflects that the number of deaths in the polygon
-corresponding to the first pump is much larger than the other ones.</p>
+<p>新しいフィールドは <code class="docutils literal notranslate"><span class="pre">DEATH（死亡）</span></code> と呼ばれ、そして <code class="docutils literal notranslate"><span class="pre">COUNT</span></code> フィールドを重みフィールドとして使用します。得られたテーブルは、明らかに第一のポンプに対応するポリゴンにおける死者数が他のものよりもはるかに大きいことを反映しています。</p>
 <figure class="align-default">
 <img alt="../../../_images/pointsinpolytable.png" src="../../../_images/pointsinpolytable.png" />
 </figure>
-<p>Another good way of visualizing the dependence of each point in the <code class="docutils literal notranslate"><span class="pre">Cholera_deaths</span></code> layer
-with a point in the <code class="docutils literal notranslate"><span class="pre">Pumps</span></code> layer is to draw a line to the closest one.
-This can be done with the <span class="guilabel">Distance to nearest hub</span> tool, and using the configuration shown next.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Pumps（ポンプ）</span></code> レイヤのあるポイントと <code class="docutils literal notranslate"><span class="pre">Cholera_deaths（コレラ死者）</span></code> レイヤの各ポイントとの依存関係を視覚化するもう一つの良い方法は、最も近いものへ線を描くことです。これは、<span class="guilabel">最寄のハブの距離（ハブへの線）</span> ツールで次のような設定を使って行うことができます。</p>
 <figure class="align-default">
 <img alt="../../../_images/nearest.png" src="../../../_images/nearest.png" />
 </figure>
@@ -270,15 +259,11 @@ This can be done with the <span class="guilabel">Distance to nearest hub</span> 
 <img alt="../../../_images/nearestresult.png" src="../../../_images/nearestresult.png" />
 </figure>
 <p>線の数は中央のポンプの方が多いですが、これは死者数ではなくコレラ患者が発見された場所の数を表していることを忘れないでください。それは代表的なパラメータですが、ある場所では他の場所よりも多くの患者が発生している可能性が考慮されていません。</p>
-<p>A density layer will also give us a very clear view of what is happening.
-We can create it with the <span class="guilabel">Heatmap (Kernel density estimation)</span> algorithm.
-Using the <code class="docutils literal notranslate"><span class="pre">Cholera_deaths</span></code> layer, its <code class="docutils literal notranslate"><span class="pre">COUNT</span></code> field as weight field, with a radius of 100,
-the extent and cell size of the streets raster layer, we get something like this.</p>
+<p>密度レイヤはまた、何が起きているかを非常に明確に示してくれます。それは <span class="guilabel">ヒートマップ（カーネル密度推定）</span> アルゴリズムで作成できます。 <code class="docutils literal notranslate"><span class="pre">Cholera_deaths</span></code> レイヤ、重みフィールドとしてその <code class="docutils literal notranslate"><span class="pre">COUNT</span></code> フィールド、半径を100、街路ラスタレイヤの範囲とセルサイズを使用すると、次のようになります。</p>
 <figure class="align-default">
 <img alt="../../../_images/density.png" src="../../../_images/density.png" />
 </figure>
-<p>Remember that, to get the output extent, you do not have to type it.
-Click on the button on the right-hand side and select <span class="guilabel">Use layer/canvas extent</span>.</p>
+<p>出力範囲の設定に入力する必要がないことを思い出してください。右側のボタンをクリックし、 <span class="guilabel">レイヤ/キャンバス範囲を使用</span> を選択します。</p>
 <figure class="align-default">
 <img alt="../../../_images/layerextent.png" src="../../../_images/layerextent.png" />
 </figure>
@@ -298,7 +283,7 @@ Click on the button on the right-hand side and select <span class="guilabel">Use
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 24, 12:47 +0900
       </span></p>
   </div>
 
