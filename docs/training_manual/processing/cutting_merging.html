@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>17.15. ラスタレイヤをクリップしてマージする &mdash; QGIS Documentation  ドキュメント</title>
+  <title>17.15. ラスタレイヤをクリッピングしてマージする &mdash; QGIS Documentation  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/qgis_docs.css?v=e885e955" />
       <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
@@ -36,7 +36,7 @@
     <link rel="search" title="検索" href="../../../search.html" />
     <link rel="next" title="17.16. 水文解析" href="hydro.html" />
     <link rel="prev" title="17.14. 最初の分析例" href="john_snow.html" />
-  <meta name="description" content="QGIS 3.44 documentation: 17.15. ラスタレイヤをクリップしてマージする">
+  <meta name="description" content="QGIS 3.44 documentation: 17.15. ラスタレイヤをクリッピングしてマージする">
   <script>
     var _paq = window._paq = window._paq || [];
     _paq.push(["disableCookies"]);
@@ -131,7 +131,7 @@
 <li class="toctree-l3"><a class="reference internal" href="extents.html">17.12. 範囲を定義する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="html.html">17.13. HTML出力</a></li>
 <li class="toctree-l3"><a class="reference internal" href="john_snow.html">17.14. 最初の分析例</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">17.15. ラスタレイヤをクリップしてマージする</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">17.15. ラスタレイヤをクリッピングしてマージする</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydro.html">17.16. 水文解析</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_twi.html">17.17. モデルデザイナーから始める</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_hydro.html">17.18. より複雑なモデル</a></li>
@@ -186,7 +186,7 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">QGISトレーニングマニュアル</a></li>
           <li class="breadcrumb-item"><a href="index.html"><span class="section-number">17. </span>QGISプロセシングガイド</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">17.15. </span>ラスタレイヤをクリップしてマージする</li>
+      <li class="breadcrumb-item active"><span class="section-number">17.15. </span>ラスタレイヤをクリッピングしてマージする</li>
 
     <li style="float: right; text-align: right;">
 	<ul>
@@ -218,11 +218,11 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 85.19% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="clipping-and-merging-raster-layers">
-<h1><span class="section-number">17.15. </span>ラスタレイヤをクリップしてマージする<a class="headerlink" href="#clipping-and-merging-raster-layers" title="Link to this heading"></a></h1>
+<h1><span class="section-number">17.15. </span>ラスタレイヤをクリッピングしてマージする<a class="headerlink" href="#clipping-and-merging-raster-layers" title="Link to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>このレッスンでは、現実の世界のシナリオで地理アルゴリズムを継続して使用する、空間データの準備の別の例が表示されます。</p>
@@ -266,30 +266,24 @@
 <p class="admonition-title">注釈</p>
 <p>最近のバージョンではより複雑なインターフェイスになっています。少なくとも1つの圧縮方式が選択されていることを確認します。</p>
 </div>
-<p>入手したいラスタレイヤのバウンディングボックスを含むこのレイヤで、 <span class="guilabel">ポリゴンでラスタをクリップ</span> アルゴリズムを使用して、両方のラスタレイヤをトリミングできます。</p>
+<p>入手したいラスタレイヤのバウンディングボックスを含んでいるこのレイヤを、 <span class="guilabel">ポリゴンでラスタをクリップ</span> アルゴリズムに使用して、両方のラスタレイヤを切り出すことができます。</p>
 <figure class="align-default">
 <img alt="../../../_images/clip.png" src="../../../_images/clip.png" />
 </figure>
-<p>Once the layers have been cropped, they can be merged using the SAGA <span class="guilabel">Mosaic raster layers</span> algorithm.</p>
+<p>レイヤを切り出したら、SAGA <span class="guilabel">Mosaic raster layers</span> アルゴリズムを使ってレイヤをマージすることができます。</p>
 <figure class="align-default">
 <img alt="../../../_images/merge1.png" src="../../../_images/merge1.png" />
 </figure>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>最初にマージしてからトリミングすると時間を節約でき、二回クリッピングアルゴリズムを呼び出さずにすむでしょう。しかしながら、マージする複数のレイヤがあってそれらがかなり大きなサイズを持っている場合、それが後工程に処理が困難であるよりも大きなレイヤになってしまいます。その場合はクリッピングアルゴリズムを数回呼び出す必要があります。時間がかかるかもしれませんが、心配しないで。その操作を自動化するためにいくつかの追加のツールがあることがすぐにわかりますから。この例では、レイヤは2つだけなので、今それを心配することはありません。</p>
+<p>最初にマージしてから切り出しすると時間を節約でき、クリッピングアルゴリズムを二回呼び出さずにすみます。しかしながら、マージするレイヤが複数あってそれらがかなり大きなサイズの場合、それが後工程に処理が困難であるよりも大きなレイヤになってしまいます。その場合はクリッピングアルゴリズムを複数回呼び出す必要があるかもしれず、それには時間がかかるかもしれません。でも心配しないでください。その操作を自動化するためのいくつかの追加のツールがあることがすぐに分かりますから。この例ではレイヤは二つだけなので、今それを心配することはありません。</p>
 </div>
 <p>それによって、私たちが望む最後のDEMが得られます。</p>
 <figure class="align-default">
 <img alt="../../../_images/finaldem.png" src="../../../_images/finaldem.png" />
 </figure>
 <p>では傾斜レイヤを計算しましょう。</p>
-<p>A slope layer can be computed with the <span class="guilabel">Slope</span> algorithm,
-but the DEM obtained in the last step is not suitable as input, since elevation
-values are in meters but cellsize is not expressed in meters (the layer uses a
-CRS with geographic coordinates). A reprojection is needed.
-To reproject a raster layer, the <span class="guilabel">Warp (reproject)</span> algorithm can be used again.
-We reproject into a CRS with meters as units (e.g. 3857), so we can then
-correctly calculate the slope, with either SAGA or GDAL.</p>
+<p>傾斜レイヤは <span class="guilabel">傾斜</span> アルゴリズムを用いて計算できますが、最後の工程で得られたDEMは、標高値はメートル単位でもセルサイズはメートル単位で表現されていないため、入力として適していません（レイヤは地理座標を持つCRSを使用しています）。再投影が必要です。ラスタレイヤを再投影するために、再び <span class="guilabel">ワープ（再投影）</span> アルゴリズムが使用できます。単位にメートルを持つCRS（例えば3857）に再投影し、その後、SAGAかGDALのどちらかで傾斜を正しく計算できます。</p>
 <p>新DEMでは、傾きが計算できるようになりました。</p>
 <figure class="align-default">
 <img alt="../../../_images/slope1.png" src="../../../_images/slope1.png" />
@@ -298,16 +292,11 @@ correctly calculate the slope, with either SAGA or GDAL.</p>
 <figure class="align-default">
 <img alt="../../../_images/slopereproj.png" src="../../../_images/slopereproj.png" />
 </figure>
-<p>The slope produced by the <span class="guilabel">Slope</span> algorithm can be expressed
-in degrees or radians; degrees are a more practical and common unit.
-In case you calculated it in radians, the <span class="guilabel">Metric conversions</span> algorithm will
-help us to do the conversion (but in case you didn't know that algorithm existed,
-you could use the raster calculator that we have already used).</p>
+<p><span class="guilabel">傾斜</span> アルゴリズムによって作成された傾斜は、度またはラジアンで表現できます。度は、より実用的で一般的な単位です。ラジアンで計算した場合は、 <span class="guilabel">メトリック変換</span> アルゴリズムが変換するのに役立ちます（しかし、そのアルゴリズムが存在していることを知らなかった場合は、すでに使ったラスタ計算機を使用できたでしょう）。</p>
 <figure class="align-default">
 <img alt="../../../_images/metricconversions.png" src="../../../_images/metricconversions.png" />
 </figure>
-<p>Reprojecting the converted slope layer back with the <span class="guilabel">Reproject raster layer</span>,
-we get the final layer we wanted.</p>
+<p><span class="guilabel">ラスタレイヤ再投影</span> を使って変換された斜面レイヤを再投影して戻すと、望んでいた最終レイヤが得られます。</p>
 <p>再投影プロセスでは、最初のステップの1つで計算されたバウンディングボックス外のデータを最終レイヤが格納するようにしている可能性があります。これは、ベースDEMを得るためにしたのと同じように、それを再びクリッピングすることによって解決できます。</p>
 </section>
 
@@ -323,7 +312,7 @@ we get the final layer we wanted.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 24, 12:47 +0900
+      <span class="lastupdated">最終更新: 2026 6月 24, 23:29 +0900
       </span></p>
   </div>
 
