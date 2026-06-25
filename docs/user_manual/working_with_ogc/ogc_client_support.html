@@ -85,7 +85,7 @@
    <a href= "../../../genindex.html">索引</a>
  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+              <p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about/foreword.html">序文</a></li>
@@ -97,7 +97,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../introduction/getting_started.html">1. 最初のステップ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../introduction/project_files.html">2. プロジェクトファイルの操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../introduction/qgis_gui.html">3. QGISのユーザインタフェース</a></li>
@@ -130,7 +130,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#wcs-client">19.2. WCS クライアント</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#wfs-and-wfs-t-client">19.3. WFS および WFS-T クライアント</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sensorthings">19.4. センサーシングス</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sensorthings">19.4. SensorThings</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#setting-connection">19.4.1. Setting connection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#loading-sensorthings-data">19.4.2. Loading SensorThings data</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#working-with-a-vector-layer-from-sensorthings">19.4.3. Working with a vector layer from SensorThings</a></li>
@@ -155,7 +155,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../literature_web/literature_and_web_references.html">27. 文献とWeb参照</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../training_manual/index.html">トレーニングマニュアル</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../gentle_gis_introduction/index.html">やさしい GIS 入門</a></li>
 </ul>
@@ -165,7 +165,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS クックブック(QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developers_guide/index.html">開発者ガイド</a></li>
 </ul>
 
@@ -216,7 +216,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 62.85% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 62.54% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="working-with-ogc-iso-protocols">
@@ -243,7 +243,7 @@
 </li>
 <li><p><a class="reference internal" href="#wcs-client" id="id33">WCS クライアント</a></p></li>
 <li><p><a class="reference internal" href="#wfs-and-wfs-t-client" id="id34">WFS および WFS-T クライアント</a></p></li>
-<li><p><a class="reference internal" href="#sensorthings" id="id35">センサーシングス</a></p>
+<li><p><a class="reference internal" href="#sensorthings" id="id35">SensorThings</a></p>
 <ul>
 <li><p><a class="reference internal" href="#setting-connection" id="id36">Setting connection</a></p></li>
 <li><p><a class="reference internal" href="#loading-sensorthings-data" id="id37">Loading SensorThings data</a></p></li>
@@ -273,13 +273,13 @@
 <li><p><strong>CSW</strong> ---ウェブのためのカタログサービス</p></li>
 <li><p><strong>SFS</strong> --- 単純地物for SQL (<a class="reference internal" href="../managing_data_source/supported_data.html#label-postgis"><span class="std std-ref">PostgreSQL Database</span></a>)</p></li>
 <li><p><strong>GML</strong> --- 地理情報記述言語</p></li>
-<li><p><strong>SensorThings API</strong> --- SensorThings API (<a class="reference internal" href="#sensor-things"><span class="std std-ref">センサーシングス</span></a>)</p></li>
+<li><p><strong>SensorThings API</strong> --- SensorThings API (<a class="reference internal" href="#sensor-things"><span class="std std-ref">SensorThings</span></a>)</p></li>
 </ul>
 <p>OGC services are increasingly being used to exchange geospatial data between
 different GIS implementations and data stores. QGIS can deal with the above
 specifications as a client, being <strong>SFS</strong> (through support of the PostgreSQL
 data provider, see section <a class="reference internal" href="../managing_data_source/supported_data.html#label-postgis"><span class="std std-ref">PostgreSQL Database</span></a>).</p>
-<p><a class="reference internal" href="../../server_manual/index.html#qgis-server-manual"><span class="std std-ref">QGIS Server</span></a>, UMN MapServer または GeoServer がインストールされたWebサーバを使用すれば、WMS、WMTS、WFS、WFS-T、およびWCSプロトコルを介して地図とデータを共有できます。</p>
+<p><span class="xref std std-ref">QGISサーバ</span> 、UMN MapServer、またはGeoServerがインストールされたWebサーバを使用すれば、WMS、WMTS、WFS、WFS-T、およびWCSプロトコルを介して地図とデータを共有できます。</p>
 <section id="wms-wmts-client">
 <span id="ogc-wms"></span><h2><a class="toc-backref" href="#id21" role="doc-backlink"><span class="section-number">19.1. </span>WMS/WMTS クライアント</a><a class="headerlink" href="#wms-wmts-client" title="Link to this heading"></a></h2>
 <section id="overview-of-wms-support">
@@ -494,8 +494,8 @@ https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?service=WMTS&amp;reques
 <li><p><strong>サーバープロパティ</strong></p>
 <ul>
 <li><p><strong>WMS バージョン</strong> --- サーバーによってサポートされたWMSのバージョン.</p></li>
-<li><p><strong>画像フォーマット</strong> --- サーバーが地図を描画するときに応答できるMIME-タイプのリスト。QGISではQtライブラリが構築された基礎になるフォーマットは何でもサポートしています。通常は少なくとも <code class="docutils literal notranslate"><span class="pre">image/png</span></code> と <code class="docutils literal notranslate"><span class="pre">image/jpeg</span></code> があります。</p></li>
-<li><p><strong>アイデンティティ形式</strong> --- サーバーが識別ツールを使用する場合に対応できるMIME-タイプのリスト。現在、QGISは <code class="docutils literal notranslate"><span class="pre">テキストplain</span></code> タイプをサポートしています。</p></li>
+<li><p><strong>画像フォーマット</strong> --- サーバーが地図を描画するときに応答できるMIME-タイプのリスト。QGISではQtライブラリが構築された基礎になるフォーマットは何でもサポートしています。通常は少なくとも <code class="docutils literal notranslate"><span class="pre">画像/png</span></code> と <code class="docutils literal notranslate"><span class="pre">画像/jpeg</span></code> があります。</p></li>
+<li><p><strong>アイデンティティ形式</strong> ---サーバーが識別ツールを使用する場合に対応できるMIME-タイプのリスト。現在、QGISは <a href="#id1"><span class="problematic" id="id2">``</span></a>テキストplain``タイプをサポートしています。</p></li>
 </ul>
 </li>
 <li><p><strong>レイヤプロパティ</strong></p>
@@ -521,7 +521,7 @@ https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?service=WMTS&amp;reques
 <ul class="simple">
 <li><p><span class="guilabel">Server default</span></p></li>
 <li><p><span class="guilabel">Predefined date</span> を使用して連続しない時間範囲のデータを公開しているサーバを指定するか、 <span class="guilabel">Predefined range</span> を使用して利用可能な日付範囲を公開しているサーバを指定します。後者の場合は <span class="guilabel">Start date</span> と <span class="guilabel">End date</span> が必須です。予想されるフォーマットは、プロバイダが連続した期間のデータを持っているかどうかに応じて、参照時間オプション（下記参照）から推測することができます。</p></li>
-<li><p><span class="guilabel">Follow project's temporal range</span> プロジェクトのプロパティダイアログで定義されたプロジェクトの時間的範囲に従います。</p></li>
+<li><p>:guilabel:<a href="#id1"><span class="problematic" id="id2">`</span></a>Follow project's temporal range`プロジェクトのプロパティダイアログで定義されたプロジェクトの時間的範囲に従います。</p></li>
 </ul>
 <figure class="align-center" id="id9">
 <span id="figure-wmts-temporal"></span><img alt="../../../_images/temporal_properties.png" src="../../../_images/temporal_properties.png" />
@@ -542,7 +542,7 @@ https://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?service=WMTS&amp;reques
 </li>
 <li><p><span class="guilabel">Ignore time components (use dates only)</span>:時間コンポーネントを無視します。チェックした場合、時系列クエリの時間コンポーネントは破棄され、日付コンポーネントのみがサーバリクエストで使用されます。</p></li>
 </ul>
-<p><a class="reference internal" href="../../../_images/checkbox.png"><img alt="checkbox" src="../../../_images/checkbox.png" style="width: 1.3em;" /></a> <span class="guilabel">特定のWMS-T基準時刻を使用する</span> レイヤーの機能で報告された時刻から選択することもできます。(日付の範囲ではなく)連続しない日付時刻インスタンスのセットを公開するサーバーに便利です。</p>
+<p><a class="reference internal" href="../../../_images/checkbox.png"><img alt="checkbox" src="../../../_images/checkbox.png" style="width: 1.3em;" /></a> :guilabel:<a href="#id1"><span class="problematic" id="id2">`</span></a>特定のWMS-T基準時刻を使用する`レイヤーの機能で報告された時刻から選択することもできます。(日付の範囲ではなく)連続しない日付時刻インスタンスのセットを公開するサーバーに便利です。</p>
 </section>
 <section id="qgis-server-properties">
 <span id="wms-server-properties"></span><h4><a class="toc-backref" href="#id31" role="doc-backlink"><span class="section-number">19.1.7.3. </span>QGIS Serverのプロパティ</a><a class="headerlink" href="#qgis-server-properties" title="Link to this heading"></a></h4>
@@ -713,7 +713,7 @@ using its default name from the queried service.</p></li>
 <p>ダウンロードの進行状況がQGISメインウィンドウの左下に視覚化されていることに気付くでしょう。そのレイヤが読み込まれると、いくつかの地物を識別して選択し、属性テーブルを表示できます。</p>
 </section>
 <section id="sensorthings">
-<span id="sensor-things"></span><span id="index-10"></span><h2><a class="toc-backref" href="#id35" role="doc-backlink"><span class="section-number">19.4. </span>センサーシングス</a><a class="headerlink" href="#sensorthings" title="Link to this heading"></a></h2>
+<span id="sensor-things"></span><span id="index-10"></span><h2><a class="toc-backref" href="#id35" role="doc-backlink"><span class="section-number">19.4. </span>SensorThings</a><a class="headerlink" href="#sensorthings" title="Link to this heading"></a></h2>
 <p>QGIS supports connections to <a class="reference external" href="https://www.ogc.org/standards/sensorthings/">OGC SensorThings API</a>,
 a standard providing an open and unified framework to interconnect IoT sensing devices,
 data, and applications over the Web.
@@ -972,7 +972,7 @@ before performing edits to avoid conflicts.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 6月 26, 00:47 +0900
       </span></p>
   </div>
 

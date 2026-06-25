@@ -85,7 +85,7 @@
    <a href= "../../../genindex.html">索引</a>
  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+              <p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about/foreword.html">序文</a></li>
@@ -97,8 +97,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">トレーニングマニュアル</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../foreword/index.html">1. コースの紹介</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basic_map/index.html">2. モジュール: 基本的な地図を作成して探索する</a></li>
@@ -141,7 +141,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS クックブック(QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developers_guide/index.html">開発者ガイド</a></li>
 </ul>
 
@@ -193,7 +193,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 88.89% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 70.37% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="lesson-working-with-databases-in-the-qgis-browser">
@@ -202,34 +202,42 @@
 <p><strong>このレッスンの目的：</strong> QGISのブラウザのインタフェースを使って空間的なデータベースをどのように作用させるのかを学びます。</p>
 <section id="follow-along-adding-database-tables-to-qgis-using-the-browser">
 <h2><span class="section-number">18.1.1. </span><abbr>★☆☆ （初級レベル）</abbr> 理解しよう: ブラウザを使ってQGISにデータベーステーブルを追加する<a class="headerlink" href="#follow-along-adding-database-tables-to-qgis-using-the-browser" title="Link to this heading"></a></h2>
-<p>すでにQGISレイヤとしてデータベースからテーブルを追加する方法を簡単に見てきました。これをもう少し詳細に見るとともに、QGISでこれを行う様々な方法を見てみましょう。新しいブラウザ・インターフェイスを見ることから始めましょう。</p>
+<p>すでにQGISレイヤとしてデータベースからテーブルを追加する方法を簡単に見てきました。これをもう少し詳細に見て、これがQGISで行うことができるさまざまな方法を見てみましょう。新しいブラウザ・インタフェースを見ることで開始できます。</p>
 <ul class="simple">
 <li><p>QGISで新しい空の地図を開きます。</p></li>
-<li><p><span class="guilabel">ブラウザ</span> タブをクリックしてブラウザを開きます。このタブが表示されていない場合は、<span class="menuselection">ビュー ► パネル ► ブラウザ</span> を選択して有効にすることができます。</p></li>
-<li><p>ツリーのPostGISの部分を開くと、前に設定した接続が利用可能になっているはずです（ブラウザウィンドウの上部にある <span class="guilabel">再読み込み</span> ボタンをクリックする必要があるかもしれません）。</p></li>
+<li><p>Open the Browser by clicking the <span class="guilabel">Browser</span> tab. If you do not see this tab,
+you can enable it by going to <span class="menuselection">View ► Panels ► Browser</span>.</p></li>
+<li><p>Open the PostgreSQL portion of the tree and you should find your previously
+configured connection available (you may need to click the <span class="guilabel">Refresh</span> button at
+the top of the browser window).</p></li>
 </ul>
 <figure class="align-center">
 <img alt="../../../_images/browser_panel.png" src="../../../_images/browser_panel.png" />
 </figure>
 <ul class="simple">
 <li><p>ここに記載されているテーブル/レイヤのいずれかをダブルクリックすると、それがマップキャンバスに追加されます。</p></li>
-<li><p>このビューでテーブル/レイヤを右クリックすると、いくつかのオプションが提供されます。<span class="guilabel">プロパティ</span> 項目をクリックしてそのレイヤのプロパティを見てください。</p></li>
+<li><p>このビューでテーブル/レイヤを右クリックすると、いくつかのオプションを提供します。<span class="guilabel">プロパティ</span> 項目をクリックしてレイヤのプロパティを見てください。</p></li>
 </ul>
 <figure class="align-center">
 <img alt="../../../_images/postgis_layer_properties.png" src="../../../_images/postgis_layer_properties.png" />
 </figure>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>もちろん、このインターフェイスを使って、自分のワークステーションの外にあるサーバーでホストされているPostgreSQLデータベースに接続することも可能です。ツリーのPostgreSQL項目を右クリックすると、新しい接続のための接続パラメータを指定することができます。</p>
+<p>Of course you can also use this interface to connect to PostgreSQL
+databases hosted on a server external to your workstation. Right clicking
+on the PostgreSQL entry in the tree will allow you to specify connection
+parameters for a new connection.</p>
 </div>
 </section>
 <section id="follow-along-adding-a-filtered-set-of-records-as-a-layer">
 <h2><span class="section-number">18.1.2. </span><abbr>★☆☆ （初級レベル）</abbr> 理解しよう: レコードのフィルタセットをレイヤとして追加する<a class="headerlink" href="#follow-along-adding-a-filtered-set-of-records-as-a-layer" title="Link to this heading"></a></h2>
-<p>テーブル全体をQGISレイヤとして追加する方法を見てきたので、前のセクションで学んだクエリを使用して、テーブルからフィルタされたレコードの集合をレイヤとして追加する方法を学ぶのはいいかもしれません。</p>
+<p>今、QGISレイヤーとしてテーブル全体を追加する方法を見てきたので、前のセクションで学んだクエリを使用して、レイヤーとしてテーブルからレコードのフィルタセットを追加する方法を学ぶのはいいかもしれません。</p>
 <ul>
-<li><p>新しい空の地図をレイヤなしで開始する</p></li>
-<li><p><span class="guilabel">PostgreSQLレイヤを追加</span> ボタンをクリックするか、メニューから <span class="menuselection">レイヤ ► PostgreSQLレイヤを追加</span> を選択します。</p></li>
-<li><p>表示される <span class="guilabel">PostgreSQLのテーブルを追加</span> ダイアログで、 <span class="guilabel">postgis_demo</span> 接続に接続します。</p></li>
+<li><p>レイヤーなしで新しい空の地図を開始</p></li>
+<li><p>Click the <span class="guilabel">Add PostgreSQL Layers</span> button or select <span class="menuselection">Layer
+► Add PostgreSQL Layers</span> from the menu.</p></li>
+<li><p>In the <span class="guilabel">Add PostgreSQL Table(s)</span> dialog that comes up, connect to the
+<span class="guilabel">postgis_demo</span> connection.</p></li>
 <li><p>Expand the <span class="guilabel">public schema</span> and you should find the three tables we were
 working with previously.</p></li>
 <li><p>Click the <code class="docutils literal notranslate"><span class="pre">lines</span></code> layer to select it, but instead of adding it, click
@@ -272,7 +280,7 @@ dialog.</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 23, 13:40 +0900
+      <span class="lastupdated">最終更新: 2026 6月 26, 00:47 +0900
       </span></p>
   </div>
 
