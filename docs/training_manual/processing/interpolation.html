@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>17.22. 内挿 &mdash; QGIS Documentation  ドキュメント</title>
+  <title>17.22. 補間 &mdash; QGIS Documentation  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/qgis_docs.css?v=e885e955" />
       <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
@@ -36,7 +36,7 @@
     <link rel="search" title="検索" href="../../../search.html" />
     <link rel="next" title="17.23. 補間（続）" href="interpolation_cross.html" />
     <link rel="prev" title="17.21. モデルを作成するためにモデラー専用ツールを使用する" href="modeler_only.html" />
-  <meta name="description" content="QGIS 3.44 documentation: 17.22. 内挿">
+  <meta name="description" content="QGIS 3.44 documentation: 17.22. 補間">
   <script>
     var _paq = window._paq = window._paq || [];
     _paq.push(["disableCookies"]);
@@ -85,7 +85,7 @@
    <a href= "../../../genindex.html">索引</a>
  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+              <p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about/foreword.html">序文</a></li>
@@ -97,8 +97,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">トレーニングマニュアル</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../foreword/index.html">1. コースの紹介</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basic_map/index.html">2. モジュール: 基本的な地図を作成して探索する</a></li>
@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../spatial_databases/index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">17. QGISプロセシングガイド</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="intro.html">17.1. はじめに</a></li>
@@ -127,18 +127,18 @@
 <li class="toctree-l3"><a class="reference internal" href="first_saga_alg.html">17.8. 外部アルゴリズムを実行する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="log.html">17.9. プロセシングログ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="no_data.html">17.10. ラスタ計算機。No-data値</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクター計算機</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクタ計算機</a></li>
 <li class="toctree-l3"><a class="reference internal" href="extents.html">17.12. 範囲を定義する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="html.html">17.13. HTML出力</a></li>
 <li class="toctree-l3"><a class="reference internal" href="john_snow.html">17.14. 最初の分析例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cutting_merging.html">17.15. ラスタレイヤをクリップしてマージする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cutting_merging.html">17.15. ラスタレイヤをクリッピングしてマージする</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydro.html">17.16. 水文解析</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_twi.html">17.17. モデルデザイナーから始める</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_hydro.html">17.18. より複雑なモデル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_hydro_calculator.html">17.19. モデラーでの数値計算</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_hydro_twi.html">17.20. モデル内のモデル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_only.html">17.21. モデルを作成するためにモデラー専用ツールを使用する</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">17.22. 内挿</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">17.22. 補間</a></li>
 <li class="toctree-l3"><a class="reference internal" href="interpolation_cross.html">17.23. 補間（続）</a></li>
 <li class="toctree-l3"><a class="reference internal" href="iterative.html">17.24. アルゴリズムの反復実行</a></li>
 <li class="toctree-l3"><a class="reference internal" href="iterative_model.html">17.25. アルゴリズムの反復実行（続）</a></li>
@@ -166,7 +166,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS クックブック(QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developers_guide/index.html">開発者ガイド</a></li>
 </ul>
 
@@ -186,7 +186,7 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">QGISトレーニングマニュアル</a></li>
           <li class="breadcrumb-item"><a href="index.html"><span class="section-number">17. </span>QGISプロセシングガイド</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">17.22. </span>内挿</li>
+      <li class="breadcrumb-item active"><span class="section-number">17.22. </span>補間</li>
 
     <li style="float: right; text-align: right;">
 	<ul>
@@ -218,11 +218,11 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 73.68% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="interpolation">
-<h1><span class="section-number">17.22. </span>内挿<a class="headerlink" href="#interpolation" title="Link to this heading"></a></h1>
+<h1><span class="section-number">17.22. </span>補間<a class="headerlink" href="#interpolation" title="Link to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>この章では、ポイントデータの補間方法について示し、空間分析の実際の実行例を示します。</p>
@@ -232,12 +232,8 @@
 <figure class="align-default">
 <img alt="../../../_images/project.png" src="../../../_images/project.png" />
 </figure>
-<p>データは、最新の収穫機によって作られるような、収穫産出高データ、に対応します。そして、ここではそれを収穫産出高のラスタレイヤを得るために使います。そのレイヤでさらに何か分析する計画はなく、最も生産的な地域、そして生産性が改善できる地域を簡単に特定するための背景レイヤとしてのみ使用します。</p>
-<p>The first thing to do is to clean--up the layer, since it contains redundant
-points. These are caused by the movement of the harvester, in places where it
-has to do a turn or it changes its speed for some reason. The <span class="guilabel">Points filter</span>
-algorithm will be useful for this. We will use it twice, to remove points that
-can be considered outliers both in the upper and lower part of the distribution.</p>
+<p>データは、最新の収穫機によって作られるような収穫量データに対応します。そして、ここではそれを収穫量のラスタレイヤを得るために使います。そのレイヤでさらに何か分析する計画はなく、最も生産的な地域、そして生産性が改善できる地域を簡単に特定するための背景レイヤとしてのみ使用します。</p>
+<p>最初にすることはレイヤをクリーンアップすることです。なぜならそれには冗長なポイントが含まれているためです。これらは収穫機が何かの理由で転回したり速度を変えなければならない場所でした動きに起因します。 <span class="guilabel">Points Filter</span> アルゴリズムは、これに役立ちます。それを二回使って分布の上位または下位の部分の両方で外れ値とみなされるポイントを除外します。</p>
 <p>最初の実行には、次のパラメーター値を使います。</p>
 <figure class="align-default">
 <img alt="../../../_images/filter.png" src="../../../_images/filter.png" />
@@ -247,37 +243,29 @@ can be considered outliers both in the upper and lower part of the distribution.
 <img alt="../../../_images/filter2.png" src="../../../_images/filter2.png" />
 </figure>
 <p>入力としてオリジナルレイヤーを使用しているのではなく、以前に実行した際の出力を使用している点に注意してください。</p>
-<p>最終的なフィルタレイヤー、減らされたポイントのセットのもの、はオリジナルものと類似して見えるはずですが、含んでいるポイントはより少ないです。それらの属性テーブルで比較すると確認できます。</p>
-<p>Now let's rasterize the layer using the <span class="guilabel">Rasterize</span> algorithm.</p>
+<p>ポイントの減らされた集合を持った最終的なフィルタレイヤーは、オリジナルのものに似て見えるでしょうが、含んでいるポイントの数はより少なくなっています。それは属性テーブルで比較すると確認できます。</p>
+<p>では <span class="guilabel">ラスタライズ</span> アルゴリズムを使用してレイヤをラスタ化しましょう。</p>
 <figure class="align-default">
 <img alt="../../../_images/rasterize2.png" src="../../../_images/rasterize2.png" />
 </figure>
-<p>The <code class="docutils literal notranslate"><span class="pre">Filtered</span> <span class="pre">points</span></code> layer refers to the resulting one of the second filter.
-It has the same name as the one produced by the first filter, since the name
-is assigned by the algorithm, but you should not use the first one. Since we
-will not be using it for anything else, you can safely remove it from your
-project to avoid confusion, and leave just the last filtered layer.</p>
-<p>結果のラスターレイヤーはこのように見えます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">Filtered</span> <span class="pre">points</span></code> レイヤーは、二番目のフィルタの成果のレイヤーを参照します。アルゴリズムが名前を割り当てるため、最初のフィルタによって作成されたレイヤーと同じ名前ですが、最初のものは使用しないでください。最初のものは他に使わないので、混乱を避けるためにプロジェクトから取り除き、最後にフィルタ処理したレイヤーだけ残してもよいです。</p>
+<p>成果ラスタレイヤはこのように見えます。</p>
 <figure class="align-default">
 <img alt="../../../_images/rasterized.png" src="../../../_images/rasterized.png" />
 </figure>
-<p>It is already a raster layer, but it is missing data in some of its cells.
-It only contain valid values in those cells that contained a point from the
-vector layer that we have just rasterized, and a no--data value in all the
-other ones. To fill the missing values, we can use the <span class="guilabel">Close gaps</span> algorithm.</p>
+<p>それはもうラスタレイヤですが、一部のセルのデータが欠落しています。ラスタ化したベクタレイヤのポイントを含んでいたセルは有効な値を含んでいますが、それ以外のセルは no--data 値を含んでいます。この欠落値を埋めるため、 <span class="guilabel">Close gaps</span> アルゴリズムを使用できます。</p>
 <figure class="align-default">
 <img alt="../../../_images/close_gaps.png" src="../../../_images/close_gaps.png" />
 </figure>
-<p>データなし値のないレイヤーはこのように見えます。</p>
+<p>no--data 値のないレイヤはこのように見えます。</p>
 <figure class="align-default">
 <img alt="../../../_images/filled.png" src="../../../_images/filled.png" />
 </figure>
-<p>収穫産出高が計られた地域において、データによっておおわれる地域を制限するために、提供された制限レイヤーでラスターレイヤーを切り抜くことができます。</p>
+<p>データによって含まれる地域を収穫量が計測された地域に限るため、提供された制限レイヤを使ってラスタレイヤを切り抜くことができます。</p>
 <figure class="align-default">
 <img alt="../../../_images/clip1.png" src="../../../_images/clip1.png" />
 </figure>
-<p>And for a smoother result (less accurate but better for rendering in the
-background as a support layer), we can apply a <span class="guilabel">Gaussian filter</span> to the layer.</p>
+<p>そして滑らかな結果（正確度は低いがサポートレイヤとして背景にレンダリングされるには良い）を得るため、レイヤに <span class="guilabel">Gaussian Filter</span> を適用します。</p>
 <figure class="align-default">
 <img alt="../../../_images/gaussian.png" src="../../../_images/gaussian.png" />
 </figure>
@@ -299,7 +287,7 @@ background as a support layer), we can apply a <span class="guilabel">Gaussian f
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 7月 01, 07:06 +0900
       </span></p>
   </div>
 

@@ -35,7 +35,7 @@
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="検索" href="../../../search.html" />
     <link rel="next" title="17.24. アルゴリズムの反復実行" href="iterative.html" />
-    <link rel="prev" title="17.22. 内挿" href="interpolation.html" />
+    <link rel="prev" title="17.22. 補間" href="interpolation.html" />
   <meta name="description" content="QGIS 3.44 documentation: 17.23. 補間（続）">
   <script>
     var _paq = window._paq = window._paq || [];
@@ -85,7 +85,7 @@
    <a href= "../../../genindex.html">索引</a>
  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+              <p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about/foreword.html">序文</a></li>
@@ -97,8 +97,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">トレーニングマニュアル</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../foreword/index.html">1. コースの紹介</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basic_map/index.html">2. モジュール: 基本的な地図を作成して探索する</a></li>
@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../spatial_databases/index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">17. QGISプロセシングガイド</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="intro.html">17.1. はじめに</a></li>
@@ -127,18 +127,18 @@
 <li class="toctree-l3"><a class="reference internal" href="first_saga_alg.html">17.8. 外部アルゴリズムを実行する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="log.html">17.9. プロセシングログ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="no_data.html">17.10. ラスタ計算機。No-data値</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクター計算機</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクタ計算機</a></li>
 <li class="toctree-l3"><a class="reference internal" href="extents.html">17.12. 範囲を定義する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="html.html">17.13. HTML出力</a></li>
 <li class="toctree-l3"><a class="reference internal" href="john_snow.html">17.14. 最初の分析例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cutting_merging.html">17.15. ラスタレイヤをクリップしてマージする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cutting_merging.html">17.15. ラスタレイヤをクリッピングしてマージする</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydro.html">17.16. 水文解析</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_twi.html">17.17. モデルデザイナーから始める</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_hydro.html">17.18. より複雑なモデル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_hydro_calculator.html">17.19. モデラーでの数値計算</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_hydro_twi.html">17.20. モデル内のモデル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_only.html">17.21. モデルを作成するためにモデラー専用ツールを使用する</a></li>
-<li class="toctree-l3"><a class="reference internal" href="interpolation.html">17.22. 内挿</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interpolation.html">17.22. 補間</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">17.23. 補間（続）</a></li>
 <li class="toctree-l3"><a class="reference internal" href="iterative.html">17.24. アルゴリズムの反復実行</a></li>
 <li class="toctree-l3"><a class="reference internal" href="iterative_model.html">17.25. アルゴリズムの反復実行（続）</a></li>
@@ -166,7 +166,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS クックブック(QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developers_guide/index.html">開発者ガイド</a></li>
 </ul>
 
@@ -207,7 +207,7 @@
 
 
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
-        <a href="interpolation.html" class="btn btn-neutral float-left" title="17.22. 内挿" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="interpolation.html" class="btn btn-neutral float-left" title="17.22. 補間" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="iterative.html" class="btn btn-neutral float-right" title="17.24. アルゴリズムの反復実行" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
@@ -218,7 +218,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 75.00% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="more-interpolation">
@@ -227,57 +227,57 @@
 <p class="admonition-title">注釈</p>
 <p>この章では、補間アルゴリズムが使用される別の実用的な場合を示しています。</p>
 </div>
-<p>補間は一般的な技術であり、QGIS処理フレームワークを使用して適用できるいくつかの技術を実証するために使用できます。このレッスンでは、すでに導入されたいくつかの補間アルゴリズムを使用しますが、別のアプローチです。</p>
-<p>このレッスン用のデータもポイントレイヤーを含んでいますが、この場合は標高データです。前のレッスンで行ったのとずっと同じ方法でそれを補間しようとしているが、今回は元のデータの一部を保存しておいて、補間処理の品質を評価するためにそれを使用します。</p>
-<p>First, we have to rasterize the points layer and fill the resulting no--data cells, but using just a fraction of the points in the layer. We will save 10% of the points for a later check, so we need to have 90% of the points ready for the interpolation. To do so, we could use the <span class="guilabel">Split shapes layer randomly</span> algorithm, which we have already used in a previous lesson, but there is a better way to do that, without having to create any new intermediate layer. Instead of that, we can just select the points we want to use for the interpolation (the 90% fraction), and then run the algorithm. As we have already seen, the rasterizing algorithm will use only those selected points and ignore the rest. The selection can be done using the <span class="guilabel">Random selection</span> algorithm. Run it with the following parameters.</p>
+<p>補間は一般的な技術であり、QGISプロセシングフレームワークを使用して適用できるいくつかの技術を実際にやってみせるのに使用できます。このレッスンでは既に紹介したいくつかの補間アルゴリズムを別のアプローチで使用します。</p>
+<p>このレッスン用のデータもポイントレイヤーを含んでいますが、この場合は標高データです。前のレッスンで行ったのとほとんど同じ方法で補間しますが、今回は元のデータの一部を保存しておいて、補間処理の品質を評価するためにそれを使用します。</p>
+<p>まず、ポイントレイヤをラスタ化し、no--data セルを埋めますが、レイヤ内の一部のポイントだけを使用します。ポイントの 10% を後のチェックのために取っておくので、ポイントの90%を補間のために準備する必要があります。そのためには前のレッスンで使った <span class="guilabel">シェープレイヤーをランダムに分割</span> アルゴリズムを使用できますが、新しい中間レイヤーを全く作ることなく それをするもっと良い方法があります。代わりの方法では、補間に使用したいポイント（90％の部分）を選択だけして、その後、アルゴリズムを実行します。既に見てきたように、ラスタ化アルゴリズムは、選択されたポイントだけを使用し、残りを無視します。選択は、 <span class="guilabel">ランダム選択</span> アルゴリズムを使用して行うことができます。次のパラメーターを使用して、それを実行します。</p>
 <figure class="align-default">
 <img alt="../../../_images/select.png" src="../../../_images/select.png" />
 </figure>
-<p>それはラスター化するレイヤー内の点の90％を選択します</p>
+<p>それはラスタ化するレイヤにあるポイントの90％を選択します</p>
 <figure class="align-default">
 <img alt="../../../_images/selected.png" src="../../../_images/selected.png" />
 </figure>
-<p>選択はランダムなので、選択が上記の画像に示すような選択とは異なる場合があります。</p>
-<p>Now run the <span class="guilabel">Rasterize</span> algorithm to get the first raster layer, and then run the <span class="guilabel">Close gaps</span> algorithm to fill the no-data cells [Cell resolution: 100 m].</p>
+<p>選択はランダムなので、あなたの選択は上記の画像に示されている選択とは異なるでしょう。</p>
+<p>今度は <span class="guilabel">ラスタライズ</span> アルゴリズムを実行して最初のラスタレイヤを手に入れ、次に <span class="guilabel">Close gaps</span> アルゴリズムを実行して no-data セルを埋めます[セル解像度：100 m]。</p>
 <figure class="align-default">
 <img alt="../../../_images/filled1.png" src="../../../_images/filled1.png" />
 </figure>
-<p>補間の品質を確認するために、今、選択されていないポイントを使用できます。この時点で、実際の標高（ポイントレイヤーにおける値）と補間標高（補間ラスターレイヤーの値を）知っています。これらの値の差を計算することにより、2つを比較できます</p>
+<p>補間の品質を確認するために、ここで選択されていないポイントを使用できます。この時点で、実際の標高（ポイントレイヤーにおける値）と補間した標高（補間ラスタレイヤの値）を知っています。これらの値の差を計算することにより、2つを比較できます。</p>
 <p>選択されていないポイントを使用しようとしているので、まず、この選択を反転してみましょう。</p>
 <figure class="align-default">
 <img alt="../../../_images/inverted.png" src="../../../_images/inverted.png" />
 </figure>
-<p>The points contain the original values, but not the interpolated ones. To add them in a new field, we can use the <span class="guilabel">Add raster values to points</span> algorithm</p>
+<p>ポイントは、補間されたものではなく、元の値を格納しています。それらを新しいフィールドに追加するには、 <span class="guilabel">Add raster values to points</span> アルゴリズムを使用できます</p>
 <figure class="align-default">
 <img alt="../../../_images/addgridvalues.png" src="../../../_images/addgridvalues.png" />
 </figure>
-<p>The raster layer to select (the algorithm supports multiple raster, but we just need one) is the resulting one from the interpolation. We have renamed it to <code class="docutils literal notranslate"><span class="pre">interpolate</span></code> and that layer name is the one that will be used for the name of the field to add.</p>
-<p>今、補間のために使用されなかったポイントで、両方の値を含むベクターレイヤーを持っています。</p>
+<p>選択するラスタレイヤ（アルゴリズムは複数のラスタをサポートしていますが、ここでは1つだけ必要）は補間の成果レイヤです。ここではその名前を <code class="docutils literal notranslate"><span class="pre">interpolate</span></code> に変更しました。このレイヤ名は追加するフィールドの名前に使用されます。</p>
+<p>これで補間に使用しなかったポイントに両方の値を格納したベクタレイヤができました。</p>
 <figure class="align-default">
 <img alt="../../../_images/extended_layer.png" src="../../../_images/extended_layer.png" />
 </figure>
-<p>Now, we will use the fields calculator for this task. Open the <span class="guilabel">Field calculator</span> algorithm and run it with the following parameters.</p>
+<p>今度はこの作業にフィールド計算機を使用します。 <span class="guilabel">フィールド計算機</span> アルゴリズムを開き、次のパラメータでそれを実行してください。</p>
 <figure class="align-default">
 <img alt="../../../_images/fields_calculator.png" src="../../../_images/fields_calculator.png" />
 </figure>
-<p>ラスターレイヤーからの値を使用して、フィールドには別の名前を持っている場合は、それに応じて上記の式を変更する必要があります。このアルゴリズムを実行すると、それらのそれぞれが2つの標高値の差を含む、補間のために使用していないだけでポイントを持つ新しいレイヤーが得られるでしょう。</p>
+<p>ラスタレイヤからの値を持つフィールドに異なる名前を使っている場合は、それに応じて上記の式を変更する必要があります。このアルゴリズムを実行すると、補間に使用していないポイントだけを持ち、各ポイントが2つの標高値の差を格納している新しいレイヤが得られます。</p>
 <p>その値に従ってそのレイヤーを表現すると最大の不一致がどこに見つかるかの最初のアイデアが得られるでしょう。</p>
 <figure class="align-default">
 <img alt="../../../_images/diffs.png" src="../../../_images/diffs.png" />
 </figure>
-<p>そのレイヤーを補間すると補間された地域のすべての点で推定誤差を持つラスターレイヤーを取得します。</p>
+<p>そのレイヤを補間すると、補間された地域の全てのポイントにおける推定誤差を持ったラスタレイヤが得られます。</p>
 <figure class="align-default">
 <img alt="../../../_images/raster_diffs.png" src="../../../_images/raster_diffs.png" />
 </figure>
-<p><span class="menuselection">GRASS ► v.sample</span> で直接に同じ情報（元の点の値と補間のものとの差）を得ることもできます。</p>
-<p>このレッスンの初めでランダムな選択を実行する際に導入されるランダム成分があるので、結果はこれらのものと異なる場合があります。</p>
+<p><span class="menuselection">GRASS ► v.sample</span> で同じ情報（元のポイントの値と補間されたものとの差）を直接得ることもできます。</p>
+<p>このレッスンの初めでランダムな選択を実行する際にランダム成分が入るので、結果はこれらのものと異なるでしょう。</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="interpolation.html" class="btn btn-neutral float-left" title="17.22. 内挿" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="interpolation.html" class="btn btn-neutral float-left" title="17.22. 補間" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="iterative.html" class="btn btn-neutral float-right" title="17.24. アルゴリズムの反復実行" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
@@ -285,7 +285,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 7月 01, 07:06 +0900
       </span></p>
   </div>
 
