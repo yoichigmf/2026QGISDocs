@@ -85,7 +85,7 @@
    <a href= "../../../genindex.html">索引</a>
  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+              <p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about/foreword.html">序文</a></li>
@@ -97,8 +97,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">トレーニングマニュアル</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../foreword/index.html">1. コースの紹介</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basic_map/index.html">2. モジュール: 基本的な地図を作成して探索する</a></li>
@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../spatial_databases/index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../processing/index.html">17. QGISプロセシングガイド</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../databases/index.html">18. モジュール: QGISで空間データベースを使う</a></li>
@@ -136,7 +136,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS クックブック(QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developers_guide/index.html">開発者ガイド</a></li>
 </ul>
 
@@ -187,7 +187,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 91.46% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="preparing-exercise-data">
@@ -204,7 +204,7 @@
 </div>
 <section id="create-osm-based-vector-files">
 <h2><span class="section-number">20.1. </span>OSMを基にしたベクタファイルを作る<a class="headerlink" href="#create-osm-based-vector-files" title="Link to this heading"></a></h2>
-<p>デフォルトのデータセットをコースのためのローカライズされたデータに置き換えたい場合、QGISに組み込まれたツールを使って簡単に行うことができます。あなたが使おうとする領域は、都市部と農村部の適当な混合地であり、河川や水面、道路、地域の境界(自然保護区や農場など)などが分かれてる必要があります。</p>
+<p>デフォルトのデータセットを講座のためのローカライズされたデータに置き換えたい場合、QGISに組み込まれたツールを使って簡単に行うことができます。あなたが使おうとする領域は、都市部と農村部の適当な混合地であり、河川や水面、道路、地域の境界(自然保護区や農場など)などが分かれてる必要があります。</p>
 <ol class="arabic">
 <li><p>QGISプロジェクトを開く</p></li>
 <li><p><span class="menuselection">レイヤ►データソースマネージャ</span> を選択し、 <span class="guilabel">データソースマネージャ</span> ダイアログを開きます。</p></li>
@@ -258,10 +258,9 @@
 </figure>
 <p>あなたの地域に含まれるデータをサンプリングして、あなたの地域でどのような結果が得られるかを確認できます。</p>
 <p>講座で使用するために、結果のデータを保存する必要があります。データに応じて、ESRIシェープファイル、GeoPackage、SpatiaLite形式を使用します。</p>
-<p>To convert the <code class="docutils literal notranslate"><span class="pre">place</span></code> temporary layer to another format:</p>
+<p><code class="docutils literal notranslate"><span class="pre">place</span></code> 一時レイヤを他の形式に変換するには:</p>
 <ol class="arabic">
-<li><p>Click the <a class="reference internal" href="../../../_images/mIndicatorMemory.png"><img alt="indicatorMemory" src="../../../_images/mIndicatorMemory.png" style="width: 1.5em;" /></a> icon next to the <code class="docutils literal notranslate"><span class="pre">place</span></code> layer
-to open the <span class="guilabel">Save Scratch Layer</span> dialog.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">place</span></code> レイヤーの横にある <a class="reference internal" href="../../../_images/mIndicatorMemory.png"><img alt="indicatorMemory" src="../../../_images/mIndicatorMemory.png" style="width: 1.5em;" /></a> アイコンをクリックして、 <span class="guilabel">スクラッチレイヤを保存</span> ダイアログを開きます。</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <p>一時レイヤーのプロパティ（CRS、範囲、フィールドなど）のいずれかを変更する必要がある場合は、代わりに <span class="menuselection">書出-&gt;地物に名前を付けて保存...</span> コンテキストメニューを使用し、を確認してください。 <span class="guilabel">保存したファイルを地図に追加する</span> オプションがチェックされています。これにより、新しいレイヤーが追加されます。</p>
@@ -274,9 +273,7 @@ to open the <span class="guilabel">Save Scratch Layer</span> dialog.</p>
 </figure>
 </li>
 <li><p><span class="guilabel">OK</span> を押します</p>
-<p>In the <span class="guilabel">Layers</span> panel, the temporary <code class="docutils literal notranslate"><span class="pre">place</span></code> layer is
-replaced with the saved <code class="docutils literal notranslate"><span class="pre">places</span></code> shapefile layer and
-the temporary icon next to it removed.</p>
+<p><span class="guilabel">レイヤー</span> パネルで、一時的な <code class="docutils literal notranslate"><span class="pre">place</span></code> レイヤーが保存された <code class="docutils literal notranslate"><span class="pre">places</span></code> シェープファイルレイヤーに置き換えられ、その横にある一時的なアイコンが無くなります。</p>
 </li>
 <li><p>レイヤーをダブルクリックして <span class="menuselection">レイヤのプロパティ-&gt;ソース</span> タブを開き、 <span class="guilabel">レイヤ名</span> プロパティをファイル名と一致するように更新します。</p></li>
 <li><p>他のレイヤーに対してこのプロセスを繰り返し、次のように名前を変更します：</p>
@@ -288,10 +285,9 @@ the temporary icon next to it removed.</p>
 <p>各結果データセットは、 <code class="file docutils literal notranslate"><span class="pre">exercise_data/shapefile/</span></code> ディレクトリに保存する必要があります。</p>
 </li>
 </ol>
-<p>The next step is to create a GeoPackage file from the <code class="docutils literal notranslate"><span class="pre">building</span></code> layer
-to use during the course:</p>
+<p>次のステップは、講座で使うために <code class="docutils literal notranslate"><span class="pre">building</span></code> レイヤーからGeoPackageファイルを作成することです。</p>
 <ol class="arabic">
-<li><p>Click the <a class="reference internal" href="../../../_images/mIndicatorMemory.png"><img alt="indicatorMemory" src="../../../_images/mIndicatorMemory.png" style="width: 1.5em;" /></a> icon next to the <code class="docutils literal notranslate"><span class="pre">building</span></code> layer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">building</span></code> レイヤの隣にある <a class="reference internal" href="../../../_images/mIndicatorMemory.png"><img alt="indicatorMemory" src="../../../_images/mIndicatorMemory.png" style="width: 1.5em;" /></a> アイコンをクリックします</p></li>
 <li><p><span class="guilabel">GeoPackage</span> 形式を選びます</p></li>
 <li><p>ファイルを <code class="file docutils literal notranslate"><span class="pre">training_data.gpkg</span></code> として <code class="file docutils literal notranslate"><span class="pre">exercise_data/</span></code> フォルダの下に保存します</p></li>
 <li><p><span class="guilabel">レイヤ名</span> がデフォルトのファイル名として記入されます。それを <code class="docutils literal notranslate"><span class="pre">buildings</span></code> に置き換えます。</p>
@@ -301,12 +297,11 @@ to use during the course:</p>
 </li>
 <li><p><span class="guilabel">OK</span> を押します</p></li>
 <li><p>レイヤのプロパティダイアログで名前を変更します</p></li>
-<li><p>Repeat the process with the <code class="docutils literal notranslate"><span class="pre">highway</span></code> layer, saving it as <code class="docutils literal notranslate"><span class="pre">roads</span></code> in
-the same GeoPackage database.</p></li>
+<li><p>このプロセスを <code class="docutils literal notranslate"><span class="pre">highway</span></code> レイヤで繰り返し、それを <code class="docutils literal notranslate"><span class="pre">roads</span></code> として同じGeoPackageデータベースに保存します。</p></li>
 </ol>
 <p>最後のステップは、残りの一時ファイルをSpatiaLiteファイルとして保存することです。</p>
 <ol class="arabic">
-<li><p>Click the <a class="reference internal" href="../../../_images/mIndicatorMemory.png"><img alt="indicatorMemory" src="../../../_images/mIndicatorMemory.png" style="width: 1.5em;" /></a> icon next to the <code class="docutils literal notranslate"><span class="pre">landuse</span></code> layer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">landuse</span></code> レイヤの隣にある <a class="reference internal" href="../../../_images/mIndicatorMemory.png"><img alt="indicatorMemory" src="../../../_images/mIndicatorMemory.png" style="width: 1.5em;" /></a> アイコンをクリックします</p></li>
 <li><p><span class="guilabel">SpatiaLite</span> 形式を選択します</p></li>
 <li><p>そのファイルを <code class="file docutils literal notranslate"><span class="pre">exercise_data/</span></code> フォルダの下に <code class="file docutils literal notranslate"><span class="pre">landuse.sqlite</span></code> として保存します。デフォルトでは、 <span class="guilabel">レイヤー名</span> がファイル名として入力されます。変更しないでください。</p>
 <figure class="align-center">
@@ -315,17 +310,17 @@ the same GeoPackage database.</p></li>
 </li>
 <li><p><span class="guilabel">OK</span> を押します</p></li>
 </ol>
-<p>これで、次のような地図が作成されます（レイヤーが地図に追加されると、QGISがランダムに色を割り当てるため、シンボルは確かに大きく異なります）：</p>
+<p>これで、次のような地図が作成されます（シンボロジは間違いなく大きく異なりますが、それはレイヤーが地図に追加されるときにQGISがランダムに色を割り当てるためです）：</p>
 <figure class="align-center">
 <img alt="../../../_images/post_osm_import.png" src="../../../_images/post_osm_import.png" />
 </figure>
-<p>重要なことは、上に示したものと一致する7つのベクターレイヤーがあり、それらすべてのレイヤーにいくつかのデータがあることです。</p>
+<p>重要なことは、上に示したものと一致する7つのベクターレイヤーがあり、それら全てのレイヤーにいくつかのデータがあることです。</p>
 </section>
 <section id="create-srtm-dem-tiff-files">
 <h2><span class="section-number">20.2. </span>SRTM DEM tiffファイルを作る<a class="headerlink" href="#create-srtm-dem-tiff-files" title="Link to this heading"></a></h2>
 <p>モジュール <a class="reference internal" href="../create_vector_data/index.html#tm-create-vector-data"><span class="std std-ref">モジュール: ベクタデータを作る</span></a> および <a class="reference internal" href="../rasters/index.html#tm-rasters"><span class="std std-ref">モジュール: ラスタ</span></a> の場合、講座用に選択した地域をカバーするラスターイメージ（SRTM DEM）も必要です。</p>
 <p><a class="reference external" href="https://srtm.csi.cgiar.org/">CGIAR-CGI</a> は、 <a class="reference external" href="https://srtm.csi.cgiar.org/srtmdata/">https://srtm.csi.cgiar.org/srtmdata/</a> からダウンロードできるSRTMDEMを提供します。</p>
-<p>使用することを選択した地域全体をカバーする画像が必要になります。範囲座標を見つけるには、QGISで <a class="reference internal" href="../../../_images/mActionZoomToLayer.png"><img alt="zoomToLayer" src="../../../_images/mActionZoomToLayer.png" style="width: 1.5em;" /></a> 最大のレイヤーの範囲にズームし、ステータスバーの <a class="reference internal" href="../../../_images/extents.png"><img alt="extents" src="../../../_images/extents.png" style="width: 1.5em;" /></a> <span class="guilabel">範囲</span> ボックスの値を選択します。 <code class="file docutils literal notranslate"><span class="pre">GeoTiff</span></code> 形式のままにします。フォームに入力したら、 <span class="guilabel">ここをクリックして検索を開始&gt;&gt;</span> ボタンをクリックし、ファイルをダウンロードします。</p>
+<p>使うことを選んだ地域全体をカバーする画像が必要になります。範囲座標を見つけるには、QGISで <a class="reference internal" href="../../../_images/mActionZoomToLayer.png"><img alt="zoomToLayer" src="../../../_images/mActionZoomToLayer.png" style="width: 1.5em;" /></a> 最大のレイヤーの範囲にズームし、ステータスバーの <a class="reference internal" href="../../../_images/extents.png"><img alt="extents" src="../../../_images/extents.png" style="width: 1.5em;" /></a> <span class="guilabel">範囲</span> ボックスの値を採取します。 <code class="file docutils literal notranslate"><span class="pre">GeoTiff</span></code> 形式のままにしてください。フォームに入力したら <span class="guilabel">ここをクリックして検索を開始&gt;&gt;</span> ボタンをクリックし、ファイルをダウンロードします。</p>
 <p>必要なファイルをダウンロードしたら、それらを <code class="file docutils literal notranslate"><span class="pre">raster/SRTM</span></code> サブフォルダの下の <code class="file docutils literal notranslate"><span class="pre">exercise_data</span></code> ディレクトリに保存する必要があります。</p>
 </section>
 <section id="create-imagery-tiff-files">
@@ -362,7 +357,7 @@ the same GeoPackage database.</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 7月 02, 06:33 +0900
       </span></p>
   </div>
 

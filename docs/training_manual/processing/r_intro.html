@@ -34,7 +34,7 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="検索" href="../../../search.html" />
-    <link rel="next" title="17.34. 地滑りを予測する" href="geomorpho.html" />
+    <link rel="next" title="17.34. 地すべりを予測する" href="geomorpho.html" />
     <link rel="prev" title="17.32. 太陽光発電所を計画する" href="solar.html" />
   <meta name="description" content="QGIS 3.44 documentation: 17.33. プロセシングでRスクリプトを使用する">
   <script>
@@ -85,7 +85,7 @@
    <a href= "../../../genindex.html">索引</a>
  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+              <p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about/foreword.html">序文</a></li>
@@ -97,8 +97,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">トレーニングマニュアル</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../foreword/index.html">1. コースの紹介</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basic_map/index.html">2. モジュール: 基本的な地図を作成して探索する</a></li>
@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../spatial_databases/index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">17. QGISプロセシングガイド</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="intro.html">17.1. はじめに</a></li>
@@ -127,18 +127,18 @@
 <li class="toctree-l3"><a class="reference internal" href="first_saga_alg.html">17.8. 外部アルゴリズムを実行する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="log.html">17.9. プロセシングログ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="no_data.html">17.10. ラスタ計算機。No-data値</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクター計算機</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクタ計算機</a></li>
 <li class="toctree-l3"><a class="reference internal" href="extents.html">17.12. 範囲を定義する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="html.html">17.13. HTML出力</a></li>
 <li class="toctree-l3"><a class="reference internal" href="john_snow.html">17.14. 最初の分析例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cutting_merging.html">17.15. ラスタレイヤをクリップしてマージする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cutting_merging.html">17.15. ラスタレイヤをクリッピングしてマージする</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydro.html">17.16. 水文解析</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_twi.html">17.17. モデルデザイナーから始める</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_hydro.html">17.18. より複雑なモデル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_hydro_calculator.html">17.19. モデラーでの数値計算</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_hydro_twi.html">17.20. モデル内のモデル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_only.html">17.21. モデルを作成するためにモデラー専用ツールを使用する</a></li>
-<li class="toctree-l3"><a class="reference internal" href="interpolation.html">17.22. 内挿</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interpolation.html">17.22. 補間</a></li>
 <li class="toctree-l3"><a class="reference internal" href="interpolation_cross.html">17.23. 補間（続）</a></li>
 <li class="toctree-l3"><a class="reference internal" href="iterative.html">17.24. アルゴリズムの反復実行</a></li>
 <li class="toctree-l3"><a class="reference internal" href="iterative_model.html">17.25. アルゴリズムの反復実行（続）</a></li>
@@ -156,7 +156,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#text-and-graph-output-from-r-syntax">17.33.4. Rからのテキスト・グラフ出力 - 文法</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="geomorpho.html">17.34. 地滑りを予測する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geomorpho.html">17.34. 地すべりを予測する</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../databases/index.html">18. モジュール: QGISで空間データベースを使う</a></li>
@@ -172,7 +172,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS クックブック(QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developers_guide/index.html">開発者ガイド</a></li>
 </ul>
 
@@ -214,7 +214,7 @@
 
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
         <a href="solar.html" class="btn btn-neutral float-left" title="17.32. 太陽光発電所を計画する" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="geomorpho.html" class="btn btn-neutral float-right" title="17.34. 地滑りを予測する" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="geomorpho.html" class="btn btn-neutral float-right" title="17.34. 地すべりを予測する" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
 </div>
@@ -224,33 +224,24 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 91.04% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="use-r-scripts-in-processing">
 <span id="r-intro"></span><h1><span class="section-number">17.33. </span>プロセシングでRスクリプトを使用する<a class="headerlink" href="#use-r-scripts-in-processing" title="Link to this heading"></a></h1>
 <p>このモジュールは、Matteo Ghettaが提供し、<a class="reference external" href="https://www.santannapisa.it/it">Scuola Superiore Sant'Anna</a> が資金を提供しました</p>
-<p>Processing (with the <span class="guilabel">Processing R Provider</span> plugin) makes it possible to write
-and run R scripts inside QGIS.</p>
+<p>（ <span class="guilabel">Processing R Provider</span> プラグインを使った）プロセシングは、QGISの中でRスクリプトを書いて実行することを可能にします。</p>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p>コンピュータにRがインストールされ、PATHが正しく設定されている必要があります。さらにプロセシングは外部のRパッケージを呼び出すだけで、それをインストールすることはできません。ですから外部パッケージは必ずRで直接インストールするようにしてください。ユーザーマニュアルの関連する <a class="reference internal" href="../../user_manual/processing/3rdParty.html#creating-r-scripts"><span class="std std-ref">章</span></a> を参照してください。</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p><em>パッケージ</em> の問題がある場合、それは <code class="docutils literal notranslate"><span class="pre">sp</span></code>, <code class="docutils literal notranslate"><span class="pre">rgdal</span></code>, <code class="docutils literal notranslate"><span class="pre">raster</span></code> などのプロセシングで必要な <em>必須</em> パッケージが欠けていることに関連しているかもしれません。</p>
+<p><em>パッケージ</em> の問題がある場合、それは <code class="docutils literal notranslate"><span class="pre">sp</span></code>, <code class="docutils literal notranslate"><span class="pre">rgdal</span></code>, <code class="docutils literal notranslate"><span class="pre">raster</span></code> などのプロセシングが要求する <em>必須</em> パッケージが欠けていることに関連しているかもしれません。</p>
 </div>
 <section id="adding-scripts">
 <h2><span class="section-number">17.33.1. </span>スクリプトを追加する<a class="headerlink" href="#adding-scripts" title="Link to this heading"></a></h2>
-<p>Adding a script is simple.
-The easiest way is to open the Processing toolbox and choose
-<span class="guilabel">Create new R script...</span> from the R menu (labelled with an
-R icon) at the top of the Processing Toolbox.
-You can also create the script in for instance a text editor and save it in
-your R scripts folder (<code class="file docutils literal notranslate"><span class="pre">processing/rscripts</span></code>).
-When it has been saved there, it will be available for editing by
-right-clicking on the script name in the processing toolbox and then choose
-<span class="guilabel">Edit Script...</span>).</p>
+<p>スクリプトを追加するのは簡単です。最も簡単な方法は、プロセシングツールボックスを開き、プロセシングツールボックスの上部にあるRメニュー（Rのアイコンがついている）から <span class="guilabel">Create new R script...</span> を選択することです。また、例えばテキストエディタでスクリプトを作成し、Rスクリプトフォルダ（<code class="file docutils literal notranslate"><span class="pre">processing/rscripts</span></code>）に保存することもできます。そこに保存されると、プロセシングツールボックスのスクリプト名を右クリックして <span class="guilabel">Edit Script...</span>) を選択することで編集できるようになります。</p>
 <figure class="align-default">
 <img alt="../../../_images/r_intro_1.png" src="../../../_images/r_intro_1.png" />
 </figure>
@@ -258,8 +249,7 @@ right-clicking on the script name in the processing toolbox and then choose
 <p class="admonition-title">注釈</p>
 <p>プロセシングの中にRが見あたらない場合は、 <span class="menuselection">プロセシング ► オプション ► プロバイダ</span> を有効にする必要があります</p>
 </div>
-<p>It opens a <span class="guilabel">R Script Editor</span> in which you have to specify some parameters
-before you can add the script body.</p>
+<p>すると <span class="guilabel">R Script Editor</span> が開くので、必要なパラメーターを指定するとスクリプト本体を追加できるようになります。</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../../_images/r_intro_2.png"><img alt="../../../_images/r_intro_2.png" src="../../../_images/r_intro_2.png" style="width: 385.0px; height: 159.6px;" /></a>
 </figure>
@@ -270,7 +260,7 @@ before you can add the script body.</p>
 <p><code class="file docutils literal notranslate"><span class="pre">exercise_data/processing/r_intro/</span></code> フォルダの下にある <code class="file docutils literal notranslate"><span class="pre">r_intro.qgs</span></code> QGISプロジェクトを開きます。</p>
 <section id="script-parameters">
 <h3>スクリプトのパラメーター<a class="headerlink" href="#script-parameters" title="Link to this heading"></a></h3>
-<p>エディタを開いて、それの最初に書き始めます。</p>
+<p>エディタを開いて、その先頭から書き始めます。</p>
 <p>スクリプト本体の <strong>前</strong> にいくつかのパラメーターを指定する <strong>必要があります</strong> :</p>
 <ol class="arabic">
 <li><p>スクリプトを置くグループの名前（この場合は <cite>plots</cite>）（グループが存在しない場合は作成されます）:</p>
@@ -279,23 +269,23 @@ before you can add the script body.</p>
 </div>
 <p>スクリプトはプロセシングツールボックスの <strong>plots</strong> Rグループ内にあります。</p>
 </li>
-<li><p>プロットを（この例に）表示したいことをプロセシングに伝える必要があります:</p>
+<li><p>（この例では）プロットを表示したいことをプロセシングに指示する必要があります:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">##showplots</span>
 </pre></div>
 </div>
 <p>すると、<strong>結果ビューア</strong> パネルにプロットへのリンクが表示されます（ <span class="menuselection">ビュー ► パネル</span> と <span class="menuselection">プロセシング ► 結果ビューア</span> でオン/オフを切り替えることができます）。</p>
 </li>
-<li><p>また、入力データについてプロセシングに伝える必要があります。この例では、ベクタレイヤのフィールドからプロットを作成したいと思います:</p>
+<li><p>また、入力データについてプロセシングに指示する必要があります。この例では、ベクタレイヤのフィールドからプロットを作成したいと思います:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">##Layer=vector</span>
 </pre></div>
 </div>
-<p>プロセシングは入力がベクトルであることが判りました。<em>Layer</em> という名前は重要ではなく、重要なのは <strong>vector</strong> というパラメータです。</p>
+<p>これでプロセシングは入力がベクタであることが分かりました。<em>Layer</em> という名前は重要ではなく、重要なのは <strong>vector</strong> というパラメータです。</p>
 </li>
-<li><p>最後に、（上記で指定した名前 <em>レイヤ</em> を使って）ベクタレイヤの入力フィールドを指定します:</p>
+<li><p>最後に、（上記で指定した名前 <em>Layer</em> を使って）ベクタレイヤの入力フィールドを指定します:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">##X=Field Layer</span>
 </pre></div>
 </div>
-<p>これでプロセシングは、<em>Layer</em> というフィールドが必要で、それを <strong>X</strong> と呼ぶことを知りました。</p>
+<p>これでプロセシングは、<em>Layer</em> のフィールドが必要で、それを <strong>X</strong> と呼ぶことを知りました。</p>
 </li>
 <li><p>また、<code class="docutils literal notranslate"><span class="pre">name</span></code> を使ってスクリプトの名前を定義することも可能です:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">##My box plot script=name</span>
@@ -307,7 +297,7 @@ before you can add the script body.</p>
 </section>
 <section id="script-body">
 <h3>スクリプト本体<a class="headerlink" href="#script-body" title="Link to this heading"></a></h3>
-<p>今、機能を追加できるスクリプトの <em>見出し</em> を設定し終わりました:</p>
+<p>これでスクリプトの <em>見出し</em> を設定したので機能を加えられます:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">boxplot</span><span class="p">(</span><span class="n">Layer</span><span class="p">[[</span><span class="n">X</span><span class="p">]])</span>
 </pre></div>
 </div>
@@ -316,7 +306,7 @@ before you can add the script body.</p>
 <p class="admonition-title">警告</p>
 <p>パラメータ <strong>X</strong> は二重の角括弧(<code class="docutils literal notranslate"><span class="pre">[[]]</span></code>)の中に入れる必要があります。</p>
 </div>
-<p>最後のスクリプトは次のようになります:</p>
+<p>最終的なスクリプトは次のようになります:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">##Vector processing=group</span>
 <span class="c1">##showplots</span>
 <span class="c1">##Layer=vector</span>
@@ -332,20 +322,20 @@ before you can add the script body.</p>
 <p class="admonition-title">注釈</p>
 <p>スクリプトは好きな場所に保存できますが、その場合プロセシングでは自動的にプロセシングツールボックスに含めることができないので、手動でアップロードする必要があります。</p>
 </div>
-<p>今、エディタ・ウィンドウの上部にあるボタンを使用して、それを実行します。</p>
+<p>それではエディタウィンドウの上部にあるボタンを使用して、それを実行してください:</p>
 <figure class="align-default">
 <img alt="../../../_images/r_intro_4.png" src="../../../_images/r_intro_4.png" />
 </figure>
-<p>エディタウィンドウを閉じたら、プロセシングのテキストボックスを使って、スクリプトを探します:</p>
+<p>エディタウィンドウが閉じていたらプロセシングのテキストボックスを使って自分のスクリプトを探します:</p>
 <figure class="align-default">
 <img alt="../../../_images/r_intro_5.png" src="../../../_images/r_intro_5.png" />
 </figure>
 <p>これで、プロセシングアルゴリズムウィンドウに必要なパラメータを入力することができます:</p>
 <ul class="simple">
-<li><p>for <strong>Layer</strong> choose <code class="docutils literal notranslate"><span class="pre">sample_points</span></code></p></li>
-<li><p>for the <strong>X</strong> field choose <code class="docutils literal notranslate"><span class="pre">value</span></code></p></li>
+<li><p><strong>Layer</strong> に <code class="docutils literal notranslate"><span class="pre">sample_points</span></code> を選びます</p></li>
+<li><p><strong>X</strong> フィールドに <code class="docutils literal notranslate"><span class="pre">value</span></code> を選びます</p></li>
 </ul>
-<p>Click on <span class="guilabel">Run</span>.</p>
+<p><span class="guilabel">実行</span> をクリックします。</p>
 <figure class="align-default">
 <img alt="../../../_images/r_intro_6.png" src="../../../_images/r_intro_6.png" />
 </figure>
@@ -397,13 +387,13 @@ before you can add the script body.</p>
 </section>
 <section id="id2">
 <h3>スクリプト本体<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
-<p>今、関数の本体を追加できます。</p>
+<p>これで関数の本体を追加できます:</p>
 <ol class="arabic">
 <li><p><code class="docutils literal notranslate"><span class="pre">spsample</span></code> 関数を使います:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pts</span><span class="o">=</span><span class="n">spsample</span><span class="p">(</span><span class="n">Layer</span><span class="p">,</span> <span class="n">Size</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;random&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>この関数は、<em>Layer</em> を使用して、点の配置を制約します（線レイヤの場合、点はレイヤ内のいずれかの線上にある必要があり、ポリゴンレイヤの場合、点はポリゴン内にある必要があります）。点の数は <em>Size</em> パラメータで指定します。サンプリング方法は、<em>random</em> です。</p>
+<p>この関数は、<em>Layer</em> を使用して、ポイントの配置を制約します（ラインレイヤの場合、ポイントはレイヤ内のいずれかのライン上にある必要があり、ポリゴンレイヤの場合、ポイントはポリゴン内にある必要があります）。ポイントの数は <em>Size</em> パラメータで指定します。サンプリング方法は、<em>random</em> です。</p>
 </li>
 <li><p>出力（<a href="#id1"><span class="problematic" id="id2">``</span></a>Output``パラメータ）を生成します:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Output</span><span class="o">=</span><span class="n">SpatialPointsDataFrame</span><span class="p">(</span><span class="n">pts</span><span class="p">,</span> <span class="k">as</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">pts</span><span class="p">))</span>
@@ -411,7 +401,7 @@ before you can add the script body.</p>
 </div>
 </li>
 </ol>
-<p>最後のスクリプトは次のようになります:</p>
+<p>最終的なスクリプトは次のようになります:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">##Point pattern analysis=group</span>
 <span class="c1">##Layer=vector</span>
 <span class="c1">##Size=number 10</span>
@@ -439,7 +429,7 @@ before you can add the script body.</p>
 <h2><span class="section-number">17.33.4. </span>Rからのテキスト・グラフ出力 - 文法<a class="headerlink" href="#text-and-graph-output-from-r-syntax" title="Link to this heading"></a></h2>
 <p>（<a href="#id1"><span class="problematic" id="id2">``</span></a>Processing R Provider plugin``を使った）プロセシング は、Rから結果を取り出すために特別な文法を使用します:</p>
 <ul class="simple">
-<li><p>コマンドの前に <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> は、 <code class="docutils literal notranslate"><span class="pre">&gt;lillie.test(Layer[[Field]])</span></code> 中でのように、結果がR出力（結果ビューア）に送られるべきことを意味します</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;lillie.test(Layer[[Field]])</span></code> のような、コマンドの前にある <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> は結果がR出力（結果ビューア）に送られるべきことを意味します</p></li>
 <li><p>プロットの後に <code class="docutils literal notranslate"><span class="pre">+</span></code> を付けると、オーバーレイプロットを有効にします。例えば、 <code class="docutils literal notranslate"><span class="pre">plot(Layer[[X]],</span> <span class="pre">Layer[[Y]])</span> <span class="pre">+</span> <span class="pre">abline(h=mean(Layer[[X]]))</span></code> です。</p></li>
 </ul>
 </section>
@@ -450,14 +440,14 @@ before you can add the script body.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="solar.html" class="btn btn-neutral float-left" title="17.32. 太陽光発電所を計画する" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="geomorpho.html" class="btn btn-neutral float-right" title="17.34. 地滑りを予測する" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="geomorpho.html" class="btn btn-neutral float-right" title="17.34. 地すべりを予測する" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 7月 02, 06:33 +0900
       </span></p>
   </div>
 

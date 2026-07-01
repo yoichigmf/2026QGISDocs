@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>17.34. 地滑りを予測する &mdash; QGIS Documentation  ドキュメント</title>
+  <title>17.34. 地すべりを予測する &mdash; QGIS Documentation  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/qgis_docs.css?v=e885e955" />
       <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
@@ -36,7 +36,7 @@
     <link rel="search" title="検索" href="../../../search.html" />
     <link rel="next" title="18. モジュール: QGISで空間データベースを使う" href="../databases/index.html" />
     <link rel="prev" title="17.33. プロセシングでRスクリプトを使用する" href="r_intro.html" />
-  <meta name="description" content="QGIS 3.44 documentation: 17.34. 地滑りを予測する">
+  <meta name="description" content="QGIS 3.44 documentation: 17.34. 地すべりを予測する">
   <script>
     var _paq = window._paq = window._paq || [];
     _paq.push(["disableCookies"]);
@@ -85,7 +85,7 @@
    <a href= "../../../genindex.html">索引</a>
  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+              <p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../about/foreword.html">序文</a></li>
@@ -97,8 +97,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">トレーニングマニュアル</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../foreword/index.html">1. コースの紹介</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basic_map/index.html">2. モジュール: 基本的な地図を作成して探索する</a></li>
@@ -114,7 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grass/index.html">12. モジュール: GRASS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../assessment/index.html">13. モジュール: 学習評価</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../forestry/index.html">14. モジュール: 林業への応用</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLでのデータベース概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database_concepts/index.html">15. モジュール: PostgreSQLによるデータベースの概念</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../spatial_databases/index.html">16. モジュール: PostGIS / PostgreSQLを使った空間データベースの概念</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">17. QGISプロセシングガイド</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="intro.html">17.1. はじめに</a></li>
@@ -127,18 +127,18 @@
 <li class="toctree-l3"><a class="reference internal" href="first_saga_alg.html">17.8. 外部アルゴリズムを実行する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="log.html">17.9. プロセシングログ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="no_data.html">17.10. ラスタ計算機。No-data値</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクター計算機</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vector_calculator.html">17.11. ベクタ計算機</a></li>
 <li class="toctree-l3"><a class="reference internal" href="extents.html">17.12. 範囲を定義する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="html.html">17.13. HTML出力</a></li>
 <li class="toctree-l3"><a class="reference internal" href="john_snow.html">17.14. 最初の分析例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cutting_merging.html">17.15. ラスタレイヤをクリップしてマージする</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cutting_merging.html">17.15. ラスタレイヤをクリッピングしてマージする</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hydro.html">17.16. 水文解析</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_twi.html">17.17. モデルデザイナーから始める</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_hydro.html">17.18. より複雑なモデル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_hydro_calculator.html">17.19. モデラーでの数値計算</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_hydro_twi.html">17.20. モデル内のモデル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modeler_only.html">17.21. モデルを作成するためにモデラー専用ツールを使用する</a></li>
-<li class="toctree-l3"><a class="reference internal" href="interpolation.html">17.22. 内挿</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interpolation.html">17.22. 補間</a></li>
 <li class="toctree-l3"><a class="reference internal" href="interpolation_cross.html">17.23. 補間（続）</a></li>
 <li class="toctree-l3"><a class="reference internal" href="iterative.html">17.24. アルゴリズムの反復実行</a></li>
 <li class="toctree-l3"><a class="reference internal" href="iterative_model.html">17.25. アルゴリズムの反復実行（続）</a></li>
@@ -150,7 +150,7 @@
 <li class="toctree-l3"><a class="reference internal" href="generalize.html">17.31. ベクターの単純化と平滑化</a></li>
 <li class="toctree-l3"><a class="reference internal" href="solar.html">17.32. 太陽光発電所を計画する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="r_intro.html">17.33. プロセシングでRスクリプトを使用する</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">17.34. 地滑りを予測する</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">17.34. 地すべりを予測する</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../databases/index.html">18. モジュール: QGISで空間データベースを使う</a></li>
@@ -166,7 +166,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqgis_developer_cookbook/index.html">PyQGIS クックブック(QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../developers_guide/index.html">開発者ガイド</a></li>
 </ul>
 
@@ -186,7 +186,7 @@
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">QGISトレーニングマニュアル</a></li>
           <li class="breadcrumb-item"><a href="index.html"><span class="section-number">17. </span>QGISプロセシングガイド</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">17.34. </span>地滑りを予測する</li>
+      <li class="breadcrumb-item active"><span class="section-number">17.34. </span>地すべりを予測する</li>
 
     <li style="float: right; text-align: right;">
 	<ul>
@@ -222,11 +222,11 @@
 </div>
 </div></blockquote>
 <section id="predicting-landslides">
-<h1><span class="section-number">17.34. </span>地滑りを予測する<a class="headerlink" href="#predicting-landslides" title="Link to this heading"></a></h1>
+<h1><span class="section-number">17.34. </span>地すべりを予測する<a class="headerlink" href="#predicting-landslides" title="Link to this heading"></a></h1>
 <p>Module contributed by Paolo Cavallini - <a class="reference external" href="https://www.faunalia.eu/en">Faunalia</a></p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>この章では、地滑りの可能性を予測するために過度に単純化したモデルを作成する方法を示します。</p>
+<p>この章では、地すべりの可能性を予測するために過度に単純化したモデルを作成する方法を示します。</p>
 </div>
 <p>まず、傾斜を計算します（様々なバックエンドの中から選択します；興味のある読者は出力の差分を計算できます）。</p>
 <ul class="simple">
@@ -234,14 +234,14 @@
 <li><p><span class="menuselection">SAGA ► 傾斜、向き、曲率</span></p></li>
 <li><p><span class="menuselection">GDAL 傾斜</span></p></li>
 </ul>
-<p>それから、気象衛星局での降雨値の補間に基づいて、予測雨量のモデルを作成します。</p>
+<p>次に気象観測所での降雨値の補間に基づいて、予測雨量のモデルを作成します:</p>
 <ul class="simple">
 <li><p><span class="menuselection">GRASS ► v.surf.rst</span> （解像度：500メートル）</p></li>
 </ul>
 <p>地すべりの確率は非常に大ざっぱには降雨と傾斜の両方に関連します（もちろん、現実のモデルは、より多くのレイヤー、および適切なパラメーターを使用します）、 <code class="docutils literal notranslate"><span class="pre">(降雨*傾斜)/100</span></code> としましょう。</p>
 <ul class="simple">
 <li><p><span class="menuselection">SAGA ► ラスター計算機</span> 降雨、傾斜: <code class="docutils literal notranslate"><span class="pre">(a*b)/100</span></code> (または: <span class="menuselection">GRASS ► r.mapcalc</span>)</p></li>
-<li><p>その後、予測される降雨の危険性が最大である自治体がどこか計算してみましょう： <span class="menuselection">SAGA ► ポリゴンでのラスター統計</span> （関心のパラメーターは <em>最大</em> と <em>平均</em> ） 。</p></li>
+<li><p>次に、予測される降雨の危険性が最大である自治体がどこか計算してみましょう： <span class="menuselection">SAGA ► ポリゴンでのラスター統計</span> （関心のパラメーターは <em>最大</em> と <em>平均</em> ） 。</p></li>
 </ul>
 </section>
 
@@ -257,7 +257,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 7月 02, 06:33 +0900
       </span></p>
   </div>
 
