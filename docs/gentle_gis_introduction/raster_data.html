@@ -85,7 +85,7 @@
    <a href= "../../genindex.html">索引</a>
  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+              <p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/foreword.html">序文</a></li>
@@ -97,8 +97,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../training_manual/index.html">トレーニングマニュアル</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">やさしい GIS 入門</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="preamble.html">1. はじめに</a></li>
@@ -140,7 +140,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyqgis_developer_cookbook/index.html">PyQGIS クックブック(QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developers_guide/index.html">開発者ガイド</a></li>
 </ul>
 
@@ -191,7 +191,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 97.30% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="raster-data">
@@ -269,11 +269,7 @@
 <p>いくつかの要因が画像の空間分解能を決定します。リモートセンシングデータの場合、空間分解能は、通常、画像を撮るために使用されるセンサの性能によって決定されます。例えば、SPOT5衛星は、各ピクセルが10m×10mの画像を撮影できます。 MODISなどの他の衛星では、ピクセルあたり500mx500mの画像しか撮影しません。航空写真では、50cmx50cmのピクセルサイズは珍しくありません。ピクセルサイズが小さい画像は、画像の詳細がよくわかるため、「 <strong>高解像度</strong> 」画像と呼ばれます。ピクセルサイズが大きい画像は、画像の細部を示す量が少ないため、「 <strong>低解像度</strong> 」画像と呼ばれます。</p>
 <p>空間分析によって算出されるラスタデータ（先に述べた降雨量図など）では通常、ラスタを作成するために使用される情報の空間密度が空間分解能を決定します。例えば、高解像度の平均降雨量図を作成したい場合、理想的には互いに近接した多くの気象観測所が必要になるでしょう。</p>
 <p>高空間分解能で取り込まれたラスタを知る上で重要なことの1つは、記憶容量要件です。 3 x 3ピクセルのラスタを考えてみてください。各ピクセルには平均降雨量を表す数値が含まれています。ラスタに含まれるすべての情報を保存するには、コンピュータのメモリに9個の数値を格納する必要があります。今、南アフリカ全体の1キロ×1キロメートルのピクセルでラスタレイヤを作成したいとします。南アフリカはおよそ 1,219,090 km <sup>2</sup> です。これは、すべての情報を保持するために、ハードディスクに100万を超える数字を保存する必要があることを意味します。ピクセルサイズを小さくすると、必要な記憶容量が大幅に増加します。</p>
-<p>Sometimes using a low spatial resolution is useful when you want to work with a
-large area and are not interested in looking at any one area in a lot of detail.
-The cloud maps you see on the weather report, are an example of this --- it's
-useful to see the clouds across the whole country. Zooming in to one particular
-cloud in high resolution will not tell you very much about the upcoming weather!</p>
+<p>広い領域で作業し、いずれかの領域を細かく見ることに感心がないときは、低空間分解能を使用した方が便利なこともあります。天気予報で見られる雲の地図はその一例です。国全体に渡って雲を見ることは有用です。ある雲だけに高解像度でズームインしても、今後の天気を教えてくれることはありません！</p>
 <p>その一方、小さな領域に興味があるなら、低解像度のラスタデータを使用することは問題となる可能性があります。画像から個々の地物はたぶん作れなくなるからです。</p>
 </section>
 <section id="spectral-resolution">
@@ -338,7 +334,7 @@ Edition. McGraw Hill. ISBN: 0070658986</p></li>
 <li><p>DeMers, Michael N. (2005). Fundamentals of Geographic Information Systems. 3rd
 Edition. Wiley. ISBN: 9814126195</p></li>
 </ul>
-<p><strong>Website:</strong> <a class="reference external" href="https://en.wikipedia.org/wiki/GIS_file_formats#Raster_formats">https://en.wikipedia.org/wiki/GIS_file_formats#Raster_formats</a></p>
+<p><strong>Webサイト:</strong> <a class="reference external" href="https://en.wikipedia.org/wiki/GIS_file_formats#Raster_formats">https://en.wikipedia.org/wiki/GIS_file_formats#Raster_formats</a></p>
 <p>QGISユーザーガイドには, ラスタデータの操作についてより詳細な情報が含まれています.</p>
 </section>
 <section id="what-s-next">
@@ -359,7 +355,7 @@ Edition. Wiley. ISBN: 9814126195</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 7月 05, 00:54 +0900
       </span></p>
   </div>
 

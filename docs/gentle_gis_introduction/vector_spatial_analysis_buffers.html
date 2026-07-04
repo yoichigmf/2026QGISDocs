@@ -85,7 +85,7 @@
    <a href= "../../genindex.html">索引</a>
  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+              <p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/foreword.html">序文</a></li>
@@ -97,8 +97,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../training_manual/index.html">トレーニングマニュアル</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">やさしい GIS 入門</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="preamble.html">1. はじめに</a></li>
@@ -140,7 +140,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyqgis_developer_cookbook/index.html">PyQGIS クックブック(QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developers_guide/index.html">開発者ガイド</a></li>
 </ul>
 
@@ -191,7 +191,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 97.67% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="vector-spatial-analysis-buffers">
@@ -214,7 +214,7 @@
 <section id="buffering-in-detail">
 <h2><span class="section-number">10.2. </span>バッファリングの詳細<a class="headerlink" href="#buffering-in-detail" title="Link to this heading"></a></h2>
 <p><strong>バッファリング</strong> は通常２つのエリアを作成します:１つは、選択した現実世界の地物から指定距離 <strong>内</strong> のエリア、もう１つは <strong>外</strong> のエリアです。指定距離内の領域を <strong>バッファゾーン</strong> といいます。</p>
-<p><strong>バッファゾーン</strong> は、現実世界の機能を互いに遠ざける目的で機能する領域です。多くの場合、緩衝地帯は、環境を保護し、住宅および商業地帯を労働災害や自然災害から保護するため、または暴力を防ぐために設定されます。一般的なタイプの緩衝地帯は、住宅地と商業地の間のグリーンベルト、国の間の国境地帯（ <a class="reference internal" href="#figure-buffer-zone"><span class="std std-numref">図 10.42</span></a> 参照）、空港周辺の騒音保護地帯、または河川沿いの汚染防止地帯です。</p>
+<p><strong>バッファゾーン（緩衝地帯）</strong> は、現実世界の地物を互いに遠ざける目的で機能する領域です。バッファゾーンは多くの場合、環境を保護し、住宅および商業地帯を労働災害や自然災害から保護するため、または暴力を防ぐために設定されます。一般的なタイプのバッファゾーンは、住宅地と商業地の間のグリーンベルト、国の間の国境地帯（ <a class="reference internal" href="#figure-buffer-zone"><span class="std std-numref">図 10.42</span></a> 参照）、空港周辺の騒音保護地帯、または河川沿いの汚染防止地帯です。</p>
 <figure class="align-center" id="id1">
 <span id="figure-buffer-zone"></span><a class="reference internal image-reference" href="../../_images/buffer_zone.png"><img alt="../../_images/buffer_zone.png" src="../../_images/buffer_zone.png" style="width: 30em;" /></a>
 <figcaption>
@@ -243,14 +243,7 @@
 </section>
 <section id="variations-in-buffering">
 <h2><span class="section-number">10.3. </span>バッファの種類<a class="headerlink" href="#variations-in-buffering" title="Link to this heading"></a></h2>
-<p>There are several variations in buffering. The <strong>buffer distance</strong> or buffer size
-<strong>can vary</strong> according to numerical values provided in the vector layer attribute
-table for each feature. The numerical values have to be defined in map units
-according to the Coordinate Reference System (CRS) used with the data. For example,
-the width of a buffer zone along the banks of a river can vary depending on the
-intensity of the adjacent land use. For intensive cultivation the buffer distance
-may be bigger than for organic farming (see Figure <a class="reference internal" href="#figure-variable-buffer"><span class="std std-numref">図 10.46</span></a> and
-<a class="reference internal" href="#table-buffer-attributes"><span class="std std-numref">表 10.6</span></a>).</p>
+<p>バッファリングにはいくつかのバリエーションがあります。 <strong>バッファ距離</strong> 又はバッファサイズは、各地物のベクタレイヤ属性テーブルで提供される数値に応じて <strong>変えることができます</strong> 。数値は、データで使用される座標参照系（CRS）に従って、地図の単位で定義されている必要があります。例えば川の土手に沿ったバッファゾーンの幅は、隣接する土地利用の強度に応じて変化する可能性があります。集約的栽培の場合、バッファ距離は有機農業の場合よりも大きくなる可能性があります（ <a class="reference internal" href="#figure-variable-buffer"><span class="std std-numref">図 10.46</span></a> 及び <a class="reference internal" href="#table-buffer-attributes"><span class="std std-numref">表 10.6</span></a> 参照）。</p>
 <figure class="align-center" id="id5">
 <span id="figure-variable-buffer"></span><a class="reference internal image-reference" href="../../_images/variable_buffer.png"><img alt="../../_images/variable_buffer.png" src="../../_images/variable_buffer.png" style="width: 30em;" /></a>
 <figcaption>
@@ -258,7 +251,7 @@ may be bigger than for organic farming (see Figure <a class="reference internal"
 </figcaption>
 </figure>
 <span id="table-buffer-attributes"></span><table class="docutils align-default" id="id6">
-<caption><span class="caption-number">表 10.6 </span><span class="caption-text">Different buffer distances to rivers based on adjacent land use.</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<caption><span class="caption-number">表 10.6 </span><span class="caption-text">隣接した土地利用に基づいた川までのバッファゾーン距離</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>河川</p></th>
 <th class="head"><p>隣接する土地利用</p></th>
@@ -350,7 +343,7 @@ may be bigger than for organic farming (see Figure <a class="reference internal"
 </section>
 <section id="now-you-try">
 <h2><span class="section-number">10.7. </span>やってみよう<a class="headerlink" href="#now-you-try" title="Link to this heading"></a></h2>
-<p>ここでは人に教える際のアイデアいくつか述べていきます:</p>
+<p>ここでは生徒に教える際のアイデアをいくつか述べていきます:</p>
 <ul class="simple">
 <li><p>交通量が劇的に増加したため、都市計画者は幹線道路を広げ、2番目の車線を追加したいと考えています。道路の周りにバッファを作成して、バッファゾーン内にある資産を見つけます（ <a class="reference internal" href="#figure-buffer-road"><span class="std std-numref">図 10.50</span></a> 参照）。</p></li>
 <li><p>抗議グループを制御するために、警察は抗議者を建物から少なくとも100メートル離しておくために中立ゾーンを設置したいと思っています。建物の周りにバッファを作成し、バッファ領域がどこにあるかイベントプランナーにわかるように色付けします。</p></li>
@@ -399,7 +392,7 @@ Edition. Wiley. ISBN: 9814126195</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 7月 05, 00:54 +0900
       </span></p>
   </div>
 

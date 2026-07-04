@@ -85,7 +85,7 @@
    <a href= "../../genindex.html">索引</a>
  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+              <p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/foreword.html">序文</a></li>
@@ -97,8 +97,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../training_manual/index.html">トレーニングマニュアル</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">やさしい GIS 入門</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="preamble.html">1. はじめに</a></li>
@@ -112,7 +112,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#continuous-colour-symbols">4.5. 連続色シンボル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#unique-value-symbols">4.6. 一意値シンボル</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#things-to-be-aware-of">4.7. 注意すべき点</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#what-have-we-learned">4.8. わかりましたか?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-have-we-learned">4.8. 分かりましたか?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#now-you-try">4.9. やってみよう</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#something-to-think-about">4.10. 考えてみよう</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#further-reading">4.11. 参考文献</a></li>
@@ -137,7 +137,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyqgis_developer_cookbook/index.html">PyQGIS クックブック(QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developers_guide/index.html">開発者ガイド</a></li>
 </ul>
 
@@ -188,7 +188,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 93.53% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="vector-attribute-data">
@@ -217,15 +217,10 @@
 <figure class="align-center" id="id2">
 <span id="figure-house"></span><a class="reference internal image-reference" href="../../_images/house_picture.png"><img alt="../../_images/house_picture.png" src="../../_images/house_picture.png" style="width: 30em;" /></a>
 <figcaption>
-<p><span class="caption-number">図 4.10 </span><span class="caption-text">すべての地物は記述可能な特徴を持っています。それらは目に見えるものもあれば、その地物について知っていること（例. 建築年）もあります。</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">図 4.10 </span><span class="caption-text">全ての地物は記述可能な特徴を持っています。それらは目に見えるものもあれば、その地物について知っていること（例. 建築年）もあります。</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>The geometry of these house features is a polygon (based on the floor plan of the
-house), the attributes we have recorded are roof colour, whether there is a
-balcony, and the year the house was built. Note that attributes don't have to be
-visible things --- they can describe things we know about the feature such as the
-year it was built. In a GIS Application, we can represent this feature type in a
-houses polygon layer, and the attributes in an attribute table (see <a class="reference internal" href="#figure-house-gis"><span class="std std-numref">図 4.11</span></a>).</p>
+<p>これらの家地物のジオメトリは（家の間取り図に基づいた）ポリゴンであり、記録した属性は屋根の色、バルコニーの有無、家が建てられた年です。属性は目に見えるものでなくてもよいこと---建てられた年など、その地物について知っていることが記述できることに注意してください。 GISアプリケーションでは、この地物型を家ポリゴンレイヤで表し、属性を属性テーブルで表すことができます（ <a class="reference internal" href="#figure-house-gis"><span class="std std-numref">図 4.11</span></a> 参照）。</p>
 <figure class="align-center" id="id3">
 <span id="figure-house-gis"></span><a class="reference internal image-reference" href="../../_images/houses_in_gis.png"><img alt="../../_images/houses_in_gis.png" src="../../_images/houses_in_gis.png" style="width: 30em;" /></a>
 <figcaption>
@@ -259,17 +254,9 @@ houses polygon layer, and the attributes in an attribute table (see <a class="re
 </section>
 <section id="attributes-in-detail">
 <h2><span class="section-number">4.2. </span>属性の詳細<a class="headerlink" href="#attributes-in-detail" title="Link to this heading"></a></h2>
-<p>Attributes for a vector feature are stored in a <strong>table</strong>. A table is like a
-spreadsheet. Each column in the table is called a <strong>field</strong>. Each row in the table
-is a <strong>record</strong>. <a class="reference internal" href="#table-house-attributes"><span class="std std-numref">表 4.7</span></a> shows a simple example of how an
-attribute table looks in a GIS. The records in the attribute table in a GIS each
-correspond to one feature. Usually the information in the attribute table is
-stored in some kind of database. The GIS application links the attribute records
-with the feature geometry so that you can find records in the table by selecting
-features on the map, and find features on the map by selecting features in the
-table.</p>
+<p>ベクタ地物の属性は、 <strong>テーブル</strong> に格納されます。テーブルとはスプレッドシートのようなものです。テーブルの各列は <strong>フィールド</strong> と呼ばれます。テーブルの各行は <strong>レコード</strong> です。テーブル <a class="reference internal" href="#table-house-attributes"><span class="std std-numref">表 4.7</span></a> は、属性テーブルがGISでどのように見えるかの簡単な例を示しています。GISにおける属性テーブル内のレコードは、それぞれが一つの地物に対応しています。通常、属性テーブル内の情報は、ある種のデータベースに格納されます。GISアプリケーションは、属性レコードを地物ジオメトリとリンクしているので、地図上の地物を選択することでテーブル内のレコードを見つけ、テーブル上の地物を選択することで地図中の地物を見つけることができます。</p>
 <span id="table-house-attributes"></span><table class="docutils align-default" id="id7">
-<caption><span class="caption-number">表 4.7 </span><span class="caption-text">House Attributes: An attribute table has fields (columns) and records (in rows).</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<caption><span class="caption-number">表 4.7 </span><span class="caption-text">家の属性：属性テーブルはフィールド (列) とレコード (行) を持っています。</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>属性テーブル</p></th>
 <th class="head"><p>フィールド1 : YearBuilt</p></th>
@@ -295,11 +282,7 @@ table.</p>
 </tr>
 </tbody>
 </table>
-<p>Each field in the attribute table contains a specific type of data ---
-text, numeric or date. Deciding what attributes to use for a feature requires some
-thought and planning. In our house example earlier on in this topic, we chose roof
-colour, presence of a balcony and year of construction as attributes of interest.
-We could just as easily have chosen other aspects of a house such as:</p>
+<p>属性テーブルの各フィールドには、特定のタイプのデータ（テキスト、数値、または日付）が含まれています。地物に使用する属性を決定するには、いくつか検討と計画が必要です。このトピックの前半の家の例では、関心のある属性として、屋根の色、バルコニーの有無、および建築年を選択しました。以下のような家の他の面を選択することも簡単にできるでしょう：</p>
 <ul class="simple">
 <li><p>階数</p></li>
 <li><p>部屋数</p></li>
@@ -309,7 +292,7 @@ We could just as easily have chosen other aspects of a house such as:</p>
 <li><p>家の床面積</p></li>
 <li><p>他には....</p></li>
 </ul>
-<p>それほど多くの選択肢があるのに、どの属性が地物のために必要かをどうしたらうまく選択できるのでしょうか？これは通常、データで何をする予定かに帰着します。年齢によって家屋を示す色分けされた地図を作成したい場合は、地物に「建築年」属性があると意味があります。このタイプの地図を使用することはないと確かに知っている場合、情報を格納しない方が良いです。不要な情報を収集し格納するのは、情報を調査し取り込むためにコストや時間が必要なので、悪い考えです。非常に多くの場合は、企業、友人や政府からベクタデータを取得します。これらの場合には、特定の属性を要求することは通常不可能であり、得られたもので何とかする必要があります。</p>
+<p>それほど多くの選択肢があるのに、どの属性が地物のために必要かをどうしたらうまく選択できるのでしょうか？これは通常、データで何をする予定かに帰着します。年齢によって家屋を示す色分けされた地図を作成したい場合は、地物に「建築年」属性があると意味があります。この種の地図を使うことはないと確信している場合はその情報を格納しない方が良いです。不要な情報を収集し格納することは、それを調査し取り込むために費用や時間がかかるので悪い考えです。ベクタデータは、しばしば企業、友人や政府からを取得します。これらの場合、特定の属性を要求することは通常不可能であり、得られたもので何とかする必要があります。</p>
 </section>
 <section id="single-symbols">
 <h2><span class="section-number">4.3. </span>単一シンボル<a class="headerlink" href="#single-symbols" title="Link to this heading"></a></h2>
@@ -343,20 +326,12 @@ We could just as easily have chosen other aspects of a house such as:</p>
 <p><span class="caption-number">図 4.18 </span><span class="caption-text">等高線に段階色を設定した後の地図。</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>Setting colours based on discrete groups of attribute values is called Graduated
-Symbology in QGIS. The process is shown in Illustrations <a class="reference internal" href="#figure-graduated-symbol"><span class="std std-numref">図 4.17</span></a>
-and <a class="reference internal" href="#figure-graduated-symbol-map"><span class="std std-numref">図 4.18</span></a>. <strong>Graduated symbols</strong> are most useful when you
-want to show clear differences between features with attribute values in different
-value ranges. The GIS Application will analyse the attribute data (e.g. height)
-and, based on the number of classes you request, create groupings for you. This
-process is illustrated in <a class="reference internal" href="#table-graduated"><span class="std std-numref">表 4.8</span></a>: graduated colour breaks up
-the attribute value ranges into the number of classes you select; each class is
-represented by a different colour.</p>
+<p>属性値の個別のグループに基づいて色を設定することは、QGISでは段階シンボロジと呼ばれます。このプロセスは、イラスト <a class="reference internal" href="#figure-graduated-symbol"><span class="std std-numref">図 4.17</span></a> および <a class="reference internal" href="#figure-graduated-symbol-map"><span class="std std-numref">図 4.18</span></a> に示されています。 <strong>段階シンボル</strong> は、異なる値域の属性値を持つ地物間の違いを明確に示したい場合に最も役立ちます。 GISアプリケーションは、属性データ（高さなど）を分析し、要求された階級の数に基づいてグループを作ります。この手順は <a class="reference internal" href="#table-graduated"><span class="std std-numref">表 4.8</span></a>: に示されています。段階色は、属性値の範囲が選んだ階級の数に分割され、各階級は異なる色で表されます。</p>
 <span id="table-graduated"></span><table class="docutils align-default" id="id12">
 <caption><span class="caption-number">表 4.8 </span><span class="caption-text">段階シンボル</span><a class="headerlink" href="#id12" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>属性値</p></th>
-<th class="head"><p>クラスと色</p></th>
+<th class="head"><p>階級と色</p></th>
 </tr>
 </thead>
 <tbody>
@@ -392,17 +367,9 @@ represented by a different colour.</p>
 </section>
 <section id="continuous-colour-symbols">
 <h2><span class="section-number">4.5. </span>連続色シンボル<a class="headerlink" href="#continuous-colour-symbols" title="Link to this heading"></a></h2>
-<p>In the previous section on Graduated Colour symbols we saw that we can draw
-features in discrete groups or classes. Sometimes it is useful to draw features
-in a <strong>colour range</strong> from one colour to another. The GIS Application will use a
-numerical attribute value from a feature (e.g. contour heights or pollution levels
-in a stream) to decide which colour to use. <a class="reference internal" href="#table-continuous"><span class="std std-numref">表 4.9</span></a> shows
-how the attribute value is used to define a continuous range of colours.
-Continuous colour symbology uses a start colour (e.g. light orange shown here)
-and an end colour (e.g. dark brown shown here) and creates a series of shades
-between those colours.</p>
+<p>前のセクションでは段階色シンボルについて、地物をグループや階級に分けて描画できることを見ました。場合によっては、ある色から別の色へと変化する <strong>色範囲</strong> 内で地物を描くことが有用なこともあります。GISアプリケーションでは、地物の数値属性値（例えば、等高線の高さや小川の汚染レベル）に基づいて使用する色を決定します。<a class="reference internal" href="#table-continuous"><span class="std std-numref">表 4.9</span></a> では、属性値を使って連続的な色の範囲を定義する方法を示しています。連続色シンボロジは最初の色（例 ここでは明るいオレンジ）と終りの色（例 ここでは暗い茶色）を使い、それらの色の間で一連のシェードを生成します。</p>
 <span id="table-continuous"></span><table class="docutils align-default" id="id13">
-<caption><span class="caption-number">表 4.9 </span><span class="caption-text">Continuous colour symbology</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
+<caption><span class="caption-number">表 4.9 </span><span class="caption-text">連続色シンボロジ</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>属性値</p></th>
 <th class="head"><p>カラー（クラスまたはグルーピングなし）</p></th>
@@ -455,17 +422,9 @@ between those colours.</p>
 </section>
 <section id="unique-value-symbols">
 <h2><span class="section-number">4.6. </span>一意値シンボル<a class="headerlink" href="#unique-value-symbols" title="Link to this heading"></a></h2>
-<p>Sometimes the attributes of features are not numeric, but instead <strong>strings</strong> are
-used. 'String' is a computer term meaning a group of letters, numbers and other
-writing symbols. Strings attributes are often used to classify things by name.
-We can tell the GIS Application to give each unique string or number its own
-colour and symbol. Road features may have different classes (e.g. 'street',
-'secondary road', 'main road' etc.), each drawn in the map view of the GIS with
-different colours or symbols. This is illustrated in <a class="reference internal" href="#table-unique"><span class="std std-numref">表 4.10</span></a>:
-unique attribute values for a feature type (e.g. roads) can each have their own
-symbol.</p>
+<p>場合によっては、地物の属性が数値でなく、代わりに <strong>文字列</strong> が使われることがあります。「文字列」は文字、数字、その他の表記記号の集まりを意味するコンピュータ用語です。文字列の属性は、多くの場合、名前で物事を分類するために使用されます。一意の文字列又は数値のそれぞれに独自の色やシンボルを与えるようGISアプリケーションに指示することができます。道路の地物に様々な分類（例えば、「街路」、「周辺道路」、「主要道路」など）を持たせ、GISの地図ビュー内でそれぞれ異なる色又はシンボルで描くことができます。 <a class="reference internal" href="#table-unique"><span class="std std-numref">表 4.10</span></a> では、地物の種類（例 roads）に対応した一意の属性値がそれぞれ独自のシンボルを持っていることを示しています。</p>
 <span id="table-unique"></span><table class="docutils align-default" id="id16">
-<caption><span class="caption-number">表 4.10 </span><span class="caption-text">Unique values and symbols</span><a class="headerlink" href="#id16" title="Link to this table"></a></caption>
+<caption><span class="caption-number">表 4.10 </span><span class="caption-text">一意値とシンボル</span><a class="headerlink" href="#id16" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>属性値</p></th>
 <th class="head"><p>色クラスとシンボル</p></th>
@@ -486,27 +445,27 @@ symbol.</p>
 </tr>
 </tbody>
 </table>
-<p>GISアプリケーション内で、レイヤに一意値シンボルを開く/使用することを選択できます。 GISは、属性フィールドのさまざまな文字列値をすべてスキャンし、一意の文字列または数値のリストを作成します。次に、それぞれの一意の値に色とスタイルを割り当てることができます。これは <a class="reference internal" href="#figure-unique-symbol"><span class="std std-numref">図 4.21</span></a> に示されています。</p>
+<p>GISアプリケーション内で、レイヤに一意値シンボルを開く/使用することを選択できます。 GISは、属性フィールドの様々な文字列値を全てスキャンし、一意の文字列又は数値のリストを作成します。次に、それぞれの一意の値に色とスタイルを割り当てることができます。これは <a class="reference internal" href="#figure-unique-symbol"><span class="std std-numref">図 4.21</span></a> に示されています。</p>
 <figure class="align-center" id="id17">
 <span id="figure-unique-symbol"></span><a class="reference internal image-reference" href="../../_images/unique_symbol_settings.png"><img alt="../../_images/unique_symbol_settings.png" src="../../_images/unique_symbol_settings.png" style="width: 30em;" /></a>
 <figcaption>
-<p><span class="caption-number">図 4.21 </span><span class="caption-text">道路の種類に基づいて、道路に対して一意値シンボルを定義します。</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+<p><span class="caption-number">図 4.21 </span><span class="caption-text">道路に対して道路の種類に基づいた一意値シンボルを定義します。</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>GISがレイヤを描画するとき、画面に描画する前に各地物の属性を確認します。属性テーブルで選択したフィールドの値に基づいて、道路の線が適切な色と線のスタイル（およびポリゴン地物の場合は塗りつぶしのスタイル）で描画されます。これは <a class="reference internal" href="#figure-unique-symbol-map"><span class="std std-numref">図 4.22</span></a> に示されています。</p>
 <figure class="align-center" id="id18">
 <span id="figure-unique-symbol-map"></span><a class="reference internal image-reference" href="../../_images/unique_symbol_map.png"><img alt="../../_images/unique_symbol_map.png" src="../../_images/unique_symbol_map.png" style="width: 30em;" /></a>
 <figcaption>
-<p><span class="caption-number">図 4.22 </span><span class="caption-text">道路ベクタレイヤは道路の種別ごとに一意の値を用いてシンボル化されます。</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+<p><span class="caption-number">図 4.22 </span><span class="caption-text">道路の種類による一意の値を用いてシンボル化された道路ベクタレイヤ。</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="things-to-be-aware-of">
 <h2><span class="section-number">4.7. </span>注意すべき点<a class="headerlink" href="#things-to-be-aware-of" title="Link to this heading"></a></h2>
-<p>使用する属性とシンボロジを決定するときは、いくらか計画が必要です。何らかの <strong>地理空間</strong> データの収集を開始する前に、必要とされている属性が何で、それがどのように記号化されるかを知っているか確かめる必要があります。最初の頃に立てた計画が悪いと、前に戻ってデータを再収集することは非常に困難です。属性データを収集する目的は、空間情報を分析し、解釈できるようにすることであることも忘れないでください。どのようにこれをするかは答えようとしている質問に依存します。シンボロジは、人々が使用された色や記号に基づいて属性データを見て理解できるようにする視覚言語です。このため、理解しやすくするためには地図をどのようにシンボル化したらよいかに、思考の多くをつぎ込む必要があります。</p>
+<p>使用する属性とシンボロジを決定するときは、いくらか計画が必要です。何らかの <strong>地理空間</strong> データの収集を開始する前に、必要とされている属性が何で、それをどのようにシンボル化するかをしっかり分かっている必要があります。最初の頃に立てた計画が悪いと、前に戻ってデータを再収集することは非常に困難です。属性データを収集する目的は、空間情報を分析し、解釈できるようにすることであることも忘れないでください。どのようにこれをするかは答えようとしている質問に依存します。シンボロジは、人々が使用された色や記号に基づいて属性データを見て理解できるようにする視覚言語です。このため、理解しやすくするためには地図をどのようにシンボル化したらよいかに、思考の多くをつぎ込む必要があります。</p>
 </section>
 <section id="what-have-we-learned">
-<h2><span class="section-number">4.8. </span>わかりましたか?<a class="headerlink" href="#what-have-we-learned" title="Link to this heading"></a></h2>
+<h2><span class="section-number">4.8. </span>分かりましたか?<a class="headerlink" href="#what-have-we-learned" title="Link to this heading"></a></h2>
 <p>ここでは以下のことを学びました:</p>
 <ul class="simple">
 <li><p>ベクタデータは <strong>属性</strong> を持っています</p></li>
@@ -518,30 +477,27 @@ symbol.</p>
 <li><p>フィールドは地物の持つ <strong>情報</strong> (例. 高さ, 屋根の色)を表します</p></li>
 <li><p>フィールドは,  <strong>数値</strong>, <strong>(任意の) 文字列</strong>, <strong>日付</strong> などの情報を含むことができます</p></li>
 <li><p>地物の属性データはシンボルの設定に使用することができます</p></li>
-<li><p><strong>段階色</strong> シンボルはデータをいくつかのクラスにまとめることができます</p></li>
-<li><p><strong>連続色</strong> シンボルは, 地物の属性情報に基づいてカラーレンジの色を割り当てることができます</p></li>
+<li><p><strong>段階色</strong> シンボロジはデータをいくつかのクラスにまとめることができます</p></li>
+<li><p><strong>連続色</strong> シンボロジは, 地物の属性情報に基づいてカラーレンジの色を割り当てることができます</p></li>
 <li><p><strong>一意値</strong> シンボルは指定した属性フィールドの中の個別値にそれぞれ異なるシンボル (色やスタイル) を設定することができます</p></li>
 <li><p>ベクタレイヤの属性が定義されたシンボル体系を使用していない場合は、 <strong>単一シンボル</strong> を使用して描画されます。</p></li>
 </ul>
 </section>
 <section id="now-you-try">
 <h2><span class="section-number">4.9. </span>やってみよう<a class="headerlink" href="#now-you-try" title="Link to this heading"></a></h2>
-<p>ここでは人に教える際のアイデアいくつか述べていきます:</p>
+<p>ここでは生徒に教える際のアイデアをいくつか述べていきます:</p>
 <ul class="simple">
-<li><p>Using the table that you created in the last topic, add a new column for the
-symbology type you would use for each feature type and have the learners
-identify which symbology type they would use (see <a class="reference internal" href="#table-example-symbols"><span class="std std-numref">表 4.11</span></a> for
-an example).</p></li>
-<li><p>ベクタ地物は、次のタイプで使用しているシンボロジの種類を特定するようにしてください：</p>
+<li><p>最後のトピックで作成したテーブルに新しい列を追加して、それぞれの地物タイプのシンボロジの種類に使用し、生徒たちに彼らならどのシンボロジの種類を使うかを特定させてください（例として <a class="reference internal" href="#table-example-symbols">table_example_symbols</a> を参照）。</p></li>
+<li><p>あなたなら次のベクタ地物の種類にどのシンボロジ型を使うか見極めてみてください:</p>
 <ul>
-<li><p>学校のまわりで採集された土壌サンプルのpHレベルを示す点</p></li>
+<li><p>学校のまわりで採集された土壌サンプルのpHレベルを示すポイント</p></li>
 <li><p>都市の道路網を示すライン</p></li>
 <li><p>レンガ、木材、あるいは「他の」材料で作られているかどうかを示す属性をもつ住宅ポリゴン。</p></li>
 </ul>
 </li>
 </ul>
 <span id="table-example-symbols"></span><table class="docutils align-default" id="id19">
-<caption><span class="caption-number">表 4.11 </span><span class="caption-text">Example Feature Types and Symbology</span><a class="headerlink" href="#id19" title="Link to this table"></a></caption>
+<caption><span class="caption-number">表 4.11 </span><span class="caption-text">地物の型とシンボロジの例</span><a class="headerlink" href="#id19" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>実際の地物</p></th>
 <th class="head"><p>ジオメトリタイプ</p></th>
@@ -607,7 +563,7 @@ an example).</p></li>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 7月 05, 00:54 +0900
       </span></p>
   </div>
 

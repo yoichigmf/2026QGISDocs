@@ -85,7 +85,7 @@
    <a href= "../../genindex.html">索引</a>
  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+              <p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/foreword.html">序文</a></li>
@@ -97,8 +97,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../training_manual/index.html">トレーニングマニュアル</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">やさしい GIS 入門</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="preamble.html">1. はじめに</a></li>
@@ -140,7 +140,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../pyqgis_developer_cookbook/index.html">PyQGIS Cookbook (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyqgis_developer_cookbook/index.html">PyQGIS クックブック(QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../developers_guide/index.html">開発者ガイド</a></li>
 </ul>
 
@@ -191,7 +191,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 94.62% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="vector-data">
@@ -266,14 +266,7 @@
 </section>
 <section id="polygon-features-in-detail">
 <h2><span class="section-number">3.4. </span>ポリゴン地物の詳細<a class="headerlink" href="#polygon-features-in-detail" title="Link to this heading"></a></h2>
-<p>Polygon features are <strong>enclosed areas</strong> like dams, islands, country boundaries
-and so on. Like polyline features, polygons are created from a series of vertices
-that are connected with a continuous line. However because a polygon always
-describes an enclosed area, the first and last vertices should always be at the
-same place! Polygons often have <strong>shared geometry</strong> --- boundaries that are in
-common with a neighbouring polygon. Many GIS applications have the capability to
-ensure that the boundaries of neighbouring polygons exactly coincide. We will
-explore this in the <a class="reference internal" href="topology.html#gentle-gis-topology"><span class="std std-ref">トポロジ</span></a> topic later in this tutorial.</p>
+<p>ポリゴン地物は、ダム、島、国境などの <strong>囲まれた領域</strong> です。ポリライン地物と同様に、ポリゴンは連続線で連結された一連の頂点から作成されます。しかし、ポリゴンは常に閉じた領域を記述しているので、最初と最後の頂点は常に同じ場所でなければなりません！ポリゴンは、多くの場合、 <strong>共有ジオメトリ</strong> ---隣接するポリゴンと共通している境界を有します。多くのGISアプリケーションには、隣接するポリゴンの境界が正確に一致することを確実にする能力があります。このチュートリアルの後の <a class="reference internal" href="topology.html#gentle-gis-topology"><span class="std std-ref">トポロジ</span></a> トピックではこれについて見ていきます。</p>
 <p>ポイントとポリラインと同様に、ポリゴンは <strong>属性</strong> を持っています。属性は、ポリゴンごとに記述します。例えば、ダムは深さと水質の属性を持つことができます。</p>
 </section>
 <section id="vector-data-in-layers">
@@ -282,15 +275,8 @@ explore this in the <a class="reference internal" href="topology.html#gentle-gis
 </section>
 <section id="editing-vector-data">
 <h2><span class="section-number">3.6. </span>ベクタデータの編集<a class="headerlink" href="#editing-vector-data" title="Link to this heading"></a></h2>
-<p>The GIS application will allow you to create and modify the geometry data in a
-layer --- a process called <strong>digitising</strong> --- which we will look at more closely
-in a later tutorial. If a layer contains polygons (e.g. farm dams), the GIS
-application will only allow you to create new polygons in that layer. Similarly
-if you want to change the shape of a feature, the application will only allow you
-to do it if the changed shape is correct. For example it won't allow you to edit
-a line in such a way that it has only one vertex --- remember in our discussion
-of lines above that all lines must have at least two vertices.</p>
-<p>ベクタデータの作成と編集は、興味のあるものに対して個人的なデータを作成できる主要な方法の一つであるため、GISの重要な機能です。たとえば、川での汚染を監視しているとします。GISを使用すると、雨水排水のためのすべての排水口を（ポイント地物として）デジタイズすることができます。また、川自体を（ポリライン地物として）デジタイズすることもできます。最後に、川の流路に沿ってpHレベルを読み取り、これらを読み取った場所を（ポイントレイヤとして）デジタイズできます。</p>
+<p>GISアプリケーションでは、レイヤのジオメトリデータを作成、修正すること --– このプロセスは <strong>デジタイジング</strong> と呼ばれます–-- ができます。デジタイジングについては、後のチュートリアルで詳しく説明します。あるレイヤ中にポリゴン (例. 農業用貯水池)がある場合, GISアプリケーションがそのレイヤに作成を許すのは新たなポリゴンだけです。同様に、地物の形状を変更したいとき、アプリケーションは変更された形状が正しいときだけそれを許します。例えば、1つの頂点しかない線を引くことはできません –-- 線は必ず2つ以上の頂点を有する必要があるということを思い出してください。</p>
+<p>ベクタデータの作成と編集は、関心のあるものに対して個人的なデータを作成できる主要な方法の一つであるため、GISの重要な機能です。たとえば、川の汚染を監視しているとします。GISを使用すると、雨水排水設備の全てのはけ口を（ポイント地物として）デジタイズすることができます。また、川自体を（ポリライン地物として）デジタイズすることもできます。最後に、川の流路に沿ってpHレベルを読み取り、読み取った場所を（ポイントレイヤとして）デジタイズできます。</p>
 <p>自らデータを作成するだけでなく、無料で入手し利用できるベクタデータもたくさんあります。たとえば、地図測量局（国土地理院）からは 1:50 000 の地図シートに掲載されているベクタデータを入手できます。</p>
 </section>
 <section id="scale-and-vector-data">
@@ -382,14 +368,10 @@ of lines above that all lines must have at least two vertices.</p>
 </section>
 <section id="now-you-try">
 <h2><span class="section-number">3.12. </span>やってみよう<a class="headerlink" href="#now-you-try" title="Link to this heading"></a></h2>
-<p>ここでは人に教える際のアイデアいくつか述べていきます:</p>
+<p>ここでは生徒に教える際のアイデアをいくつか述べていきます:</p>
 <ul class="simple">
-<li><p>お住まいの地域の地形図のコピー（ <a class="reference internal" href="#figure-sample-map"><span class="std std-numref">図 3.44</span></a> に示されているものなど）を使用して、学習者がさまざまな種類のベクタデータの例を地図上で強調表示して識別できるかどうかを確認します。</p></li>
-<li><p>Think of how you would create vector features in a GIS to represent real world
-features on your school grounds. Create a table of different features in and
-around your school and then task your learners to decide whether they would be
-best represented in the GIS as a point, line or polygon. See <a class="reference internal" href="#table-vector-geometry"><span class="std std-numref">表 3.18</span></a>
-for an example.</p></li>
+<li><p>お住まいの地域の地形図のコピー（ <a class="reference internal" href="#figure-sample-map"><span class="std std-numref">図 3.44</span></a> に示されているものなど）を使用して、生徒が様々な種類のベクタデータの例を地図上で強調表示して識別できるかどうかを確認します。</p></li>
+<li><p>学校の敷地にある現実世界の地物を表すために、GISでベクタ地物をどのように作成するか考えてください。学校の中および周りの様々な地物のテーブルを作成し、それから生徒に、それらはGISではポイント、ライン、ポリゴンのどれで表現するのが最善かを決める課題を与えてください。 <a href="#id17"><span class="problematic" id="id18">table_vector_1_</span></a> の例を参照してください。</p></li>
 </ul>
 <figure class="align-center" id="id15">
 <span id="figure-sample-map"></span><a class="reference internal image-reference" href="../../_images/sample_map.png"><img alt="../../_images/sample_map.png" src="../../_images/sample_map.png" style="width: 30em;" /></a>
@@ -398,7 +380,7 @@ for an example.</p></li>
 </figcaption>
 </figure>
 <span id="table-vector-geometry"></span><table class="docutils align-default" id="id16">
-<caption><span class="caption-number">表 3.18 </span><span class="caption-text">Vector data and geometry types</span><a class="headerlink" href="#id16" title="Link to this table"></a></caption>
+<caption><span class="caption-number">表 3.18 </span><span class="caption-text">ベクタデータとジオメトリの型</span><a class="headerlink" href="#id16" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>実際の地物</p></th>
 <th class="head"><p>最適なジオメトリ型</p></th>
@@ -422,8 +404,7 @@ for an example.</p></li>
 </tr>
 </tbody>
 </table>
-<p>Create a table like <a class="reference internal" href="#table-vector-geometry"><span class="std std-numref">表 3.18</span></a> (leaving the &quot;geometry
-type&quot; column empty) and ask your learners to decide on suitable geometry types.</p>
+<p>（「ジオメトリ型」の列を空白にした） <a class="reference internal" href="#table-vector-geometry"><span class="std std-numref">表 3.18</span></a> のような表を作り、生徒たちに適切なジオメトリ型を決めるように問います。</p>
 </section>
 <section id="something-to-think-about">
 <h2><span class="section-number">3.13. </span>考えてみよう<a class="headerlink" href="#something-to-think-about" title="Link to this heading"></a></h2>
@@ -451,7 +432,7 @@ type&quot; column empty) and ask your learners to decide on suitable geometry ty
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 7月 05, 00:54 +0900
       </span></p>
   </div>
 
