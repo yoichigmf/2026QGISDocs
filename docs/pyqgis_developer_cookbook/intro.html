@@ -85,7 +85,7 @@
    <a href= "../../genindex.html">索引</a>
  
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">About QGIS</span></p>
+              <p class="caption" role="heading"><span class="caption-text">QGISについて</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../about/preamble.html">はじめに</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/foreword.html">序文</a></li>
@@ -97,8 +97,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ユーザ向け</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../user_manual/index.html">QGIS Desktop User Guide/Manual (QGIS 3.44)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../server_manual/index.html">QGIS Server Guide/Manual (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/index.html">QGIS Desktop ユーザーガイド/マニュアル (QGIS 3.44)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server_manual/index.html">QGIS Server ガイド/マニュアル (QGIS 3.44)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../training_manual/index.html">トレーニングマニュアル</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gentle_gis_introduction/index.html">やさしい GIS 入門</a></li>
 </ul>
@@ -108,7 +108,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">開発者向け</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">PyQGIS Cookbook (QGIS 3.44)</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">PyQGIS クックブック(QGIS 3.44)</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">1. はじめに</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#scripting-in-the-python-console">1.1. Pythonコンソールでのスクリプティング</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#python-plugins">1.2. Python プラグイン</a><ul>
@@ -203,7 +203,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 97.56% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 100.00% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="introduction">
@@ -278,10 +278,7 @@
 </div>
 <section id="processing-plugins">
 <h3><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">1.2.1. </span>プロセシングプラグイン</a><a class="headerlink" href="#processing-plugins" title="Link to this heading"></a></h3>
-<p>Processing Plugins can be used to process data. They are easier to develop,
-more specific and more lightweight than Python Plugins. <a class="reference internal" href="processing.html#processing-plugin"><span class="std std-ref">プロセシングプラグインを書く</span></a>
-explains when the use of Processing algorithms is appropriate and how to develop
-them.</p>
+<p>プロセシングプラグインはデータを処理するために使うことができます。Pythonプラグインよりも開発が簡単で、より具体的で軽量です。 <a class="reference internal" href="processing.html#processing-plugin"><span class="std std-ref">プロセシングプラグインを書く</span></a> では、プロセシングアルゴリズムを使用することが適切な場合や、どのように開発すればよいかを説明します。</p>
 </section>
 </section>
 <section id="running-python-code-when-qgis-starts">
@@ -307,11 +304,7 @@ them.</p>
 <section id="the-pyqgis-startup-environment-variable">
 <span id="index-4"></span><h3><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">1.3.2. </span>PYQGIS_STARTUP環境変数</a><a class="headerlink" href="#the-pyqgis-startup-environment-variable" title="Link to this heading"></a></h3>
 <p>既存のPythonファイルのパスを <code class="docutils literal notranslate"><span class="pre">PYQGIS_STARTUP</span></code> 環境変数に設定すると、QGISの初期化が完了する直前にPythonコードを実行することができます。</p>
-<p>This code will run before QGIS initialization is complete.
-This method is very useful for cleaning
-sys.path, which may have undesirable paths, or for isolating/loading
-the initial environment without requiring a virtual environment, e.g.
-homebrew or MacPorts installs on Mac.</p>
+<p>このコードはQGISの初期化が完了する前に実行されます。このメソッドは、望ましくないパスが含まれる可能性のある sys.path をクリーニングするためや、仮想環境を必要とせずに初期環境を分離/読み込むために非常に役立ちます（例：MacのHomebrewまたはMacPortsインストール）。</p>
 </section>
 <section id="the-code-parameter">
 <span id="index-5"></span><h3><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">1.3.3. </span><code class="docutils literal notranslate"><span class="pre">--code</span></code> パラメータ</a><a class="headerlink" href="#the-code-parameter" title="Link to this heading"></a></h3>
@@ -379,7 +372,7 @@ homebrew or MacPorts installs on Mac.</p>
 </section>
 <section id="using-pyqgis-in-custom-applications">
 <h3><a class="toc-backref" href="#id15" role="doc-backlink"><span class="section-number">1.4.2. </span>カスタムアプリケーションでPyQGISを使用する</a><a class="headerlink" href="#using-pyqgis-in-custom-applications" title="Link to this heading"></a></h3>
-<p><a class="reference internal" href="#standalonescript"><span class="std std-ref">スタンドアロンスクリプトでPyQGISを使用する</span></a> とカスタムPyQGISアプリケーションが違うのは、 <code class="xref py py-class docutils literal notranslate"><span class="pre">QgsApplication</span> <span class="pre">&lt;qgis.core.QgsApplication&gt;</span> <span class="pre">`</span> <span class="pre">をインスタンス化するときの2番目の引数だけです。</span> <span class="pre">:const:`False</span></code> の代わりに <code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code> を渡して、GUIを使用する予定であることを示します。</p>
+<p><a class="reference internal" href="#standalonescript"><span class="std std-ref">スタンドアロンスクリプトでPyQGISを使用する</span></a> とカスタムPyQGISアプリケーションが違うのは、  <a class="reference external" href="https://qgis.org/pyqgis/3.44/core/QgsApplication.html#qgis.core.QgsApplication" title="(in QGIS Python API v3.44)"><code class="xref py py-class docutils literal notranslate"><span class="pre">QgsApplication</span></code></a>. をインスタンス化するときの2番目の引数だけです。 <code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code> の代わりに <code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code> を渡して、GUIを使用する予定であることを示します。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span><span class="w"> </span><span class="nn">qgis.core</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="c1"># Supply the path to the qgis install location</span>
@@ -454,7 +447,7 @@ homebrew or MacPorts installs on Mac.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 6月 18, 14:19 +0900
+      <span class="lastupdated">最終更新: 2026 7月 05, 21:31 +0900
       </span></p>
   </div>
 
