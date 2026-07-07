@@ -234,7 +234,7 @@
   <blockquote>
 <div><div class="admonition important">
 <p class="admonition-title">重要</p>
-<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 96.46% 翻訳されています。</p>
+<p>翻訳は <a class="reference internal" href="../../documentation_guidelines/do_translations.html#translation-guidelines"><span class="std std-ref">あなたが参加できる</span></a>  コミュニティの取り組みです。このページは現在 99.18% 翻訳されています。</p>
 </div>
 </div></blockquote>
 <section id="general-tools">
@@ -1555,10 +1555,7 @@
 <li><p><strong>レイヤ選択</strong>: コンテキストメニューを開き、地物情報を表示するレイヤをユーザーが選択します。マウスの下にひとつの地物しかない場合、結果は自動的に表示されます。</p></li>
 </ul>
 </li>
-<li><p>In the upper part, the information widget: when you identify a data in the map canvas,
-this is the place where the <span class="guilabel">Identify Results</span> dialog will list details
-about the clicked (or hovered over, depending on the tool in use) items.
-Their formatting relies on the <a class="reference internal" href="#identify-view"><span class="std std-ref">selected view</span></a>.</p>
+<li><p>上部の情報ウィジェット：マップキャンバス上のデータを識別すると、ここにある <span class="guilabel">地物情報結果</span> ダイアログに、クリック（または使用中のツールに応じてホバー）されたアイテムの詳細がリストアップされます。その書式設定は  <a class="reference internal" href="#identify-view"><span class="std std-ref">selected view</span></a> の設定に従って表示されます。</p>
 <p>識別ツールによって表示される情報は、選択しているレイヤの種類によって異なり、以下のようなものがあります。</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../working_with_vector/attribute_table.html#identify-features-vector"><span class="std std-ref">ベクタレイヤ</span></a> （ベクトルタイルや点群データを含む）</p></li>
@@ -1637,18 +1634,16 @@ of the identified feature or pixel</p></li>
 a <a class="reference internal" href="../working_with_vector/joins_relations.html#vector-relations"><span class="std std-ref">referenced or referencing vector feature</span></a> of the identified feature.
 Only available if <a class="reference internal" href="../../../_images/checkbox.png"><img alt="checkbox" src="../../../_images/checkbox.png" style="width: 1.3em;" /></a> <span class="guilabel">Show Relations</span> is checked in Identify Settings.</p></li>
 <li><p><span class="guilabel">地物をコピー</span> ：ベクタのジオメトリと属性、またはピクセルのジオメトリをコピーします。</p></li>
-<li><p><span class="guilabel">Toggle feature selection</span>: Adds or removes identified feature to/from the selection</p></li>
-<li><p><span class="guilabel">Copy attribute value</span>: Copies the value in the <span class="guilabel">Value</span> column
-of the tree item you click on</p></li>
-<li><p><span class="guilabel">Copy feature attributes</span>: Copies the attribute names and values of the identified item</p></li>
-<li><p><span class="guilabel">Select features by attribute value</span>: Selects all vector features in the layer
-that match the selected attribute value</p></li>
+<li><p><span class="guilabel">選択地物を切り替え</span> ：識別された地物を選択範囲に追加または選択範囲から削除します。</p></li>
+<li><p><span class="guilabel">属性値のコピー</span> ：クリックしたツリーアイテムの <span class="guilabel">値</span> 列の値をコピーします。</p></li>
+<li><p><span class="guilabel">地物属性のコピー</span> ：識別されたアイテムの属性名と値をコピーします。</p></li>
+<li><p><span class="guilabel">属性で地物を選択</span> ： 選択した属性値に一致するレイヤ内のすべてのベクタ地物を選択します。</p></li>
 </ul>
 </li>
-<li><p>レイヤ、結果パネル、またはマップキャンバスのレンダリングを制御します。：</p>
+<li><p>レイヤ、結果パネル、またはマップキャンバスのレンダリングを制御する：</p>
 <ul>
-<li><p><span class="guilabel">Clear result</span>: Removes results in the window</p></li>
-<li><p><span class="guilabel">Clear highlights</span>: Removes items highlighted on the map</p></li>
+<li><p><span class="guilabel">結果のクリア</span> ：ウィンドウ内の結果を削除します。</p></li>
+<li><p><span class="guilabel">ハイライトをクリア</span> ： マップ上でハイライト表示されているアイテムを削除します。</p></li>
 <li><p><span class="guilabel">Highlight all</span>: Highlights in the map canvas all the items identified
 in the results dialog, regardless of their layer</p></li>
 <li><p><span class="guilabel">Highlight layer</span>: Highlights in the map canvas all the items identified
@@ -1758,8 +1753,7 @@ in the <span class="guilabel">Layers</span> panel</p></li>
 <aside class="footnote brackets" id="id9" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
 <span class="backrefs">(<a role="doc-backlink" href="#id7">1</a>,<a role="doc-backlink" href="#id8">2</a>)</span>
-<p>For raster layers, symbology and rendering items are melted together,
-meaning that saving/loading one would also save/load items of/from the other.</p>
+<p>ラスタレイヤでは、シンボロジとレンダリングの設定が一体化しているため、一方を保存または読み込むと、もう一方の設定も同時に保存・読み込みされます。</p>
 </aside>
 </aside>
 <p>デフォルトでは、読み込まれたレイヤに適用されるスタイルは <code class="docutils literal notranslate"><span class="pre">default</span></code> という名前です。あなたのレイヤに理想的で適切なレンダリングが設定できたら、 <a class="reference internal" href="../../../_images/selectstring.png"><img alt="selectString" src="../../../_images/selectstring.png" style="width: 2.5em;" /></a> <span class="menuselection">スタイル</span> コンボボックスをクリックして下記の項目を選択することで、スタイルを保存することができます。</p>
@@ -2274,7 +2268,7 @@ meaning that saving/loading one would also save/load items of/from the other.</p
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p><strong>ミドルクリックで、適用する式を作成または編集します</strong></p>
-<p><a class="reference internal" href="../../../_images/mIconDataDefine.png"><img alt="dataDefine" src="../../../_images/mIconDataDefine.png" style="width: 1.5em;" /></a> <sup>データ定義による上書き</sup> ウィジェットをマウスの中央ボタンでクリックするだけで、 <span class="guilabel">式文字列ビルダー</span> ダイアログを直接開いて、適用する式を作成または編集できます。</p>
+<p><a class="reference internal" href="../../../_images/mIconDataDefine.png"><img alt="dataDefine" src="../../../_images/mIconDataDefine.png" style="width: 1.5em;" /></a> <sup>データによって定義された上書き</sup> ウィジェットをマウスの中央ボタンでクリックするだけで、 <span class="guilabel">式文字列ビルダー</span> ダイアログを直接開いて、適用する式を作成または編集できます。</p>
 </div>
 </section>
 <section id="using-the-data-defined-assistant-interface">
@@ -2285,78 +2279,34 @@ meaning that saving/loading one would also save/load items of/from the other.</p
 <li><p><span class="guilabel">入力</span> データの定義。すなわち：</p>
 <ul class="simple">
 <li><p><span class="guilabel">ソース</span> ：フィールドまたは <a class="reference internal" href="../../../_images/mIconExpression.png"><img alt="expression" src="../../../_images/mIconExpression.png" style="width: 1.5em;" /></a> <a class="reference internal" href="../expressions/expression.html#vector-expressions"><span class="std std-ref">式</span></a> を使用して表現する属性値</p></li>
-<li><p>the range of values to represent: you can manually enter the values
-or use the <a class="reference internal" href="../../../_images/mActionRefresh.png"><img alt="refresh" src="../../../_images/mActionRefresh.png" style="width: 1.5em;" /></a> <sup>Fetch value range from layer</sup> button
-to fill these fields automatically with the minimum and maximum values returned
-by the <span class="guilabel">Source</span> expression applied to your data.
-Features whose values are out of the given range will be represented
-with the property of the closest limit of the output range.</p></li>
+<li><p>表現する値の範囲：値を手動で入力するか、 <a class="reference internal" href="../../../_images/mActionRefresh.png"><img alt="refresh" src="../../../_images/mActionRefresh.png" style="width: 1.5em;" /></a> <sup>レイヤから値の範囲を取得する</sup> ボタンを使用して、データに適用された <span class="guilabel">ソース</span> 式から返される最小値と最大値をこれらのフィールドに自動入力できます。指定された範囲外の値を持つフィーチャは、出力範囲の最も近い境界（上限または下限）のプロパティで表現されます。</p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="../../../_images/unchecked.png"><img alt="unchecked" src="../../../_images/unchecked.png" style="width: 1.3em;" /></a> <span class="guilabel">Apply transform curve</span>: by default, output values
-are applied to input features following a specific scaling method (see below for setting).
-You can override this logic: enable the transform option, click on the
-graphic to add break point(s) and drag the point(s) to apply a custom distribution.</p></li>
+<li><p><a class="reference internal" href="../../../_images/unchecked.png"><img alt="unchecked" src="../../../_images/unchecked.png" style="width: 1.3em;" /></a> <span class="guilabel">変換曲線を適用する</span> ： デフォルトでは、出力値は特定のスケール手法（設定は下記を参照）に従って入力地物に適用されます。このロジックは上書きすることができます。変換オプションを有効にして、グラフ上をクリックしてブレークポイント（複数可）を追加し、ポイントをドラッグしてカスタム分布を適用します。</p></li>
 <li><p><span class="guilabel">出力</span> 値の定義：このオプションは定義するパラメータによって異なります。共通して設定できるのは以下の項目です：</p>
 <ul>
-<li><p>for color: a linear interpolation of source values is done
-over a given <a class="reference internal" href="../style_library/style_manager.html#color-ramp"><span class="std std-ref">color ramp</span></a> in order to assign each symbol the correct color.
-A color to use for symbols with NULL values can also be given.</p></li>
-<li><p>for rotation: a linear interpolation is done over a range of minimum and maximum angles
-in order to assign each symbol the correct rotation.
-An angle to use for symbols with NULL values can also be given.</p></li>
-<li><p>for opacity: a polynomial interpolation is done over a range of minimum and maximum opacity values.
-The <span class="guilabel">Exponent</span> field dictates the way source values are mapped to the output range.
-Power values greater than <code class="docutils literal notranslate"><span class="pre">1</span></code> will cause the output values distribution to start slowly
-before accelerating as the source values approach their maximum.
-Smaller exponents (less than <code class="docutils literal notranslate"><span class="pre">1</span></code>) will do the opposite.
-An opacity value to use for symbols with NULL values can also be given.</p></li>
-<li><p>for width (line symbols): an interpolation is done over a range of minimum and maximum values
-in order to assign each symbol the correct width.
-The <span class="guilabel">Scale method</span> field controls how the interpolation is done
-and what the output value represents.</p>
+<li><p>色の場合：各シンボルに正しい色を割り当てるために、指定された  <a class="reference internal" href="../style_library/style_manager.html#color-ramp"><span class="std std-ref">color ramp</span></a> に基づいてソース値の線形補間が行われます。また、NULL値を持つシンボルに使用する色を指定することもできます。</p></li>
+<li><p>回転の場合：各シンボルに正しい回転を割り当てるために、最小角度と最大角度の範囲で線形補間が行われます。また、NULL値を持つシンボルに使用する角度を指定することもできます。</p></li>
+<li><p>不透明度の場合：最小不透明度と最大不透明度の範囲で多項式補間が行われます。 <span class="guilabel">指数</span> フィールドは、ソース値が出力範囲にマッピングされる方法を決定します。 <code class="docutils literal notranslate"><span class="pre">1</span></code> より大きい累乗値は、ソース値が最大値に近づくにつれて加速する前に、出力値の分布を緩やかに開始させます。小さい指数（ <code class="docutils literal notranslate"><span class="pre">1</span></code> 未満）はその逆になります。また、NULL値を持つシンボルに使用する不透明度を指定することもできます。</p></li>
+<li><p>幅（ラインシンボル）の場合：各シンボルに正しい幅を割り当てるために、最小値と最大値の範囲で補間が行われます。 <span class="guilabel">スケール方法</span> フィールドは、補間がどのように行われ、出力値が何を表すかを制御します。</p>
 <ul class="simple">
-<li><p><strong>Linear</strong>: linearly interpolates the width of the symbol between the <span class="guilabel">Size from</span>
-and the <span class="guilabel">Size to</span> when the <span class="guilabel">Source</span> expression value varies
-from <span class="guilabel">value from</span> to <span class="guilabel">value to</span>.
-Symbols width are proportional.</p></li>
-<li><p><strong>Exponential</strong>: Also interpolates the width, but allows to control the exact power
-used for scaling through the <span class="guilabel">Exponent</span> field.
-Power values greater than <code class="docutils literal notranslate"><span class="pre">1</span></code> will cause the output values distribution to start slowly
-before accelerating as the source values approach their maximum.
-Smaller exponents (less than <code class="docutils literal notranslate"><span class="pre">1</span></code>) will do the opposite.</p></li>
+<li><p><strong>線形</strong> ： <span class="guilabel">ソース</span> 式の値が <span class="guilabel">開始値</span> から <span class="guilabel">終了値</span> まで変化するとき、シンボルの幅を <span class="guilabel">開始幅</span> と <span class="guilabel">終了幅</span> の間で線形補間します。シンボルの幅は比例します。</p></li>
+<li><p><strong>指数</strong> ：同じく幅を補間しますが、<span class="guilabel">指数</span> フィールドによってスケーリングに使用される正確な累乗値を制御できます。 <code class="docutils literal notranslate"><span class="pre">1</span></code> より大きい累乗値は、ソース値が最大値に近づくにつれて加速する前に、出力値の分布を緩やかに開始させます。小さい指数 （ <code class="docutils literal notranslate"><span class="pre">1</span></code> 未満）はその逆になります。</p></li>
 </ul>
-<p>The width to use for symbols with NULL values can also be given.</p>
+<p>また、NULL値を持つシンボルに使用する幅を指定することもできます。</p>
 </li>
-<li><p>for size (point symbols): an interpolation is done over a range of minimum and maximum values
-in order to assign each symbol the correct size &quot;diameter&quot;.
-The <span class="guilabel">Scale method</span> field controls how the interpolation is done
-and what the output value represents.</p>
+<li><p>サイズ（ポイントシンボル）の場合：各シンボルに正しいサイズ（直径）を割り当てるために、最小値と最大値の範囲で補間が行われます。縮尺 The <span class="guilabel">スケール方法</span> フィールドは、補間がどのように行われ、出力値が何を表すかを制御します。</p>
 <ul class="simple">
-<li><p><strong>Radius</strong>: linearly interpolates the diameter of the symbol between the <span class="guilabel">Size from</span>
-and the <span class="guilabel">Size to</span> when the <span class="guilabel">Source</span> expression value varies
-from <span class="guilabel">value from</span> to <span class="guilabel">value to</span>.
-Symbols diameter are proportional.</p></li>
-<li><p><strong>Surface</strong>: scales the symbol diameter according to the square root (power of <code class="docutils literal notranslate"><span class="pre">0.5</span></code>)
-of the <span class="guilabel">Source</span> expression value to linearly interpolate the area of the symbol
-between the <span class="guilabel">Size from</span> and the <span class="guilabel">Size to</span> when the <span class="guilabel">Source</span>
-expression value varies from <span class="guilabel">value from</span> to <span class="guilabel">value to</span>.
-Symbols area are proportional.
-This method reflects human perception of size variation better than the <strong>radius</strong> one.</p></li>
-<li><p><strong>Flannery</strong>: Applies a compensation factor (power of <code class="docutils literal notranslate"><span class="pre">0.57</span></code>) to the area interpolation,
-in order to mitigate the eyes' perceptual underestimation of proportional areas.
-Maybe relevant only for circular symbols.</p></li>
-<li><p><strong>Exponential</strong>: Also interpolates the area, but allows to control the exact power
-used for scaling through the <span class="guilabel">Exponent</span> field.
-Power values greater than <code class="docutils literal notranslate"><span class="pre">1</span></code> will cause the output values distribution to start slowly
-before accelerating as the source values approach their maximum.
-Smaller exponents (less than <code class="docutils literal notranslate"><span class="pre">1</span></code>) will do the opposite.</p></li>
+<li><p><strong>半径</strong> ： <span class="guilabel">ソース</span> 式の値が <span class="guilabel">開始値</span> から <span class="guilabel">終了値</span> まで変化するとき、シンボルの直径を <span class="guilabel">開始幅</span> と <span class="guilabel">終了幅</span> の間で線形補間します。シンボルの直径は比例します。</p></li>
+<li><p><strong>面積</strong> ： <span class="guilabel">ソース</span> 式の値の平方根（ <code class="docutils literal notranslate"><span class="pre">0.5</span></code> 乗）に応じてシンボルの直径をスケーリングし、 <span class="guilabel">ソース</span> 式の値が <span class="guilabel">開始値</span> から <span class="guilabel">終了値</span> まで変化するときに、シンボルの面積を <span class="guilabel">開始幅</span> と <span class="guilabel">終了幅</span> の間で線形補間します。シンボルの面積は比例します。この手法は、 <strong>半径</strong> の手法よりもサイズの変化に対する人間の知覚をより正確に反映します。</p></li>
+<li><p><strong>フラナリー</strong> ：比率シンボルの面積に対して人間の目が実際よりも小さく見積もってしまう知覚的な過小評価を軽減するために、面積補間に補正係数 （ <code class="docutils literal notranslate"><span class="pre">0.57</span></code> 乗）を適用します。おそらく円形シンボルにのみ関連します。</p></li>
+<li><p><strong>指数</strong> ：同じく面積を補間しますが、<span class="guilabel">指数</span> フィールドによってスケーリングに使用される正確な累乗値を制御できます。 <code class="docutils literal notranslate"><span class="pre">1</span></code> より大きい累乗値は、ソース値が最大値に近づくにつれて加速する前に、出力値の分布を緩やかに開始させます。小さい指数 （ <code class="docutils literal notranslate"><span class="pre">1</span></code> 未満）はその逆になります。</p></li>
 </ul>
-<p>The size to use for symbols with NULL values can also be given.</p>
+<p>また、NULL値を持つシンボルに使用するサイズを指定することもできます。</p>
 <figure class="align-center" id="id50">
 <span id="figure-symbology-scale-methods"></span><img alt="../../../_images/scale_methods.png" src="../../../_images/scale_methods.png" />
 <figcaption>
-<p><span class="caption-number">図 8.29 </span><span class="caption-text">Scaling values using different methods (from left to right): Radius - Surface - Flannery - Exponential of 2</span><a class="headerlink" href="#id50" title="Link to this image"></a></p>
+<p><span class="caption-number">図 8.29 </span><span class="caption-text">さまざまな手法による値のスケーリング（左から右へ）： 半径ー面積ーフラナリーー2の指数</span><a class="headerlink" href="#id50" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -2370,8 +2320,7 @@ Smaller exponents (less than <code class="docutils literal notranslate"><span cl
 <p><span class="caption-number">図 8.30 </span><span class="caption-text">passengersレイヤのフィールド値に基づいた地物サイズのスケーリング</span><a class="headerlink" href="#id51" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>The values presented in the varying size assistant above will set the size
-'Data-defined override' with the editable formula below:</p>
+<p>上記のサイズ可変アシスタントに表示される値は、以下の編集可能な式を使用して、サイズの「データによって定義された上書き」を設定します。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coalesce</span><span class="p">(</span><span class="n">scale_polynomial</span><span class="p">(</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.57</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2392,8 +2341,7 @@ Smaller exponents (less than <code class="docutils literal notranslate"><span cl
 </figure>
 <section id="basic">
 <h4><span class="section-number">8.8.11.1. </span>基本<a class="headerlink" href="#basic" title="Link to this heading"></a></h4>
-<p>When setting authentication credentials, the <span class="guilabel">Basic</span> tab
-allows you to set:</p>
+<p>認証情報を設定するとき、 <span class="guilabel">基本</span> タブでは以下の項目を設定できます：</p>
 <ul class="simple">
 <li><p><span class="guilabel">ユーザー名</span> ：データソースへの接続に使用されるユーザー名。</p></li>
 <li><p><span class="guilabel">パスワード</span> ：データソースへの接続に使用されるパスワード</p></li>
@@ -2405,13 +2353,7 @@ authentication configuration.</p>
 <div><div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p><strong>QGISユーザー設定とセキュリティ</strong></p>
-<p>In the <span class="guilabel">Authentication</span> tab, saving <strong>username</strong> and <strong>password</strong>
-will keep unprotected credentials in the connection configuration. Those
-<strong>credentials will be visible</strong> if, for instance, you share the project file
-with someone. Therefore, it is advisable to save your credentials in an
-<em>Authentication configuration</em> instead (<span class="guilabel">Configurations</span> tab -
-See <a class="reference internal" href="../auth_system/index.html#authentication-index"><span class="std std-ref">認証システム</span></a> for more details) or in a service connection
-file (see <a class="reference internal" href="../managing_data_source/opening_data.html#pg-service-file"><span class="std std-ref">PostgreSQL Service connection file</span></a> for example).</p>
+<p><span class="guilabel">認証</span> タブで <strong>ユーザー名</strong> と <strong>パスワード</strong> を保存すると、保護されていない認証情報が接続設定に保持されます。 例えば、プロジェクトファイルを他者と共有した場合には、これらの <strong>認証情報が見えてしまいます</strong> 。従って、代わりに <em>認証設定</em> の中に資格情報を保存する（ <span class="guilabel">設定</span> タブを使用します。詳細は <a class="reference internal" href="../auth_system/index.html#authentication-index"><span class="std std-ref">認証システム</span></a> を参照）か、サービス接続ファイル（例は <a class="reference internal" href="../managing_data_source/opening_data.html#pg-service-file"><span class="std std-ref">PostgreSQL Service connection file</span></a> を参照）内に資格情報を保存することをお勧めします。</p>
 </div>
 </div></blockquote>
 </section>
@@ -2421,11 +2363,11 @@ file (see <a class="reference internal" href="../managing_data_source/opening_da
 <p>認証設定セレクタを使用すると、ユーザーは既存の認証設定から選択するか、新しい認証設定を作成できます。この機能では以下の操作が行えます：</p>
 <ul class="simple">
 <li><p>ドロップダウンリストから、既存の認証設定を選択します。</p></li>
-<li><p><a class="reference internal" href="../../../_images/symbologyAdd.png"><img alt="symbologyAdd" src="../../../_images/symbologyAdd.png" style="width: 1.5em;" /></a> <sup>Create a new authentication configuration</sup></p></li>
-<li><p><a class="reference internal" href="../../../_images/symbologyRemove.png"><img alt="symbologyRemove" src="../../../_images/symbologyRemove.png" style="width: 1.5em;" /></a> <sup>Delete selected configuration</sup></p></li>
-<li><p><a class="reference internal" href="../../../_images/mActionProjectProperties.png"><img alt="projectProperties" src="../../../_images/mActionProjectProperties.png" style="width: 1.5em;" /></a> <sup>Edit selected configuration</sup></p></li>
+<li><p><a class="reference internal" href="../../../_images/symbologyAdd.png"><img alt="symbologyAdd" src="../../../_images/symbologyAdd.png" style="width: 1.5em;" /></a> <sup>認証構成を作成</sup></p></li>
+<li><p><a class="reference internal" href="../../../_images/symbologyRemove.png"><img alt="symbologyRemove" src="../../../_images/symbologyRemove.png" style="width: 1.5em;" /></a> <sup>選択した認証構成を削除</sup></p></li>
+<li><p><a class="reference internal" href="../../../_images/mActionProjectProperties.png"><img alt="projectProperties" src="../../../_images/mActionProjectProperties.png" style="width: 1.5em;" /></a> <sup>選択した認証構成を編集</sup></p></li>
 </ul>
-<p>For more information on the authentication system, see <a class="reference internal" href="../auth_system/index.html#authentication-index"><span class="std std-ref">認証システム</span></a>.</p>
+<p>認証システムについての詳細は、 <a class="reference internal" href="../auth_system/index.html#authentication-index"><span class="std std-ref">認証システム</span></a> を参照してください。</p>
 </section>
 </section>
 </section>
@@ -2443,7 +2385,7 @@ file (see <a class="reference internal" href="../managing_data_source/opening_da
 
   <div role="contentinfo">
     <p>&#169; Copyright 2002-now, QGIS project.
-      <span class="lastupdated">最終更新: 2026 7月 05, 04:01 +0900
+      <span class="lastupdated">最終更新: 2026 7月 07, 21:03 +0900
       </span></p>
   </div>
 
